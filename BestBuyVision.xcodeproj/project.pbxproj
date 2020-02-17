@@ -18,6 +18,8 @@
 		57BA1F0423FA0BD700350ADB /* UIShadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0323FA0BD700350ADB /* UIShadows.swift */; };
 		57BA1F0823FA0CCE00350ADB /* UIViewAndExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0723FA0CCE00350ADB /* UIViewAndExtension.swift */; };
 		57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0923FA0D1300350ADB /* Colors.swift */; };
+		57BA1F0C23FA185400350ADB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0B23FA185400350ADB /* SignupViewController.swift */; };
+		57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		57BA1F0323FA0BD700350ADB /* UIShadows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIShadows.swift; sourceTree = "<group>"; };
 		57BA1F0723FA0CCE00350ADB /* UIViewAndExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAndExtension.swift; sourceTree = "<group>"; };
 		57BA1F0923FA0D1300350ADB /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		57BA1F0B23FA185400350ADB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				57BA1F0323FA0BD700350ADB /* UIShadows.swift */,
 				57BA1F0723FA0CCE00350ADB /* UIViewAndExtension.swift */,
 				57BA1F0923FA0D1300350ADB /* Colors.swift */,
+				57BA1F0B23FA185400350ADB /* SignupViewController.swift */,
+				57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */,
 			);
 			path = BestBuyVision;
 			sourceTree = "<group>";
@@ -269,11 +275,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BA1ED823F9995500350ADB /* ViewController.swift in Sources */,
+				57BA1F0C23FA185400350ADB /* SignupViewController.swift in Sources */,
 				57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */,
 				57BA1F0423FA0BD700350ADB /* UIShadows.swift in Sources */,
 				57BA1ED423F9995500350ADB /* AppDelegate.swift in Sources */,
 				57BA1F0823FA0CCE00350ADB /* UIViewAndExtension.swift in Sources */,
 				57BA1ED623F9995500350ADB /* SceneDelegate.swift in Sources */,
+				57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var signinBtn: UIButton!
     @IBOutlet weak var passwordTextBox: UITextField!
     @IBOutlet weak var usernameTextBox: UITextField!
     @IBOutlet weak var companyLogoImage: UIImageView!
@@ -18,13 +18,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginBtn.layer.cornerRadius = loginBtn.frame.size.height/2
-        loginBtn.setShadow(opacity: 0.65, radius: 5.0)
+        signinBtn.layer.cornerRadius = signinBtn.frame.size.height/2
+        signinBtn.setShadow(opacity: 0.65, radius: 5.0)
         usernameTextBox.setShadow(opacity: 0.25, radius: 5.0)
         passwordTextBox.setShadow(opacity: 0.25, radius: 5.0)
         
         //setting the gradient background
-        view.setGradientBackground(colorOne: Colors.loginColorOne, colorTwo: Colors.loginColorTwo)
+        view.setGradientBackground(colorOne: Colors.white, colorTwo: Colors.blue)
+        
+    }
+    
+    @IBAction func signBtnClick(_ sender: Any) {
+        performSegue(withIdentifier: "segueTab", sender: nil)
+    }
+    
+    @IBAction func signUpBtnClick(_ sender: Any) {
+        performSegue(withIdentifier: "segueSignUp", sender: nil)
+    }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
 
