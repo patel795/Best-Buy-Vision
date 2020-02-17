@@ -15,6 +15,9 @@
 		57BA1EE023F9995800350ADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57BA1EDE23F9995800350ADB /* LaunchScreen.storyboard */; };
 		57BA1EEB23F9995800350ADB /* BestBuyVisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1EEA23F9995800350ADB /* BestBuyVisionTests.swift */; };
 		57BA1EF623F9995800350ADB /* BestBuyVisionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1EF523F9995800350ADB /* BestBuyVisionUITests.swift */; };
+		57BA1F0423FA0BD700350ADB /* UIShadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0323FA0BD700350ADB /* UIShadows.swift */; };
+		57BA1F0823FA0CCE00350ADB /* UIViewAndExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0723FA0CCE00350ADB /* UIViewAndExtension.swift */; };
+		57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0923FA0D1300350ADB /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		57BA1EF123F9995800350ADB /* BestBuyVisionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BestBuyVisionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BA1EF523F9995800350ADB /* BestBuyVisionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestBuyVisionUITests.swift; sourceTree = "<group>"; };
 		57BA1EF723F9995800350ADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57BA1F0323FA0BD700350ADB /* UIShadows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIShadows.swift; sourceTree = "<group>"; };
+		57BA1F0723FA0CCE00350ADB /* UIViewAndExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAndExtension.swift; sourceTree = "<group>"; };
+		57BA1F0923FA0D1300350ADB /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 				57BA1EDC23F9995800350ADB /* Assets.xcassets */,
 				57BA1EDE23F9995800350ADB /* LaunchScreen.storyboard */,
 				57BA1EE123F9995800350ADB /* Info.plist */,
+				57BA1F0323FA0BD700350ADB /* UIShadows.swift */,
+				57BA1F0723FA0CCE00350ADB /* UIViewAndExtension.swift */,
+				57BA1F0923FA0D1300350ADB /* Colors.swift */,
 			);
 			path = BestBuyVision;
 			sourceTree = "<group>";
@@ -260,7 +269,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BA1ED823F9995500350ADB /* ViewController.swift in Sources */,
+				57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */,
+				57BA1F0423FA0BD700350ADB /* UIShadows.swift in Sources */,
 				57BA1ED423F9995500350ADB /* AppDelegate.swift in Sources */,
+				57BA1F0823FA0CCE00350ADB /* UIViewAndExtension.swift in Sources */,
 				57BA1ED623F9995500350ADB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
