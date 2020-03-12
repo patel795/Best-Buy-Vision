@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2559A351EFAD9639C324E275 /* Pods_BestBuyVision_BestBuyVisionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD05828DC936135B7F77E6A /* Pods_BestBuyVision_BestBuyVisionUITests.framework */; };
+		5741782F2419B06500970F60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5741782E2419B06500970F60 /* GoogleService-Info.plist */; };
 		57BA1ED423F9995500350ADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1ED323F9995500350ADB /* AppDelegate.swift */; };
 		57BA1ED623F9995500350ADB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1ED523F9995500350ADB /* SceneDelegate.swift */; };
 		57BA1ED823F9995500350ADB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1ED723F9995500350ADB /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 		57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0923FA0D1300350ADB /* Colors.swift */; };
 		57BA1F0C23FA185400350ADB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0B23FA185400350ADB /* SignupViewController.swift */; };
 		57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */; };
+		6AD03DA232053ADB0E5168BF /* Pods_BestBuyVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D900AB37F21EA33B19C162F5 /* Pods_BestBuyVision.framework */; };
+		C2D6D68DBAFD3170385EB5D3 /* Pods_BestBuyVisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9107417D54DA721F1C9B05 /* Pods_BestBuyVisionTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		197EE6A797D8C8CAA7429E45 /* Pods-BestBuyVisionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVisionTests.release.xcconfig"; path = "Target Support Files/Pods-BestBuyVisionTests/Pods-BestBuyVisionTests.release.xcconfig"; sourceTree = "<group>"; };
+		2FD05828DC936135B7F77E6A /* Pods_BestBuyVision_BestBuyVisionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVision_BestBuyVisionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		382F0C81FE6CB85E2504E797 /* Pods-BestBuyVision-BestBuyVisionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision-BestBuyVisionUITests.debug.xcconfig"; path = "Target Support Files/Pods-BestBuyVision-BestBuyVisionUITests/Pods-BestBuyVision-BestBuyVisionUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		524B65D0BC7D6BFB0010137A /* Pods-BestBuyVision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision.release.xcconfig"; path = "Target Support Files/Pods-BestBuyVision/Pods-BestBuyVision.release.xcconfig"; sourceTree = "<group>"; };
+		5741782E2419B06500970F60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		57BA1ED023F9995500350ADB /* BestBuyVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestBuyVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BA1ED323F9995500350ADB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57BA1ED523F9995500350ADB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +68,11 @@
 		57BA1F0923FA0D1300350ADB /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		57BA1F0B23FA185400350ADB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageViewController.swift; sourceTree = "<group>"; };
+		84AC19D754A28E20EF1FDA65 /* Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig"; path = "Target Support Files/Pods-BestBuyVision-BestBuyVisionUITests/Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8D5AFF8C1FA1A128CC1AC4CC /* Pods-BestBuyVisionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVisionTests.debug.xcconfig"; path = "Target Support Files/Pods-BestBuyVisionTests/Pods-BestBuyVisionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A35EA5A16B20F759BD1C2F23 /* Pods-BestBuyVision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision.debug.xcconfig"; path = "Target Support Files/Pods-BestBuyVision/Pods-BestBuyVision.debug.xcconfig"; sourceTree = "<group>"; };
+		D900AB37F21EA33B19C162F5 /* Pods_BestBuyVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA9107417D54DA721F1C9B05 /* Pods_BestBuyVisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AD03DA232053ADB0E5168BF /* Pods_BestBuyVision.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2D6D68DBAFD3170385EB5D3 /* Pods_BestBuyVisionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,12 +96,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2559A351EFAD9639C324E275 /* Pods_BestBuyVision_BestBuyVisionUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F95D4FEBEFEEE4AC6FCB496 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A35EA5A16B20F759BD1C2F23 /* Pods-BestBuyVision.debug.xcconfig */,
+				524B65D0BC7D6BFB0010137A /* Pods-BestBuyVision.release.xcconfig */,
+				382F0C81FE6CB85E2504E797 /* Pods-BestBuyVision-BestBuyVisionUITests.debug.xcconfig */,
+				84AC19D754A28E20EF1FDA65 /* Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig */,
+				8D5AFF8C1FA1A128CC1AC4CC /* Pods-BestBuyVisionTests.debug.xcconfig */,
+				197EE6A797D8C8CAA7429E45 /* Pods-BestBuyVisionTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		57BA1EC723F9995500350ADB = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +124,8 @@
 				57BA1EE923F9995800350ADB /* BestBuyVisionTests */,
 				57BA1EF423F9995800350ADB /* BestBuyVisionUITests */,
 				57BA1ED123F9995500350ADB /* Products */,
+				3F95D4FEBEFEEE4AC6FCB496 /* Pods */,
+				62716BC20D260A4D8BCC8702 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +150,7 @@
 				57BA1EDE23F9995800350ADB /* LaunchScreen.storyboard */,
 				57BA1EE123F9995800350ADB /* Info.plist */,
 				57BA1F0323FA0BD700350ADB /* UIShadows.swift */,
+				5741782E2419B06500970F60 /* GoogleService-Info.plist */,
 				57BA1F0723FA0CCE00350ADB /* UIViewAndExtension.swift */,
 				57BA1F0923FA0D1300350ADB /* Colors.swift */,
 				57BA1F0B23FA185400350ADB /* SignupViewController.swift */,
@@ -143,6 +177,16 @@
 			path = BestBuyVisionUITests;
 			sourceTree = "<group>";
 		};
+		62716BC20D260A4D8BCC8702 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D900AB37F21EA33B19C162F5 /* Pods_BestBuyVision.framework */,
+				2FD05828DC936135B7F77E6A /* Pods_BestBuyVision_BestBuyVisionUITests.framework */,
+				DA9107417D54DA721F1C9B05 /* Pods_BestBuyVisionTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57BA1EFA23F9995800350ADB /* Build configuration list for PBXNativeTarget "BestBuyVision" */;
 			buildPhases = (
+				0E908F867F1F188F1946DBA7 /* [CP] Check Pods Manifest.lock */,
 				57BA1ECC23F9995500350ADB /* Sources */,
 				57BA1ECD23F9995500350ADB /* Frameworks */,
 				57BA1ECE23F9995500350ADB /* Resources */,
+				5AD6F9516440450AB56947AF /* [CP] Embed Pods Frameworks */,
+				E4724FFD95C5689BC5920C8F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,6 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57BA1EFD23F9995800350ADB /* Build configuration list for PBXNativeTarget "BestBuyVisionTests" */;
 			buildPhases = (
+				2409ACCC2374CEC9795F1312 /* [CP] Check Pods Manifest.lock */,
 				57BA1EE223F9995800350ADB /* Sources */,
 				57BA1EE323F9995800350ADB /* Frameworks */,
 				57BA1EE423F9995800350ADB /* Resources */,
@@ -185,9 +233,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57BA1F0023F9995800350ADB /* Build configuration list for PBXNativeTarget "BestBuyVisionUITests" */;
 			buildPhases = (
+				0FE58F0314A2B16299523FBA /* [CP] Check Pods Manifest.lock */,
 				57BA1EED23F9995800350ADB /* Sources */,
 				57BA1EEE23F9995800350ADB /* Frameworks */,
 				57BA1EEF23F9995800350ADB /* Resources */,
+				1EC5E4DC0EA570155B02C8D2 /* [CP] Embed Pods Frameworks */,
+				3A17B501EADE34FE3DA90D45 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BA1EE023F9995800350ADB /* LaunchScreen.storyboard in Resources */,
+				5741782F2419B06500970F60 /* GoogleService-Info.plist in Resources */,
 				57BA1EDD23F9995800350ADB /* Assets.xcassets in Resources */,
 				57BA1EDB23F9995500350ADB /* Main.storyboard in Resources */,
 			);
@@ -268,6 +320,143 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E908F867F1F188F1946DBA7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BestBuyVision-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0FE58F0314A2B16299523FBA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BestBuyVision-BestBuyVisionUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1EC5E4DC0EA570155B02C8D2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BestBuyVision-BestBuyVisionUITests/Pods-BestBuyVision-BestBuyVisionUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BestBuyVision-BestBuyVisionUITests/Pods-BestBuyVision-BestBuyVisionUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BestBuyVision-BestBuyVisionUITests/Pods-BestBuyVision-BestBuyVisionUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2409ACCC2374CEC9795F1312 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BestBuyVisionTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A17B501EADE34FE3DA90D45 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BestBuyVision-BestBuyVisionUITests/Pods-BestBuyVision-BestBuyVisionUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BestBuyVision-BestBuyVisionUITests/Pods-BestBuyVision-BestBuyVisionUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BestBuyVision-BestBuyVisionUITests/Pods-BestBuyVision-BestBuyVisionUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AD6F9516440450AB56947AF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BestBuyVision/Pods-BestBuyVision-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BestBuyVision/Pods-BestBuyVision-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BestBuyVision/Pods-BestBuyVision-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4724FFD95C5689BC5920C8F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BestBuyVision/Pods-BestBuyVision-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BestBuyVision/Pods-BestBuyVision-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BestBuyVision/Pods-BestBuyVision-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		57BA1ECC23F9995500350ADB /* Sources */ = {
@@ -452,6 +641,7 @@
 		};
 		57BA1EFB23F9995800350ADB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A35EA5A16B20F759BD1C2F23 /* Pods-BestBuyVision.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -469,6 +659,7 @@
 		};
 		57BA1EFC23F9995800350ADB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 524B65D0BC7D6BFB0010137A /* Pods-BestBuyVision.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -486,6 +677,7 @@
 		};
 		57BA1EFE23F9995800350ADB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D5AFF8C1FA1A128CC1AC4CC /* Pods-BestBuyVisionTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -507,6 +699,7 @@
 		};
 		57BA1EFF23F9995800350ADB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 197EE6A797D8C8CAA7429E45 /* Pods-BestBuyVisionTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +721,7 @@
 		};
 		57BA1F0123F9995800350ADB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 382F0C81FE6CB85E2504E797 /* Pods-BestBuyVision-BestBuyVisionUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -547,6 +741,7 @@
 		};
 		57BA1F0223F9995800350ADB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84AC19D754A28E20EF1FDA65 /* Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
