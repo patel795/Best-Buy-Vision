@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -113,8 +113,34 @@
 				8D5AFF8C1FA1A128CC1AC4CC /* Pods-BestBuyVisionTests.debug.xcconfig */,
 				197EE6A797D8C8CAA7429E45 /* Pods-BestBuyVisionTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		574178312419E62700970F60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		574178322419E62D00970F60 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				57BA1F0323FA0BD700350ADB /* UIShadows.swift */,
+				57BA1F0723FA0CCE00350ADB /* UIViewAndExtension.swift */,
+				57BA1F0923FA0D1300350ADB /* Colors.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		574178332419E63500970F60 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57BA1ED723F9995500350ADB /* ViewController.swift */,
+				57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */,
+				57BA1F0B23FA185400350ADB /* SignupViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		57BA1EC723F9995500350ADB = {
@@ -142,19 +168,16 @@
 		57BA1ED223F9995500350ADB /* BestBuyVision */ = {
 			isa = PBXGroup;
 			children = (
+				574178332419E63500970F60 /* Controllers */,
+				574178322419E62D00970F60 /* Helpers */,
+				574178312419E62700970F60 /* View */,
 				57BA1ED323F9995500350ADB /* AppDelegate.swift */,
 				57BA1ED523F9995500350ADB /* SceneDelegate.swift */,
-				57BA1ED723F9995500350ADB /* ViewController.swift */,
 				57BA1ED923F9995500350ADB /* Main.storyboard */,
 				57BA1EDC23F9995800350ADB /* Assets.xcassets */,
 				57BA1EDE23F9995800350ADB /* LaunchScreen.storyboard */,
 				57BA1EE123F9995800350ADB /* Info.plist */,
-				57BA1F0323FA0BD700350ADB /* UIShadows.swift */,
 				5741782E2419B06500970F60 /* GoogleService-Info.plist */,
-				57BA1F0723FA0CCE00350ADB /* UIViewAndExtension.swift */,
-				57BA1F0923FA0D1300350ADB /* Colors.swift */,
-				57BA1F0B23FA185400350ADB /* SignupViewController.swift */,
-				57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */,
 			);
 			path = BestBuyVision;
 			sourceTree = "<group>";

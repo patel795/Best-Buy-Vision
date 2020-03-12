@@ -22,13 +22,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        signinBtn.layer.cornerRadius = signinBtn.frame.size.height/2
-        signinBtn.setShadow(opacity: 0.65, radius: 5.0)
-        usernameTextBox.setShadow(opacity: 0.25, radius: 5.0)
-        passwordTextBox.setShadow(opacity: 0.25, radius: 5.0)
-        
         //setting the gradient background
-        view.setGradientBackground(colorOne: Colors.white, colorTwo: Colors.blue)
+        view.backgroundColor = Colors.white
+        //view.setGradientBackground(colorOne: Colors.white, colorTwo: Colors.bestBuyBlue)
+        
+        setUpNavigationBar()
         
         db = Firestore.firestore()
         
@@ -36,7 +34,16 @@ class ViewController: UIViewController {
         let settings = db.settings
         settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
+    }
+    
+    private func setUpNavigationBar() {
+        let image = UIImage(named: "Logo2")
+        let titleViewImage = UIImageView(image: image)
+        titleViewImage.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        titleViewImage.contentMode = .scaleAspectFit
         
+        navigationItem.titleView = titleViewImage
+        navigationController?.navigationBar.barTintColor = Colors.bestBuyBlue
     }
     
     func  makeAlert(title:String, message:String) {
@@ -51,7 +58,7 @@ class ViewController: UIViewController {
     
     @IBAction func signBtnClick(_ sender: Any) {
         let username = usernameTextBox.text!
-        let password = usernameTextBox.text!
+        let password = passwordTextBox.text!
         
         // MARK: FB:  Try to sign the user in using Firebase Authentication
         // This is all boilerplate code copied and pasted from Firebase documentation
