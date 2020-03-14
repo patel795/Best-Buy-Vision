@@ -22,10 +22,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //setting the gradient background
-        view.backgroundColor = Colors.white
-        //view.setGradientBackground(colorOne: Colors.white, colorTwo: Colors.bestBuyBlue)
-        
         setUpNavigationBar()
         
         db = Firestore.firestore()
@@ -38,8 +34,8 @@ class ViewController: UIViewController {
     
     private func setUpNavigationBar() {
         let image = UIImage(named: "Logo2")
-        let titleViewImage = UIImageView(image: image)
-        titleViewImage.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        let titleViewImage = UIImageView(image: image?.imageWithInsets(insets: UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)))
+        //titleViewImage.frame = CGRect(x: -0, y: 0, width: 34, height: 34)
         titleViewImage.contentMode = .scaleAspectFit
         
         navigationItem.titleView = titleViewImage
@@ -77,7 +73,6 @@ class ViewController: UIViewController {
             else {
                 // 1. A problem occured when looking up  the user
                 // - doesn't meet password requirements
-                // - user already exists
                 print("ERROR!")
                 print(error?.localizedDescription as Any)
                 
@@ -89,7 +84,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func signUpBtnClick(_ sender: Any) {
+    @IBAction func signUpClicked(_ sender: Any) {
         performSegue(withIdentifier: "segueSignUp", sender: nil)
     }
     
@@ -99,7 +94,9 @@ class ViewController: UIViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
     }
 
 

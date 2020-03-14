@@ -25,15 +25,7 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        signUpBtn.layer.cornerRadius = signUpBtn.frame.size.height/2
-        signUpBtn.setShadow(opacity: 0.65, radius: 5.0)
-        emailTextBox.setShadow(opacity: 0.25, radius: 5.0)
-        passwordTextBox.setShadow(opacity: 0.25, radius: 5.0)
-        confirmTextBox.setShadow(opacity: 0.25, radius: 5.0)
-        //companyLogoImage.setShadow(opacity: 1.0, radius: 1.0)
-        
-        //setting the gradient background
-        view.setGradientBackground(colorOne: Colors.white, colorTwo: Colors.blue)
+        setUpNavigationBar()
 
         db = Firestore.firestore()
         
@@ -42,6 +34,16 @@ class SignupViewController: UIViewController {
         settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
         // Do any additional setup after loading the view.
+    }
+    
+    private func setUpNavigationBar() {
+        let image = UIImage(named: "Logo2")
+        let titleViewImage = UIImageView(image: image?.imageWithInsets(insets: UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)))
+        titleViewImage.contentMode = .scaleAspectFit
+        
+        navigationItem.titleView = titleViewImage
+        //navigationItem.titleView?.alignmentRect(forFrame: CGRect(x: -100, y: 0, width: 34, height: 34))
+        navigationController?.navigationBar.tintColor = Colors.black
     }
     
     func  makeAlert(title:String, message:String) {
@@ -87,6 +89,7 @@ class SignupViewController: UIViewController {
                 
                 if (user != nil) {
                     self.showToast(controller: self, message : "Account created", seconds: 1.0)
+                    self.navigationController?.popViewController(animated: true)
                 }
                 else {
                     // 1. Error when creating a user
@@ -96,7 +99,6 @@ class SignupViewController: UIViewController {
                     // 2. Show the error in the UI
                     let errorMsg = error?.localizedDescription
                     self.makeAlert(title: "Error", message: errorMsg!)
-                    
                 }
             }
         }
