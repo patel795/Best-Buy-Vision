@@ -52,11 +52,19 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     
     private func makeApiCall(){
         let startingText = "search="
+        //let searchText = productName.text!
         var productNameString = productName.text!
         productNameString = startingText + productNameString
         productNameString = productNameString.replacingOccurrences(of: " ", with: "&search=", options: .literal, range: nil)
-       
-        let URL = "https://api.bestbuy.com/v1/products(\(productNameString))?format=json&show=sku,name,salePrice&apiKey=\(APIKEY)"
+        
+        /*
+        var textFinal = searchText.components(separatedBy: " ").first
+        let secondWord = searchText.components(separatedBy: " ")[1] as String
+        textFinal = "\(textFinal!) " + "\(secondWord)"
+        textFinal = textFinal!.replacingOccurrences(of: " ", with: "%20")
+        */
+        //https://api.bestbuy.com/v1/products((\(productNameString))&categoryPath.name=\(textFinal!)*)?format=json&show=sku,name,salePrice&apiKey=\(APIKEY)
+        let URL = "https://api.bestbuy.com/v1/products((\(productNameString)))?format=json&sort=bestSellingRank.asc&show=sku,name,salePrice,bestSellingRank&pageSize=100&apiKey=\(APIKEY)"
         
         // ALAMOFIRE function: get the data from the website
         Alamofire.request(URL, method: .get, parameters: nil).responseJSON {
@@ -81,7 +89,10 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         }
     }
     
+    /*
     func grabCategories(){
+        var categories:[String] = []
+        var jsonConatiner:[String: String] = [:]
         for i in 1...43 {
             let URL = "https://api.bestbuy.com/v1/categories?apiKey=TWVhgdNpaxCG1GSk4IReKegI&pageSize=100&page=\(i)&show=name&format=json"
             // ALAMOFIRE function: get the data from the website
@@ -93,8 +104,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 if (response.result.isSuccess) {
                     do {
                         let json = try JSON(data:response.data!)
-                        //var counter = 2
-                        print(json["categories"])
+                        print(json)
                     }
                     catch {
                         print ("Error while parsing JSON response")
@@ -103,6 +113,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
             }
         }
     }
+    */
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
@@ -117,8 +128,9 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     @IBAction func searchBtnClick(_ sender: Any) {
-        //makeApiCall()
-        grabCategories()
+        makeApiCall()
+        performSegue(withIdentifier: "segueProducts", sender: nil)
+        //grabCategories()
     }
     
     /*

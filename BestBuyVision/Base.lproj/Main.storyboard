@@ -191,11 +191,41 @@
                     <navigationItem key="navigationItem" title="Scan Image" id="mBO-MB-xLy"/>
                     <connections>
                         <outlet property="productName" destination="Muk-3E-Ne9" id="Xkf-Tf-Txc"/>
+                        <segue destination="ZWd-70-xlL" kind="show" identifier="segueProducts" id="lpQ-hG-CsH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Prv-4Q-Fcy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3988" y="-213.54679802955667"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="q5n-3w-w9r">
+            <objects>
+                <tableViewController id="ZWd-70-xlL" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PhK-6G-P2O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qpC-Kw-Nno">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qpC-Kw-Nno" id="0wD-dD-OWy">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZWd-70-xlL" id="T1h-Dd-ymh"/>
+                            <outlet property="delegate" destination="ZWd-70-xlL" id="EbP-Mu-yvV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="hIK-qG-YL2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jGI-K3-c9g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5110" y="-214"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Cla-s1-xz1">
@@ -411,7 +441,6 @@
         <!--Navigation Controller-->
         <scene sceneID="4sk-cE-nCM">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tvt-v4-cfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fLV-Ps-Wbd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="more" id="MOT-Iq-rRz"/>
                     <toolbarItems/>
@@ -424,6 +453,7 @@
                         <segue destination="JiJ-MR-PhQ" kind="relationship" relationship="rootViewController" id="Ji7-gx-Baa"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tvt-v4-cfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3045.5999999999999" y="1175.615763546798"/>
         </scene>
