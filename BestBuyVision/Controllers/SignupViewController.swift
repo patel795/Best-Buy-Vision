@@ -38,12 +38,13 @@ class SignupViewController: UIViewController {
     
     private func setUpNavigationBar() {
         let image = UIImage(named: "Logo2")
-        let titleViewImage = UIImageView(image: image?.imageWithInsets(insets: UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)))
+        let newImage = image?.imageWithColor(.white)
+        let titleViewImage = UIImageView(image: newImage?.imageWithInsets(insets: UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 500)))
+       
         titleViewImage.contentMode = .scaleAspectFit
         
         navigationItem.titleView = titleViewImage
-        //navigationItem.titleView?.alignmentRect(forFrame: CGRect(x: -100, y: 0, width: 34, height: 34))
-        navigationController?.navigationBar.tintColor = Colors.black
+        
     }
     
     func  makeAlert(title:String, message:String) {

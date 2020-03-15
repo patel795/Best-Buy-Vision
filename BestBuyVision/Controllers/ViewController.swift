@@ -34,12 +34,14 @@ class ViewController: UIViewController {
     
     private func setUpNavigationBar() {
         let image = UIImage(named: "Logo2")
-        let titleViewImage = UIImageView(image: image?.imageWithInsets(insets: UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)))
+        let newImage = image?.imageWithColor(.white)
+        let titleViewImage = UIImageView(image: newImage?.imageWithInsets(insets: UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)))
         //titleViewImage.frame = CGRect(x: -0, y: 0, width: 34, height: 34)
         titleViewImage.contentMode = .scaleAspectFit
         
         navigationItem.titleView = titleViewImage
         navigationController?.navigationBar.barTintColor = Colors.bestBuyBlue
+        navigationController?.navigationBar.tintColor = Colors.white
     }
     
     func  makeAlert(title:String, message:String) {
@@ -80,8 +82,8 @@ class ViewController: UIViewController {
                 let errorMsg = error?.localizedDescription
                 self.makeAlert(title: "Error", message: errorMsg!)
             }
-        
         }
+        self.performSegue(withIdentifier: "segueTab", sender: nil)
     }
     
     @IBAction func signUpClicked(_ sender: Any) {
