@@ -1,0 +1,6 @@
+framework module Pods_BestBuyVisionTests {
+  umbrella header "Pods-BestBuyVisionTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
