@@ -83,7 +83,6 @@ class ViewController: UIViewController {
                 self.makeAlert(title: "Error", message: errorMsg!)
             }
         }
-        self.performSegue(withIdentifier: "segueTab", sender: nil)
     }
     
     @IBAction func signUpClicked(_ sender: Any) {
