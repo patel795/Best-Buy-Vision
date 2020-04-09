@@ -25,8 +25,6 @@
 		A055CCFF7B775CD02F9AB81F /* Pods_BestBuyVisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */; };
 		AE011881243EDAC40013FF91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE011880243EDAC40013FF91 /* GoogleService-Info.plist */; };
 		AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
-		AE03AC7B243F93E200BDF48B /* laptop_Model.mlproj in Resources */ = {isa = PBXBuildFile; fileRef = AE03AC7A243F93E200BDF48B /* laptop_Model.mlproj */; };
-		AE03AC7D243F941000BDF48B /* laptop_Models.mlproj in Resources */ = {isa = PBXBuildFile; fileRef = AE03AC7C243F941000BDF48B /* laptop_Models.mlproj */; };
 		AE03AC7F243F95FB00BDF48B /* laptop.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE03AC7E243F95FB00BDF48B /* laptop.mlmodel */; };
 /* End PBXBuildFile section */
 
@@ -77,8 +75,6 @@
 		A35EA5A16B20F759BD1C2F23 /* Pods-BestBuyVision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision.debug.xcconfig"; path = "Target Support Files/Pods-BestBuyVision/Pods-BestBuyVision.debug.xcconfig"; sourceTree = "<group>"; };
 		AE011880243EDAC40013FF91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
-		AE03AC7A243F93E200BDF48B /* laptop_Model.mlproj */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = laptop_Model.mlproj; path = ../../../laptop_Model.mlproj; sourceTree = "<group>"; };
-		AE03AC7C243F941000BDF48B /* laptop_Models.mlproj */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = laptop_Models.mlproj; path = ../../../laptop_Models.mlproj; sourceTree = "<group>"; };
 		AE03AC7E243F95FB00BDF48B /* laptop.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = laptop.mlmodel; path = ../../../laptop.mlmodel; sourceTree = "<group>"; };
 		F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -149,8 +145,6 @@
 				57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */,
 				57BA1F0B23FA185400350ADB /* SignupViewController.swift */,
 				AE03AC7E243F95FB00BDF48B /* laptop.mlmodel */,
-				AE03AC7A243F93E200BDF48B /* laptop_Model.mlproj */,
-				AE03AC7C243F941000BDF48B /* laptop_Models.mlproj */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -342,8 +336,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BA1EE023F9995800350ADB /* LaunchScreen.storyboard in Resources */,
-				AE03AC7D243F941000BDF48B /* laptop_Models.mlproj in Resources */,
-				AE03AC7B243F93E200BDF48B /* laptop_Model.mlproj in Resources */,
 				AE011881243EDAC40013FF91 /* GoogleService-Info.plist in Resources */,
 				57BA1EDD23F9995800350ADB /* Assets.xcassets in Resources */,
 				57BA1EDB23F9995500350ADB /* Main.storyboard in Resources */,
