@@ -205,7 +205,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Scan Image" id="mBO-MB-xLy"/>
                     <connections>
-                        <outlet property="classificationLabel" destination="a4D-n5-dfA" id="a9o-ok-8NS"/>
+                        <outlet property="classificationLabel" destination="ghn-hW-SyX" id="aOJ-yv-63O"/>
                         <outlet property="imageView" destination="sQF-dk-CnS" id="Ovb-Nq-woD"/>
                         <outlet property="productName" destination="Muk-3E-Ne9" id="Xkf-Tf-Txc"/>
                         <segue destination="ZWd-70-xlL" kind="show" identifier="segueProducts" id="lpQ-hG-CsH"/>
