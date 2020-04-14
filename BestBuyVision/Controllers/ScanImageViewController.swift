@@ -13,6 +13,7 @@ import CoreML
 import Vision
 import ImageIO
 
+var productNameString = ""
 
 class ScanImageViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -83,7 +84,9 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 do {
                     let json = try JSON(data:response.data!)
                     //var counter = 2
-                    print(json)
+                    //productsData = json
+                    //print(productsData)
+                    //print(json)
                 }
                 catch {
                     print ("Error while parsing JSON response")
@@ -205,21 +208,29 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         print(image.size)
     }
     
-    @IBAction func searchBtnClick(_ sender: Any) {
-        makeApiCall()
-        performSegue(withIdentifier: "segueProducts", sender: nil)
+    @IBAction func searchBtnClick(_ sender: AnyObject?) {
+        //makeApiCall()
+        //print("hello", productsData)
+        productNameString = productName.text!
+        print(productNameString)
+        performSegue(withIdentifier: "segueProducts", sender: sender)
         //grabCategories()
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "segueProducts" {
+            if let productsTableViewController = segue.destination as? ProoductsTableViewController {
+                productsTableViewController.productNameString = productNameString
+            }
+        }
     }
-    */
+    
     @IBAction func add_upload_image(_ sender: Any) {
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
             presentPhotoPicker(sourceType: .photoLibrary)

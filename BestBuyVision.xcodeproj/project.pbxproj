@@ -26,6 +26,7 @@
 		AE011881243EDAC40013FF91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE011880243EDAC40013FF91 /* GoogleService-Info.plist */; };
 		AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
 		AEFB8EA72443A88500F89819 /* Capstone_Image_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AEFB8EA62443A88500F89819 /* Capstone_Image_Classifier.mlmodel */; };
+		AEFB8EA924461DA400F89819 /* ProoductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		AE011880243EDAC40013FF91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
 		AEFB8EA62443A88500F89819 /* Capstone_Image_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Capstone_Image_Classifier.mlmodel; path = ../../../../Downloads/Capstone_Image_Classifier.mlmodel; sourceTree = "<group>"; };
+		AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProoductsTableViewController.swift; sourceTree = "<group>"; };
 		F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 				57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */,
 				57BA1F0B23FA185400350ADB /* SignupViewController.swift */,
 				AEFB8EA62443A88500F89819 /* Capstone_Image_Classifier.mlmodel */,
+				AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				57BA1ED423F9995500350ADB /* AppDelegate.swift in Sources */,
 				57BA1F0823FA0CCE00350ADB /* UIViewAndExtension.swift in Sources */,
 				57BA1ED623F9995500350ADB /* SceneDelegate.swift in Sources */,
+				AEFB8EA924461DA400F89819 /* ProoductsTableViewController.swift in Sources */,
 				57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
