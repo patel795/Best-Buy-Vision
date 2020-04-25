@@ -28,7 +28,6 @@
 		7D25AD249D3EB41CD6E0D40D /* Pods_BestBuyVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */; };
 		A055CCFF7B775CD02F9AB81F /* Pods_BestBuyVisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */; };
 		AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
-		AEAFA0DB24536C4400931015 /* Capstone_Image_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AEAFA0DA24536C4400931015 /* Capstone_Image_Classifier.mlmodel */; };
 		AEFB8EA924461DA400F89819 /* ProoductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
