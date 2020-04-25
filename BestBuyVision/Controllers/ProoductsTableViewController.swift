@@ -81,7 +81,7 @@ class ProoductsTableViewController: UITableViewController {
             image = UIImage(data : data! as Data)!
         }
         else{
-            image = UIImage(named: "questionmark.png")!;
+            image = UIImage(named: "Logo")!;
         }
         cell.productImage.image = image
         cell.productName?.text = self.products[indexPath.row].productName

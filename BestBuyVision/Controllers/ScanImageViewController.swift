@@ -20,7 +20,6 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     
     let APIKEY = "TWVhgdNpaxCG1GSk4IReKegI"
 
-    @IBOutlet weak var productNameTemp: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var biggerimageView: UIImageView!
     override func viewDidLoad() {
@@ -208,7 +207,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         // Pass the selected object to the new view controller.
         if segue.identifier == "segueProducts" {
             if let productsTableViewController = segue.destination as? ProoductsTableViewController {
-                productsTableViewController.productNameString = productNameTemp.text!
+                productsTableViewController.productNameString = classificationResult
             }
         }
     }
