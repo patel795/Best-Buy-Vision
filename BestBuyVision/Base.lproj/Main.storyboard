@@ -182,12 +182,6 @@
                                 <rect key="frame" x="65" y="213" width="244" height="158"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="In7-E8-yHg">
-                                <rect key="frame" x="16" y="527" width="343" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="LLS-cW-SDD"/>
@@ -196,7 +190,6 @@
                     <connections>
                         <outlet property="biggerimageView" destination="dul-sf-mmK" id="p5d-o7-Oav"/>
                         <outlet property="imageView" destination="sQF-dk-CnS" id="Ovb-Nq-woD"/>
-                        <outlet property="productNameTemp" destination="In7-E8-yHg" id="Ao3-3g-6vj"/>
                         <segue destination="ZWd-70-xlL" kind="show" identifier="segueProducts" id="lpQ-hG-CsH"/>
                     </connections>
                 </viewController>
