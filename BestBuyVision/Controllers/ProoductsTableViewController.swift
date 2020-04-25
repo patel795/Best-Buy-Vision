@@ -31,6 +31,7 @@ class ProoductsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    // MARK: - Making API call
     private func makeApiCall(completion: @escaping (String) -> ()){
         let startingText = "search="
         self.productNameString = startingText + self.productNameString
@@ -41,36 +42,42 @@ class ProoductsTableViewController: UITableViewController {
             completion("Error: URL")
             return
         }
-        
         DispatchQueue.main.async {
             //showing loading spinner
             self.showSpinner(onView: self.view)
         }
         
         // ALAMOFIRE function: get the data from the website
-        Alamofire.request(URL, method: .post, parameters: nil).responseJSON {
+        Alamofire.request(URL, method: .get, parameters: nil).responseJSON {
             (response) in
             if (response.result.isSuccess) {
                 do {
                     let json = try JSON(data:response.data!)
-                    for i in 0...json["products"].count{
-                        let item = Product(productName: json["products"][i]["name"].stringValue,
-                                           productPrice: json["products"][i]["salePrice"].stringValue,
-                                           productDescription: json["products"][i]["shortDescription"].stringValue,
-                                           SKU: json["products"][i]["sku"].stringValue,
-                                           productThumbnailURL: json["products"][i]["image"].stringValue)
-                        self.products.append(item)
-                    }
-                    
-                    DispatchQueue.main.async {
-                        //reloading the table view data
-                        self.tableView.reloadData()
+                    if(json["error"].isEmpty){
+                        for i in 0...json["products"].count{
+                            let item = Product(productName: json["products"][i]["name"].stringValue,
+                                               productPrice: json["products"][i]["salePrice"].stringValue,
+                                               productDescription: json["products"][i]["shortDescription"].stringValue,
+                                               SKU: json["products"][i]["sku"].stringValue,
+                                               productThumbnailURL: json["products"][i]["image"].stringValue)
+                            self.products.append(item)
+                        }
                         
-                        // remove spinner
-                        self.removeSpinner()
+                        DispatchQueue.main.async {
+                            //reloading the table view data
+                            self.tableView.reloadData()
+                            
+                            // remove spinner
+                            self.removeSpinner()
+                        }
+                        
+                        completion("Success")
                     }
-                    
-                    completion("Success")
+                    else{
+                        self.removeSpinner()
+                        self.performSegue(withIdentifier: "segueNoProduct", sender: nil)
+                        completion("Can't find the product.")
+                    }
                 }
                 catch {
                     completion("Error while parsing JSON response")
@@ -79,7 +86,8 @@ class ProoductsTableViewController: UITableViewController {
             else{
                 // remove spinner
                 self.removeSpinner()
-                completion("Can't find the product.")
+                self.performSegue(withIdentifier: "segueNoProduct", sender: nil)
+                completion("Request Failed")
             }
         }
     }
