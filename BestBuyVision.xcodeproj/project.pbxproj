@@ -11,6 +11,7 @@
 		577ECCA224537AFB007AB88D /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */; };
 		577ECCA42453C77F007AB88D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577ECCA32453C77F007AB88D /* Product.swift */; };
 		577ECCA62453DA67007AB88D /* Capstone_Image_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 577ECCA52453DA67007AB88D /* Capstone_Image_Classifier.mlmodel */; };
+		57AC72F22454D6E000F23F43 /* SpinnerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AC72F12454D6E000F23F43 /* SpinnerExtension.swift */; };
 		57BA1ED423F9995500350ADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1ED323F9995500350ADB /* AppDelegate.swift */; };
 		57BA1ED623F9995500350ADB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1ED523F9995500350ADB /* SceneDelegate.swift */; };
 		57BA1ED823F9995500350ADB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1ED723F9995500350ADB /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 		577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		577ECCA32453C77F007AB88D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		577ECCA52453DA67007AB88D /* Capstone_Image_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Capstone_Image_Classifier.mlmodel; path = ../../../../Capstone_Image_Classifier.mlmodel; sourceTree = "<group>"; };
+		57AC72F12454D6E000F23F43 /* SpinnerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerExtension.swift; sourceTree = "<group>"; };
 		57BA1ED023F9995500350ADB /* BestBuyVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestBuyVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BA1ED323F9995500350ADB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57BA1ED523F9995500350ADB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				57BA1F0323FA0BD700350ADB /* UIShadows.swift */,
 				57BA1F0723FA0CCE00350ADB /* UIViewAndExtension.swift */,
 				57BA1F0923FA0D1300350ADB /* Colors.swift */,
+				57AC72F12454D6E000F23F43 /* SpinnerExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				57BA1F0823FA0CCE00350ADB /* UIViewAndExtension.swift in Sources */,
 				57BA1ED623F9995500350ADB /* SceneDelegate.swift in Sources */,
 				AEFB8EA924461DA400F89819 /* ProoductsTableViewController.swift in Sources */,
+				57AC72F22454D6E000F23F43 /* SpinnerExtension.swift in Sources */,
 				57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */,
 				577ECCA42453C77F007AB88D /* Product.swift in Sources */,
 			);

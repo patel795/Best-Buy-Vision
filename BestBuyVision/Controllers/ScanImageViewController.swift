@@ -145,7 +145,6 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 topClassifications.map { classification in
                     // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
                     classificationResult = classification.identifier
-                    print("hello", classificationResult)
                    //return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
                 }
                 self.biggerimageView.isHidden = false
