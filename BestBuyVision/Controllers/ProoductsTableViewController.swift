@@ -62,7 +62,7 @@ class ProoductsTableViewController: UITableViewController {
                         self.productPrice.append(json["products"][i]["salePrice"].stringValue)
                     }
                     //print(json)
-                    //print(self.productName)
+                    print("Product Name", self.productName)
                     //print(self.productPrice)
                     self.tableView.reloadData()
                     //print(json)
