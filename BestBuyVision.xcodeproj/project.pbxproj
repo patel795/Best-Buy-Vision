@@ -10,6 +10,7 @@
 		2EB1AA34E8954B2E858D343C /* Pods_BestBuyVision_BestBuyVisionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5472AB3CA540F8CF61BCF82B /* Pods_BestBuyVision_BestBuyVisionUITests.framework */; };
 		577ECCA224537AFB007AB88D /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */; };
 		577ECCA42453C77F007AB88D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577ECCA32453C77F007AB88D /* Product.swift */; };
+		577ECCA62453DA67007AB88D /* Capstone_Image_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 577ECCA52453DA67007AB88D /* Capstone_Image_Classifier.mlmodel */; };
 		57BA1ED423F9995500350ADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1ED323F9995500350ADB /* AppDelegate.swift */; };
 		57BA1ED623F9995500350ADB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1ED523F9995500350ADB /* SceneDelegate.swift */; };
 		57BA1ED823F9995500350ADB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1ED723F9995500350ADB /* ViewController.swift */; };
@@ -24,7 +25,6 @@
 		57BA1F0C23FA185400350ADB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0B23FA185400350ADB /* SignupViewController.swift */; };
 		57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */; };
 		57FB326C24536E350030F5F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57FB326B24536E340030F5F7 /* GoogleService-Info.plist */; };
-		57FB326E24536E7F0030F5F7 /* Capstone_Image_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57FB326D24536E7F0030F5F7 /* Capstone_Image_Classifier.mlmodel */; };
 		7D25AD249D3EB41CD6E0D40D /* Pods_BestBuyVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */; };
 		A055CCFF7B775CD02F9AB81F /* Pods_BestBuyVisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */; };
 		AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
@@ -55,6 +55,7 @@
 		5472AB3CA540F8CF61BCF82B /* Pods_BestBuyVision_BestBuyVisionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVision_BestBuyVisionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		577ECCA32453C77F007AB88D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		577ECCA52453DA67007AB88D /* Capstone_Image_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Capstone_Image_Classifier.mlmodel; path = ../../../../Capstone_Image_Classifier.mlmodel; sourceTree = "<group>"; };
 		57BA1ED023F9995500350ADB /* BestBuyVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestBuyVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BA1ED323F9995500350ADB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57BA1ED523F9995500350ADB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,13 +76,11 @@
 		57BA1F0B23FA185400350ADB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageViewController.swift; sourceTree = "<group>"; };
 		57FB326B24536E340030F5F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Capstone Project/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		57FB326D24536E7F0030F5F7 /* Capstone_Image_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Capstone_Image_Classifier.mlmodel; path = ../../../../Capstone_Image_Classifier.mlmodel; sourceTree = "<group>"; };
 		5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC19D754A28E20EF1FDA65 /* Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig"; path = "Target Support Files/Pods-BestBuyVision-BestBuyVisionUITests/Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D5AFF8C1FA1A128CC1AC4CC /* Pods-BestBuyVisionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVisionTests.debug.xcconfig"; path = "Target Support Files/Pods-BestBuyVisionTests/Pods-BestBuyVisionTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A35EA5A16B20F759BD1C2F23 /* Pods-BestBuyVision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision.debug.xcconfig"; path = "Target Support Files/Pods-BestBuyVision/Pods-BestBuyVision.debug.xcconfig"; sourceTree = "<group>"; };
 		AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
-		AEAFA0DA24536C4400931015 /* Capstone_Image_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Capstone_Image_Classifier.mlmodel; path = ../../../../Downloads/Capstone_Image_Classifier.mlmodel; sourceTree = "<group>"; };
 		AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProoductsTableViewController.swift; sourceTree = "<group>"; };
 		F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -150,8 +149,8 @@
 				AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */,
 				57BA1ED723F9995500350ADB /* ViewController.swift */,
 				57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */,
+				577ECCA52453DA67007AB88D /* Capstone_Image_Classifier.mlmodel */,
 				57BA1F0B23FA185400350ADB /* SignupViewController.swift */,
-				57FB326D24536E7F0030F5F7 /* Capstone_Image_Classifier.mlmodel */,
 				AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */,
 				577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */,
 			);
@@ -514,10 +513,10 @@
 				57BA1F0C23FA185400350ADB /* SignupViewController.swift in Sources */,
 				57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */,
 				57BA1F0423FA0BD700350ADB /* UIShadows.swift in Sources */,
+				577ECCA62453DA67007AB88D /* Capstone_Image_Classifier.mlmodel in Sources */,
 				AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				577ECCA224537AFB007AB88D /* ProductTableViewCell.swift in Sources */,
 				57BA1ED423F9995500350ADB /* AppDelegate.swift in Sources */,
-				57FB326E24536E7F0030F5F7 /* Capstone_Image_Classifier.mlmodel in Sources */,
 				57BA1F0823FA0CCE00350ADB /* UIViewAndExtension.swift in Sources */,
 				57BA1ED623F9995500350ADB /* SceneDelegate.swift in Sources */,
 				AEFB8EA924461DA400F89819 /* ProoductsTableViewController.swift in Sources */,

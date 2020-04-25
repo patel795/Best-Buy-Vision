@@ -18,6 +18,7 @@ class ProoductsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.rowHeight = 115
         makeApiCall()
         
