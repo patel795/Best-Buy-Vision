@@ -14,13 +14,11 @@ class ProoductsTableViewController: UITableViewController {
 
     let APIKEY = "TWVhgdNpaxCG1GSk4IReKegI"
     var productNameString = ""
-    var productName =  [String]()
-    var productPrice = [String]()
+    var products =  [Product]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("Hello", productNameString)
+        tableView.rowHeight = 115
         makeApiCall()
         
         // Uncomment the following line to preserve selection between presentations
@@ -32,51 +30,36 @@ class ProoductsTableViewController: UITableViewController {
 
     private func makeApiCall(){
         let startingText = "search="
-        //let searchText = productName.text!
-        //var productNameString = productName.text!
         productNameString = startingText + productNameString
         productNameString = productNameString.replacingOccurrences(of: " ", with: "&search=", options: .literal, range: nil)
         
-        /*
-        var textFinal = searchText.components(separatedBy: " ").first
-        let secondWord = searchText.components(separatedBy: " ")[1] as String
-        textFinal = "\(textFinal!) " + "\(secondWord)"
-        textFinal = textFinal!.replacingOccurrences(of: " ", with: "%20")
-        */
-        //https://api.bestbuy.com/v1/products((\(productNameString))&categoryPath.name=\(textFinal!)*)?format=json&show=sku,name,salePrice&apiKey=\(APIKEY)
-        let URL = "https://api.bestbuy.com/v1/products((\(productNameString)))?format=json&sort=bestSellingRank.asc&show=sku,name,salePrice,bestSellingRank&pageSize=100&apiKey=\(APIKEY)"
-        
+        let URL = "https://api.bestbuy.com/v1/products((\(productNameString)&active=true))?format=json&sort=bestSellingRank.asc&show=sku,name,salePrice,bestSellingRank,image,shortDescription&pageSize=100&apiKey=\(APIKEY)"
+        print(URL)
         // ALAMOFIRE function: get the data from the website
         Alamofire.request(URL, method: .get, parameters: nil).responseJSON {
             (response) in
             
-            // -- put your code below this line
-            
             if (response.result.isSuccess) {
-                print("awesome, i got a response from the website!")
-                
                 do {
-                    let json = try JSON(data:response.data!)
-                    for i in 0...json["products"].count{
-                        self.productName.append(json["products"][i]["name"].stringValue)
-                        self.productPrice.append(json["products"][i]["salePrice"].stringValue)
+                        let json = try JSON(data:response.data!)
+                        for i in 0...json["products"].count{
+                        var item = Product(productName: json["products"][i]["name"].stringValue,
+                                           productPrice: json["products"][i]["salePrice"].stringValue,
+                                           productDescription: json["products"][i]["shortDescription"].stringValue,
+                                           SKU: json["products"][i]["sku"].stringValue,
+                                           productThumbnailURL: json["products"][i]["image"].stringValue)
+                        self.products.append(item)
                     }
-                    //print(json)
-                    //print(self.productName)
-                    //print(self.productPrice)
                     self.tableView.reloadData()
-                    //print(json)
                 }
                 catch {
                     print ("Error while parsing JSON response")
                 }
-                
             }
-            
         }
     }
+    
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -84,19 +67,25 @@ class ProoductsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return productName.count - 1
+        return products.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductList", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductList", for: indexPath) as! ProductTableViewCell
+        var image = UIImage()
+        let url = NSURL(string: self.products[indexPath.row].productThumbnailURL)
+        if(url?.absoluteString != ""){
+            let data = NSData(contentsOf : url as! URL)
+            image = UIImage(data : data! as Data)!
+        }
+        else{
+            image = UIImage(named: "questionmark.png")!;
+        }
+        cell.productImage.image = image
+        cell.productName?.text = self.products[indexPath.row].productName
+        cell.productPrice?.text = "$" + self.products[indexPath.row].productPrice
         
-        //let price = String(format:"%.2f", self.productPrice[indexPath.row])
-        //print(String(format:"%.2f", price))
-        cell.textLabel?.text = self.productName[indexPath.row];
-        cell.detailTextLabel?.text = "Price: " + self.productPrice[indexPath.row]
-        // Configure the cell...
-
         return cell
     }
     
