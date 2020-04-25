@@ -146,8 +146,12 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 topClassifications.map { classification in
                     // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
                     classificationResult = classification.identifier
+                    print("hello", classificationResult)
                    //return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
                 }
+                self.biggerimageView.isHidden = false
+                self.imageView.isHidden = true
+                self.performSegue(withIdentifier: "segueProducts", sender: AnyObject?.self)
                 //print("Classification:\n" + descriptions.joined(separator: "\n"))
                 //self.classificationLabel.text = "Classification:" + descriptions.joined(separator:)()
             }
@@ -163,17 +167,11 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         
         guard (info[.editedImage] as? UIImage) != nil else {
             print("No image found")
-            biggerimageView.isHidden = false
-            imageView.isHidden = true
-            self.performSegue(withIdentifier: "segueProducts", sender: AnyObject?.self)
             return
         }
 
         // print out the image size as a test
         print(image.size)
-        biggerimageView.isHidden = false
-        imageView.isHidden = true
-        self.performSegue(withIdentifier: "segueProducts", sender: AnyObject?.self)
     }
     
     @IBAction func searchBtnClick(_ sender: AnyObject?) {
