@@ -14,17 +14,16 @@ import Vision
 import ImageIO
 
 var productNameString = ""
+var classificationResult = ""
 
 class ScanImageViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     let APIKEY = "TWVhgdNpaxCG1GSk4IReKegI"
 
-    @IBOutlet weak var productName: UITextField!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var classificationLabel: UILabel!
+    @IBOutlet weak var biggerimageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //let vc = UIImagePickerController()
         //vc.sourceType = .camera
         //vc.allowsEditing = true
@@ -34,6 +33,8 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        biggerimageView.isHidden = true
+        imageView.isHidden = false
         self.tabBarController?.navigationItem.hidesBackButton = true
         setUpNavigationBar()
     }
@@ -54,47 +55,6 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         bestbuyBtn.imageView?.contentMode = .scaleAspectFit
         bestbuyBtn.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
         tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: bestbuyBtn)
-    }
-    
-    private func makeApiCall(){
-        let startingText = "search="
-        //let searchText = productName.text!
-        var productNameString = productName.text!
-        productNameString = startingText + productNameString
-        productNameString = productNameString.replacingOccurrences(of: " ", with: "&search=", options: .literal, range: nil)
-        
-        /*
-        var textFinal = searchText.components(separatedBy: " ").first
-        let secondWord = searchText.components(separatedBy: " ")[1] as String
-        textFinal = "\(textFinal!) " + "\(secondWord)"
-        textFinal = textFinal!.replacingOccurrences(of: " ", with: "%20")
-        */
-        //https://api.bestbuy.com/v1/products((\(productNameString))&categoryPath.name=\(textFinal!)*)?format=json&show=sku,name,salePrice&apiKey=\(APIKEY)
-        let URL = "https://api.bestbuy.com/v1/products((\(productNameString)))?format=json&sort=bestSellingRank.asc&show=sku,name,salePrice,bestSellingRank&pageSize=100&apiKey=\(APIKEY)"
-        
-        // ALAMOFIRE function: get the data from the website
-        Alamofire.request(URL, method: .get, parameters: nil).responseJSON {
-            (response) in
-            
-            // -- put your code below this line
-            
-            if (response.result.isSuccess) {
-                print("awesome, i got a response from the website!")
-                
-                do {
-                    let json = try JSON(data:response.data!)
-                    //var counter = 2
-                    //productsData = json
-                    //print(productsData)
-                    //print(json)
-                }
-                catch {
-                    print ("Error while parsing JSON response")
-                }
-                
-            }
-            
-        }
     }
     
     /*
@@ -146,7 +106,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     }()
     
     func updateClassifications(for image: UIImage) {
-        classificationLabel.text = "Classifying..."
+        //classificationLabel.text = "Classifying..."
         
         let orientation = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue))!
         guard let ciImage = CIImage(image: image) else { fatalError("Unable to create \(CIImage.self) from \(image).") }
@@ -171,23 +131,24 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     func processClassifications(for request: VNRequest, error: Error?) {
         DispatchQueue.main.async {
             guard let results = request.results else {
-                self.classificationLabel.text = "Unable to classify image.\n\(error!.localizedDescription)"
+                //self.classificationLabel.text = "Unable to classify image.\n\(error!.localizedDescription)"
                 return
             }
             // The `results` will always be `VNClassificationObservation`s, as specified by the Core ML model in this project.
             let classifications = results as! [VNClassificationObservation]
         
             if classifications.isEmpty {
-                self.classificationLabel.text = "Nothing recognized."
+                //self.classificationLabel.text = "Nothing recognized."
             } else {
                 // Display top classifications ranked by confidence in the UI.
-                let topClassifications = classifications.prefix(2)
-                let descriptions = topClassifications.map { classification in
+                let topClassifications = classifications.prefix(1)
+                topClassifications.map { classification in
                     // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
-                   return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
+                    classificationResult = classification.identifier
+                   //return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
                 }
-                print("Classification:\n" + descriptions.joined(separator: "\n"))
-                self.classificationLabel.text = "Classification:" + descriptions.joined(separator:)()
+                //print("Classification:\n" + descriptions.joined(separator: "\n"))
+                //self.classificationLabel.text = "Classification:" + descriptions.joined(separator:)()
             }
         }
     }
@@ -196,42 +157,29 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         picker.dismiss(animated: true)
 
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        imageView.image = image
+        biggerimageView.image = image
         updateClassifications(for: image)
         
         guard (info[.editedImage] as? UIImage) != nil else {
             print("No image found")
+            biggerimageView.isHidden = false
+            imageView.isHidden = true
+            self.performSegue(withIdentifier: "segueProducts", sender: AnyObject?.self)
             return
         }
 
         // print out the image size as a test
         print(image.size)
+        biggerimageView.isHidden = false
+        imageView.isHidden = true
+        self.performSegue(withIdentifier: "segueProducts", sender: AnyObject?.self)
     }
     
     @IBAction func searchBtnClick(_ sender: AnyObject?) {
         //makeApiCall()
         //print("hello", productsData)
-        productNameString = productName.text!
+        //productNameString = productName.text!
         print(productNameString)
-        performSegue(withIdentifier: "segueProducts", sender: sender)
-        //grabCategories()
-    }
-    
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        if segue.identifier == "segueProducts" {
-            if let productsTableViewController = segue.destination as? ProoductsTableViewController {
-                productsTableViewController.productNameString = productNameString
-            }
-        }
-    }
-    
-    @IBAction func add_upload_image(_ sender: Any) {
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
             presentPhotoPicker(sourceType: .photoLibrary)
             return
@@ -250,6 +198,20 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         photoSourcePicker.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         present(photoSourcePicker, animated: true)
+        //grabCategories()
+    }
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "segueProducts" {
+            if let productsTableViewController = segue.destination as? ProoductsTableViewController {
+                productsTableViewController.productNameString = classificationResult
+            }
+        }
     }
     
     func presentPhotoPicker(sourceType: UIImagePickerController.SourceType) {
