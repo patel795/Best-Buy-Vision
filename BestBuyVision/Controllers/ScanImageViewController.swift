@@ -149,6 +149,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 }
                 self.biggerimageView.isHidden = false
                 self.imageView.isHidden = true
+                self.removeSpinner()
                 self.performSegue(withIdentifier: "segueProducts", sender: AnyObject?.self)
                 //print("Classification:\n" + descriptions.joined(separator: "\n"))
                 //self.classificationLabel.text = "Classification:" + descriptions.joined(separator:)()
@@ -160,6 +161,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         picker.dismiss(animated: true)
 
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        self.showSpinner(onView: self.view)
         biggerimageView.image = image
         updateClassifications(for: image)
         
