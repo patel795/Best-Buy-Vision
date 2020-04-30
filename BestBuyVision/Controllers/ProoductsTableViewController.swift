@@ -15,6 +15,7 @@ class ProoductsTableViewController: UITableViewController {
     let APIKEY = "TWVhgdNpaxCG1GSk4IReKegI"
     var productNameString = ""
     var products =  [Product]()
+    var indexPathRow = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,7 @@ class ProoductsTableViewController: UITableViewController {
             if (response.result.isSuccess) {
                 do {
                     let json = try JSON(data:response.data!)
+                    print(json)
                     if(json["error"].isEmpty){
                         for i in 0...json["products"].count{
                             let item = Product(productName: json["products"][i]["name"].stringValue,
@@ -126,6 +128,11 @@ class ProoductsTableViewController: UITableViewController {
     }
     
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        indexPathRow = indexPath.row
+        self.performSegue(withIdentifier: "segueProductDetail", sender: AnyObject?.self)
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -161,14 +168,19 @@ class ProoductsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "segueProductDetail" {
+            if let productDescriptionDetailController = segue.destination as? ProductDescriptionDetailControllerViewController {
+                productDescriptionDetailController.SKU = products[indexPathRow].SKU
+            }
+        }
     }
-    */
+    
 
 }
