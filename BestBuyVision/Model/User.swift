@@ -9,13 +9,12 @@
 import Foundation
 
 class User {
-    var userName: String
+    var email: String
     var password: String
-    var confirmPassword: String
     
-    init(userName: String, password: String, confirmPassword: String) {
-        self.userName = userName
+    init(email: String, password: String) {
+        self.email = email
         self.password = password
-        self.confirmPassword = confirmPassword
     }
+    
 }

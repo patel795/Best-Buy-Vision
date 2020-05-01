@@ -77,14 +77,13 @@ class SignupViewController: UIViewController {
     }
 
     @IBAction func signUpBtnPressed(_ sender: Any) {
-        let email = self.emailTextBox.text!
-        let password = self.passwordTextBox.text!
-        let confirmPassword  = self.confirmTextBox.text!
+        let confirmPassword = confirmTextBox.text!
+        let user = User(email: self.emailTextBox.text!, password: self.passwordTextBox.text!)
         
-        if(password == confirmPassword){
+        if(user.password == confirmPassword){
             // MARK: FB:  Try to create a user using Firebase Authentication
             // This is all boilerplate code copied and pasted from Firebase documentation
-            Auth.auth().createUser(withEmail: email, password: password) {
+            Auth.auth().createUser(withEmail: user.email, password: user.password) {
                 
                 (user, error) in
                 
