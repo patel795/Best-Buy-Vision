@@ -89,7 +89,10 @@ class SignupViewController: UIViewController {
                 (user, error) in
                 
                 if (user != nil) {
-                    self.showToast(controller: self, message : "Account created", seconds: 1.0)
+                    user?.user.sendEmailVerification { (error) in
+                        print(error ?? "error unknown")
+                    }
+                    self.showToast(controller: self, message : "Account has been registered, to login please verify your email.", seconds: 1.0)
                     self.navigationController?.popViewController(animated: true)
                 }
                 else {
@@ -106,6 +109,7 @@ class SignupViewController: UIViewController {
         else{
             makeAlert(title: "Wrong Password", message: "Please enter the correct password in confirmation field.")
         }
+        
     }
     
     /*

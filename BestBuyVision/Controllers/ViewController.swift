@@ -63,14 +63,15 @@ class ViewController: UIViewController {
         Auth.auth().signIn(withEmail: username, password: password) {
             
             (user, error) in
-            
+        
             if (user != nil) {
                 // 1. Found a user!
-                print("User signed in! ")
-                print("User id: \(user?.user.uid ?? "Username default")")
-                print("Email: \(user?.user.email ?? "email default")")
-                
-                self.performSegue(withIdentifier: "segueTab", sender: nil)
+                if(user!.user.isEmailVerified) {
+                    self.performSegue(withIdentifier: "segueTab", sender: nil)
+                }
+                else {
+                    self.makeAlert(title: "Error", message: "This account is not verified yet!")
+                }
             }
             else {
                 // 1. A problem occured when looking up  the user
