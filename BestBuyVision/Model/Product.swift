@@ -14,6 +14,7 @@ class Product {
     var productDescription: String
     var SKU: String
     var productThumbnailURL: String
+    var images = [String]()
     
     init(productName: String, productPrice: String, productDescription: String, SKU: String, productThumbnailURL : String) {
         self.productName = productName

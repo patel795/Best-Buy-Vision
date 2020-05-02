@@ -17,6 +17,8 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
     var SKU = ""
     var indexPathRow = Int()
     var imageLinks: Array<String> = Array()
+    var item: Product?
+    var imagesJson: JSON?
     
     @IBOutlet weak var slideshow: ImageSlideshow!
     
@@ -24,9 +26,16 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("SKU" , SKU)
         makeApiCall(){ (info) in
-            print(info)
+            self.alamofireSource.removeAll()
+            
+            for i in 0...((self.imagesJson?.count ?? 1)-1) {
+                let string = self.imagesJson?[i]["rel"].stringValue
+                if (string?.contains("Standard"))! {
+                    self.alamofireSource.append(AlamofireSource(urlString: (self.imagesJson?[i]["href"].stringValue)!)!)
+                }
+                //self.imageLinks.append(json["products"][0]["images"][i]["href"].stringValue)
+            }
         }
         
         // Do any additional setup after loading the view.
@@ -61,13 +70,14 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
     }
     
     func imageSlideshow(_ imageSlideshow: ImageSlideshow, didChangeCurrentPageTo page: Int) {
-        print("current page:", page)
+        
     }
     
     // MARK: - Making API call
     private func makeApiCall(completion: @escaping (String) -> ()){
         
-        guard let URL = URL(string: "https://api.bestbuy.com/v1/products(sku=\(self.SKU))?apiKey=\(self.APIKEY)&format=json")
+        guard let URL = URL(string:
+            "https://api.bestbuy.com/v1/products(sku=\(self.SKU))?show=sku,name,salePrice,images,shortDescription&apiKey=\(self.APIKEY)&format=json")
             
         else {
             completion("Error: URL")
@@ -84,24 +94,15 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
             if (response.result.isSuccess) {
                 do {
                     let json = try JSON(data:response.data!)
-                    print("Hello", json)
                     if(json["error"].isEmpty){
-                            let item = Product(productName: json["products"][0]["name"].stringValue,
+                        self.item = Product(productName: json["products"][0]["name"].stringValue,
                                                productPrice: json["products"][0]["salePrice"].stringValue,
                                                productDescription: json["products"][0]["shortDescription"].stringValue,
                                                SKU: json["products"][0]["sku"].stringValue,
                                                productThumbnailURL: json["products"][0]["image"].stringValue)
-                            //self.products.append(item)
                         
-                        self.alamofireSource.removeAll()
-                        for i in 0...(json["products"][0]["images"].count)-1{
-                            print(json["products"][0]["images"][i]["href"].stringValue)
-                            print(json["products"][0]["images"].count)
-                            self.alamofireSource.append(AlamofireSource(urlString: json["products"][0]["images"][i]["href"].stringValue)!)
-                            //self.imageLinks.append(json["products"][0]["images"][i]["href"].stringValue)
-                        }
+                        self.imagesJson = json["products"][0]["images"]
                         
-                        //print(self.imageLinks)
                         DispatchQueue.main.async {
                             //reloading the table view data
                             //self.tableView.reloadData()
