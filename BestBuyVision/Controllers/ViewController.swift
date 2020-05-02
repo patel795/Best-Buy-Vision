@@ -26,6 +26,10 @@ class ViewController: UIViewController {
         
         db = Firestore.firestore()
         
+        signinBtn.layer.cornerRadius = signinBtn.frame.size.height/2
+        Utilities.styleTextField(usernameTextBox)
+        Utilities.styleTextField(passwordTextBox)
+        
         // OPTIONAL:  Required when dealing with dates that are stored in Firestore
         let settings = db.settings
         settings.areTimestampsInSnapshotsEnabled = true
