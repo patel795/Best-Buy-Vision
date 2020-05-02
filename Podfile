@@ -7,6 +7,12 @@ target 'BestBuyVision' do
 
   # Pods for BestBuyVision
 
+pod "ImageSlideshow"
+    pod "ImageSlideshow/AFURL"
+    pod "ImageSlideshow/Alamofire"
+    pod "ImageSlideshow/SDWebImage"
+    pod "ImageSlideshow/Kingfisher"
+
   target 'BestBuyVisionTests' do
     inherit! :search_paths
     # Pods for testing
