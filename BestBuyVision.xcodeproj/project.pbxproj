@@ -24,12 +24,12 @@
 		57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0923FA0D1300350ADB /* Colors.swift */; };
 		57BA1F0C23FA185400350ADB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0B23FA185400350ADB /* SignupViewController.swift */; };
 		57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */; };
-		57BEE038245BC51A006EB9DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57BEE037245BC51A006EB9DB /* GoogleService-Info.plist */; };
-		57BEE03C245BC56D006EB9DB /* Capstone_Image_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57BEE03B245BC56C006EB9DB /* Capstone_Image_Classifier.mlmodel */; };
 		7D25AD249D3EB41CD6E0D40D /* Pods_BestBuyVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */; };
 		A055CCFF7B775CD02F9AB81F /* Pods_BestBuyVisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */; };
 		AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
 		AE5C670C245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */; };
+		AE5C6712245D0B3F0055F9F6 /* Capstone_Image_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5C6711245D0B3F0055F9F6 /* Capstone_Image_Classifier.mlmodel */; };
+		AE5C6714245D0B770055F9F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE5C6713245D0B770055F9F6 /* GoogleService-Info.plist */; };
 		AEAFA0E524566C9B00931015 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFA0E424566C9B00931015 /* User.swift */; };
 		AEFB8EA924461DA400F89819 /* ProoductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -78,14 +78,14 @@
 		57BA1F0923FA0D1300350ADB /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		57BA1F0B23FA185400350ADB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageViewController.swift; sourceTree = "<group>"; };
-		57BEE037245BC51A006EB9DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Capstone Project/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		57BEE03B245BC56C006EB9DB /* Capstone_Image_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Capstone_Image_Classifier.mlmodel; path = ../../../../Capstone_Image_Classifier.mlmodel; sourceTree = "<group>"; };
 		5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC19D754A28E20EF1FDA65 /* Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig"; path = "Target Support Files/Pods-BestBuyVision-BestBuyVisionUITests/Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D5AFF8C1FA1A128CC1AC4CC /* Pods-BestBuyVisionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVisionTests.debug.xcconfig"; path = "Target Support Files/Pods-BestBuyVisionTests/Pods-BestBuyVisionTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A35EA5A16B20F759BD1C2F23 /* Pods-BestBuyVision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision.debug.xcconfig"; path = "Target Support Files/Pods-BestBuyVision/Pods-BestBuyVision.debug.xcconfig"; sourceTree = "<group>"; };
 		AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
 		AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionDetailControllerViewController.swift; sourceTree = "<group>"; };
+		AE5C6711245D0B3F0055F9F6 /* Capstone_Image_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Capstone_Image_Classifier.mlmodel; path = ../../../../Downloads/Capstone_Image_Classifier.mlmodel; sourceTree = "<group>"; };
+		AE5C6713245D0B770055F9F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AEAFA0E424566C9B00931015 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProoductsTableViewController.swift; sourceTree = "<group>"; };
 		F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,8 +158,8 @@
 				57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */,
 				57BA1F0B23FA185400350ADB /* SignupViewController.swift */,
 				AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */,
-				57BEE03B245BC56C006EB9DB /* Capstone_Image_Classifier.mlmodel */,
 				577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */,
+				AE5C6711245D0B3F0055F9F6 /* Capstone_Image_Classifier.mlmodel */,
 				AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */,
 			);
 			path = Controllers;
@@ -205,8 +205,8 @@
 				574178312419E62700970F60 /* View */,
 				57BA1ED323F9995500350ADB /* AppDelegate.swift */,
 				57BA1ED523F9995500350ADB /* SceneDelegate.swift */,
-				57BEE037245BC51A006EB9DB /* GoogleService-Info.plist */,
 				57BA1ED923F9995500350ADB /* Main.storyboard */,
+				AE5C6713245D0B770055F9F6 /* GoogleService-Info.plist */,
 				57BA1EDC23F9995800350ADB /* Assets.xcassets */,
 				57BA1EDE23F9995800350ADB /* LaunchScreen.storyboard */,
 				57BA1EE123F9995800350ADB /* Info.plist */,
@@ -354,7 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BA1EE023F9995800350ADB /* LaunchScreen.storyboard in Resources */,
-				57BEE038245BC51A006EB9DB /* GoogleService-Info.plist in Resources */,
+				AE5C6714245D0B770055F9F6 /* GoogleService-Info.plist in Resources */,
 				57BA1EDD23F9995800350ADB /* Assets.xcassets in Resources */,
 				57BA1EDB23F9995500350ADB /* Main.storyboard in Resources */,
 			);
@@ -522,7 +522,7 @@
 				57BA1F0C23FA185400350ADB /* SignupViewController.swift in Sources */,
 				57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */,
 				57BA1F0423FA0BD700350ADB /* UIShadows.swift in Sources */,
-				57BEE03C245BC56D006EB9DB /* Capstone_Image_Classifier.mlmodel in Sources */,
+				AE5C6712245D0B3F0055F9F6 /* Capstone_Image_Classifier.mlmodel in Sources */,
 				AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				577ECCA224537AFB007AB88D /* ProductTableViewCell.swift in Sources */,
 				57BA1ED423F9995500350ADB /* AppDelegate.swift in Sources */,
