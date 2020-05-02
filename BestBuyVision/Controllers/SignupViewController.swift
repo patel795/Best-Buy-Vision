@@ -77,19 +77,21 @@ class SignupViewController: UIViewController {
     }
 
     @IBAction func signUpBtnPressed(_ sender: Any) {
-        let email = self.emailTextBox.text!
-        let password = self.passwordTextBox.text!
-        let confirmPassword  = self.confirmTextBox.text!
+        let confirmPassword = confirmTextBox.text!
+        let user = User(email: self.emailTextBox.text!, password: self.passwordTextBox.text!)
         
-        if(password == confirmPassword){
+        if(user.password == confirmPassword){
             // MARK: FB:  Try to create a user using Firebase Authentication
             // This is all boilerplate code copied and pasted from Firebase documentation
-            Auth.auth().createUser(withEmail: email, password: password) {
+            Auth.auth().createUser(withEmail: user.email, password: user.password) {
                 
                 (user, error) in
                 
                 if (user != nil) {
-                    self.showToast(controller: self, message : "Account created", seconds: 1.0)
+                    user?.user.sendEmailVerification { (error) in
+                        print(error ?? "error unknown")
+                    }
+                    self.showToast(controller: self, message : "Account has been registered, to login please verify your email.", seconds: 1.0)
                     self.navigationController?.popViewController(animated: true)
                 }
                 else {
@@ -106,6 +108,7 @@ class SignupViewController: UIViewController {
         else{
             makeAlert(title: "Wrong Password", message: "Please enter the correct password in confirmation field.")
         }
+        
     }
     
     /*

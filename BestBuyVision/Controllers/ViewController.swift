@@ -55,22 +55,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func signBtnClick(_ sender: Any) {
-        let username = usernameTextBox.text!
-        let password = passwordTextBox.text!
+        let user = User(email: usernameTextBox.text!, password: passwordTextBox.text!)
         
         // MARK: FB:  Try to sign the user in using Firebase Authentication
         // This is all boilerplate code copied and pasted from Firebase documentation
-        Auth.auth().signIn(withEmail: username, password: password) {
+        Auth.auth().signIn(withEmail: user.email, password: user.password) {
             
             (user, error) in
-            
+        
             if (user != nil) {
                 // 1. Found a user!
-                print("User signed in! ")
-                print("User id: \(user?.user.uid ?? "Username default")")
-                print("Email: \(user?.user.email ?? "email default")")
-                
-                self.performSegue(withIdentifier: "segueTab", sender: nil)
+                if(user!.user.isEmailVerified) {
+                    self.performSegue(withIdentifier: "segueTab", sender: nil)
+                }
+                else {
+                    self.makeAlert(title: "Error", message: "This account is not verified yet!")
+                }
             }
             else {
                 // 1. A problem occured when looking up  the user
