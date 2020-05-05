@@ -20,10 +20,13 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     
     let APIKEY = "TWVhgdNpaxCG1GSk4IReKegI"
 
+    @IBOutlet weak var uploadImageBtn: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var biggerimageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        uploadImageBtn.layer.cornerRadius = uploadImageBtn.frame.size.height/2
         //let vc = UIImagePickerController()
         //vc.sourceType = .camera
         //vc.allowsEditing = true
