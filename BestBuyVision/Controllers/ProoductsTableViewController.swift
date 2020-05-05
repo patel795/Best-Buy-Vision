@@ -54,6 +54,7 @@ class ProoductsTableViewController: UITableViewController {
             if (response.result.isSuccess) {
                 do {
                     let json = try JSON(data:response.data!)
+                    print(json)
                     if(json["error"].isEmpty){
                         for i in 0...json["products"].count{
                             let item = Product(productName: json["products"][i]["name"].stringValue,
