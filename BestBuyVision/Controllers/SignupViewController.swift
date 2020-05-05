@@ -26,6 +26,8 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
         
         setUpNavigationBar()
+        
+        setUpButtonsAndTextBox()
 
         db = Firestore.firestore()
         
@@ -34,6 +36,13 @@ class SignupViewController: UIViewController {
         settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
         // Do any additional setup after loading the view.
+    }
+    
+    private func setUpButtonsAndTextBox(){
+        signUpBtn.layer.cornerRadius = signUpBtn.frame.size.height/2
+        Utilities.styleTextField(emailTextBox)
+        Utilities.styleTextField(passwordTextBox)
+        Utilities.styleTextField(confirmTextBox)
     }
     
     private func setUpNavigationBar() {
