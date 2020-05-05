@@ -17,10 +17,12 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
     var SKU = ""
     var indexPathRow = Int()
     var imageLinks: Array<String> = Array()
-    var item: Product?
+    var products =  [Product]()
     var imagesJson: JSON?
     
     @IBOutlet weak var slideshow: ImageSlideshow!
+    @IBOutlet weak var productName: UILabel!
+    @IBOutlet weak var productPrice: UILabel!
     
     var alamofireSource = [AlamofireSource(urlString: "https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080")!, AlamofireSource(urlString: "https://images.unsplash.com/photo-1447746249824-4be4e1b76d66?w=1080")!, AlamofireSource(urlString: "https://images.unsplash.com/photo-1463595373836-6e0b0a8ee322?w=1080")!]
     
@@ -37,7 +39,6 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
                 //self.imageLinks.append(json["products"][0]["images"][i]["href"].stringValue)
             }
         }
-        
         // Do any additional setup after loading the view.
     }
     
@@ -95,13 +96,18 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
                 do {
                     let json = try JSON(data:response.data!)
                     if(json["error"].isEmpty){
-                        self.item = Product(productName: json["products"][0]["name"].stringValue,
+                        let item = Product(productName: json["products"][0]["name"].stringValue,
                                                productPrice: json["products"][0]["salePrice"].stringValue,
                                                productDescription: json["products"][0]["shortDescription"].stringValue,
                                                SKU: json["products"][0]["sku"].stringValue,
                                                productThumbnailURL: json["products"][0]["image"].stringValue)
                         
                         self.imagesJson = json["products"][0]["images"]
+                        self.products.append(item)
+                        
+                        print(self.products)
+                        self.productName.text = item.productName
+                        self.productPrice.text = "$" + item.productPrice
                         
                         DispatchQueue.main.async {
                             //reloading the table view data
