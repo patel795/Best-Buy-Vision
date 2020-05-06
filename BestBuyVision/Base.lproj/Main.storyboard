@@ -290,24 +290,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fs7-9d-9FJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6178" y="-937"/>
+            <point key="canvasLocation" x="6175" y="-1036"/>
         </scene>
         <!--Product Description Detail Controller View Controller-->
         <scene sceneID="gtq-wj-eos">
             <objects>
                 <viewController id="9aN-3Z-msN" customClass="ProductDescriptionDetailControllerViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hd1-VV-4SR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lEH-6B-BRh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lEH-6B-BRh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXM-HJ-Bnf" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JXM-HJ-Bnf" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                         <subviews>
                                             <view contentMode="scaleAspectFit" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lSp-1A-nPv" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                                <rect key="frame" x="0.0" y="50" width="375" height="504"/>
+                                                <rect key="frame" x="0.0" y="50" width="375" height="435"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="375" id="F85-LB-T1L"/>
@@ -315,45 +315,103 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izo-7l-uUE">
-                                                <rect key="frame" x="0.0" y="462" width="375" height="163"/>
+                                                <rect key="frame" x="20" y="493" width="335" height="46"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="24" name="Arial-Black"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            <font key="NSFont" size="19" name="HelveticaNeue-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rva-hm-nIG">
-                                                <rect key="frame" x="20" y="633" width="77" height="46"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rva-hm-nIG">
+                                                <rect key="frame" x="20.000000000000004" y="549.66666666666663" width="43.333333333333343" height="20.333333333333371"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="19" name="ArialNarrow-BoldItalic"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            <font key="NSFont" size="17" name="HelveticaNeue-Medium"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNe-Ep-XZW">
+                                                <rect key="frame" x="20" y="618" width="335" height="17.666666666666629"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Label">
+                                                        <attributes>
+                                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYr-tg-lYF">
+                                                <rect key="frame" x="20" y="589" width="335" height="21"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Description">
+                                                        <attributes>
+                                                            <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rM5-eY-cNh">
+                                                <rect key="frame" x="20" y="643" width="335" height="34"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="18"/>
+                                                <state key="normal" title="More...">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="expandDescriptionClick:" destination="9aN-3Z-msN" eventType="touchUpInside" id="zGW-4Y-PQB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yj-lm-Psb">
+                                                <rect key="frame" x="20" y="700" width="335" height="33"/>
+                                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <state key="normal" title="Google Review">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="googleReviewBtnClick:" destination="9aN-3Z-msN" eventType="touchUpInside" id="o4x-cs-BsY"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="Rva-hm-nIG" firstAttribute="leading" secondItem="JXM-HJ-Bnf" secondAttribute="leading" constant="20" id="91R-yO-4fJ"/>
-                                            <constraint firstItem="izo-7l-uUE" firstAttribute="top" secondItem="lSp-1A-nPv" secondAttribute="bottom" constant="37" id="Ivh-XP-rPh"/>
+                                            <constraint firstItem="9Yj-lm-Psb" firstAttribute="top" secondItem="rM5-eY-cNh" secondAttribute="bottom" constant="23" id="B8A-3Y-0sS"/>
+                                            <constraint firstAttribute="trailing" secondItem="rM5-eY-cNh" secondAttribute="trailing" constant="20" id="DHl-zG-rOX"/>
+                                            <constraint firstItem="eYr-tg-lYF" firstAttribute="top" secondItem="Rva-hm-nIG" secondAttribute="bottom" constant="19" id="EXj-Hx-JUZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="9Yj-lm-Psb" secondAttribute="trailing" constant="20" id="GGT-fa-1xW"/>
+                                            <constraint firstItem="izo-7l-uUE" firstAttribute="top" secondItem="lSp-1A-nPv" secondAttribute="bottom" constant="15" id="Ivh-XP-rPh"/>
+                                            <constraint firstItem="rNe-Ep-XZW" firstAttribute="leading" secondItem="JXM-HJ-Bnf" secondAttribute="leading" constant="20" id="JAX-I1-rHr"/>
                                             <constraint firstItem="lSp-1A-nPv" firstAttribute="top" secondItem="JXM-HJ-Bnf" secondAttribute="top" id="OfS-Nw-Kov"/>
                                             <constraint firstAttribute="trailing" secondItem="lSp-1A-nPv" secondAttribute="trailing" id="P3t-Ye-MhS"/>
-                                            <constraint firstItem="Rva-hm-nIG" firstAttribute="top" secondItem="izo-7l-uUE" secondAttribute="bottom" constant="26" id="SVA-el-A3U"/>
-                                            <constraint firstItem="izo-7l-uUE" firstAttribute="leading" secondItem="JXM-HJ-Bnf" secondAttribute="leading" id="TnC-7r-N49"/>
-                                            <constraint firstAttribute="trailing" secondItem="izo-7l-uUE" secondAttribute="trailing" id="UZ0-7I-hvu"/>
+                                            <constraint firstItem="rM5-eY-cNh" firstAttribute="top" secondItem="rNe-Ep-XZW" secondAttribute="bottom" constant="7.3300000000000001" id="QxY-NI-R71"/>
+                                            <constraint firstItem="Rva-hm-nIG" firstAttribute="top" secondItem="izo-7l-uUE" secondAttribute="bottom" constant="8" id="SVA-el-A3U"/>
+                                            <constraint firstItem="9Yj-lm-Psb" firstAttribute="leading" secondItem="JXM-HJ-Bnf" secondAttribute="leading" constant="20" id="TXs-is-QpH"/>
+                                            <constraint firstItem="izo-7l-uUE" firstAttribute="leading" secondItem="JXM-HJ-Bnf" secondAttribute="leading" constant="20" id="TnC-7r-N49"/>
+                                            <constraint firstAttribute="trailing" secondItem="izo-7l-uUE" secondAttribute="trailing" constant="20" id="UZ0-7I-hvu"/>
                                             <constraint firstItem="Rva-hm-nIG" firstAttribute="leading" secondItem="JXM-HJ-Bnf" secondAttribute="leading" constant="20" id="Xw4-mf-ddd"/>
                                             <constraint firstItem="lSp-1A-nPv" firstAttribute="leading" secondItem="JXM-HJ-Bnf" secondAttribute="leading" id="dfo-CG-1QF"/>
+                                            <constraint firstAttribute="trailing" secondItem="rNe-Ep-XZW" secondAttribute="trailing" constant="20" id="eLM-ew-ewf"/>
+                                            <constraint firstItem="eYr-tg-lYF" firstAttribute="leading" secondItem="JXM-HJ-Bnf" secondAttribute="leading" constant="20" id="fDz-Rr-N4h"/>
+                                            <constraint firstItem="rNe-Ep-XZW" firstAttribute="top" secondItem="eYr-tg-lYF" secondAttribute="bottom" constant="8" id="n9c-py-HMd"/>
                                             <constraint firstItem="lSp-1A-nPv" firstAttribute="leading" secondItem="JXM-HJ-Bnf" secondAttribute="leading" id="pOd-Yd-8Pz"/>
+                                            <constraint firstAttribute="bottom" secondItem="9Yj-lm-Psb" secondAttribute="bottom" constant="67" id="qaM-ws-cVe"/>
+                                            <constraint firstItem="rM5-eY-cNh" firstAttribute="leading" secondItem="JXM-HJ-Bnf" secondAttribute="leading" constant="20" id="srK-Lr-H7N"/>
                                             <constraint firstAttribute="trailing" secondItem="lSp-1A-nPv" secondAttribute="trailing" id="y8X-V9-hIN"/>
+                                            <constraint firstAttribute="trailing" secondItem="eYr-tg-lYF" secondAttribute="trailing" constant="20" id="zgE-nT-gXi"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -383,16 +441,50 @@
                         <viewLayoutGuide key="safeArea" id="Lrw-CU-m1g"/>
                     </view>
                     <navigationItem key="navigationItem" id="sOw-aw-CWa"/>
-                    <size key="freeformSize" width="375" height="1000"/>
+                    <size key="freeformSize" width="375" height="800"/>
                     <connections>
+                        <outlet property="expandDescriptionBtn" destination="rM5-eY-cNh" id="tM2-fB-Tko"/>
+                        <outlet property="googleReviewBtn" destination="9Yj-lm-Psb" id="D3J-RH-rYJ"/>
+                        <outlet property="productDescription" destination="rNe-Ep-XZW" id="oeV-U8-4iq"/>
                         <outlet property="productName" destination="izo-7l-uUE" id="tjN-af-1TI"/>
                         <outlet property="productPrice" destination="Rva-hm-nIG" id="zc7-tg-05M"/>
                         <outlet property="slideshow" destination="lSp-1A-nPv" id="But-6B-qOq"/>
+                        <segue destination="vFL-iN-tSY" kind="show" identifier="segueGoogleReview" id="qR8-lq-06n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4G1-WL-HOn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6176.8000000000002" y="-145.56650246305421"/>
+        </scene>
+        <!--Review-->
+        <scene sceneID="eDv-cS-wF2">
+            <objects>
+                <viewController id="1bf-ki-jYN" customClass="GoogleReviewViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZVf-5F-xnf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tdi-AH-ZOt">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="QGN-BY-dF4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Review" id="vzG-jP-2fo"/>
+                    <connections>
+                        <outlet property="googleReviewWebKit" destination="Tdi-AH-ZOt" id="VUI-qh-Ujn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GBQ-Dv-Gkj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8245.6000000000004" y="-140.39408866995075"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Cla-s1-xz1">
@@ -623,6 +715,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tvt-v4-cfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3045.5999999999999" y="1175.615763546798"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HlL-oK-Usy">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vyY-Nd-Ksy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vFL-iN-tSY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="sN6-Jq-DId"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uR4-TP-uyx">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1bf-ki-jYN" kind="relationship" relationship="rootViewController" id="EoV-0X-TLx"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="7303.1999999999998" y="-140.39408866995075"/>
         </scene>
     </scenes>
     <resources>

@@ -20,6 +20,9 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
     var products =  [Product]()
     var imagesJson: JSON?
     
+    @IBOutlet weak var googleReviewBtn: UIButton!
+    @IBOutlet weak var expandDescriptionBtn: UIButton!
+    @IBOutlet weak var productDescription: UILabel!
     @IBOutlet weak var slideshow: ImageSlideshow!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
@@ -28,6 +31,9 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        googleReviewBtn.layer.cornerRadius = googleReviewBtn.frame.size.height/2
+        
         makeApiCall(){ (info) in
             self.alamofireSource.removeAll()
             
@@ -38,15 +44,18 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
                 }
                 //self.imageLinks.append(json["products"][0]["images"][i]["href"].stringValue)
             }
+            
+            self.productName.text = self.products[0].productName
+            self.productPrice.text = "$" + self.products[0].productPrice
+            self.productDescription.text = self.products[0].productDescription
         }
-        // Do any additional setup after loading the view.
     }
     
     private func imageSlideView(){
 
         slideshow.slideshowInterval = 5.0
         slideshow.pageIndicatorPosition = .init(horizontal: .center, vertical: .under)
-        slideshow.contentScaleMode = UIViewContentMode.scaleAspectFill
+        slideshow.contentScaleMode = UIViewContentMode.scaleAspectFit
 
         let pageControl = UIPageControl()
         pageControl.currentPageIndicatorTintColor = UIColor.lightGray
@@ -78,7 +87,7 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
     private func makeApiCall(completion: @escaping (String) -> ()){
         
         guard let URL = URL(string:
-            "https://api.bestbuy.com/v1/products(sku=\(self.SKU))?show=sku,name,salePrice,images,shortDescription&apiKey=\(self.APIKEY)&format=json")
+            "https://api.bestbuy.com/v1/products(sku=\(self.SKU))?show=sku,name,salePrice,images,longDescription&apiKey=\(self.APIKEY)&format=json")
             
         else {
             completion("Error: URL")
@@ -98,16 +107,12 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
                     if(json["error"].isEmpty){
                         let item = Product(productName: json["products"][0]["name"].stringValue,
                                                productPrice: json["products"][0]["salePrice"].stringValue,
-                                               productDescription: json["products"][0]["shortDescription"].stringValue,
+                                               productDescription: json["products"][0]["longDescription"].stringValue,
                                                SKU: json["products"][0]["sku"].stringValue,
                                                productThumbnailURL: json["products"][0]["image"].stringValue)
                         
                         self.imagesJson = json["products"][0]["images"]
                         self.products.append(item)
-                        
-                        print(self.products)
-                        self.productName.text = item.productName
-                        self.productPrice.text = "$" + item.productPrice
                         
                         DispatchQueue.main.async {
                             //reloading the table view data
@@ -138,14 +143,34 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
         }
     }
     
-    /*
+    @IBAction func expandDescriptionClick(_ sender: Any) {
+        if(expandDescriptionBtn.titleLabel?.text == "More..."){
+            expandDescriptionBtn.setTitle("Less...", for: .normal)
+            productDescription.numberOfLines = 0
+            productDescription.lineBreakMode = .byWordWrapping
+        }
+        else if(expandDescriptionBtn.titleLabel?.text == "Less..."){
+            expandDescriptionBtn.setTitle("More...", for: .normal)
+            productDescription.numberOfLines = 7
+            productDescription.lineBreakMode = .byTruncatingTail
+        }
+    }
+    
+    @IBAction func googleReviewBtnClick(_ sender: Any) {
+        performSegue(withIdentifier: "segueGoogleReview", sender: nil)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "segueGoogleReview" {
+            if let navController = segue.destination as? UINavigationController {
+                if let chidVC = navController.topViewController as? GoogleReviewViewController {
+                    chidVC.productName = self.products[0].productName
+                }
+            }
+        }
     }
-    */
 
 }
