@@ -25,10 +25,15 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
         super.viewDidLoad()
         
         productName = productName.replacingOccurrences(of: " ", with: "+")
-        let myURL = URL(string:"https://www.google.com/search?q=\(productName)&tbm=shop")
-        let myRequest = URLRequest(url: myURL!)
-        googleReviewWebKit.load(myRequest)
-        // Do any additional setup after loading the view.
+        let productURL = URL(string:"https://www.google.com/search?q=\(productName)&tbm=shop")
+        
+        if(productURL != nil){
+            let myRequest = URLRequest(url: productURL!)
+            googleReviewWebKit.load(myRequest)
+        }
+        else{
+            MakeToast.showToast(controller: self, message: "No Product Found", seconds: 2.0)
+        }
     }
     
 
