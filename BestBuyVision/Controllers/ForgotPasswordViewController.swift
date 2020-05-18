@@ -1,48 +1,27 @@
 //
-//  SignupViewController.swift
+//  ForgotPasswordViewController.swift
 //  BestBuyVision
 //
-//  Created by Rathin Chopra on 2020-02-16.
+//  Created by Xcode User on 2020-05-17.
 //  Copyright © 2020 Rathin Chopra. All rights reserved.
 //
 
 import UIKit
 import Firebase
-import WebKit
 
-class SignupViewController: UIViewController {
+class ForgotPasswordViewController: UIViewController {
 
-    @IBOutlet weak var signUpBtn: UIButton!
-    @IBOutlet weak var confirmTextBox: UITextField!
-    @IBOutlet weak var passwordTextBox: UITextField!
-    @IBOutlet weak var emailTextBox: UITextField!
-    @IBOutlet weak var companyLogoImage: UIImageView!
-    
-    // MARK: Initialize firestore variable
-    // ------------------------------------
-    var db:Firestore!
-    
+    @IBOutlet weak var emailAddressTextBox: UITextField!
+    @IBOutlet weak var sendLinkBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpNavigationBar()
         
-        setUpButtonsAndTextBox()
+        sendLinkBtn.layer.cornerRadius = sendLinkBtn.frame.size.height/2
+        Utilities.styleTextField(emailAddressTextBox)
 
-        db = Firestore.firestore()
-        
-        // OPTIONAL:  Required when dealing with dates that are stored in Firestore
-        let settings = db.settings
-        settings.areTimestampsInSnapshotsEnabled = true
-        db.settings = settings
         // Do any additional setup after loading the view.
-    }
-    
-    private func setUpButtonsAndTextBox(){
-        signUpBtn.layer.cornerRadius = signUpBtn.frame.size.height/2
-        Utilities.styleTextField(emailTextBox)
-        Utilities.styleTextField(passwordTextBox)
-        Utilities.styleTextField(confirmTextBox)
     }
     
     private func setUpNavigationBar() {
@@ -84,23 +63,18 @@ class SignupViewController: UIViewController {
             }
         }
     }
-
-    @IBAction func signUpBtnPressed(_ sender: Any) {
-        let confirmPassword = confirmTextBox.text!
-        let user = User(email: self.emailTextBox.text!, password: self.passwordTextBox.text!)
-        
-        if(user.password == confirmPassword){
-            // MARK: FB:  Try to create a user using Firebase Authentication
-            // This is all boilerplate code copied and pasted from Firebase documentation
-            Auth.auth().createUser(withEmail: user.email, password: user.password) {
+    
+    @IBAction func sendLink(_ sender: Any) {
+        let email = self.emailAddressTextBox.text!
+        if (email == "") {
+            self.makeAlert(title: "No Email Adddress", message: "Error..Please enter your email address")
+        }
+        else{
+            Auth.auth().sendPasswordReset(withEmail: email) {
+                error in
                 
-                (user, error) in
-                
-                if (user != nil) {
-                    user?.user.sendEmailVerification { (error) in
-                        print(error ?? "error unknown")
-                    }
-                    self.showToast(controller: self, message : "Account has been registered, to login please verify your email.", seconds: 1.0)
+                if (error == nil) {
+                    self.showToast(controller: self, message : "Reset Password Link has been sent to your email address", seconds: 1.0)
                     self.navigationController?.popViewController(animated: true)
                 }
                 else {
@@ -112,14 +86,10 @@ class SignupViewController: UIViewController {
                     let errorMsg = error?.localizedDescription
                     self.makeAlert(title: "Error", message: errorMsg!)
                 }
+                //print(error ?? "error unknown")
             }
         }
-        else{
-            makeAlert(title: "Wrong Password", message: "Please enter the correct password in confirmation field.")
-        }
-        
     }
-
     /*
     // MARK: - Navigation
 

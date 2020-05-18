@@ -93,6 +93,10 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "segueSignUp", sender: nil)
     }
     
+    @IBAction func forgotPasswordPressed(_ sender: Any) {
+        performSegue(withIdentifier: "SegueForgotPassword", sender: nil)
+    }
+    
     @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
         
     }
