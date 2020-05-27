@@ -17,11 +17,16 @@ class ProoductsTableViewController: UITableViewController {
     var products =  [Product]()
     var indexPathRow = Int()
     
+    @IBOutlet weak var productNames: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.rowHeight = 115
-        
+        var formattedProductNames = "*For debugging purposes only* \n"
+        for i in 0...4{
+            formattedProductNames = formattedProductNames + productNameStrings[i] + "\n"
+        }
+        productNames.text = "\(formattedProductNames)"
         for index in 0...(productNameStrings.count - 1) {
             makeApiCall(productName: productNameStrings[index]){ (info) in
                 print(info)
@@ -38,10 +43,15 @@ class ProoductsTableViewController: UITableViewController {
     // MARK: - Making API call
     private func makeApiCall(productName: String, completion: @escaping (String) -> ()){
         let startingText = "search="
+        
         var productNameForURL = startingText + productName
+        productNameForURL = productNameForURL.replacingOccurrences(of: "\"", with: "", options: .literal, range: nil)
+        productNameForURL = productNameForURL.trimmingCharacters(in: .whitespacesAndNewlines)
+        productNameForURL = productNameForURL.replacingOccurrences(of: "_", with: "", options: .literal, range: nil)
+        productNameForURL = productNameForURL.replacingOccurrences(of: "+", with: "", options: .literal, range: nil)
         productNameForURL = productNameForURL.replacingOccurrences(of: " ", with: "&search=", options: .literal, range: nil)
         
-        guard let URL = URL(string: "https://api.bestbuy.com/v1/products((\(productNameForURL)&active=true))?format=json&sort=bestSellingRank.asc&show=sku,name,salePrice,bestSellingRank,image,shortDescription&pageSize=100&pageSize=3&page=1&apiKey=\(self.APIKEY)")
+        guard let URL = URL(string: "https://api.bestbuy.com/v1/products((\(productNameForURL)&active=true))?format=json&show=sku,name,salePrice,bestSellingRank,image,shortDescription&pageSize=100&pageSize=3&page=1&apiKey=\(self.APIKEY)")
         else {
             completion("Error: URL")
             return
@@ -57,30 +67,32 @@ class ProoductsTableViewController: UITableViewController {
             if (response.result.isSuccess) {
                 do {
                     let json = try JSON(data:response.data!)
-                    print(json)
+                    //print(json)
                     if(json["error"].isEmpty){
-                        for i in 0...json["products"].count - 1{
-                            let item = Product(productName: json["products"][i]["name"].stringValue,
-                                               productPrice: json["products"][i]["salePrice"].stringValue,
-                                               productDescription: json["products"][i]["shortDescription"].stringValue,
-                                               SKU: json["products"][i]["sku"].stringValue,
-                                               productThumbnailURL: json["products"][i]["image"].stringValue)
-                            self.products.append(item)
-                        }
-                        
-                        DispatchQueue.main.async {
-                            //reloading the table view data
-                            self.tableView.reloadData()
+                        if(json["products"].count != 0){
+                            for i in 0...json["products"].count - 1{
+                                let item = Product(productName: json["products"][i]["name"].stringValue,
+                                                   productPrice: json["products"][i]["salePrice"].stringValue,
+                                                   productDescription: json["products"][i]["shortDescription"].stringValue,
+                                                   SKU: json["products"][i]["sku"].stringValue,
+                                                   productThumbnailURL: json["products"][i]["image"].stringValue)
+                                self.products.append(item)
+                            }
                             
-                            // remove spinner
-                            //self.removeSpinner()
+                            DispatchQueue.main.async {
+                                //reloading the table view data
+                                self.tableView.reloadData()
+                                
+                                // remove spinner
+                                //self.removeSpinner()
+                            }
+                            
+                            completion("Success")
                         }
-                        
-                        completion("Success")
                     }
                     else{
                         //self.removeSpinner()
-                        self.performSegue(withIdentifier: "segueNoProduct", sender: nil)
+                        //self.performSegue(withIdentifier: "segueNoProduct", sender: nil)
                         completion("Can't find the product.")
                     }
                 }
