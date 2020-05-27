@@ -14,7 +14,7 @@ import Vision
 import ImageIO
 
 var productNameString = ""
-var classificationResult = ""
+var classificationResult: Array<String> = Array()
 
 class ScanImageViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -144,11 +144,11 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 //self.classificationLabel.text = "Nothing recognized."
             } else {
                 // Display top classifications ranked by confidence in the UI.
-                let topClassifications = classifications.prefix(1)
-                topClassifications.map { classification in
+                let topClassifications = classifications.prefix(5)
+                classificationResult = topClassifications.map { classification in
                     // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
-                    classificationResult = classification.identifier
-                   //return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
+                    //classificationResult = classification.identifier
+                    return String(format: "%@", classification.identifier)
                 }
                 self.biggerimageView.isHidden = false
                 self.imageView.isHidden = true
@@ -211,7 +211,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         // Pass the selected object to the new view controller.
         if segue.identifier == "segueProducts" {
             if let productsTableViewController = segue.destination as? ProoductsTableViewController {
-                productsTableViewController.productNameString = classificationResult
+                productsTableViewController.productNameStrings = classificationResult
             }
         }
     }

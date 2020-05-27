@@ -19,7 +19,7 @@
 		<key>AlamofireImage.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>45</integer>
+			<integer>47</integer>
 		</dict>
 		<key>AppAuth.xcscheme</key>
 		<dict>
@@ -234,12 +234,12 @@
 		<key>ImageSlideshow.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>43</integer>
+			<integer>44</integer>
 		</dict>
 		<key>Kingfisher.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>47</integer>
+			<integer>43</integer>
 		</dict>
 		<key>Pods-BestBuyVision-BestBuyVisionUITests.xcscheme</key>
 		<dict>
