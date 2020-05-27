@@ -169,7 +169,6 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         updateClassifications(for: image)
         
         guard (info[.editedImage] as? UIImage) != nil else {
-            print("No image found")
             return
         }
 

@@ -24,6 +24,10 @@ extension UIView {
     }
 }
 
+extension RangeReplaceableCollection where Self: StringProtocol {
+    var asciiPrintable: Self { filter { $0.isASCII && 32..<127 ~= ($0.unicodeScalars.first?.value ?? 0) } }
+}
+
 extension UIImage {
     func imageWithInsets(insets: UIEdgeInsets) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(

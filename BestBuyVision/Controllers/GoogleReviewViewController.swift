@@ -24,8 +24,8 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        productName = productName.replacingOccurrences(of: "\"", with: "+")
-        productName = productName.replacingOccurrences(of: " ", with: "+")
+        productName = Utilities.replaceSpecialChars(productName, "")
+        productName = productName.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
         let productURL = URL(string:"https://www.google.com/search?q=\(productName)&tbm=shop")
         
         if(productURL != nil){

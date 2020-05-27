@@ -27,11 +27,17 @@ class ProoductsTableViewController: UITableViewController {
             formattedProductNames = formattedProductNames + productNameStrings[i] + "\n"
         }
         productNames.text = "\(formattedProductNames)"
+        
+        let group = DispatchGroup()
+        
         for index in 0...(productNameStrings.count - 1) {
+            group.enter()
             makeApiCall(productName: productNameStrings[index]){ (info) in
                 print(info)
             }
+            group.leave()
         }
+        group.wait()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -39,16 +45,16 @@ class ProoductsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    
 
     // MARK: - Making API call
     private func makeApiCall(productName: String, completion: @escaping (String) -> ()){
         let startingText = "search="
         
         var productNameForURL = startingText + productName
-        productNameForURL = productNameForURL.replacingOccurrences(of: "\"", with: "", options: .literal, range: nil)
         productNameForURL = productNameForURL.trimmingCharacters(in: .whitespacesAndNewlines)
-        productNameForURL = productNameForURL.replacingOccurrences(of: "_", with: "", options: .literal, range: nil)
-        productNameForURL = productNameForURL.replacingOccurrences(of: "+", with: "", options: .literal, range: nil)
+        productNameForURL = Utilities.replaceSpecialChars(productNameForURL, "")
         productNameForURL = productNameForURL.replacingOccurrences(of: " ", with: "&search=", options: .literal, range: nil)
         
         guard let URL = URL(string: "https://api.bestbuy.com/v1/products((\(productNameForURL)&active=true))?format=json&show=sku,name,salePrice,bestSellingRank,image,shortDescription&pageSize=100&pageSize=3&page=1&apiKey=\(self.APIKEY)")
