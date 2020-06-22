@@ -13,11 +13,12 @@ import CoreML
 import Vision
 import ImageIO
 
-var productNameString = ""
-var classificationResult: Array<String> = Array()
-
 class ScanImageViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
+
+    var productNameString = ""
+    var classificationResult: Array<String> = Array()
+    var image = UIImage()
+    var counter = 0
     let APIKEY = "TWVhgdNpaxCG1GSk4IReKegI"
 
     @IBOutlet weak var uploadImageBtn: UIButton!
@@ -60,32 +61,6 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: bestbuyBtn)
     }
     
-    /*
-    func grabCategories(){
-        var categories:[String] = []
-        var jsonConatiner:[String: String] = [:]
-        for i in 1...43 {
-            let URL = "https://api.bestbuy.com/v1/categories?apiKey=TWVhgdNpaxCG1GSk4IReKegI&pageSize=100&page=\(i)&show=name&format=json"
-            // ALAMOFIRE function: get the data from the website
-            Alamofire.request(URL, method: .get, parameters: nil).responseJSON {
-                (response) in
-                
-                // -- put your code below this line
-                
-                if (response.result.isSuccess) {
-                    do {
-                        let json = try JSON(data:response.data!)
-                        print(json)
-                    }
-                    catch {
-                        print ("Error while parsing JSON response")
-                    }
-                }
-            }
-        }
-    }
-    */
-    
     // MARK: - Image Classification
     
     /// - Tag: MLModelSetup
@@ -96,7 +71,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
              To use a different Core ML classifier model, add it to the project
              and replace `MobileNet` with that model's generated Swift class.
              */
-            let model = try VNCoreMLModel(for: Capstone_Image_Classifier().model)
+            let model = try VNCoreMLModel(for: First_Stage_Categories_Classifier().model)
             
             let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
                 self?.processClassifications(for: request, error: error)
@@ -108,7 +83,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         }
     }()
     
-    func updateClassifications(for image: UIImage) {
+    func updateClassifications(for image: UIImage, requestName: VNCoreMLRequest) {
         //classificationLabel.text = "Classifying..."
         
         let orientation = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue))!
@@ -117,7 +92,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         DispatchQueue.global(qos: .userInitiated).async {
             let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation)
             do {
-                try handler.perform([self.classificationRequest])
+                try handler.perform([requestName])
             } catch {
                 /*
                  This handler catches general image processing errors. The `classificationRequest`'s
@@ -145,7 +120,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
             } else {
                 // Display top classifications ranked by confidence in the UI.
                 let topClassifications = classifications.prefix(5)
-                classificationResult = topClassifications.map { classification in
+                self.classificationResult = topClassifications.map { classification in
                     // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
                     //classificationResult = classification.identifier
                     return String(format: "%@", classification.identifier)
@@ -153,20 +128,59 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 self.biggerimageView.isHidden = false
                 self.imageView.isHidden = true
                 self.removeSpinner()
-                self.performSegue(withIdentifier: "segueProducts", sender: AnyObject?.self)
+                
+                if(self.counter == 1){
+                    self.performSegue(withIdentifier: "segueProducts", sender: AnyObject?.self)
+                }
+                
+                if(self.counter == 0){
+                    self.secondClassificationRequest(modelName: self.classificationResult[0])
+                }
                 //print("Classification:\n" + descriptions.joined(separator: "\n"))
                 //self.classificationLabel.text = "Classification:" + descriptions.joined(separator:)()
             }
         }
     }
     
+    func secondClassificationRequest(modelName:String){
+        counter = 1
+    
+        let secondClassificationRequest: VNCoreMLRequest = {
+            do {
+                /*
+                 Use the Swift class `MobileNet` Core ML generates from the model.
+                 To use a different Core ML classifier model, add it to the project
+                 and replace `MobileNet` with that model's generated Swift class.
+                 */
+                
+                let catergoriesDict:[String:AnyObject] = ["Laptops":Laptops().model, "Headphones":Laptops().model]
+                
+                print(type(of:Laptops()))
+                
+                let chosenCategory = catergoriesDict[modelName]!
+                
+                let model = try VNCoreMLModel(for: chosenCategory as! MLModel)
+                
+                let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
+                    self?.processClassifications(for: request, error: error)
+                })
+                request.imageCropAndScaleOption = .centerCrop
+                return request
+            } catch {
+                fatalError("Failed to load Vision ML model: \(error)")
+            }
+        }()
+        
+        updateClassifications(for: image, requestName: secondClassificationRequest)
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
 
-        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         self.showSpinner(onView: self.view)
         biggerimageView.image = image
-        updateClassifications(for: image)
+        updateClassifications(for: image, requestName: classificationRequest)
         
         guard (info[.editedImage] as? UIImage) != nil else {
             return

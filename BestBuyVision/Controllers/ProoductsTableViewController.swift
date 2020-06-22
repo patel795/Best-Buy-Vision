@@ -23,7 +23,7 @@ class ProoductsTableViewController: UITableViewController {
         
         tableView.rowHeight = 115
         var formattedProductNames = "*For debugging purposes only* \n"
-        for i in 0...4{
+        for i in 0...1{
             formattedProductNames = formattedProductNames + productNameStrings[i] + "\n"
         }
         productNames.text = "\(formattedProductNames)"
@@ -98,8 +98,7 @@ class ProoductsTableViewController: UITableViewController {
                     }
                     else{
                         //self.removeSpinner()
-                        //self.performSegue(withIdentifier: "segueNoProduct", sender: nil)
-                        completion("Can't find the product.")
+                        //self.performSegue(withIdentifier: "segueNoProduct", sender: nil)//completion("Can't find the product.")
                     }
                 }
                 catch {
