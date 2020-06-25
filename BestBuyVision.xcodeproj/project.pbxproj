@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		2EB1AA34E8954B2E858D343C /* Pods_BestBuyVision_BestBuyVisionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5472AB3CA540F8CF61BCF82B /* Pods_BestBuyVision_BestBuyVisionUITests.framework */; };
 		576DC481245DFDC6002A9926 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576DC480245DFDC6002A9926 /* Utilities.swift */; };
-		577EA4F4247EEBD0006C73C1 /* Capstone_Image_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 577EA4F3247EEBD0006C73C1 /* Capstone_Image_Classifier.mlmodel */; };
-		577EA4F6247EEBE7006C73C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 577EA4F5247EEBE7006C73C1 /* GoogleService-Info.plist */; };
 		577ECCA224537AFB007AB88D /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */; };
 		577ECCA42453C77F007AB88D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577ECCA32453C77F007AB88D /* Product.swift */; };
 		579B8A232462547C008F3C28 /* GoogleReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B8A222462547C008F3C28 /* GoogleReviewViewController.swift */; };
@@ -29,13 +27,15 @@
 		57BA1F0C23FA185400350ADB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0B23FA185400350ADB /* SignupViewController.swift */; };
 		57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */; };
 		57D406BA2470AF850042A7D1 /* MakeToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D406B92470AF850042A7D1 /* MakeToast.swift */; };
-		57EB2AAD249AAC3F0045F841 /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57EB2AAC249AAC3F0045F841 /* First_Stage_Categories_Classifier.mlmodel */; };
-		57EB2AAF249AB2610045F841 /* Laptops.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57EB2AAE249AB2610045F841 /* Laptops.mlmodel */; };
 		7D25AD249D3EB41CD6E0D40D /* Pods_BestBuyVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */; };
 		A055CCFF7B775CD02F9AB81F /* Pods_BestBuyVisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */; };
 		AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
 		AE5C670C245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */; };
 		AE64F12D2472022A00FAD5BF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */; };
+		AE9C0F0024A3DF7100F554C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE9C0EFF24A3DF7000F554C4 /* GoogleService-Info.plist */; };
+		AE9C0F0224A3DF7C00F554C4 /* Laptops.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE9C0F0124A3DF7C00F554C4 /* Laptops.mlmodel */; };
+		AE9C0F0424A3DF8500F554C4 /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE9C0F0324A3DF8500F554C4 /* First_Stage_Categories_Classifier.mlmodel */; };
+		AE9C0F0624A3E13800F554C4 /* makeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9C0F0524A3E13800F554C4 /* makeAlert.swift */; };
 		AEAFA0E524566C9B00931015 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFA0E424566C9B00931015 /* User.swift */; };
 		AEFB8EA924461DA400F89819 /* ProoductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -63,8 +63,6 @@
 		524B65D0BC7D6BFB0010137A /* Pods-BestBuyVision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision.release.xcconfig"; path = "Target Support Files/Pods-BestBuyVision/Pods-BestBuyVision.release.xcconfig"; sourceTree = "<group>"; };
 		5472AB3CA540F8CF61BCF82B /* Pods_BestBuyVision_BestBuyVisionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVision_BestBuyVisionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		576DC480245DFDC6002A9926 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		577EA4F3247EEBD0006C73C1 /* Capstone_Image_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Capstone_Image_Classifier.mlmodel; path = ../../../../Capstone_Image_Classifier.mlmodel; sourceTree = "<group>"; };
-		577EA4F5247EEBE7006C73C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Capstone Project/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		577ECCA32453C77F007AB88D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		579B8A222462547C008F3C28 /* GoogleReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleReviewViewController.swift; sourceTree = "<group>"; };
@@ -89,8 +87,6 @@
 		57BA1F0B23FA185400350ADB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageViewController.swift; sourceTree = "<group>"; };
 		57D406B92470AF850042A7D1 /* MakeToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeToast.swift; sourceTree = "<group>"; };
-		57EB2AAC249AAC3F0045F841 /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
-		57EB2AAE249AB2610045F841 /* Laptops.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Laptops.mlmodel; path = ../../../../Laptops.mlmodel; sourceTree = "<group>"; };
 		5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC19D754A28E20EF1FDA65 /* Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig"; path = "Target Support Files/Pods-BestBuyVision-BestBuyVisionUITests/Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D5AFF8C1FA1A128CC1AC4CC /* Pods-BestBuyVisionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVisionTests.debug.xcconfig"; path = "Target Support Files/Pods-BestBuyVisionTests/Pods-BestBuyVisionTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +94,10 @@
 		AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
 		AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionDetailControllerViewController.swift; sourceTree = "<group>"; };
 		AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		AE9C0EFF24A3DF7000F554C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AE9C0F0124A3DF7C00F554C4 /* Laptops.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Laptops.mlmodel; path = ../../../../Documents/First_Stage_Image_Classifier.mlproj/Models/Laptops.mlmodel; sourceTree = "<group>"; };
+		AE9C0F0324A3DF8500F554C4 /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../Documents/First_Stage_Image_Classifier.mlproj/Models/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
+		AE9C0F0524A3E13800F554C4 /* makeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeAlert.swift; sourceTree = "<group>"; };
 		AEAFA0E424566C9B00931015 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProoductsTableViewController.swift; sourceTree = "<group>"; };
 		F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +153,7 @@
 				57AC72F12454D6E000F23F43 /* SpinnerExtension.swift */,
 				576DC480245DFDC6002A9926 /* Utilities.swift */,
 				57D406B92470AF850042A7D1 /* MakeToast.swift */,
+				AE9C0F0524A3E13800F554C4 /* makeAlert.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -166,10 +167,9 @@
 				57BA1F0B23FA185400350ADB /* SignupViewController.swift */,
 				AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */,
 				577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */,
-				57EB2AAE249AB2610045F841 /* Laptops.mlmodel */,
-				57EB2AAC249AAC3F0045F841 /* First_Stage_Categories_Classifier.mlmodel */,
+				AE9C0F0324A3DF8500F554C4 /* First_Stage_Categories_Classifier.mlmodel */,
+				AE9C0F0124A3DF7C00F554C4 /* Laptops.mlmodel */,
 				AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */,
-				577EA4F3247EEBD0006C73C1 /* Capstone_Image_Classifier.mlmodel */,
 				579B8A222462547C008F3C28 /* GoogleReviewViewController.swift */,
 				AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */,
 			);
@@ -216,8 +216,8 @@
 				57BA1ED323F9995500350ADB /* AppDelegate.swift */,
 				57BA1ED523F9995500350ADB /* SceneDelegate.swift */,
 				57BA1ED923F9995500350ADB /* Main.storyboard */,
+				AE9C0EFF24A3DF7000F554C4 /* GoogleService-Info.plist */,
 				57BA1EDC23F9995800350ADB /* Assets.xcassets */,
-				577EA4F5247EEBE7006C73C1 /* GoogleService-Info.plist */,
 				57BA1EDE23F9995800350ADB /* LaunchScreen.storyboard */,
 				57BA1EE123F9995800350ADB /* Info.plist */,
 			);
@@ -364,7 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BA1EE023F9995800350ADB /* LaunchScreen.storyboard in Resources */,
-				577EA4F6247EEBE7006C73C1 /* GoogleService-Info.plist in Resources */,
+				AE9C0F0024A3DF7100F554C4 /* GoogleService-Info.plist in Resources */,
 				57BA1EDD23F9995800350ADB /* Assets.xcassets in Resources */,
 				57BA1EDB23F9995500350ADB /* Main.storyboard in Resources */,
 			);
@@ -528,16 +528,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57EB2AAF249AB2610045F841 /* Laptops.mlmodel in Sources */,
 				579B8A232462547C008F3C28 /* GoogleReviewViewController.swift in Sources */,
 				57BA1ED823F9995500350ADB /* ViewController.swift in Sources */,
 				57BA1F0C23FA185400350ADB /* SignupViewController.swift in Sources */,
+				AE9C0F0424A3DF8500F554C4 /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */,
 				57BA1F0423FA0BD700350ADB /* UIShadows.swift in Sources */,
 				AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				577ECCA224537AFB007AB88D /* ProductTableViewCell.swift in Sources */,
+				AE9C0F0224A3DF7C00F554C4 /* Laptops.mlmodel in Sources */,
 				57BA1ED423F9995500350ADB /* AppDelegate.swift in Sources */,
-				577EA4F4247EEBD0006C73C1 /* Capstone_Image_Classifier.mlmodel in Sources */,
+				AE9C0F0624A3E13800F554C4 /* makeAlert.swift in Sources */,
 				57BA1F0823FA0CCE00350ADB /* UIViewAndExtension.swift in Sources */,
 				57D406BA2470AF850042A7D1 /* MakeToast.swift in Sources */,
 				AEAFA0E524566C9B00931015 /* User.swift in Sources */,
@@ -547,7 +548,6 @@
 				AE5C670C245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift in Sources */,
 				AE64F12D2472022A00FAD5BF /* ForgotPasswordViewController.swift in Sources */,
 				57AC72F22454D6E000F23F43 /* SpinnerExtension.swift in Sources */,
-				57EB2AAD249AAC3F0045F841 /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */,
 				577ECCA42453C77F007AB88D /* Product.swift in Sources */,
 			);

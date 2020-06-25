@@ -119,7 +119,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 //self.classificationLabel.text = "Nothing recognized."
             } else {
                 // Display top classifications ranked by confidence in the UI.
-                let topClassifications = classifications.prefix(5)
+                let topClassifications = classifications.prefix(3)
                 self.classificationResult = topClassifications.map { classification in
                     // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
                     //classificationResult = classification.identifier
@@ -128,6 +128,12 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 self.biggerimageView.isHidden = false
                 self.imageView.isHidden = true
                 self.removeSpinner()
+                
+                print(self.classificationResult)
+                if(self.classificationResult.contains("Negative Class")){
+                    self.performSegue(withIdentifier: "segueNegativeClass", sender: nil)
+                    return
+                }
                 
                 if(self.counter == 1){
                     self.performSegue(withIdentifier: "segueProducts", sender: AnyObject?.self)
@@ -153,9 +159,14 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                  and replace `MobileNet` with that model's generated Swift class.
                  */
                 
-                let catergoriesDict:[String:AnyObject] = ["Laptops":Laptops().model, "Headphones":Laptops().model]
-                
-                print(type(of:Laptops()))
+                print("Testing")
+                let catergoriesDict:[String:AnyObject] = ["Laptops":Laptops().model, "Headphones":Laptops().model,
+                    "Digital Camera": Laptops().model,
+                    "In Ear Headphones": Laptops().model,
+                    "Mobile Phones": Laptops().model,
+                    "Printers": Laptops().model,
+                    "Tablets": Laptops().model,
+                    "Watches": Laptops().model]
                 
                 let chosenCategory = catergoriesDict[modelName]!
                 
