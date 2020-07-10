@@ -17,6 +17,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
 
     var productNameString = ""
     var classificationResult: Array<String> = Array()
+    var classificationConfidence: Array<Float> = Array()
     var image = UIImage()
     var counter = 0
     let APIKEY = "TWVhgdNpaxCG1GSk4IReKegI"
@@ -119,18 +120,27 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 //self.classificationLabel.text = "Nothing recognized."
             } else {
                 // Display top classifications ranked by confidence in the UI.
-                let topClassifications = classifications.prefix(3)
+                let topClassifications = classifications.prefix(10)
                 self.classificationResult = topClassifications.map { classification in
                     // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
                     //classificationResult = classification.identifier
+                    
                     return String(format: "%@", classification.identifier)
                 }
+                
+                self.classificationConfidence = topClassifications.map { classification in
+                    // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
+                    //classificationResult = classification.identifier
+                    
+                    return classification.confidence as Float
+                    //String(format: "%@", classification.confidence)
+                }
+                
                 self.biggerimageView.isHidden = false
                 self.imageView.isHidden = true
                 self.removeSpinner()
                 
-                print(self.classificationResult)
-                if(self.classificationResult.contains("Negative Class")){
+                if(self.classificationResult.contains("Negative Class") && self.classificationConfidence[ self.classificationResult.index(of: "Negative Class")!] > 0.01){
                     self.performSegue(withIdentifier: "segueNegativeClass", sender: nil)
                     return
                 }
