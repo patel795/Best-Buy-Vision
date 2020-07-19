@@ -19,9 +19,11 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     var classificationResult: Array<String> = Array()
     var classificationConfidence: Array<Float> = Array()
     var image = UIImage()
+    var selectedImageView = UIImageView()
     var counter = 0
     let APIKEY = "TWVhgdNpaxCG1GSk4IReKegI"
 
+    @IBOutlet weak var productLogoImage: UIImageView!
     @IBOutlet weak var uploadImageBtn: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var biggerimageView: UIImageView!
@@ -29,11 +31,6 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         super.viewDidLoad()
         
         uploadImageBtn.layer.cornerRadius = uploadImageBtn.frame.size.height/2
-        //let vc = UIImagePickerController()
-        //vc.sourceType = .camera
-        //vc.allowsEditing = true
-        //vc.delegate = self
-        //present(vc, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +39,17 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         imageView.isHidden = false
         self.tabBarController?.navigationItem.hidesBackButton = true
         setUpNavigationBar()
+    }
+    
+    private func detectBoundingBoxes(for image: UIImage) {
+      GoogleVisionLogoDetector().detect(from: image) { ocrResult in
+        //self.activityIndicator.stopAnimating()
+        guard let ocrResult = ocrResult else {
+          fatalError("Did not recognize any text in this image")
+        }
+        print(ocrResult)
+        self.performSegue(withIdentifier: "segueProducts", sender: AnyObject?.self)
+      }
     }
     
     private func setUpNavigationBar() {
@@ -199,9 +207,13 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         picker.dismiss(animated: true)
 
         image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        self.showSpinner(onView: self.view)
-        biggerimageView.image = image
-        updateClassifications(for: image, requestName: classificationRequest)
+        selectedImageView.image = image
+        //self.showSpinner(onView: self.view)
+        
+        //self.removeSpinner()
+        
+        //detectBoundingBoxes(for: image)
+        //updateClassifications(for: image, requestName: classificationRequest)
         
         guard (info[.editedImage] as? UIImage) != nil else {
             return
@@ -211,11 +223,20 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         print(image.size)
     }
     
+    @IBAction func productLogoBtnClick(_ sender: Any) {
+    }
+    
     @IBAction func searchBtnClick(_ sender: AnyObject?) {
-        //makeApiCall()
-        //print("hello", productsData)
-        //productNameString = productName.text!
-        print(productNameString)
+        
+        selectedImageView = biggerimageView
+        biggerimageView.isHidden = false
+        imageSelector()
+        
+    }
+    
+    // MARK: - Private Functions
+    
+    private func imageSelector(){
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
             presentPhotoPicker(sourceType: .photoLibrary)
             return
@@ -232,9 +253,10 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         photoSourcePicker.addAction(takePhoto)
         photoSourcePicker.addAction(choosePhoto)
         photoSourcePicker.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        present(photoSourcePicker, animated: true)
-        //grabCategories()
+
+        present(photoSourcePicker, animated: true){
+            self.biggerimageView.image = self.image
+        }
     }
     
     // MARK: - Navigation
