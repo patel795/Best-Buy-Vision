@@ -16,18 +16,19 @@ class GoogleVisionLogoDetector {
       return URL(string: "https://vision.googleapis.com/v1/images:annotate?key=\(apiKey)")!
     }
 
-    func detect(from image: UIImage, completion: @escaping (OCRResult?) -> Void) {
+    func detect(from image: UIImage, completion: @escaping (companyName?) -> Void) -> Data{
       guard let base64Image = base64EncodeImage(image) else {
         print("Error while base64 encoding image")
         completion(nil)
-        return
+        return Data.empty
       }
-      callGoogleVisionAPI(with: base64Image, completion: completion)
+      return callGoogleVisionAPI(with: base64Image, completion: completion)
     }
 
     private func callGoogleVisionAPI(
       with base64EncodedImage: String,
-      completion: @escaping (OCRResult?) -> Void) {
+      completion: @escaping (companyName?) -> Void) -> Data {
+        var result:Data = Data.empty
       let parameters: Parameters = [
         "requests": [
           [
@@ -36,7 +37,7 @@ class GoogleVisionLogoDetector {
             ],
             "features": [
               [
-                "type": "WEB_DETECTION"
+                "type": "LOGO_DETECTION"
               ]
             ]
           ]
@@ -57,7 +58,9 @@ class GoogleVisionLogoDetector {
             return
           }
           print(response.result.debugDescription)
+            result = response.data!
       }
+        return result
     }
 
     private func base64EncodeImage(_ image: UIImage) -> String? {

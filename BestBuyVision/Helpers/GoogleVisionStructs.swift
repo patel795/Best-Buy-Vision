@@ -51,7 +51,7 @@ struct Annotation: Codable {
   }
 }
 
-struct OCRResult: Codable {
+struct companyName: Codable {
   let annotations: [Annotation]
   enum CodingKeys: String, CodingKey {
     case annotations = "textAnnotations"
@@ -62,13 +62,13 @@ struct OCRResult: Codable {
   }
 }
 
-struct GoogleCloudOCRResponse: Codable {
-  let responses: [OCRResult]
+struct GoogleCloudResponse: Codable {
+  let responses: [companyName]
   enum CodingKeys: String, CodingKey {
     case responses = "responses"
   }
   init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
-    responses = try container.decode([OCRResult].self, forKey: .responses)
+    responses = try container.decode([companyName].self, forKey: .responses)
   }
 }

@@ -41,15 +41,37 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         setUpNavigationBar()
     }
     
-    private func detectBoundingBoxes(for image: UIImage) {
-      GoogleVisionLogoDetector().detect(from: image) { ocrResult in
-        //self.activityIndicator.stopAnimating()
-        guard let ocrResult = ocrResult else {
-          fatalError("Did not recognize any text in this image")
+    private func companyLogoDetector(for image: UIImage) -> String{
+        var result:Data = Data.empty
+        let group = DispatchGroup()
+        group.enter()
+              result = GoogleVisionLogoDetector().detect(from: image) { companyName in
+                //self.activityIndicator.stopAnimating()
+                guard let companyName = companyName else {
+                  fatalError("Did not recognize any text in this image")
+                }
+                //print(companyName)
+                //self.performSegue(withIdentifier: "segueProducts", sender: AnyObject?.self)
+           }
+        
+        //while(result == Data.empty){
+          //  print("Do nothing")
+        //}
+        
+        if(result != Data.empty){
+            group.leave()
         }
-        print(ocrResult)
-        self.performSegue(withIdentifier: "segueProducts", sender: AnyObject?.self)
-      }
+        group.notify(queue: .main) {
+            // do something here when loop finished
+            do {
+                let json = try JSON(data:result)
+                print(json["SUCCESS"]["responses"]["logoAnnotations"]["description"])
+            } catch {
+                return
+            }
+        }
+
+        return "Incomplete"
     }
     
     private func setUpNavigationBar() {
@@ -144,9 +166,9 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                     //String(format: "%@", classification.confidence)
                 }
                 
-                self.biggerimageView.isHidden = false
-                self.imageView.isHidden = true
-                self.removeSpinner()
+                //self.biggerimageView.isHidden = false
+                //self.imageView.isHidden = true
+                //self.removeSpinner()
                 
                 if(self.classificationResult.contains("Negative Class") && self.classificationConfidence[ self.classificationResult.index(of: "Negative Class")!] > 0.01){
                     self.performSegue(withIdentifier: "segueNegativeClass", sender: nil)
@@ -158,7 +180,8 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 }
                 
                 if(self.counter == 0){
-                    self.secondClassificationRequest(modelName: self.classificationResult[0])
+                    self.companyLogoDetector(for: self.image)
+                    //self.secondClassificationRequest(modelName: self.classificationResult[0])
                 }
                 //print("Classification:\n" + descriptions.joined(separator: "\n"))
                 //self.classificationLabel.text = "Classification:" + descriptions.joined(separator:)()
@@ -213,7 +236,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         //self.removeSpinner()
         
         //detectBoundingBoxes(for: image)
-        //updateClassifications(for: image, requestName: classificationRequest)
+        updateClassifications(for: image, requestName: classificationRequest)
         
         guard (info[.editedImage] as? UIImage) != nil else {
             return
@@ -224,6 +247,9 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     @IBAction func productLogoBtnClick(_ sender: Any) {
+        selectedImageView = productLogoImage
+        productLogoImage.isHidden = false
+        imageSelector()
     }
     
     @IBAction func searchBtnClick(_ sender: AnyObject?) {
