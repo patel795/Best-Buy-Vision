@@ -187,6 +187,12 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.3):
     - BoringSSL-GRPC/Interface (= 0.0.3)
   - BoringSSL-GRPC/Interface (0.0.3)
+  - CardParts (3.1.1):
+    - RxCocoa (~> 5.0)
+    - RxDataSources (~> 4.0)
+    - RxGesture (~> 3.0)
+    - RxSwift (~> 5.0)
+  - Differentiator (4.0.1)
   - FBSDKCoreKit (5.15.1):
     - FBSDKCoreKit/Basics (= 5.15.1)
     - FBSDKCoreKit/Core (= 5.15.1)
@@ -385,6 +391,19 @@ PODS:
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - PromisesObjC (1.2.8)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxGesture (3.0.2):
+    - RxCocoa (~> 5.1)
+    - RxSwift (~> 5.1)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
   - SDWebImage (5.7.0):
     - SDWebImage/Core (= 5.7.0)
   - SDWebImage/Core (5.7.0)
@@ -392,6 +411,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - CardParts
   - Firebase/Analytics
   - Firebase/Core
   - Firebase/Firestore
@@ -411,6 +431,8 @@ SPEC REPOS:
     - AlamofireImage
     - AppAuth
     - BoringSSL-GRPC
+    - CardParts
+    - Differentiator
     - FBSDKCoreKit
     - FBSDKLoginKit
     - Firebase
@@ -439,6 +461,11 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - RxCocoa
+    - RxDataSources
+    - RxGesture
+    - RxRelay
+    - RxSwift
     - SDWebImage
     - SwiftyJSON
 
@@ -449,6 +476,8 @@ SPEC CHECKSUMS:
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   AppAuth: 73574f3013a1e65b9601a3ddc8b3158cce68c09d
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
+  CardParts: fc7fd19ed6ed46c502ba9ee75dba275e721b9895
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   FBSDKCoreKit: 1d5acf7c9d7a2f92bb1a242dc60cae5b7adb91df
   FBSDKLoginKit: f1ea8026a58b52d30c9f2e6a58ca7d813619fb83
   Firebase: f378c80340dd41c0ad0914af740c021eb282a04b
@@ -477,9 +506,14 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SDWebImage: a99471f452bdfa0ca52ddf5b1adf2b61cab1d1eb
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 0c9ba5daab3a3a1a338114f717e8da2d83c0ed1d
+PODFILE CHECKSUM: edfbf4c9facf736b186d2656959a4f7c2a790cb1
 
 COCOAPODS: 1.9.1

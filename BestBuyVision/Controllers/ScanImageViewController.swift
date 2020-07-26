@@ -13,7 +13,7 @@ import CoreML
 import Vision
 import ImageIO
 
-class ScanImageViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class ScanImageViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate {
 
     var productNameString = ""
     var classificationResult: Array<String> = Array()
@@ -22,6 +22,8 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     var selectedImageView = UIImageView()
     var counter = 0
     let APIKEY = "TWVhgdNpaxCG1GSk4IReKegI"
+    var cardUiView = UIView()
+    let cardView = CardsUIView()
 
     @IBOutlet weak var productLogoImage: UIImageView!
     @IBOutlet weak var uploadImageBtn: UIButton!
@@ -30,6 +32,11 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cardUiView = cardView.getChildView()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(clickView(_:)))
+        tapGesture.delegate = self
+        cardUiView.addGestureRecognizer(tapGesture)
         uploadImageBtn.layer.cornerRadius = uploadImageBtn.frame.size.height/2
     }
     
@@ -42,37 +49,19 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     private func companyLogoDetector(for image: UIImage) -> String{
-        var result:Data = Data.empty
-        let group = DispatchGroup()
-        group.enter()
-              result = GoogleVisionLogoDetector().detect(from: image) { companyName in
-                //self.activityIndicator.stopAnimating()
-                guard let companyName = companyName else {
-                  fatalError("Did not recognize any text in this image")
-                }
-                //print(companyName)
-                //self.performSegue(withIdentifier: "segueProducts", sender: AnyObject?.self)
-           }
+        var googleResult:String = ""
         
-        //while(result == Data.empty){
-          //  print("Do nothing")
-        //}
-        
-        if(result != Data.empty){
-            group.leave()
+        GoogleVisionLogoDetector().detect(from: image) { companyName in
+             do {
+                let json = try JSON(data:companyName!)
+                googleResult = json["responses"][0]["logoAnnotations"][0]["description"].stringValue
+             } catch {
+                 return
+             }
         }
-        group.notify(queue: .main) {
-            // do something here when loop finished
-            do {
-                let json = try JSON(data:result)
-                print(json["SUCCESS"]["responses"]["logoAnnotations"]["description"])
-            } catch {
-                return
-            }
-        }
-
-        return "Incomplete"
+        return googleResult
     }
+    
     
     private func setUpNavigationBar() {
         let image = UIImage(named: "Logo2")
@@ -180,7 +169,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 }
                 
                 if(self.counter == 0){
-                    self.companyLogoDetector(for: self.image)
+                    let comapnyName = self.companyLogoDetector(for: self.image)
                     //self.secondClassificationRequest(modelName: self.classificationResult[0])
                 }
                 //print("Classification:\n" + descriptions.joined(separator: "\n"))
@@ -283,6 +272,10 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         present(photoSourcePicker, animated: true){
             self.biggerimageView.image = self.image
         }
+    }
+
+    @objc func clickView(_ sender: UIView) {
+        print("You clicked on view")
     }
     
     // MARK: - Navigation
