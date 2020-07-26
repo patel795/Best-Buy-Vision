@@ -14,6 +14,7 @@ class CardsUIView{
     let verticalStack = UIStackView()
     let childView = UIView()
     let label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 20))
+    var productImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: Double(UIScreen.main.bounds.width) * 0.7, height: Double(200)))
     
     func createSubView(mainView: UIView, headerLabel: String, x_coordinate: Double, y_coordinate: Double) -> UIView{
         
@@ -64,13 +65,19 @@ class CardsUIView{
         return childView
     }
     
-    func changeImageView(productImage: UIImage){
+    func changeImageView(){
         verticalStack.isHidden = true
-        let productImageView = UIImageView(image: productImage)
+        productImageView.contentMode = .scaleAspectFit
+        productImageView.frame = CGRect(x: Double(childView.frame.midX - ((UIScreen.main.bounds.width) * 0.7)/2), y: Double(childView.frame.midY - 100), width: Double(UIScreen.main.bounds.width) * 0.7, height: Double(200))
         childView.addSubview(productImageView)
+        productImageView.isHidden = false
     }
     
     func getChildView() -> UIView{
         return childView
+    }
+    
+    func getProductImageView() -> UIImageView{
+        return productImageView
     }
 }

@@ -24,26 +24,42 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     let APIKEY = "TWVhgdNpaxCG1GSk4IReKegI"
     var cardUiView = UIView()
     let cardView = CardsUIView()
+    let cardViewForProduct = CardsUIView()
+    var productcardUiView = UIView()
 
+    /*
     @IBOutlet weak var productLogoImage: UIImageView!
     @IBOutlet weak var uploadImageBtn: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var biggerimageView: UIImageView!
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         
         cardUiView = cardView.getChildView()
+        productcardUiView = cardViewForProduct.getChildView()
+        
+        let card1 = cardView.createSubView(mainView: view, headerLabel: "Image of the logo", x_coordinate: Double((UIScreen.main.bounds.width - UIScreen.main.bounds.width * 0.9)/2), y_coordinate: Double(100))
+        
+        let card2 = cardViewForProduct.createSubView(mainView: view, headerLabel: "Image of the product", x_coordinate: Double((UIScreen.main.bounds.width - UIScreen.main.bounds.width * 0.9)/2), y_coordinate: Double(350))
+        
+        view.addSubview(card1)
+        view.addSubview(card2)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(clickView(_:)))
         tapGesture.delegate = self
         cardUiView.addGestureRecognizer(tapGesture)
-        uploadImageBtn.layer.cornerRadius = uploadImageBtn.frame.size.height/2
+        
+        let tapGestureForProduct = UITapGestureRecognizer(target: self, action: #selector(clickProductView(_:)))
+        tapGestureForProduct.delegate = self
+        productcardUiView.addGestureRecognizer(tapGestureForProduct)
+        //uploadImageBtn.layer.cornerRadius = uploadImageBtn.frame.size.height/2
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        biggerimageView.isHidden = true
-        imageView.isHidden = false
+        //biggerimageView.isHidden = true
+        //imageView.isHidden = false
         self.tabBarController?.navigationItem.hidesBackButton = true
         setUpNavigationBar()
     }
@@ -235,20 +251,6 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         print(image.size)
     }
     
-    @IBAction func productLogoBtnClick(_ sender: Any) {
-        selectedImageView = productLogoImage
-        productLogoImage.isHidden = false
-        imageSelector()
-    }
-    
-    @IBAction func searchBtnClick(_ sender: AnyObject?) {
-        
-        selectedImageView = biggerimageView
-        biggerimageView.isHidden = false
-        imageSelector()
-        
-    }
-    
     // MARK: - Private Functions
     
     private func imageSelector(){
@@ -270,13 +272,31 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         photoSourcePicker.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
         present(photoSourcePicker, animated: true){
-            self.biggerimageView.image = self.image
+            self.selectedImageView.image = self.image
         }
     }
 
     @objc func clickView(_ sender: UIView) {
+        
+        var imageViewForProduct = cardView.getProductImageView()
+        
+        selectedImageView = imageViewForProduct
+        cardView.changeImageView()
+        imageSelector()
         print("You clicked on view")
     }
+    
+    
+    @objc func clickProductView(_ sender: UIView) {
+        
+        var imageViewForProduct = cardViewForProduct.getProductImageView()
+        
+        selectedImageView = imageViewForProduct
+        cardView.changeImageView()
+        imageSelector()
+        print("You clicked on view")
+    }
+    
     
     // MARK: - Navigation
 
