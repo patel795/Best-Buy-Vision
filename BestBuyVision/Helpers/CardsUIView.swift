@@ -67,9 +67,15 @@ class CardsUIView{
     
     func changeImageView(){
         verticalStack.isHidden = true
-        productImageView.contentMode = .scaleAspectFit
-        productImageView.frame = CGRect(x: Double(childView.frame.midX - ((UIScreen.main.bounds.width) * 0.7)/2), y: Double(childView.frame.midY - 100), width: Double(UIScreen.main.bounds.width) * 0.7, height: Double(200))
         childView.addSubview(productImageView)
+        productImageView.contentMode = .scaleAspectFill
+        productImageView.translatesAutoresizingMaskIntoConstraints = false
+        childView.addConstraint(NSLayoutConstraint(item: productImageView, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: childView, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0))
+        childView.addConstraint(NSLayoutConstraint(item: productImageView, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: childView, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 0))
+        childView.addConstraint(NSLayoutConstraint(item: productImageView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: childView, attribute: NSLayoutConstraint.Attribute.height, multiplier: 1, constant: 0))
+        childView.addConstraint(NSLayoutConstraint(item: productImageView, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: childView, attribute: NSLayoutConstraint.Attribute.width, multiplier: 1, constant: 0))
+        productImageView.layer.cornerRadius = childView.frame.height / 4.0
+        productImageView.clipsToBounds = true
         productImageView.isHidden = false
     }
     

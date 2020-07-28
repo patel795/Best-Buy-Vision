@@ -39,9 +39,9 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         cardUiView = cardView.getChildView()
         productcardUiView = cardViewForProduct.getChildView()
         
-        let card1 = cardView.createSubView(mainView: view, headerLabel: "Image of the logo", x_coordinate: Double((UIScreen.main.bounds.width - UIScreen.main.bounds.width * 0.9)/2), y_coordinate: Double(100))
+        let card1 = cardView.createSubView(mainView: view, headerLabel: "Image of the logo", x_coordinate: Double((UIScreen.main.bounds.width - UIScreen.main.bounds.width * 0.9)/2), y_coordinate: Double(30))
         
-        let card2 = cardViewForProduct.createSubView(mainView: view, headerLabel: "Image of the product", x_coordinate: Double((UIScreen.main.bounds.width - UIScreen.main.bounds.width * 0.9)/2), y_coordinate: Double(350))
+        let card2 = cardViewForProduct.createSubView(mainView: view, headerLabel: "Image of the product", x_coordinate: Double((UIScreen.main.bounds.width - UIScreen.main.bounds.width * 0.9)/2), y_coordinate: Double(270))
         
         view.addSubview(card1)
         view.addSubview(card2)
@@ -292,7 +292,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         var imageViewForProduct = cardViewForProduct.getProductImageView()
         
         selectedImageView = imageViewForProduct
-        cardView.changeImageView()
+        cardViewForProduct.changeImageView()
         imageSelector()
         print("You clicked on view")
     }
