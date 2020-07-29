@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2EB1AA34E8954B2E858D343C /* Pods_BestBuyVision_BestBuyVisionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5472AB3CA540F8CF61BCF82B /* Pods_BestBuyVision_BestBuyVisionUITests.framework */; };
-		5758A91124C8EB2800DA587F /* Laptops.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5758A91024C8EB2800DA587F /* Laptops.mlmodel */; };
-		5758A91324C8EB2D00DA587F /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5758A91224C8EB2D00DA587F /* First_Stage_Categories_Classifier.mlmodel */; };
-		5758A91524C8EB6E00DA587F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5758A91424C8EB6E00DA587F /* GoogleService-Info.plist */; };
 		576DC481245DFDC6002A9926 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576DC480245DFDC6002A9926 /* Utilities.swift */; };
 		57724D4424B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57724D4324B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift */; };
 		57724D4624B80AC100AAEBA6 /* GoogleVisionStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57724D4524B80AC100AAEBA6 /* GoogleVisionStructs.swift */; };
@@ -38,6 +35,18 @@
 		7D25AD249D3EB41CD6E0D40D /* Pods_BestBuyVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */; };
 		A055CCFF7B775CD02F9AB81F /* Pods_BestBuyVisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */; };
 		AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
+		AE3F2ED424D2096F00F88129 /* ClassificationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F2ED324D2096F00F88129 /* ClassificationModels.swift */; };
+		AE3F2ED924D20DC500F88129 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE3F2ED824D20DC400F88129 /* GoogleService-Info.plist */; };
+		AE3F2EDB24D20E1400F88129 /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE3F2EDA24D20E1400F88129 /* First_Stage_Categories_Classifier.mlmodel */; };
+		AE3F2EF824D20F3B00F88129 /* AppleInc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE3F2EEF24D20F3900F88129 /* AppleInc.mlmodel */; };
+		AE3F2EF924D20F3B00F88129 /* Micro-Star International.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE3F2EF024D20F3900F88129 /* Micro-Star International.mlmodel */; };
+		AE3F2EFA24D20F3B00F88129 /* Lenovo.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE3F2EF124D20F3900F88129 /* Lenovo.mlmodel */; };
+		AE3F2EFB24D20F3B00F88129 /* RazerInc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE3F2EF224D20F3900F88129 /* RazerInc.mlmodel */; };
+		AE3F2EFC24D20F3B00F88129 /* Hewlett-Packard.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE3F2EF324D20F3900F88129 /* Hewlett-Packard.mlmodel */; };
+		AE3F2EFD24D20F3B00F88129 /* AcerInc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE3F2EF424D20F3A00F88129 /* AcerInc.mlmodel */; };
+		AE3F2EFE24D20F3B00F88129 /* MicrosoftCorporation.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE3F2EF524D20F3A00F88129 /* MicrosoftCorporation.mlmodel */; };
+		AE3F2EFF24D20F3B00F88129 /* ASUS.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE3F2EF624D20F3A00F88129 /* ASUS.mlmodel */; };
+		AE3F2F0024D20F3B00F88129 /* Dell.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE3F2EF724D20F3B00F88129 /* Dell.mlmodel */; };
 		AE5C670C245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */; };
 		AE64F12D2472022A00FAD5BF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */; };
 		AE9C0F0624A3E13800F554C4 /* makeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9C0F0524A3E13800F554C4 /* makeAlert.swift */; };
@@ -67,9 +76,6 @@
 		382F0C81FE6CB85E2504E797 /* Pods-BestBuyVision-BestBuyVisionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision-BestBuyVisionUITests.debug.xcconfig"; path = "Target Support Files/Pods-BestBuyVision-BestBuyVisionUITests/Pods-BestBuyVision-BestBuyVisionUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		524B65D0BC7D6BFB0010137A /* Pods-BestBuyVision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision.release.xcconfig"; path = "Target Support Files/Pods-BestBuyVision/Pods-BestBuyVision.release.xcconfig"; sourceTree = "<group>"; };
 		5472AB3CA540F8CF61BCF82B /* Pods_BestBuyVision_BestBuyVisionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVision_BestBuyVisionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5758A91024C8EB2800DA587F /* Laptops.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Laptops.mlmodel; path = ../../../../Laptops.mlmodel; sourceTree = "<group>"; };
-		5758A91224C8EB2D00DA587F /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
-		5758A91424C8EB6E00DA587F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Capstone Project/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		576DC480245DFDC6002A9926 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		57724D4324B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionLogoDetector.swift; sourceTree = "<group>"; };
 		57724D4524B80AC100AAEBA6 /* GoogleVisionStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionStructs.swift; sourceTree = "<group>"; };
@@ -105,6 +111,18 @@
 		8D5AFF8C1FA1A128CC1AC4CC /* Pods-BestBuyVisionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVisionTests.debug.xcconfig"; path = "Target Support Files/Pods-BestBuyVisionTests/Pods-BestBuyVisionTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A35EA5A16B20F759BD1C2F23 /* Pods-BestBuyVision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision.debug.xcconfig"; path = "Target Support Files/Pods-BestBuyVision/Pods-BestBuyVision.debug.xcconfig"; sourceTree = "<group>"; };
 		AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
+		AE3F2ED324D2096F00F88129 /* ClassificationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationModels.swift; sourceTree = "<group>"; };
+		AE3F2ED824D20DC400F88129 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AE3F2EDA24D20E1400F88129 /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../Documents/First_Stage_Image_Classifier.mlproj/Models/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
+		AE3F2EEF24D20F3900F88129 /* AppleInc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = AppleInc.mlmodel; path = ../../../../../Documents/ClassificationResults/Laptops/AppleInc.mlmodel; sourceTree = "<group>"; };
+		AE3F2EF024D20F3900F88129 /* Micro-Star International.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "Micro-Star International.mlmodel"; path = "../../../../../Documents/ClassificationResults/Laptops/Micro-Star International.mlmodel"; sourceTree = "<group>"; };
+		AE3F2EF124D20F3900F88129 /* Lenovo.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Lenovo.mlmodel; path = ../../../../../Documents/ClassificationResults/Laptops/Lenovo.mlmodel; sourceTree = "<group>"; };
+		AE3F2EF224D20F3900F88129 /* RazerInc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = RazerInc.mlmodel; path = ../../../../../Documents/ClassificationResults/Laptops/RazerInc.mlmodel; sourceTree = "<group>"; };
+		AE3F2EF324D20F3900F88129 /* Hewlett-Packard.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "Hewlett-Packard.mlmodel"; path = "../../../../../Documents/ClassificationResults/Laptops/Hewlett-Packard.mlmodel"; sourceTree = "<group>"; };
+		AE3F2EF424D20F3A00F88129 /* AcerInc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = AcerInc.mlmodel; path = ../../../../../Documents/ClassificationResults/Laptops/AcerInc.mlmodel; sourceTree = "<group>"; };
+		AE3F2EF524D20F3A00F88129 /* MicrosoftCorporation.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = MicrosoftCorporation.mlmodel; path = ../../../../../Documents/ClassificationResults/Laptops/MicrosoftCorporation.mlmodel; sourceTree = "<group>"; };
+		AE3F2EF624D20F3A00F88129 /* ASUS.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ASUS.mlmodel; path = ../../../../../Documents/ClassificationResults/Laptops/ASUS.mlmodel; sourceTree = "<group>"; };
+		AE3F2EF724D20F3B00F88129 /* Dell.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Dell.mlmodel; path = ../../../../../Documents/ClassificationResults/Laptops/Dell.mlmodel; sourceTree = "<group>"; };
 		AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionDetailControllerViewController.swift; sourceTree = "<group>"; };
 		AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		AE9C0F0524A3E13800F554C4 /* makeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeAlert.swift; sourceTree = "<group>"; };
@@ -168,6 +186,7 @@
 				57724D4524B80AC100AAEBA6 /* GoogleVisionStructs.swift */,
 				57E556FD24CA12B40075A537 /* ProductCard.swift */,
 				57A3069724CA3A90007D84BE /* CardsUIView.swift */,
+				AE3F2ED324D2096F00F88129 /* ClassificationModels.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -180,8 +199,7 @@
 				57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */,
 				57BA1F0B23FA185400350ADB /* SignupViewController.swift */,
 				AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */,
-				5758A91024C8EB2800DA587F /* Laptops.mlmodel */,
-				5758A91224C8EB2D00DA587F /* First_Stage_Categories_Classifier.mlmodel */,
+				AE3F2EDA24D20E1400F88129 /* First_Stage_Categories_Classifier.mlmodel */,
 				577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */,
 				AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */,
 				579B8A222462547C008F3C28 /* GoogleReviewViewController.swift */,
@@ -225,13 +243,14 @@
 		57BA1ED223F9995500350ADB /* BestBuyVision */ = {
 			isa = PBXGroup;
 			children = (
+				AE3F2ED524D209CE00F88129 /* CreateMLModels */,
 				57417838241ABF7800970F60 /* Model */,
 				574178332419E63500970F60 /* Controllers */,
 				574178322419E62D00970F60 /* Helpers */,
 				57BA1ED323F9995500350ADB /* AppDelegate.swift */,
 				57BA1ED523F9995500350ADB /* SceneDelegate.swift */,
-				5758A91424C8EB6E00DA587F /* GoogleService-Info.plist */,
 				57BA1ED923F9995500350ADB /* Main.storyboard */,
+				AE3F2ED824D20DC400F88129 /* GoogleService-Info.plist */,
 				57BA1EDC23F9995800350ADB /* Assets.xcassets */,
 				57BA1EDE23F9995800350ADB /* LaunchScreen.storyboard */,
 				57BA1EE123F9995800350ADB /* Info.plist */,
@@ -265,6 +284,30 @@
 				5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE3F2ED524D209CE00F88129 /* CreateMLModels */ = {
+			isa = PBXGroup;
+			children = (
+				AE3F2EDC24D20E8B00F88129 /* Laptops */,
+			);
+			path = CreateMLModels;
+			sourceTree = "<group>";
+		};
+		AE3F2EDC24D20E8B00F88129 /* Laptops */ = {
+			isa = PBXGroup;
+			children = (
+				AE3F2EF424D20F3A00F88129 /* AcerInc.mlmodel */,
+				AE3F2EEF24D20F3900F88129 /* AppleInc.mlmodel */,
+				AE3F2EF624D20F3A00F88129 /* ASUS.mlmodel */,
+				AE3F2EF724D20F3B00F88129 /* Dell.mlmodel */,
+				AE3F2EF324D20F3900F88129 /* Hewlett-Packard.mlmodel */,
+				AE3F2EF124D20F3900F88129 /* Lenovo.mlmodel */,
+				AE3F2EF024D20F3900F88129 /* Micro-Star International.mlmodel */,
+				AE3F2EF524D20F3A00F88129 /* MicrosoftCorporation.mlmodel */,
+				AE3F2EF224D20F3900F88129 /* RazerInc.mlmodel */,
+			);
+			path = Laptops;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,8 +422,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BA1EE023F9995800350ADB /* LaunchScreen.storyboard in Resources */,
-				5758A91524C8EB6E00DA587F /* GoogleService-Info.plist in Resources */,
 				57BA1EDD23F9995800350ADB /* Assets.xcassets in Resources */,
+				AE3F2ED924D20DC500F88129 /* GoogleService-Info.plist in Resources */,
 				57BA1EDB23F9995500350ADB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,31 +586,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3F2EF824D20F3B00F88129 /* AppleInc.mlmodel in Sources */,
 				579B8A232462547C008F3C28 /* GoogleReviewViewController.swift in Sources */,
+				AE3F2EFB24D20F3B00F88129 /* RazerInc.mlmodel in Sources */,
 				57BA1ED823F9995500350ADB /* ViewController.swift in Sources */,
 				57BA1F0C23FA185400350ADB /* SignupViewController.swift in Sources */,
-				5758A91124C8EB2800DA587F /* Laptops.mlmodel in Sources */,
 				57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */,
 				57BA1F0423FA0BD700350ADB /* UIShadows.swift in Sources */,
+				AE3F2EF924D20F3B00F88129 /* Micro-Star International.mlmodel in Sources */,
 				AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
+				AE3F2F0024D20F3B00F88129 /* Dell.mlmodel in Sources */,
 				577ECCA224537AFB007AB88D /* ProductTableViewCell.swift in Sources */,
 				57A3069824CA3A90007D84BE /* CardsUIView.swift in Sources */,
+				AE3F2ED424D2096F00F88129 /* ClassificationModels.swift in Sources */,
+				AE3F2EDB24D20E1400F88129 /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				57724D4624B80AC100AAEBA6 /* GoogleVisionStructs.swift in Sources */,
 				57C8EB8D24CA055A00667151 /* CardViewController.swift in Sources */,
+				AE3F2EFF24D20F3B00F88129 /* ASUS.mlmodel in Sources */,
+				AE3F2EFC24D20F3B00F88129 /* Hewlett-Packard.mlmodel in Sources */,
+				AE3F2EFD24D20F3B00F88129 /* AcerInc.mlmodel in Sources */,
 				57724D4424B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift in Sources */,
 				57BA1ED423F9995500350ADB /* AppDelegate.swift in Sources */,
 				AE9C0F0624A3E13800F554C4 /* makeAlert.swift in Sources */,
 				57BA1F0823FA0CCE00350ADB /* UIViewAndExtension.swift in Sources */,
 				57D406BA2470AF850042A7D1 /* MakeToast.swift in Sources */,
+				AE3F2EFE24D20F3B00F88129 /* MicrosoftCorporation.mlmodel in Sources */,
 				AEAFA0E524566C9B00931015 /* User.swift in Sources */,
 				576DC481245DFDC6002A9926 /* Utilities.swift in Sources */,
 				57E556FE24CA12B40075A537 /* ProductCard.swift in Sources */,
 				57BA1ED623F9995500350ADB /* SceneDelegate.swift in Sources */,
+				AE3F2EFA24D20F3B00F88129 /* Lenovo.mlmodel in Sources */,
 				AEFB8EA924461DA400F89819 /* ProoductsTableViewController.swift in Sources */,
 				AE5C670C245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift in Sources */,
 				AE64F12D2472022A00FAD5BF /* ForgotPasswordViewController.swift in Sources */,
 				57AC72F22454D6E000F23F43 /* SpinnerExtension.swift in Sources */,
-				5758A91324C8EB2D00DA587F /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */,
 				577ECCA42453C77F007AB88D /* Product.swift in Sources */,
 			);

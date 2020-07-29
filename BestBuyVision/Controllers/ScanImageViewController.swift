@@ -26,6 +26,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     let cardView = CardsUIView()
     let cardViewForProduct = CardsUIView()
     var productcardUiView = UIView()
+    var companylogoName:String = ""
 
     /*
     @IBOutlet weak var productLogoImage: UIImageView!
@@ -185,8 +186,8 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 }
                 
                 if(self.counter == 0){
-                    let comapnyName = self.companyLogoDetector(for: self.image)
-                    //self.secondClassificationRequest(modelName: self.classificationResult[0])
+                    //let comapnyName = self.companyLogoDetector(for: self.image)
+                    self.ThirdClassificationRequest(modelName: self.classificationResult[0])
                 }
                 //print("Classification:\n" + descriptions.joined(separator: "\n"))
                 //self.classificationLabel.text = "Classification:" + descriptions.joined(separator:)()
@@ -194,10 +195,10 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         }
     }
     
-    func secondClassificationRequest(modelName:String){
+    func ThirdClassificationRequest(modelName:String){
         counter = 1
     
-        let secondClassificationRequest: VNCoreMLRequest = {
+        let thirdClassificationRequest: VNCoreMLRequest = {
             do {
                 /*
                  Use the Swift class `MobileNet` Core ML generates from the model.
@@ -206,29 +207,25 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                  */
                 
                 print("Testing")
-                let catergoriesDict:[String:AnyObject] = ["Laptops":Laptops().model, "Headphones":Laptops().model,
-                    "Digital Camera": Laptops().model,
-                    "In Ear Headphones": Laptops().model,
-                    "Mobile Phones": Laptops().model,
-                    "Printers": Laptops().model,
-                    "Tablets": Laptops().model,
-                    "Watches": Laptops().model]
                 
-                let chosenCategory = catergoriesDict[modelName]!
+                        let chosenCategory = Category_Model.categoriesDict[modelName]!
+                        
+                        print(companyName)
+                        let chosenCategoryCompany = chosenCategory[companyName] as AnyObject
+                        
+                        let model = try VNCoreMLModel(for: chosenCategoryCompany as! MLModel)
+                        
+                        let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
+                            self?.processClassifications(for: request, error: error)
+                        })
+                        request.imageCropAndScaleOption = .centerCrop
+                        return request
+                    } catch {
+                        fatalError("Failed to load Vision ML model: \(error)")
+                    }
+                }()
                 
-                let model = try VNCoreMLModel(for: chosenCategory as! MLModel)
-                
-                let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
-                    self?.processClassifications(for: request, error: error)
-                })
-                request.imageCropAndScaleOption = .centerCrop
-                return request
-            } catch {
-                fatalError("Failed to load Vision ML model: \(error)")
-            }
-        }()
-        
-        updateClassifications(for: image, requestName: secondClassificationRequest)
+                updateClassifications(for: image, requestName: thirdClassificationRequest)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -297,6 +294,12 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         print("You clicked on view")
     }
     
+    
+    @IBAction func searchProductClick(_ sender: Any) {
+        let logoImage = self.cardView.getProductImageView().image!
+        self.companylogoName = self.companyLogoDetector(for: logoImage)
+        updateClassifications(for: cardViewForProduct.getProductImageView().image!, requestName: classificationRequest)
+    }
     
     // MARK: - Navigation
 
