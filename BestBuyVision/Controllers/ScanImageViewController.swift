@@ -72,6 +72,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
              do {
                 let json = try JSON(data:companyName!)
                 googleResult = json["responses"][0]["logoAnnotations"][0]["description"].stringValue
+                self.companylogoName = googleResult
              } catch {
                  return
              }
@@ -210,8 +211,8 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 
                         let chosenCategory = Category_Model.categoriesDict[modelName]!
                         
-                        print(companyName)
-                        let chosenCategoryCompany = chosenCategory[companyName] as AnyObject
+                        print(companylogoName)
+                        let chosenCategoryCompany = chosenCategory[companylogoName] as AnyObject
                         
                         let model = try VNCoreMLModel(for: chosenCategoryCompany as! MLModel)
                         
@@ -238,7 +239,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         //self.removeSpinner()
         
         //detectBoundingBoxes(for: image)
-        updateClassifications(for: image, requestName: classificationRequest)
+        //updateClassifications(for: image, requestName: classificationRequest)
         
         guard (info[.editedImage] as? UIImage) != nil else {
             return
@@ -297,8 +298,23 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     
     @IBAction func searchProductClick(_ sender: Any) {
         let logoImage = self.cardView.getProductImageView().image!
-        self.companylogoName = self.companyLogoDetector(for: logoImage)
-        updateClassifications(for: cardViewForProduct.getProductImageView().image!, requestName: classificationRequest)
+        
+        let queue = DispatchQueue(label: "productQueue", attributes: .concurrent)
+        let group = DispatchGroup()
+        
+        queue.async(group: group){
+            self.companyLogoDetector(for: logoImage)
+        }
+        
+        queue.async(group: group){
+            print(self.companylogoName)
+            //self.updateClassifications(for: self.cardViewForProduct.getProductImageView().image!, requestName: self.classificationRequest)
+        }
+        
+        group.notify(queue: queue){
+            print("Successful")
+        }
+        //print(self.companylogoName)
     }
     
     // MARK: - Navigation
