@@ -56,7 +56,7 @@ class GoogleVisionLogoDetector {
             completion(Data.empty)
             return
           }
-          print(response.result.debugDescription)
+          //print(response.result.debugDescription)
             completion(response.data)
       }
     }

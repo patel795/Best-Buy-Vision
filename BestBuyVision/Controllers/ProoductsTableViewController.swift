@@ -52,10 +52,10 @@ class ProoductsTableViewController: UITableViewController {
     private func makeApiCall(productName: String, completion: @escaping (String) -> ()){
         let startingText = "search="
         
-        var productNameForURL = startingText + productName
-        productNameForURL = productNameForURL.trimmingCharacters(in: .whitespacesAndNewlines)
-        productNameForURL = Utilities.replaceSpecialChars(productNameForURL, "")
-        productNameForURL = productNameForURL.replacingOccurrences(of: " ", with: "&search=", options: .literal, range: nil)
+        let productNameForURL = startingText + productName
+        //productNameForURL = productNameForURL.trimmingCharacters(in: .whitespacesAndNewlines)
+        //productNameForURL = Utilities.replaceSpecialChars(productNameForURL, "")
+        //productNameForURL = productNameForURL.replacingOccurrences(of: " ", with: "&search=", options: .literal, range: nil)
         
         guard let URL = URL(string: "https://api.bestbuy.com/v1/products((\(productNameForURL)&active=true))?format=json&show=sku,name,salePrice,bestSellingRank,image,shortDescription&pageSize=100&pageSize=3&page=1&apiKey=\(self.APIKEY)")
         else {

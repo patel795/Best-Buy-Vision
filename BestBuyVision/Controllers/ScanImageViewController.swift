@@ -72,6 +72,11 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
              do {
                 let json = try JSON(data:companyName!)
                 googleResult = json["responses"][0]["logoAnnotations"][0]["description"].stringValue
+                if (googleResult == ""){
+                    makeAlert.showAlert(controller: self, title: "Product Logo Error", message: "Could not find logo name. Please take the image of product logo properly.")
+                    self.companylogoName = "Error"
+                    return
+                }
                 self.companylogoName = googleResult
              } catch {
                  return
@@ -157,7 +162,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 //self.classificationLabel.text = "Nothing recognized."
             } else {
                 // Display top classifications ranked by confidence in the UI.
-                let topClassifications = classifications.prefix(10)
+                let topClassifications = classifications.prefix(5)
                 self.classificationResult = topClassifications.map { classification in
                     // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
                     //classificationResult = classification.identifier
@@ -183,6 +188,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 }
                 
                 if(self.counter == 1){
+                    self.removeSpinner()
                     self.performSegue(withIdentifier: "segueProducts", sender: AnyObject?.self)
                 }
                 
@@ -297,22 +303,30 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     
     
     @IBAction func searchProductClick(_ sender: Any) {
+        if(self.cardView.getProductImageView().image == nil || self.cardViewForProduct.getProductImageView().image == nil){
+            makeAlert.showAlert(controller: self, title: "Image Error", message: "Please select both the images")
+            return
+        }
+        
         let logoImage = self.cardView.getProductImageView().image!
-        
-        let queue = DispatchQueue(label: "productQueue", attributes: .concurrent)
-        let group = DispatchGroup()
-        
-        queue.async(group: group){
+        let productImage = self.cardViewForProduct.getProductImageView().image!
+    
+        self.showSpinner(onView: self.view)
+        let ourOperation = BlockOperation()
+        ourOperation.addExecutionBlock {
             self.companyLogoDetector(for: logoImage)
         }
         
-        queue.async(group: group){
-            print(self.companylogoName)
-            //self.updateClassifications(for: self.cardViewForProduct.getProductImageView().image!, requestName: self.classificationRequest)
-        }
-        
-        group.notify(queue: queue){
-            print("Successful")
+        DispatchQueue.global(qos: .background).async {
+            ourOperation.start()
+            while(self.companylogoName == ""){
+                sleep(1)
+            }
+            if(self.companylogoName == "Error"){
+                self.removeSpinner()
+                return
+            }
+            self.updateClassifications(for: productImage, requestName: self.classificationRequest)
         }
         //print(self.companylogoName)
     }
@@ -325,6 +339,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         // Pass the selected object to the new view controller.
         if segue.identifier == "segueProducts" {
             if let productsTableViewController = segue.destination as? ProoductsTableViewController {
+                print(classificationResult)
                 productsTableViewController.productNameStrings = classificationResult
             }
         }
