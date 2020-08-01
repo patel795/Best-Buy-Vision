@@ -65,7 +65,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         setUpNavigationBar()
     }
     
-    private func companyLogoDetector(for image: UIImage) -> String{
+    private func companyLogoDetector(image: UIImage, completion: @escaping (String?) -> ()){
         var googleResult:String = ""
         
         GoogleVisionLogoDetector().detect(from: image) { companyName in
@@ -74,15 +74,15 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 googleResult = json["responses"][0]["logoAnnotations"][0]["description"].stringValue
                 if (googleResult == ""){
                     makeAlert.showAlert(controller: self, title: "Product Logo Error", message: "Could not find logo name. Please take the image of product logo properly.")
-                    self.companylogoName = "Error"
+                    completion("Error")
                     return
                 }
                 self.companylogoName = googleResult
+                completion(googleResult)
              } catch {
                  return
              }
         }
-        return googleResult
     }
     
     
@@ -312,23 +312,21 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         let productImage = self.cardViewForProduct.getProductImageView().image!
     
         self.showSpinner(onView: self.view)
-        let ourOperation = BlockOperation()
-        ourOperation.addExecutionBlock {
-            self.companyLogoDetector(for: logoImage)
-        }
-        
-        DispatchQueue.global(qos: .background).async {
-            ourOperation.start()
-            while(self.companylogoName == ""){
-                sleep(1)
-            }
-            if(self.companylogoName == "Error"){
+        self.companyLogoDetector(image: logoImage){ googleResult in
+            
+            if(googleResult == "Error"){
                 self.removeSpinner()
                 return
             }
-            self.updateClassifications(for: productImage, requestName: self.classificationRequest)
+            
+            self.companylogoName = googleResult!
+            print(self.companylogoName)
+            self.updateClassifications(for: self.cardViewForProduct.getProductImageView().image!, requestName: self.classificationRequest)
+            
+            self.removeSpinner()
         }
-        //print(self.companylogoName)
+        
+       
     }
     
     // MARK: - Navigation
