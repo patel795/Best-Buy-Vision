@@ -186,15 +186,16 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                     self.performSegue(withIdentifier: "segueNegativeClass", sender: nil)
                     return
                 }
-                
-                if(self.counter == 1){
+                else if(self.counter == 1){
                     self.removeSpinner()
                     self.performSegue(withIdentifier: "segueProducts", sender: AnyObject?.self)
                 }
-                
-                if(self.counter == 0){
-                    //let comapnyName = self.companyLogoDetector(for: self.image)
+                else if(self.counter == 0 && Category_Model.categoriesDict[self.classificationResult[0]]![self.companylogoName] != nil ){
+                    
                     self.ThirdClassificationRequest(modelName: self.classificationResult[0])
+                }
+                else{
+                    makeAlert.showAlert(controller: self, title: "No related product", message: "Could not find the product with the associated company.")
                 }
                 //print("Classification:\n" + descriptions.joined(separator: "\n"))
                 //self.classificationLabel.text = "Classification:" + descriptions.joined(separator:)()
@@ -207,32 +208,23 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     
         let thirdClassificationRequest: VNCoreMLRequest = {
             do {
-                /*
-                 Use the Swift class `MobileNet` Core ML generates from the model.
-                 To use a different Core ML classifier model, add it to the project
-                 and replace `MobileNet` with that model's generated Swift class.
-                 */
+                let chosenCategory = Category_Model.categoriesDict[modelName]!
+                         
+                let chosenCategoryCompany = chosenCategory[companylogoName] as AnyObject
+                 
+                let model = try VNCoreMLModel(for: chosenCategoryCompany as! MLModel)
                 
-                print("Testing")
-                
-                        let chosenCategory = Category_Model.categoriesDict[modelName]!
-                        
-                        print(companylogoName)
-                        let chosenCategoryCompany = chosenCategory[companylogoName] as AnyObject
-                        
-                        let model = try VNCoreMLModel(for: chosenCategoryCompany as! MLModel)
-                        
-                        let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
-                            self?.processClassifications(for: request, error: error)
-                        })
-                        request.imageCropAndScaleOption = .centerCrop
-                        return request
-                    } catch {
-                        fatalError("Failed to load Vision ML model: \(error)")
-                    }
-                }()
-                
-                updateClassifications(for: image, requestName: thirdClassificationRequest)
+                let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
+                    self?.processClassifications(for: request, error: error)
+                })
+                request.imageCropAndScaleOption = .centerCrop
+                return request
+                } catch {
+                    fatalError("Failed to load Vision ML model: \(error)")
+                }
+            }()
+            
+            updateClassifications(for: image, requestName: thirdClassificationRequest)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -287,7 +279,6 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         selectedImageView = imageViewForProduct
         cardView.changeImageView()
         imageSelector()
-        print("You clicked on view")
     }
     
     
@@ -298,7 +289,6 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         selectedImageView = imageViewForProduct
         cardViewForProduct.changeImageView()
         imageSelector()
-        print("You clicked on view")
     }
     
     
@@ -320,8 +310,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
             }
             
             self.companylogoName = googleResult!
-            print(self.companylogoName)
-            self.updateClassifications(for: self.cardViewForProduct.getProductImageView().image!, requestName: self.classificationRequest)
+            self.updateClassifications(for: productImage, requestName: self.classificationRequest)
             
             self.removeSpinner()
         }
