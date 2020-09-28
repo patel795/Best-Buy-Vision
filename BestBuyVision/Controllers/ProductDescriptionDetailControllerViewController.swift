@@ -157,19 +157,16 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
     }
     
     @IBAction func googleReviewBtnClick(_ sender: Any) {
-        performSegue(withIdentifier: "segueGoogleReview", sender: nil)
+        performSegue(withIdentifier: "segueReview", sender: nil)
     }
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueGoogleReview" {
-            if let navController = segue.destination as? UINavigationController {
-                if let chidVC = navController.topViewController as? GoogleReviewViewController {
-                    chidVC.productName = self.products[0].productName
-                }
-            }
+        
+        if let googleReviewController = segue.destination as? GoogleReviewViewController {
+            googleReviewController.productName = self.products[0].productName
         }
     }
 

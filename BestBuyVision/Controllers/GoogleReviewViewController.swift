@@ -11,16 +11,13 @@ import WebKit
 
 class GoogleReviewViewController: UIViewController, WKUIDelegate {
 
-    @IBOutlet weak var googleReviewWebKit: WKWebView!
     var productName = ""
+    let webView = WKWebView()
+    var counter = 0
+    var image = UIImage()
     
-    override func loadView() {
-        let webConfiguration = WKWebViewConfiguration()
-        googleReviewWebKit = WKWebView(frame: .zero, configuration: webConfiguration)
-        googleReviewWebKit.uiDelegate = self
-        view = googleReviewWebKit
-    }
-    
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var productDataName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,16 +25,63 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
         productName = productName.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
         let productURL = URL(string:"https://www.google.com/search?q=\(productName)&tbm=shop")
         
+        print(productName)
+        print(productURL)
         if(productURL != nil){
             let myRequest = URLRequest(url: productURL!)
-            googleReviewWebKit.load(myRequest)
+            webView.frame = CGRect(x:0, y:300, width: 300, height: 300)
+            webView.load(myRequest)
+            view.addSubview(webView)
         }
         else{
             MakeToast.showToast(controller: self, message: "No Product Found", seconds: 2.0)
         }
     }
     
-
+    @IBAction func buttonTrigger(_ sender: Any) {
+        switch counter {
+        case 0:
+            webView.evaluateJavaScript("document.getElementsByClassName('p9MVp')[0].getElementsByTagName('a')[0].getAttribute('href')", completionHandler: {
+                (value, error) in
+                print("Value: \(String(describing: value))")
+                print("Error: \(String(describing: error))")
+            })
+        case 1:
+            webView.evaluateJavaScript("document.getElementsByClassName('p9MVp')[0].getElementsByTagName('a')[0].click();", completionHandler: nil)
+        case 2:
+            webView.evaluateJavaScript("document.getElementsByTagName('html')[0].innerHTML", completionHandler: { (value, error) in
+                //print("Value: \(String(describing: value))")
+                //print("Error: \(String(describing: error))")
+                do {
+                    let productData = try GoogleReviewResponse(value)
+                    self.googleResponseData(productData: productData)
+                } catch {}
+            })
+        case 3:
+            webView.evaluateJavaScript("document.getElementsByClassName('oR27Gd')[0].getElementsByTagName('img')[0].getAttribute('src')", completionHandler: {
+                (value, error) in
+                print("Value: \(String(describing: value))")
+                print("Error: \(String(describing: error))")
+            })
+        default:
+            print("Hello")
+        }
+        counter += 1
+    }
+    
+    private func googleResponseData(productData: GoogleReviewResponse){
+        let url = NSURL(string: productData.googleResponses[0].imageLink)
+        
+        if(url?.absoluteString != ""){
+            let data = NSData(contentsOf : url as! URL)
+            self.image = UIImage(data : data! as Data)!
+        }
+        else{
+            self.image = UIImage(named: "Logo")!;
+        }
+        
+        self.productImage.image = self.image
+    }
     /*
     // MARK: - Navigation
 

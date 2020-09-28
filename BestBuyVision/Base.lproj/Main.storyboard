@@ -477,12 +477,53 @@
                         <outlet property="productName" destination="izo-7l-uUE" id="tjN-af-1TI"/>
                         <outlet property="productPrice" destination="Rva-hm-nIG" id="zc7-tg-05M"/>
                         <outlet property="slideshow" destination="lSp-1A-nPv" id="But-6B-qOq"/>
-                        <segue destination="vFL-iN-tSY" kind="show" identifier="segueGoogleReview" id="qR8-lq-06n"/>
+                        <segue destination="9dp-Dj-BMe" kind="show" identifier="segueReview" id="VgZ-kG-sDR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4G1-WL-HOn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6176.8000000000002" y="-145.56650246305421"/>
+        </scene>
+        <!--Google Review View Controller-->
+        <scene sceneID="WYG-wz-bG3">
+            <objects>
+                <viewController id="9dp-Dj-BMe" customClass="GoogleReviewViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7kR-yc-B6e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hbr-1y-O9t">
+                                <rect key="frame" x="0.0" y="44" width="375" height="223"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ead-k1-Uk2">
+                                <rect key="frame" x="0.0" y="275" width="375" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9J-CU-mfd">
+                                <rect key="frame" x="188" y="60" width="246" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTrigger:" destination="9dp-Dj-BMe" eventType="touchUpInside" id="8CY-hK-iJX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="43i-EV-WNa"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3a3-pJ-fq0"/>
+                    <connections>
+                        <outlet property="productDataName" destination="Ead-k1-Uk2" id="1Xz-Me-Vnu"/>
+                        <outlet property="productImage" destination="Hbr-1y-O9t" id="IQL-zd-KOS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UHf-kT-JsT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7064.8000000000002" y="-177.33990147783251"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="OKz-xE-mBG">
@@ -527,36 +568,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="epC-HH-xX9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6177" y="767"/>
-        </scene>
-        <!--Review-->
-        <scene sceneID="eDv-cS-wF2">
-            <objects>
-                <viewController id="1bf-ki-jYN" customClass="GoogleReviewViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZVf-5F-xnf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tdi-AH-ZOt">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="QGN-BY-dF4"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Review" id="vzG-jP-2fo"/>
-                    <connections>
-                        <outlet property="googleReviewWebKit" destination="Tdi-AH-ZOt" id="VUI-qh-Ujn"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GBQ-Dv-Gkj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="8245.6000000000004" y="-140.39408866995075"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Cla-s1-xz1">
@@ -867,25 +878,6 @@ reset link</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tvt-v4-cfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3045.5999999999999" y="1175.615763546798"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="HlL-oK-Usy">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vFL-iN-tSY" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="sN6-Jq-DId"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uR4-TP-uyx">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="1bf-ki-jYN" kind="relationship" relationship="rootViewController" id="EoV-0X-TLx"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vyY-Nd-Ksy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7303.1999999999998" y="-140.39408866995075"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
