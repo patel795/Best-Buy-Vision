@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2EB1AA34E8954B2E858D343C /* Pods_BestBuyVision_BestBuyVisionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5472AB3CA540F8CF61BCF82B /* Pods_BestBuyVision_BestBuyVisionUITests.framework */; };
+		5749E2ED2523CA440063DB47 /* ApiHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E2EC2523CA440063DB47 /* ApiHandlers.swift */; };
+		5749E2F62523CCB70063DB47 /* OcrTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E2F52523CCB70063DB47 /* OcrTextView.swift */; };
+		5749E2FE2523CCDE0063DB47 /* ScanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E2FD2523CCDE0063DB47 /* ScanButton.swift */; };
+		5749E3032523CD030063DB47 /* ScanImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E3022523CD030063DB47 /* ScanImageView.swift */; };
+		5749E3082523CD2D0063DB47 /* OcrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E3072523CD2D0063DB47 /* OcrViewController.swift */; };
 		576DC481245DFDC6002A9926 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576DC480245DFDC6002A9926 /* Utilities.swift */; };
 		57724D4424B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57724D4324B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift */; };
 		57724D4624B80AC100AAEBA6 /* GoogleVisionStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57724D4524B80AC100AAEBA6 /* GoogleVisionStructs.swift */; };
@@ -51,7 +56,6 @@
 		57D6560525219E1600DDEF5F /* BoseCorporation.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655FC25219E1500DDEF5F /* BoseCorporation.mlmodel */; };
 		57D6560625219E1600DDEF5F /* Jabra.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655FD25219E1600DDEF5F /* Jabra.mlmodel */; };
 		57D6560B25219EB900DDEF5F /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D6560A25219EB900DDEF5F /* First_Stage_Categories_Classifier.mlmodel */; };
-		57E556FE24CA12B40075A537 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E556FD24CA12B40075A537 /* ProductCard.swift */; };
 		7D25AD249D3EB41CD6E0D40D /* Pods_BestBuyVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */; };
 		A055CCFF7B775CD02F9AB81F /* Pods_BestBuyVisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */; };
 		AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
@@ -87,6 +91,11 @@
 		382F0C81FE6CB85E2504E797 /* Pods-BestBuyVision-BestBuyVisionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision-BestBuyVisionUITests.debug.xcconfig"; path = "Target Support Files/Pods-BestBuyVision-BestBuyVisionUITests/Pods-BestBuyVision-BestBuyVisionUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		524B65D0BC7D6BFB0010137A /* Pods-BestBuyVision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision.release.xcconfig"; path = "Target Support Files/Pods-BestBuyVision/Pods-BestBuyVision.release.xcconfig"; sourceTree = "<group>"; };
 		5472AB3CA540F8CF61BCF82B /* Pods_BestBuyVision_BestBuyVisionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVision_BestBuyVisionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5749E2EC2523CA440063DB47 /* ApiHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandlers.swift; sourceTree = "<group>"; };
+		5749E2F52523CCB70063DB47 /* OcrTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcrTextView.swift; sourceTree = "<group>"; };
+		5749E2FD2523CCDE0063DB47 /* ScanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanButton.swift; sourceTree = "<group>"; };
+		5749E3022523CD030063DB47 /* ScanImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageView.swift; sourceTree = "<group>"; };
+		5749E3072523CD2D0063DB47 /* OcrViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcrViewController.swift; sourceTree = "<group>"; };
 		576DC480245DFDC6002A9926 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		57724D4324B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionLogoDetector.swift; sourceTree = "<group>"; };
 		57724D4524B80AC100AAEBA6 /* GoogleVisionStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionStructs.swift; sourceTree = "<group>"; };
@@ -136,7 +145,6 @@
 		57D655FC25219E1500DDEF5F /* BoseCorporation.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BoseCorporation.mlmodel; sourceTree = "<group>"; };
 		57D655FD25219E1600DDEF5F /* Jabra.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Jabra.mlmodel; sourceTree = "<group>"; };
 		57D6560A25219EB900DDEF5F /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = "../../../../Capstone Project/First_Stage_Categories_Classifier.mlmodel"; sourceTree = "<group>"; };
-		57E556FD24CA12B40075A537 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC19D754A28E20EF1FDA65 /* Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig"; path = "Target Support Files/Pods-BestBuyVision-BestBuyVisionUITests/Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D5AFF8C1FA1A128CC1AC4CC /* Pods-BestBuyVisionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVisionTests.debug.xcconfig"; path = "Target Support Files/Pods-BestBuyVisionTests/Pods-BestBuyVisionTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -206,9 +214,9 @@
 				AE9C0F0524A3E13800F554C4 /* makeAlert.swift */,
 				57724D4324B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift */,
 				57724D4524B80AC100AAEBA6 /* GoogleVisionStructs.swift */,
-				57E556FD24CA12B40075A537 /* ProductCard.swift */,
 				57A3069724CA3A90007D84BE /* CardsUIView.swift */,
 				AE3F2ED324D2096F00F88129 /* ClassificationModels.swift */,
+				5749E2EC2523CA440063DB47 /* ApiHandlers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -228,6 +236,7 @@
 				579B8A222462547C008F3C28 /* GoogleReviewViewController.swift */,
 				AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */,
 				57C8EB8C24CA055A00667151 /* CardViewController.swift */,
+				5749E3072523CD2D0063DB47 /* OcrViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -240,6 +249,16 @@
 				AE5D4A37252189260020D855 /* GoogleModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5749E2F42523CC9E0063DB47 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5749E2F52523CCB70063DB47 /* OcrTextView.swift */,
+				5749E2FD2523CCDE0063DB47 /* ScanButton.swift */,
+				5749E3022523CD030063DB47 /* ScanImageView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		57B243E424D72E9E009F4513 /* Headphones */ = {
@@ -283,6 +302,7 @@
 		57BA1ED223F9995500350ADB /* BestBuyVision */ = {
 			isa = PBXGroup;
 			children = (
+				5749E2F42523CC9E0063DB47 /* Components */,
 				AE3F2ED524D209CE00F88129 /* CreateMLModels */,
 				57417838241ABF7800970F60 /* Model */,
 				574178332419E63500970F60 /* Controllers */,
@@ -634,6 +654,7 @@
 				579B8A232462547C008F3C28 /* GoogleReviewViewController.swift in Sources */,
 				57D655ED25219E0000DDEF5F /* AcerInc.mlmodel in Sources */,
 				57BA1ED823F9995500350ADB /* ViewController.swift in Sources */,
+				5749E2ED2523CA440063DB47 /* ApiHandlers.swift in Sources */,
 				57D655FE25219E1600DDEF5F /* JBL.mlmodel in Sources */,
 				57D655EE25219E0000DDEF5F /* Hewlett-Packard.mlmodel in Sources */,
 				57BA1F0C23FA185400350ADB /* SignupViewController.swift in Sources */,
@@ -642,6 +663,7 @@
 				AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				57D6560325219E1600DDEF5F /* BangAndOlufsen.mlmodel in Sources */,
 				57D655F025219E0000DDEF5F /* Lenovo.mlmodel in Sources */,
+				5749E2F62523CCB70063DB47 /* OcrTextView.swift in Sources */,
 				577ECCA224537AFB007AB88D /* ProductTableViewCell.swift in Sources */,
 				57A3069824CA3A90007D84BE /* CardsUIView.swift in Sources */,
 				AE3F2ED424D2096F00F88129 /* ClassificationModels.swift in Sources */,
@@ -658,9 +680,9 @@
 				57BA1F0823FA0CCE00350ADB /* UIViewAndExtension.swift in Sources */,
 				57D406BA2470AF850042A7D1 /* MakeToast.swift in Sources */,
 				57D655EB25219E0000DDEF5F /* AppleInc.mlmodel in Sources */,
+				5749E3032523CD030063DB47 /* ScanImageView.swift in Sources */,
 				AEAFA0E524566C9B00931015 /* User.swift in Sources */,
 				576DC481245DFDC6002A9926 /* Utilities.swift in Sources */,
-				57E556FE24CA12B40075A537 /* ProductCard.swift in Sources */,
 				57BA1ED623F9995500350ADB /* SceneDelegate.swift in Sources */,
 				57D655E525219DFB00DDEF5F /* MicrosoftCorporation.mlmodel in Sources */,
 				AEFB8EA924461DA400F89819 /* ProoductsTableViewController.swift in Sources */,
@@ -668,9 +690,11 @@
 				AE5C670C245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift in Sources */,
 				AE64F12D2472022A00FAD5BF /* ForgotPasswordViewController.swift in Sources */,
 				57D6560125219E1600DDEF5F /* Sony.mlmodel in Sources */,
+				5749E3082523CD2D0063DB47 /* OcrViewController.swift in Sources */,
 				57AC72F22454D6E000F23F43 /* SpinnerExtension.swift in Sources */,
 				57D6560625219E1600DDEF5F /* Jabra.mlmodel in Sources */,
 				57D6560525219E1600DDEF5F /* BoseCorporation.mlmodel in Sources */,
+				5749E2FE2523CCDE0063DB47 /* ScanButton.swift in Sources */,
 				57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */,
 				577ECCA42453C77F007AB88D /* Product.swift in Sources */,
 				57D655F125219E0000DDEF5F /* Dell.mlmodel in Sources */,
