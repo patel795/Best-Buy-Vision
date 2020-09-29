@@ -31,32 +31,32 @@
 		57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */; };
 		57C8EB8D24CA055A00667151 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C8EB8C24CA055A00667151 /* CardViewController.swift */; };
 		57D406BA2470AF850042A7D1 /* MakeToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D406B92470AF850042A7D1 /* MakeToast.swift */; };
+		57D655D925219D9C00DDEF5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57D655D825219D9C00DDEF5F /* GoogleService-Info.plist */; };
+		57D655E425219DFB00DDEF5F /* RazerInc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655E125219DF900DDEF5F /* RazerInc.mlmodel */; };
+		57D655E525219DFB00DDEF5F /* MicrosoftCorporation.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655E325219DFB00DDEF5F /* MicrosoftCorporation.mlmodel */; };
+		57D655EB25219E0000DDEF5F /* AppleInc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655DD25219DF100DDEF5F /* AppleInc.mlmodel */; };
+		57D655EC25219E0000DDEF5F /* ASUS.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655DE25219DF200DDEF5F /* ASUS.mlmodel */; };
+		57D655ED25219E0000DDEF5F /* AcerInc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655DF25219DF400DDEF5F /* AcerInc.mlmodel */; };
+		57D655EE25219E0000DDEF5F /* Hewlett-Packard.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655E025219DF600DDEF5F /* Hewlett-Packard.mlmodel */; };
+		57D655EF25219E0000DDEF5F /* Micro-Star International.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655E225219DFA00DDEF5F /* Micro-Star International.mlmodel */; };
+		57D655F025219E0000DDEF5F /* Lenovo.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655E925219DFE00DDEF5F /* Lenovo.mlmodel */; };
+		57D655F125219E0000DDEF5F /* Dell.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655EA25219E0000DDEF5F /* Dell.mlmodel */; };
+		57D655FE25219E1600DDEF5F /* JBL.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655F225219E0400DDEF5F /* JBL.mlmodel */; };
+		57D655FF25219E1600DDEF5F /* AudioTechinca.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655F325219E0700DDEF5F /* AudioTechinca.mlmodel */; };
+		57D6560025219E1600DDEF5F /* Sennheiser.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655F425219E0900DDEF5F /* Sennheiser.mlmodel */; };
+		57D6560125219E1600DDEF5F /* Sony.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655F525219E0B00DDEF5F /* Sony.mlmodel */; };
+		57D6560225219E1600DDEF5F /* BeatsElectronics.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655F625219E0E00DDEF5F /* BeatsElectronics.mlmodel */; };
+		57D6560325219E1600DDEF5F /* BangAndOlufsen.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655FA25219E1000DDEF5F /* BangAndOlufsen.mlmodel */; };
+		57D6560425219E1600DDEF5F /* Insignia.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655FB25219E1300DDEF5F /* Insignia.mlmodel */; };
+		57D6560525219E1600DDEF5F /* BoseCorporation.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655FC25219E1500DDEF5F /* BoseCorporation.mlmodel */; };
+		57D6560625219E1600DDEF5F /* Jabra.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D655FD25219E1600DDEF5F /* Jabra.mlmodel */; };
+		57D6560B25219EB900DDEF5F /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D6560A25219EB900DDEF5F /* First_Stage_Categories_Classifier.mlmodel */; };
 		57E556FE24CA12B40075A537 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E556FD24CA12B40075A537 /* ProductCard.swift */; };
 		7D25AD249D3EB41CD6E0D40D /* Pods_BestBuyVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */; };
 		A055CCFF7B775CD02F9AB81F /* Pods_BestBuyVisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */; };
 		AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
 		AE3F2ED424D2096F00F88129 /* ClassificationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F2ED324D2096F00F88129 /* ClassificationModels.swift */; };
 		AE5C670C245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */; };
-		AE5D4A16251D743D0020D855 /* Insignia.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A0D251D743A0020D855 /* Insignia.mlmodel */; };
-		AE5D4A17251D743D0020D855 /* BeatsElectronics.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A0E251D743A0020D855 /* BeatsElectronics.mlmodel */; };
-		AE5D4A18251D743D0020D855 /* BangAndOlufsen.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A0F251D743B0020D855 /* BangAndOlufsen.mlmodel */; };
-		AE5D4A19251D743D0020D855 /* Sennheiser.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A10251D743B0020D855 /* Sennheiser.mlmodel */; };
-		AE5D4A1A251D743D0020D855 /* Sony.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A11251D743B0020D855 /* Sony.mlmodel */; };
-		AE5D4A1B251D743D0020D855 /* Jabra.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A12251D743C0020D855 /* Jabra.mlmodel */; };
-		AE5D4A1C251D743D0020D855 /* JBL.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A13251D743C0020D855 /* JBL.mlmodel */; };
-		AE5D4A1D251D743D0020D855 /* AudioTechinca.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A14251D743C0020D855 /* AudioTechinca.mlmodel */; };
-		AE5D4A1E251D743D0020D855 /* BoseCorporation.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A15251D743D0020D855 /* BoseCorporation.mlmodel */; };
-		AE5D4A28251D744C0020D855 /* AppleInc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A1F251D744A0020D855 /* AppleInc.mlmodel */; };
-		AE5D4A29251D744C0020D855 /* Hewlett-Packard.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A20251D744A0020D855 /* Hewlett-Packard.mlmodel */; };
-		AE5D4A2A251D744C0020D855 /* Micro-Star International.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A21251D744A0020D855 /* Micro-Star International.mlmodel */; };
-		AE5D4A2B251D744C0020D855 /* AcerInc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A22251D744A0020D855 /* AcerInc.mlmodel */; };
-		AE5D4A2C251D744C0020D855 /* ASUS.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A23251D744B0020D855 /* ASUS.mlmodel */; };
-		AE5D4A2D251D744C0020D855 /* RazerInc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A24251D744B0020D855 /* RazerInc.mlmodel */; };
-		AE5D4A2E251D744C0020D855 /* Lenovo.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A25251D744B0020D855 /* Lenovo.mlmodel */; };
-		AE5D4A2F251D744C0020D855 /* MicrosoftCorporation.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A26251D744B0020D855 /* MicrosoftCorporation.mlmodel */; };
-		AE5D4A30251D744C0020D855 /* Dell.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A27251D744C0020D855 /* Dell.mlmodel */; };
-		AE5D4A32251D746E0020D855 /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A31251D746E0020D855 /* First_Stage_Categories_Classifier.mlmodel */; };
-		AE5D4A34251D747B0020D855 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE5D4A33251D747B0020D855 /* GoogleService-Info.plist */; };
 		AE5D4A36251D98FD0020D855 /* GoogleReviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */; };
 		AE5D4A38252189260020D855 /* GoogleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A37252189260020D855 /* GoogleModel.swift */; };
 		AE64F12D2472022A00FAD5BF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */; };
@@ -116,6 +116,26 @@
 		57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageViewController.swift; sourceTree = "<group>"; };
 		57C8EB8C24CA055A00667151 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		57D406B92470AF850042A7D1 /* MakeToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeToast.swift; sourceTree = "<group>"; };
+		57D655D825219D9C00DDEF5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		57D655DD25219DF100DDEF5F /* AppleInc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AppleInc.mlmodel; sourceTree = "<group>"; };
+		57D655DE25219DF200DDEF5F /* ASUS.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ASUS.mlmodel; sourceTree = "<group>"; };
+		57D655DF25219DF400DDEF5F /* AcerInc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AcerInc.mlmodel; sourceTree = "<group>"; };
+		57D655E025219DF600DDEF5F /* Hewlett-Packard.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "Hewlett-Packard.mlmodel"; sourceTree = "<group>"; };
+		57D655E125219DF900DDEF5F /* RazerInc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = RazerInc.mlmodel; sourceTree = "<group>"; };
+		57D655E225219DFA00DDEF5F /* Micro-Star International.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "Micro-Star International.mlmodel"; sourceTree = "<group>"; };
+		57D655E325219DFB00DDEF5F /* MicrosoftCorporation.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MicrosoftCorporation.mlmodel; sourceTree = "<group>"; };
+		57D655E925219DFE00DDEF5F /* Lenovo.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Lenovo.mlmodel; sourceTree = "<group>"; };
+		57D655EA25219E0000DDEF5F /* Dell.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Dell.mlmodel; sourceTree = "<group>"; };
+		57D655F225219E0400DDEF5F /* JBL.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = JBL.mlmodel; sourceTree = "<group>"; };
+		57D655F325219E0700DDEF5F /* AudioTechinca.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AudioTechinca.mlmodel; sourceTree = "<group>"; };
+		57D655F425219E0900DDEF5F /* Sennheiser.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Sennheiser.mlmodel; sourceTree = "<group>"; };
+		57D655F525219E0B00DDEF5F /* Sony.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Sony.mlmodel; sourceTree = "<group>"; };
+		57D655F625219E0E00DDEF5F /* BeatsElectronics.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BeatsElectronics.mlmodel; sourceTree = "<group>"; };
+		57D655FA25219E1000DDEF5F /* BangAndOlufsen.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BangAndOlufsen.mlmodel; sourceTree = "<group>"; };
+		57D655FB25219E1300DDEF5F /* Insignia.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Insignia.mlmodel; sourceTree = "<group>"; };
+		57D655FC25219E1500DDEF5F /* BoseCorporation.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BoseCorporation.mlmodel; sourceTree = "<group>"; };
+		57D655FD25219E1600DDEF5F /* Jabra.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Jabra.mlmodel; sourceTree = "<group>"; };
+		57D6560A25219EB900DDEF5F /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = "../../../../Capstone Project/First_Stage_Categories_Classifier.mlmodel"; sourceTree = "<group>"; };
 		57E556FD24CA12B40075A537 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC19D754A28E20EF1FDA65 /* Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig"; path = "Target Support Files/Pods-BestBuyVision-BestBuyVisionUITests/Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,26 +144,6 @@
 		AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
 		AE3F2ED324D2096F00F88129 /* ClassificationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationModels.swift; sourceTree = "<group>"; };
 		AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionDetailControllerViewController.swift; sourceTree = "<group>"; };
-		AE5D4A0D251D743A0020D855 /* Insignia.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Insignia.mlmodel; path = ../../../../../Documents/ClassificationResults/Headphones/Insignia.mlmodel; sourceTree = "<group>"; };
-		AE5D4A0E251D743A0020D855 /* BeatsElectronics.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = BeatsElectronics.mlmodel; path = ../../../../../Documents/ClassificationResults/Headphones/BeatsElectronics.mlmodel; sourceTree = "<group>"; };
-		AE5D4A0F251D743B0020D855 /* BangAndOlufsen.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = BangAndOlufsen.mlmodel; path = ../../../../../Documents/ClassificationResults/Headphones/BangAndOlufsen.mlmodel; sourceTree = "<group>"; };
-		AE5D4A10251D743B0020D855 /* Sennheiser.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Sennheiser.mlmodel; path = ../../../../../Documents/ClassificationResults/Headphones/Sennheiser.mlmodel; sourceTree = "<group>"; };
-		AE5D4A11251D743B0020D855 /* Sony.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Sony.mlmodel; path = ../../../../../Documents/ClassificationResults/Headphones/Sony.mlmodel; sourceTree = "<group>"; };
-		AE5D4A12251D743C0020D855 /* Jabra.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Jabra.mlmodel; path = ../../../../../Documents/ClassificationResults/Headphones/Jabra.mlmodel; sourceTree = "<group>"; };
-		AE5D4A13251D743C0020D855 /* JBL.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = JBL.mlmodel; path = ../../../../../Documents/ClassificationResults/Headphones/JBL.mlmodel; sourceTree = "<group>"; };
-		AE5D4A14251D743C0020D855 /* AudioTechinca.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = AudioTechinca.mlmodel; path = ../../../../../Documents/ClassificationResults/Headphones/AudioTechinca.mlmodel; sourceTree = "<group>"; };
-		AE5D4A15251D743D0020D855 /* BoseCorporation.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = BoseCorporation.mlmodel; path = ../../../../../Documents/ClassificationResults/Headphones/BoseCorporation.mlmodel; sourceTree = "<group>"; };
-		AE5D4A1F251D744A0020D855 /* AppleInc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = AppleInc.mlmodel; path = ../../../../../Documents/ClassificationResults/Laptops/AppleInc.mlmodel; sourceTree = "<group>"; };
-		AE5D4A20251D744A0020D855 /* Hewlett-Packard.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "Hewlett-Packard.mlmodel"; path = "../../../../../Documents/ClassificationResults/Laptops/Hewlett-Packard.mlmodel"; sourceTree = "<group>"; };
-		AE5D4A21251D744A0020D855 /* Micro-Star International.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "Micro-Star International.mlmodel"; path = "../../../../../Documents/ClassificationResults/Laptops/Micro-Star International.mlmodel"; sourceTree = "<group>"; };
-		AE5D4A22251D744A0020D855 /* AcerInc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = AcerInc.mlmodel; path = ../../../../../Documents/ClassificationResults/Laptops/AcerInc.mlmodel; sourceTree = "<group>"; };
-		AE5D4A23251D744B0020D855 /* ASUS.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ASUS.mlmodel; path = ../../../../../Documents/ClassificationResults/Laptops/ASUS.mlmodel; sourceTree = "<group>"; };
-		AE5D4A24251D744B0020D855 /* RazerInc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = RazerInc.mlmodel; path = ../../../../../Documents/ClassificationResults/Laptops/RazerInc.mlmodel; sourceTree = "<group>"; };
-		AE5D4A25251D744B0020D855 /* Lenovo.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Lenovo.mlmodel; path = ../../../../../Documents/ClassificationResults/Laptops/Lenovo.mlmodel; sourceTree = "<group>"; };
-		AE5D4A26251D744B0020D855 /* MicrosoftCorporation.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = MicrosoftCorporation.mlmodel; path = ../../../../../Documents/ClassificationResults/Laptops/MicrosoftCorporation.mlmodel; sourceTree = "<group>"; };
-		AE5D4A27251D744C0020D855 /* Dell.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Dell.mlmodel; path = ../../../../../Documents/ClassificationResults/Laptops/Dell.mlmodel; sourceTree = "<group>"; };
-		AE5D4A31251D746E0020D855 /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../Documents/First_Stage_Image_Classifier.mlproj/Models/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
-		AE5D4A33251D747B0020D855 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleReviewResponse.swift; sourceTree = "<group>"; };
 		AE5D4A37252189260020D855 /* GoogleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleModel.swift; sourceTree = "<group>"; };
 		AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -221,7 +221,7 @@
 				57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */,
 				57BA1F0B23FA185400350ADB /* SignupViewController.swift */,
 				AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */,
-				AE5D4A31251D746E0020D855 /* First_Stage_Categories_Classifier.mlmodel */,
+				57D6560A25219EB900DDEF5F /* First_Stage_Categories_Classifier.mlmodel */,
 				577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */,
 				AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */,
 				AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */,
@@ -245,15 +245,15 @@
 		57B243E424D72E9E009F4513 /* Headphones */ = {
 			isa = PBXGroup;
 			children = (
-				AE5D4A14251D743C0020D855 /* AudioTechinca.mlmodel */,
-				AE5D4A0F251D743B0020D855 /* BangAndOlufsen.mlmodel */,
-				AE5D4A0E251D743A0020D855 /* BeatsElectronics.mlmodel */,
-				AE5D4A15251D743D0020D855 /* BoseCorporation.mlmodel */,
-				AE5D4A0D251D743A0020D855 /* Insignia.mlmodel */,
-				AE5D4A12251D743C0020D855 /* Jabra.mlmodel */,
-				AE5D4A13251D743C0020D855 /* JBL.mlmodel */,
-				AE5D4A10251D743B0020D855 /* Sennheiser.mlmodel */,
-				AE5D4A11251D743B0020D855 /* Sony.mlmodel */,
+				57D655F325219E0700DDEF5F /* AudioTechinca.mlmodel */,
+				57D655FA25219E1000DDEF5F /* BangAndOlufsen.mlmodel */,
+				57D655F625219E0E00DDEF5F /* BeatsElectronics.mlmodel */,
+				57D655FC25219E1500DDEF5F /* BoseCorporation.mlmodel */,
+				57D655FB25219E1300DDEF5F /* Insignia.mlmodel */,
+				57D655FD25219E1600DDEF5F /* Jabra.mlmodel */,
+				57D655F225219E0400DDEF5F /* JBL.mlmodel */,
+				57D655F425219E0900DDEF5F /* Sennheiser.mlmodel */,
+				57D655F525219E0B00DDEF5F /* Sony.mlmodel */,
 			);
 			path = Headphones;
 			sourceTree = "<group>";
@@ -289,8 +289,8 @@
 				574178322419E62D00970F60 /* Helpers */,
 				57BA1ED323F9995500350ADB /* AppDelegate.swift */,
 				57BA1ED523F9995500350ADB /* SceneDelegate.swift */,
+				57D655D825219D9C00DDEF5F /* GoogleService-Info.plist */,
 				57BA1ED923F9995500350ADB /* Main.storyboard */,
-				AE5D4A33251D747B0020D855 /* GoogleService-Info.plist */,
 				57BA1EDC23F9995800350ADB /* Assets.xcassets */,
 				57BA1EDE23F9995800350ADB /* LaunchScreen.storyboard */,
 				57BA1EE123F9995800350ADB /* Info.plist */,
@@ -338,15 +338,15 @@
 		AE3F2EDC24D20E8B00F88129 /* Laptops */ = {
 			isa = PBXGroup;
 			children = (
-				AE5D4A22251D744A0020D855 /* AcerInc.mlmodel */,
-				AE5D4A1F251D744A0020D855 /* AppleInc.mlmodel */,
-				AE5D4A23251D744B0020D855 /* ASUS.mlmodel */,
-				AE5D4A27251D744C0020D855 /* Dell.mlmodel */,
-				AE5D4A20251D744A0020D855 /* Hewlett-Packard.mlmodel */,
-				AE5D4A25251D744B0020D855 /* Lenovo.mlmodel */,
-				AE5D4A21251D744A0020D855 /* Micro-Star International.mlmodel */,
-				AE5D4A26251D744B0020D855 /* MicrosoftCorporation.mlmodel */,
-				AE5D4A24251D744B0020D855 /* RazerInc.mlmodel */,
+				57D655DF25219DF400DDEF5F /* AcerInc.mlmodel */,
+				57D655DD25219DF100DDEF5F /* AppleInc.mlmodel */,
+				57D655E325219DFB00DDEF5F /* MicrosoftCorporation.mlmodel */,
+				57D655E125219DF900DDEF5F /* RazerInc.mlmodel */,
+				57D655DE25219DF200DDEF5F /* ASUS.mlmodel */,
+				57D655EA25219E0000DDEF5F /* Dell.mlmodel */,
+				57D655E025219DF600DDEF5F /* Hewlett-Packard.mlmodel */,
+				57D655E925219DFE00DDEF5F /* Lenovo.mlmodel */,
+				57D655E225219DFA00DDEF5F /* Micro-Star International.mlmodel */,
 			);
 			path = Laptops;
 			sourceTree = "<group>";
@@ -463,7 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BA1EE023F9995800350ADB /* LaunchScreen.storyboard in Resources */,
-				AE5D4A34251D747B0020D855 /* GoogleService-Info.plist in Resources */,
+				57D655D925219D9C00DDEF5F /* GoogleService-Info.plist in Resources */,
 				57BA1EDD23F9995800350ADB /* Assets.xcassets in Resources */,
 				57BA1EDB23F9995500350ADB /* Main.storyboard in Resources */,
 			);
@@ -627,53 +627,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE5D4A32251D746E0020D855 /* First_Stage_Categories_Classifier.mlmodel in Sources */,
+				57D6560425219E1600DDEF5F /* Insignia.mlmodel in Sources */,
+				57D6560025219E1600DDEF5F /* Sennheiser.mlmodel in Sources */,
 				AE5D4A36251D98FD0020D855 /* GoogleReviewResponse.swift in Sources */,
-				AE5D4A2C251D744C0020D855 /* ASUS.mlmodel in Sources */,
+				57D655EC25219E0000DDEF5F /* ASUS.mlmodel in Sources */,
 				579B8A232462547C008F3C28 /* GoogleReviewViewController.swift in Sources */,
+				57D655ED25219E0000DDEF5F /* AcerInc.mlmodel in Sources */,
 				57BA1ED823F9995500350ADB /* ViewController.swift in Sources */,
-				AE5D4A1A251D743D0020D855 /* Sony.mlmodel in Sources */,
+				57D655FE25219E1600DDEF5F /* JBL.mlmodel in Sources */,
+				57D655EE25219E0000DDEF5F /* Hewlett-Packard.mlmodel in Sources */,
 				57BA1F0C23FA185400350ADB /* SignupViewController.swift in Sources */,
 				57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */,
-				AE5D4A1B251D743D0020D855 /* Jabra.mlmodel in Sources */,
-				AE5D4A2A251D744C0020D855 /* Micro-Star International.mlmodel in Sources */,
 				57BA1F0423FA0BD700350ADB /* UIShadows.swift in Sources */,
 				AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
+				57D6560325219E1600DDEF5F /* BangAndOlufsen.mlmodel in Sources */,
+				57D655F025219E0000DDEF5F /* Lenovo.mlmodel in Sources */,
 				577ECCA224537AFB007AB88D /* ProductTableViewCell.swift in Sources */,
 				57A3069824CA3A90007D84BE /* CardsUIView.swift in Sources */,
-				AE5D4A18251D743D0020D855 /* BangAndOlufsen.mlmodel in Sources */,
 				AE3F2ED424D2096F00F88129 /* ClassificationModels.swift in Sources */,
 				AE5D4A38252189260020D855 /* GoogleModel.swift in Sources */,
 				57724D4624B80AC100AAEBA6 /* GoogleVisionStructs.swift in Sources */,
 				57C8EB8D24CA055A00667151 /* CardViewController.swift in Sources */,
-				AE5D4A19251D743D0020D855 /* Sennheiser.mlmodel in Sources */,
-				AE5D4A30251D744C0020D855 /* Dell.mlmodel in Sources */,
-				AE5D4A2E251D744C0020D855 /* Lenovo.mlmodel in Sources */,
 				57724D4424B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift in Sources */,
-				AE5D4A28251D744C0020D855 /* AppleInc.mlmodel in Sources */,
+				57D6560B25219EB900DDEF5F /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				57BA1ED423F9995500350ADB /* AppDelegate.swift in Sources */,
+				57D655E425219DFB00DDEF5F /* RazerInc.mlmodel in Sources */,
+				57D6560225219E1600DDEF5F /* BeatsElectronics.mlmodel in Sources */,
+				57D655FF25219E1600DDEF5F /* AudioTechinca.mlmodel in Sources */,
 				AE9C0F0624A3E13800F554C4 /* makeAlert.swift in Sources */,
-				AE5D4A1D251D743D0020D855 /* AudioTechinca.mlmodel in Sources */,
-				AE5D4A1C251D743D0020D855 /* JBL.mlmodel in Sources */,
-				AE5D4A17251D743D0020D855 /* BeatsElectronics.mlmodel in Sources */,
 				57BA1F0823FA0CCE00350ADB /* UIViewAndExtension.swift in Sources */,
 				57D406BA2470AF850042A7D1 /* MakeToast.swift in Sources */,
+				57D655EB25219E0000DDEF5F /* AppleInc.mlmodel in Sources */,
 				AEAFA0E524566C9B00931015 /* User.swift in Sources */,
 				576DC481245DFDC6002A9926 /* Utilities.swift in Sources */,
-				AE5D4A16251D743D0020D855 /* Insignia.mlmodel in Sources */,
 				57E556FE24CA12B40075A537 /* ProductCard.swift in Sources */,
-				AE5D4A29251D744C0020D855 /* Hewlett-Packard.mlmodel in Sources */,
 				57BA1ED623F9995500350ADB /* SceneDelegate.swift in Sources */,
+				57D655E525219DFB00DDEF5F /* MicrosoftCorporation.mlmodel in Sources */,
 				AEFB8EA924461DA400F89819 /* ProoductsTableViewController.swift in Sources */,
+				57D655EF25219E0000DDEF5F /* Micro-Star International.mlmodel in Sources */,
 				AE5C670C245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift in Sources */,
 				AE64F12D2472022A00FAD5BF /* ForgotPasswordViewController.swift in Sources */,
-				AE5D4A2B251D744C0020D855 /* AcerInc.mlmodel in Sources */,
+				57D6560125219E1600DDEF5F /* Sony.mlmodel in Sources */,
 				57AC72F22454D6E000F23F43 /* SpinnerExtension.swift in Sources */,
-				AE5D4A1E251D743D0020D855 /* BoseCorporation.mlmodel in Sources */,
+				57D6560625219E1600DDEF5F /* Jabra.mlmodel in Sources */,
+				57D6560525219E1600DDEF5F /* BoseCorporation.mlmodel in Sources */,
 				57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */,
-				AE5D4A2F251D744C0020D855 /* MicrosoftCorporation.mlmodel in Sources */,
 				577ECCA42453C77F007AB88D /* Product.swift in Sources */,
-				AE5D4A2D251D744C0020D855 /* RazerInc.mlmodel in Sources */,
+				57D655F125219E0000DDEF5F /* Dell.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
