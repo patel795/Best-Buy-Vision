@@ -18,6 +18,9 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
     
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productDataName: UILabel!
+    @IBOutlet weak var productDetail: UILabel!
+    @IBOutlet weak var productReview: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +32,7 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
         print(productURL)
         if(productURL != nil){
             let myRequest = URLRequest(url: productURL!)
-            webView.frame = CGRect(x:0, y:300, width: 300, height: 300)
+            webView.frame = CGRect(x:0, y:900, width: 300, height: 300)
             webView.load(myRequest)
             view.addSubview(webView)
         }
@@ -50,7 +53,7 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
             webView.evaluateJavaScript("document.getElementsByClassName('p9MVp')[0].getElementsByTagName('a')[0].click();", completionHandler: nil)
         case 2:
             webView.evaluateJavaScript("document.getElementsByTagName('html')[0].innerHTML", completionHandler: { (value, error) in
-                //print("Value: \(String(describing: value))")
+                print("Value: \(String(describing: value))")
                 //print("Error: \(String(describing: error))")
                 do {
                     let productData = try GoogleReviewResponse(value)
@@ -81,6 +84,10 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
         }
         
         self.productImage.image = self.image
+        self.productDataName.text = productData.googleResponses[0].productName
+        self.productDetail.text = productData.googleResponses[0].productDetail
+        self.productReview.text = "\(productData.googleResponses[0].productReview) / 5.0"
+        
     }
     /*
     // MARK: - Navigation

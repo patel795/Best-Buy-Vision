@@ -10,4 +10,7 @@ import Foundation
 
 struct GoogleModel {
     let imageLink : String
+    let productName : String
+    let productDetail : String
+    let productReview : String
 }
