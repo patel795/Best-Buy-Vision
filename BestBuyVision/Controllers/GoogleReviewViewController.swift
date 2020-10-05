@@ -20,7 +20,7 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
     @IBOutlet weak var productDataName: UILabel!
     @IBOutlet weak var productDetail: UILabel!
     @IBOutlet weak var productReview: UILabel!
-    
+    @IBOutlet weak var productComparePrices: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -87,7 +87,6 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
         self.productDataName.text = productData.googleResponses[0].productName
         self.productDetail.text = productData.googleResponses[0].productDetail
         self.productReview.text = "\(productData.googleResponses[0].productReview) / 5.0"
-        
     }
     /*
     // MARK: - Navigation
