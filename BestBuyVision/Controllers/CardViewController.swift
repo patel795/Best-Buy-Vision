@@ -18,7 +18,7 @@ class CardViewController: UIViewController {
         let x = (UIScreen.main.bounds.width - UIScreen.main.bounds.width * 0.9)/2
         let y = 100
         
-        view.addSubview(cardView.createSubView(mainView: view, headerLabel: "Image of the logo", x_coordinate: Double(x), y_coordinate: Double(y)))
+        view.addSubview(cardView.createSubView(mainView: view, headerLabel: "Image of the logo", x_coordinate: Double(x), y_coordinate: Double(y), forMainMenuLogo: false))
     }
     
 

@@ -16,9 +16,15 @@ class CardsUIView{
     let label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 20))
     var productImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: Double(UIScreen.main.bounds.width) * 0.7, height: Double(200)))
     
-    func createSubView(mainView: UIView, headerLabel: String, x_coordinate: Double, y_coordinate: Double) -> UIView{
+    func createSubView(mainView: UIView, headerLabel: String, x_coordinate: Double, y_coordinate: Double, forMainMenuLogo: Bool) -> UIView{
         
-        childView.frame = CGRect(x: x_coordinate, y: y_coordinate, width: Double(UIScreen.main.bounds.width) * 0.9, height: Double(200))
+        if(forMainMenuLogo){
+            childView.frame = CGRect(x: x_coordinate, y: y_coordinate, width: Double(UIScreen.main.bounds.width) * 0.4, height: Double(200))
+        }
+        else{
+            childView.frame = CGRect(x: x_coordinate, y: y_coordinate, width: Double(UIScreen.main.bounds.width) * 0.9, height: Double(200))
+        }
+        
         /*
         childView.layer.borderWidth = 8
         childView.layer.borderColor = UIColor.gray.cgColor
@@ -29,8 +35,13 @@ class CardsUIView{
         viewBorder.lineWidth = 3
         viewBorder.frame = childView.bounds
         viewBorder.fillColor = nil
-        viewBorder.path = UIBezierPath(roundedRect: childView.bounds, cornerRadius: childView.frame.height / 4.0).cgPath
         
+        if(forMainMenuLogo){
+            viewBorder.path = UIBezierPath(roundedRect: childView.bounds, cornerRadius: childView.frame.height / 6.0).cgPath
+        }
+        else{
+            viewBorder.path = UIBezierPath(roundedRect: childView.bounds, cornerRadius: childView.frame.height / 4.0).cgPath
+        }
         childView.layer.addSublayer(viewBorder)
         
         //Stack View
@@ -40,13 +51,22 @@ class CardsUIView{
         verticalStack.alignment = UIStackView.Alignment.center
         verticalStack.spacing   = 5.0
 
-        let image = UIImage(systemName: "camera")
-        let imageView = UIImageView(image: image!)
+        var image = UIImage()
+        
+        if(forMainMenuLogo){
+            image = UIImage(named: "ImageRecognitionLogo")!
+        }
+        else{
+            image = UIImage(systemName: "camera")!
+        }
+        
+        let imageView = UIImageView(image: image)
+        
         imageView.tintColor = UIColor.gray
         imageView.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
         imageView.contentMode = .scaleAspectFit
-        
+ 
         
         label.widthAnchor.constraint(equalToConstant: 140).isActive = true
         label.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
