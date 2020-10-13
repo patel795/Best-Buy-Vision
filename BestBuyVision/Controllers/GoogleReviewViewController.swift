@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import Cosmos
 
 class GoogleReviewViewController: UIViewController, WKUIDelegate {
 
@@ -21,6 +22,14 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
     @IBOutlet weak var productDetail: UILabel!
     @IBOutlet weak var productReview: UILabel!
     @IBOutlet weak var productComparePrices: UILabel!
+    
+    lazy var starView: CosmosView = {
+        var view  = CosmosView()
+        view.settings.updateOnTouch = false
+        view.rating = 4
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +48,8 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
         else{
             MakeToast.showToast(controller: self, message: "No Product Found", seconds: 2.0)
         }
+        
+        //view.addSubview(starView)
     }
     
     @IBAction func buttonTrigger(_ sender: Any) {

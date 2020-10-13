@@ -34,5 +34,6 @@ pod "ImageSlideshow"
   pod 'SwiftyJSON', '~> 4.0'
   pod 'CardParts'
   pod 'SwiftSoup'
+  pod 'Cosmos'
 
 end

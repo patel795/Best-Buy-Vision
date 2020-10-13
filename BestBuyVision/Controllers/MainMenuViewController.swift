@@ -19,18 +19,20 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate {
         let cardUiView = cardViewForTextRecognition.getChildView()
         let cardUiViewForImageRecognition = cardViewForImageRecognition.getChildView()
         
-        let card1 = cardViewForTextRecognition.createSubView(mainView: view, headerLabel: "Image of the logo", x_coordinate: Double(UIScreen.main.bounds.width * 0.045), y_coordinate: Double(30), forMainMenuLogo: true)
+        let card1 = cardViewForTextRecognition.createSubView(mainView: view, headerLabel: "Image of the logo", x_coordinate: Double(UIScreen.main.bounds.width * 0.05), y_coordinate: Double(30), forMainMenuLogo: true)
         
-        let card2 = cardViewForImageRecognition.createSubView(mainView: view, headerLabel: "Image of the logo", x_coordinate: Double((UIScreen.main.bounds.width * 0.5)), y_coordinate: Double(30), forMainMenuLogo: true)
+        let card2 = cardViewForImageRecognition.createSubView(mainView: view, headerLabel: "Image of the logo", x_coordinate: Double((UIScreen.main.bounds.width * 0.55)), y_coordinate: Double(30), forMainMenuLogo: true)
         
         view.addSubview(card1)
         view.addSubview(card2)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(clickView(_:)))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(clickImageRecognitionImageView(_:)))
         tapGesture.delegate = self
         cardUiView.addGestureRecognizer(tapGesture)
         
-        // Do any additional setup after loading the view.
+        let tapGestureForCard2 = UITapGestureRecognizer(target: self, action: #selector(clickTextRecognitionImageView(_:)))
+        tapGestureForCard2.delegate = self
+        cardUiViewForImageRecognition.addGestureRecognizer(tapGestureForCard2)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,9 +41,12 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate {
         setUpNavigationBar()
     }
     
-    @objc func clickView(_ sender: UIView) {
-        
-        print("image clicked")
+    @objc func clickImageRecognitionImageView(_ sender: UIView) {
+        performSegue(withIdentifier: "segueImageRecognition", sender: nil)
+    }
+    
+    @objc func clickTextRecognitionImageView(_ sender: UIView) {
+        performSegue(withIdentifier: "segueTextRecognition", sender: nil)
     }
     
     private func setUpNavigationBar() {
