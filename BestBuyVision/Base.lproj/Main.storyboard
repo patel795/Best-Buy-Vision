@@ -210,13 +210,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top 5 Products" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5bp-NI-g4D">
-                            <rect key="frame" x="0.0" y="171" width="375" height="290"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProductList" rowHeight="115" id="qpC-Kw-Nno" customClass="ProductTableViewCell" customModule="BestBuyVision" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="115"/>
@@ -259,7 +252,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="hIK-qG-YL2"/>
                     <connections>
-                        <outlet property="productNames" destination="5bp-NI-g4D" id="9PV-Wc-ZVJ"/>
                         <segue destination="cCH-5n-rvy" kind="show" identifier="segueNoProduct" id="vhC-vz-deH"/>
                         <segue destination="9aN-3Z-msN" kind="show" identifier="segueProductDetail" id="r9n-5T-pfj"/>
                     </connections>
@@ -1088,6 +1080,9 @@ reset link</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="CIF-y3-XhJ"/>
+                    <connections>
+                        <segue destination="ZWd-70-xlL" kind="show" identifier="segueProductWithSku" id="wYv-ag-rRf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLM-Wy-edX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1167,7 +1162,8 @@ reset link</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rEy-6b-MH3"/>
+        <segue reference="vhC-vz-deH"/>
+        <segue reference="wYv-ag-rRf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>

@@ -16,28 +16,49 @@ class ProoductsTableViewController: UITableViewController {
     var productNameStrings: Array<String> = Array()
     var products =  [Product]()
     var indexPathRow = Int()
+    var productSKU = Int()
+    
+    private var apiHandler = ApiHandlers()
     
     @IBOutlet weak var productNames: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.rowHeight = 115
+        
+        /*
         var formattedProductNames = "*For debugging purposes only* \n"
         for i in 0...1{
             formattedProductNames = formattedProductNames + productNameStrings[i] + "\n"
         }
         productNames.text = "\(formattedProductNames)"
+        */
         
-        let group = DispatchGroup()
+        let parentVC = self.navigationController?.viewControllers[self.navigationController!.viewControllers.count-2]
         
-        for index in 0...(productNameStrings.count - 1) {
+        if (parentVC is ScanImageViewController) {
+            let group = DispatchGroup()
+            
+            for index in 0...(productNameStrings.count - 1) {
+                group.enter()
+                apiHandler.makeApiCall(productName: productNameStrings[index], sku: 0){ (info) in
+                    
+                }
+                group.leave()
+            }
+            group.wait()
+        } else if parentVC is OcrViewController {
+            let group = DispatchGroup()
+            
             group.enter()
-            makeApiCall(productName: productNameStrings[index]){ (info) in
-                print(info)
+            apiHandler.makeApiCall(productName: "", sku: productSKU){ (info) in
+                self.products = info
+                self.tableView.reloadData()
             }
             group.leave()
+            
+            group.wait()
         }
-        group.wait()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -45,75 +66,6 @@ class ProoductsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    
-
-    // MARK: - Making API call
-    private func makeApiCall(productName: String, completion: @escaping (String) -> ()){
-        let startingText = "search="
-        
-        let productNameForURL = startingText + productName
-        //productNameForURL = productNameForURL.trimmingCharacters(in: .whitespacesAndNewlines)
-        //productNameForURL = Utilities.replaceSpecialChars(productNameForURL, "")
-        //productNameForURL = productNameForURL.replacingOccurrences(of: " ", with: "&search=", options: .literal, range: nil)
-        
-        guard let URL = URL(string: "https://api.bestbuy.com/v1/products((\(productNameForURL)&active=true))?format=json&show=sku,name,salePrice,bestSellingRank,image,shortDescription&pageSize=100&pageSize=3&page=1&apiKey=\(self.APIKEY)")
-        else {
-            completion("Error: URL")
-            return
-        }
-        /*DispatchQueue.main.async {
-            //showing loading spinner
-            self.showSpinner(onView: self.view)
-        }*/
-        
-        // ALAMOFIRE function: get the data from the website
-        Alamofire.request(URL, method: .get, parameters: nil).responseJSON {
-            (response) in
-            if (response.result.isSuccess) {
-                do {
-                    let json = try JSON(data:response.data!)
-                    //print(json)
-                    if(json["error"].isEmpty){
-                        if(json["products"].count != 0){
-                            for i in 0...json["products"].count - 1{
-                                let item = Product(productName: json["products"][i]["name"].stringValue,
-                                                   productPrice: json["products"][i]["salePrice"].stringValue,
-                                                   productDescription: json["products"][i]["shortDescription"].stringValue,
-                                                   SKU: json["products"][i]["sku"].stringValue,
-                                                   productThumbnailURL: json["products"][i]["image"].stringValue)
-                                self.products.append(item)
-                            }
-                            
-                            DispatchQueue.main.async {
-                                //reloading the table view data
-                                self.tableView.reloadData()
-                                
-                                // remove spinner
-                                //self.removeSpinner()
-                            }
-                            
-                            completion("Success")
-                        }
-                    }
-                    else{
-                        //self.removeSpinner()
-                        //self.performSegue(withIdentifier: "segueNoProduct", sender: nil)//completion("Can't find the product.")
-                    }
-                }
-                catch {
-                    completion("Error while parsing JSON response")
-                }
-            }
-            else{
-                // remove spinner
-                //self.removeSpinner()
-                self.performSegue(withIdentifier: "segueNoProduct", sender: nil)
-                completion("Request Failed")
-            }
-        }
-    }
-    
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {

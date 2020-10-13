@@ -14,16 +14,32 @@ import SwiftyJSON
 class ApiHandlers{
     let APIKEY = "TWVhgdNpaxCG1GSk4IReKegI"
     var products =  [Product]()
-    func makeApiCall(sku: Int, completion: @escaping ([Product]) -> ()){
+    func makeApiCall(productName:String, sku: Int, completion: @escaping ([Product]) -> ()){
         
+        var url = URL(string: "")
+        
+        if(productName != ""){
+            let startingText = "search="
+            
+            let productNameForURL = startingText + productName
+            
+            url = URL(string: "https://api.bestbuy.com/v1/products((\(productNameForURL)&active=true))?format=json&show=sku,name,salePrice,bestSellingRank,image,shortDescription&pageSize=100&pageSize=3&page=1&apiKey=\(self.APIKEY)")
+        }
+        else {
+            url = URL(string: "https://api.bestbuy.com/v1/products((sku=\(sku)&active=true))?format=json&show=sku,name,salePrice,bestSellingRank,image,shortDescription&pageSize=100&pageSize=3&page=1&apiKey=\(self.APIKEY)")
+
+        }
+        
+        /*
         guard let URL = URL(string: "https://api.bestbuy.com/v1/products((sku=\(sku)&active=true))?format=json&show=sku,name,salePrice,bestSellingRank,image,shortDescription&pageSize=100&pageSize=3&page=1&apiKey=\(self.APIKEY)")
         else {
             completion([])
             return
         }
+        */
         
         // ALAMOFIRE function: get the data from the website
-        Alamofire.request(URL, method: .get, parameters: nil).responseJSON {
+        Alamofire.request(url!, method: .get, parameters: nil).responseJSON {
             (response) in
             if (response.result.isSuccess) {
                 do {

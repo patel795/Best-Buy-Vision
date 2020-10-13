@@ -54,7 +54,6 @@
 		57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0923FA0D1300350ADB /* Colors.swift */; };
 		57BA1F0C23FA185400350ADB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0B23FA185400350ADB /* SignupViewController.swift */; };
 		57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */; };
-		57C8EB8D24CA055A00667151 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C8EB8C24CA055A00667151 /* CardViewController.swift */; };
 		57D406BA2470AF850042A7D1 /* MakeToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D406B92470AF850042A7D1 /* MakeToast.swift */; };
 		57D655D925219D9C00DDEF5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57D655D825219D9C00DDEF5F /* GoogleService-Info.plist */; };
 		7D25AD249D3EB41CD6E0D40D /* Pods_BestBuyVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */; };
@@ -144,7 +143,6 @@
 		57BA1F0923FA0D1300350ADB /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		57BA1F0B23FA185400350ADB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageViewController.swift; sourceTree = "<group>"; };
-		57C8EB8C24CA055A00667151 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		57D406B92470AF850042A7D1 /* MakeToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeToast.swift; sourceTree = "<group>"; };
 		57D655D825219D9C00DDEF5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,7 +235,6 @@
 				AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */,
 				579B8A222462547C008F3C28 /* GoogleReviewViewController.swift */,
 				AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */,
-				57C8EB8C24CA055A00667151 /* CardViewController.swift */,
 				5749E3072523CD2D0063DB47 /* OcrViewController.swift */,
 				57028AFE2527D16E00051C62 /* MainMenuViewController.swift */,
 			);
@@ -675,7 +672,6 @@
 				AE5D4A38252189260020D855 /* GoogleModel.swift in Sources */,
 				57028AF52527729100051C62 /* Sennheiser.mlmodel in Sources */,
 				57724D4624B80AC100AAEBA6 /* GoogleVisionStructs.swift in Sources */,
-				57C8EB8D24CA055A00667151 /* CardViewController.swift in Sources */,
 				57028AD62527727600051C62 /* AppleInc.mlmodel in Sources */,
 				57028ADF2527727C00051C62 /* MicrosoftCorporation.mlmodel in Sources */,
 				57724D4424B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift in Sources */,

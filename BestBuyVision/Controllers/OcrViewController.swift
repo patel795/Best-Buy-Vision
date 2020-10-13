@@ -17,6 +17,8 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
     private var scanImageView = ScanImageView(frame: .zero)
     private var ocrTextView = OcrTextView(frame: .zero, textContainer: nil)
     private var ocrRequest = VNRecognizeTextRequest(completionHandler: nil)
+    private var webCode = ""
+    private var SKU = Int()
     
     private var apiHandler = ApiHandlers()
     
@@ -26,15 +28,6 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
         configure()
         configureOCR()
         
-        let group = DispatchGroup()
-        
-        group.enter()
-        apiHandler.makeApiCall(sku: 6247211){ (info) in
-            print(info[0].productName)
-        }
-        group.leave()
-        
-        group.wait()
         // Do any additional setup after loading the view.
     }
     
@@ -130,11 +123,23 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
                 ocrText += topCandidate.string + "\n"
             }
             
+            let array = ocrText.components(separatedBy: " ")
+            let loweredCaseArray = array.map { $0.lowercased() }
+            
+            // MARK: SKU IS FOR USA AND CODE: IS FOR CANADA
+            let indexOfCode = loweredCaseArray.firstIndex(of: "sku:")
             
             DispatchQueue.main.async {
                 self.ocrTextView.text = ocrText
                 self.scanButton.isEnabled = true
             }
+            
+            // MARK: - UI CHANGE
+            if let number = Int(loweredCaseArray[indexOfCode! + 1].components(separatedBy: CharacterSet.decimalDigits.inverted).joined()) {
+                self.SKU = number
+            }
+            
+            self.performSegue(withIdentifier: "segueProductWithSku", sender: self)
         }
         
         ocrRequest.recognitionLevel = .accurate
@@ -174,15 +179,21 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
     func documentCameraViewControllerDidCancel(_ controller: VNDocumentCameraViewController) {
         controller.dismiss(animated: true)
     }
-}
 
-    /*
+
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "segueProductWithSku" {
+            if let productsTableViewController = segue.destination as? ProoductsTableViewController {
+                productsTableViewController.productSKU = SKU
+            }
+        }
     }
-    */
+}
+    
 
