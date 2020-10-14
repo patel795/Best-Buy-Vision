@@ -42,12 +42,14 @@ class ProoductsTableViewController: UITableViewController {
             for index in 0...(productNameStrings.count - 1) {
                 group.enter()
                 apiHandler.makeApiCall(productName: productNameStrings[index], sku: 0){ (info) in
-                    
+                    self.products = info
+                    self.tableView.reloadData()
                 }
                 group.leave()
             }
             group.wait()
-        } else if parentVC is OcrViewController {
+        }
+        else if parentVC is OcrViewController {
             let group = DispatchGroup()
             
             group.enter()

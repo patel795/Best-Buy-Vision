@@ -187,8 +187,9 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                     return
                 }
                 else if(self.counter == 1){
-                    self.removeSpinner()
+                    
                     self.performSegue(withIdentifier: "segueProducts", sender: self)
+                    self.removeSpinner()
                 }
                 else if(self.counter == 0 && Category_Model.categoriesDict[self.classificationResult[0]]![self.companylogoName] != nil ){
                     
