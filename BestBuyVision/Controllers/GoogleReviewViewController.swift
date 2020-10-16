@@ -17,6 +17,8 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
     var counter = 0
     var image = UIImage()
     
+    var vendorCompare:String = ""
+    
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productDataName: UILabel!
     @IBOutlet weak var productDetail: UILabel!
@@ -41,7 +43,7 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
         print(productURL)
         if(productURL != nil){
             let myRequest = URLRequest(url: productURL!)
-            webView.frame = CGRect(x:0, y:900, width: 300, height: 300)
+            webView.frame = CGRect(x:0, y:300, width: 300, height: 300)
             webView.load(myRequest)
             view.addSubview(webView)
         }
@@ -55,14 +57,8 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
     @IBAction func buttonTrigger(_ sender: Any) {
         switch counter {
         case 0:
-            webView.evaluateJavaScript("document.getElementsByClassName('p9MVp')[0].getElementsByTagName('a')[0].getAttribute('href')", completionHandler: {
-                (value, error) in
-                print("Value: \(String(describing: value))")
-                print("Error: \(String(describing: error))")
-            })
-        case 1:
             webView.evaluateJavaScript("document.getElementsByClassName('p9MVp')[0].getElementsByTagName('a')[0].click();", completionHandler: nil)
-        case 2:
+        case 1:
             webView.evaluateJavaScript("document.getElementsByTagName('html')[0].innerHTML", completionHandler: { (value, error) in
                 print("Value: \(String(describing: value))")
                 //print("Error: \(String(describing: error))")
@@ -70,12 +66,6 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
                     let productData = try GoogleReviewResponse(value)
                     self.googleResponseData(productData: productData)
                 } catch {}
-            })
-        case 3:
-            webView.evaluateJavaScript("document.getElementsByClassName('oR27Gd')[0].getElementsByTagName('img')[0].getAttribute('src')", completionHandler: {
-                (value, error) in
-                print("Value: \(String(describing: value))")
-                print("Error: \(String(describing: error))")
             })
         default:
             print("Hello")
@@ -98,6 +88,8 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
         self.productDataName.text = productData.googleResponses[0].productName
         self.productDetail.text = productData.googleResponses[0].productDetail
         self.productReview.text = "\(productData.googleResponses[0].productReview) / 5.0"
+        self.vendorCompare = productData.googleResponses[0].vendorCompare
+        print(vendorCompare)
     }
     /*
     // MARK: - Navigation

@@ -26,7 +26,6 @@
 		57028AF32527729100051C62 /* Sony.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57028AEA2527729000051C62 /* Sony.mlmodel */; };
 		57028AF42527729100051C62 /* BangAndOlufsen.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57028AEB2527729000051C62 /* BangAndOlufsen.mlmodel */; };
 		57028AF52527729100051C62 /* Sennheiser.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57028AEC2527729000051C62 /* Sennheiser.mlmodel */; };
-		57028AFA252772A700051C62 /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57028AF9252772A700051C62 /* First_Stage_Categories_Classifier.mlmodel */; };
 		57028AFF2527D16E00051C62 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57028AFE2527D16E00051C62 /* MainMenuViewController.swift */; };
 		5749E2ED2523CA440063DB47 /* ApiHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E2EC2523CA440063DB47 /* ApiHandlers.swift */; };
 		5749E2F62523CCB70063DB47 /* OcrTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E2F52523CCB70063DB47 /* OcrTextView.swift */; };
@@ -66,6 +65,7 @@
 		AE5C670C245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */; };
 		AE5D4A36251D98FD0020D855 /* GoogleReviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */; };
 		AE5D4A38252189260020D855 /* GoogleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A37252189260020D855 /* GoogleModel.swift */; };
+		AE5D4A70253965930020D855 /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A6F253965930020D855 /* First_Stage_Categories_Classifier.mlmodel */; };
 		AE64F12D2472022A00FAD5BF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */; };
 		AE9C0F0624A3E13800F554C4 /* makeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9C0F0524A3E13800F554C4 /* makeAlert.swift */; };
 		AEAFA0E524566C9B00931015 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFA0E424566C9B00931015 /* User.swift */; };
@@ -112,7 +112,6 @@
 		57028AEA2527729000051C62 /* Sony.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Sony.mlmodel; sourceTree = "<group>"; };
 		57028AEB2527729000051C62 /* BangAndOlufsen.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BangAndOlufsen.mlmodel; sourceTree = "<group>"; };
 		57028AEC2527729000051C62 /* Sennheiser.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Sennheiser.mlmodel; sourceTree = "<group>"; };
-		57028AF9252772A700051C62 /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
 		57028AFE2527D16E00051C62 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		5749E2EC2523CA440063DB47 /* ApiHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandlers.swift; sourceTree = "<group>"; };
 		5749E2F52523CCB70063DB47 /* OcrTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcrTextView.swift; sourceTree = "<group>"; };
@@ -160,6 +159,7 @@
 		AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionDetailControllerViewController.swift; sourceTree = "<group>"; };
 		AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleReviewResponse.swift; sourceTree = "<group>"; };
 		AE5D4A37252189260020D855 /* GoogleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleModel.swift; sourceTree = "<group>"; };
+		AE5D4A6F253965930020D855 /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../../Documents/ClassificationResults/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
 		AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		AE9C0F0524A3E13800F554C4 /* makeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeAlert.swift; sourceTree = "<group>"; };
 		AEAFA0E424566C9B00931015 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -235,8 +235,8 @@
 				57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */,
 				57BA1F0B23FA185400350ADB /* SignupViewController.swift */,
 				AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */,
-				57028AF9252772A700051C62 /* First_Stage_Categories_Classifier.mlmodel */,
 				577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */,
+				AE5D4A6F253965930020D855 /* First_Stage_Categories_Classifier.mlmodel */,
 				AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */,
 				AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */,
 				579B8A222462547C008F3C28 /* GoogleReviewViewController.swift */,
@@ -673,6 +673,7 @@
 				5749E2ED2523CA440063DB47 /* ApiHandlers.swift in Sources */,
 				57028AF02527729100051C62 /* JBL.mlmodel in Sources */,
 				57BA1F0C23FA185400350ADB /* SignupViewController.swift in Sources */,
+				AE5D4A70253965930020D855 /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				57028AF12527729100051C62 /* BeatsElectronics.mlmodel in Sources */,
 				57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */,
 				57028AD52527727600051C62 /* Hewlett-Packard.mlmodel in Sources */,
@@ -680,7 +681,6 @@
 				57BA1F0423FA0BD700350ADB /* UIShadows.swift in Sources */,
 				AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				57028AF32527729100051C62 /* Sony.mlmodel in Sources */,
-				57028AFA252772A700051C62 /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				5749E2F62523CCB70063DB47 /* OcrTextView.swift in Sources */,
 				577ECCA224537AFB007AB88D /* ProductTableViewCell.swift in Sources */,
 				57C3D0B62539117C0050652A /* GoogleReviewTableViewController.swift in Sources */,

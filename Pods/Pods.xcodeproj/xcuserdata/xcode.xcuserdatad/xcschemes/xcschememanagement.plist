@@ -51,6 +51,11 @@
 			<key>orderHint</key>
 			<integer>51</integer>
 		</dict>
+		<key>Cosmos.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>54</integer>
+		</dict>
 		<key>Differentiator.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -61,7 +66,7 @@
 		<key>Differentiator.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>49</integer>
+			<integer>50</integer>
 		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
@@ -311,7 +316,7 @@
 		<key>RxCocoa.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>55</integer>
+			<integer>47</integer>
 		</dict>
 		<key>RxDataSources.xcscheme</key>
 		<dict>
@@ -323,7 +328,7 @@
 		<key>RxDataSources.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>47</integer>
+			<integer>55</integer>
 		</dict>
 		<key>RxGesture.xcscheme</key>
 		<dict>
@@ -335,7 +340,7 @@
 		<key>RxGesture.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>50</integer>
+			<integer>53</integer>
 		</dict>
 		<key>RxRelay.xcscheme</key>
 		<dict>
@@ -347,7 +352,7 @@
 		<key>RxRelay.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>53</integer>
+			<integer>52</integer>
 		</dict>
 		<key>RxSwift.xcscheme</key>
 		<dict>
@@ -359,7 +364,7 @@
 		<key>RxSwift.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>54</integer>
+			<integer>48</integer>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
@@ -378,7 +383,7 @@
 		<key>SwiftSoup.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>48</integer>
+			<integer>49</integer>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
