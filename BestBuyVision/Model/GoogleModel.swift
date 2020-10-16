@@ -13,4 +13,5 @@ struct GoogleModel {
     let productName : String
     let productDetail : String
     let productReview : String
+    let vendorCompare : String
 }
