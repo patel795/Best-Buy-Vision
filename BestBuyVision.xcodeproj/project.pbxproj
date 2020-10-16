@@ -54,6 +54,9 @@
 		57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0923FA0D1300350ADB /* Colors.swift */; };
 		57BA1F0C23FA185400350ADB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0B23FA185400350ADB /* SignupViewController.swift */; };
 		57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */; };
+		57C3D0B62539117C0050652A /* GoogleReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D0B52539117C0050652A /* GoogleReviewTableViewController.swift */; };
+		57C3D0BC25393F670050652A /* GoogleReviewImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D0BB25393F670050652A /* GoogleReviewImageTableViewCell.swift */; };
+		57C3D0C4253950850050652A /* ProductPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D0C3253950850050652A /* ProductPriceTableViewCell.swift */; };
 		57D406BA2470AF850042A7D1 /* MakeToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D406B92470AF850042A7D1 /* MakeToast.swift */; };
 		57D655D925219D9C00DDEF5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57D655D825219D9C00DDEF5F /* GoogleService-Info.plist */; };
 		7D25AD249D3EB41CD6E0D40D /* Pods_BestBuyVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */; };
@@ -143,6 +146,9 @@
 		57BA1F0923FA0D1300350ADB /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		57BA1F0B23FA185400350ADB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageViewController.swift; sourceTree = "<group>"; };
+		57C3D0B52539117C0050652A /* GoogleReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleReviewTableViewController.swift; sourceTree = "<group>"; };
+		57C3D0BB25393F670050652A /* GoogleReviewImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleReviewImageTableViewCell.swift; sourceTree = "<group>"; };
+		57C3D0C3253950850050652A /* ProductPriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPriceTableViewCell.swift; sourceTree = "<group>"; };
 		57D406B92470AF850042A7D1 /* MakeToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeToast.swift; sourceTree = "<group>"; };
 		57D655D825219D9C00DDEF5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +243,7 @@
 				AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */,
 				5749E3072523CD2D0063DB47 /* OcrViewController.swift */,
 				57028AFE2527D16E00051C62 /* MainMenuViewController.swift */,
+				57C3D0B52539117C0050652A /* GoogleReviewTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -302,6 +309,7 @@
 		57BA1ED223F9995500350ADB /* BestBuyVision */ = {
 			isa = PBXGroup;
 			children = (
+				57C3D0BA25393F410050652A /* TableViewCells */,
 				5749E2F42523CC9E0063DB47 /* Components */,
 				AE3F2ED524D209CE00F88129 /* CreateMLModels */,
 				57417838241ABF7800970F60 /* Model */,
@@ -334,6 +342,15 @@
 				57BA1EF723F9995800350ADB /* Info.plist */,
 			);
 			path = BestBuyVisionUITests;
+			sourceTree = "<group>";
+		};
+		57C3D0BA25393F410050652A /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				57C3D0BB25393F670050652A /* GoogleReviewImageTableViewCell.swift */,
+				57C3D0C3253950850050652A /* ProductPriceTableViewCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		62716BC20D260A4D8BCC8702 /* Frameworks */ = {
@@ -659,12 +676,14 @@
 				57028AF12527729100051C62 /* BeatsElectronics.mlmodel in Sources */,
 				57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */,
 				57028AD52527727600051C62 /* Hewlett-Packard.mlmodel in Sources */,
+				57C3D0BC25393F670050652A /* GoogleReviewImageTableViewCell.swift in Sources */,
 				57BA1F0423FA0BD700350ADB /* UIShadows.swift in Sources */,
 				AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				57028AF32527729100051C62 /* Sony.mlmodel in Sources */,
 				57028AFA252772A700051C62 /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				5749E2F62523CCB70063DB47 /* OcrTextView.swift in Sources */,
 				577ECCA224537AFB007AB88D /* ProductTableViewCell.swift in Sources */,
+				57C3D0B62539117C0050652A /* GoogleReviewTableViewController.swift in Sources */,
 				57028AF22527729100051C62 /* BoseCorporation.mlmodel in Sources */,
 				57028AD72527727600051C62 /* Lenovo.mlmodel in Sources */,
 				57A3069824CA3A90007D84BE /* CardsUIView.swift in Sources */,
@@ -680,6 +699,7 @@
 				AE9C0F0624A3E13800F554C4 /* makeAlert.swift in Sources */,
 				57BA1F0823FA0CCE00350ADB /* UIViewAndExtension.swift in Sources */,
 				57D406BA2470AF850042A7D1 /* MakeToast.swift in Sources */,
+				57C3D0C4253950850050652A /* ProductPriceTableViewCell.swift in Sources */,
 				5749E3032523CD030063DB47 /* ScanImageView.swift in Sources */,
 				AEAFA0E524566C9B00931015 /* User.swift in Sources */,
 				576DC481245DFDC6002A9926 /* Utilities.swift in Sources */,
