@@ -10,11 +10,12 @@ import UIKit
 import WebKit
 import Cosmos
 
-class GoogleReviewViewController: UIViewController, WKUIDelegate {
+class GoogleReviewViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
     var productName = ""
     let webView = WKWebView()
     var counter = 0
+    var count = 0;
     var image = UIImage()
     
     var vendorCompare:String = ""
@@ -32,6 +33,26 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
         return view
     }()
     
+    func webView(_ webView: WKWebView,
+      didFinish navigation: WKNavigation!) {
+        print("loaded")
+        if (count == 0){
+            webView.evaluateJavaScript("document.getElementsByClassName('p9MVp')[0].getElementsByTagName('a')[0].click();", completionHandler: nil)
+        }
+        else if(count == 1){
+            webView.evaluateJavaScript("document.getElementsByTagName('html')[0].innerHTML", completionHandler: { (value, error) in
+                print("Value: \(String(describing: value))")
+                //print("Error: \(String(describing: error))")
+                do {
+                    let productData = try GoogleReviewResponse(value)
+                    self.googleResponseData(productData: productData)
+                } catch {}
+            })
+            print("loaded more")
+        }
+        count += 1;
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,22 +60,19 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate {
         productName = productName.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
         let productURL = URL(string:"https://www.google.com/search?q=\(productName)&tbm=shop")
         
-        print(productName)
-        print(productURL)
         if(productURL != nil){
             let myRequest = URLRequest(url: productURL!)
-            webView.frame = CGRect(x:0, y:300, width: 300, height: 300)
+            //webView.frame = CGRect(x:0, y:300, width: 300, height: 300)
+            webView.navigationDelegate = self
             webView.load(myRequest)
-            view.addSubview(webView)
+            //view.addSubview(webView)
         }
         else{
             MakeToast.showToast(controller: self, message: "No Product Found", seconds: 2.0)
         }
-        
-        //view.addSubview(starView)
     }
     
-    @IBAction func buttonTrigger(_ sender: Any) {
+    @IBAction func buttonTrigger(_ sender: UIButton?) {
         switch counter {
         case 0:
             webView.evaluateJavaScript("document.getElementsByClassName('p9MVp')[0].getElementsByTagName('a')[0].click();", completionHandler: nil)
