@@ -9,16 +9,62 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import WebKit
+import Cosmos
 
-class GoogleReviewTableViewController: UITableViewController {
+class GoogleReviewTableViewController: UITableViewController, WKNavigationDelegate, WKUIDelegate {
 
+    var productName = ""
+    let webView = WKWebView()
+    var counter = 0
+    var count = 0;
+    var image = UIImage()
+    var productData: GoogleReviewResponse?
+    var vendorCompare:String = ""
+    
+    func webView(_ webView: WKWebView,
+      didFinish navigation: WKNavigation!) {
+        print("loaded")
+        if (count == 0){
+            webView.evaluateJavaScript("document.getElementsByClassName('p9MVp')[0].getElementsByTagName('a')[0].click();", completionHandler: nil)
+        }
+        else if(count == 1){
+            webView.evaluateJavaScript("document.getElementsByTagName('html')[0].innerHTML", completionHandler: { (value, error) in
+                print("Value: \(String(describing: value))")
+                //print("Error: \(String(describing: error))")
+                do {
+                    self.productData = try GoogleReviewResponse(value)
+                    self.googleResponseData(productData: self.productData!)
+                    self.tableView.reloadData()
+                } catch {}
+            })
+            print("loaded more")
+        }
+        count += 1;
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
         
+        tabBarController?.navigationItem.title = "Google Review"
         
+        productName = Utilities.replaceSpecialChars(productName, "")
+        productName = productName.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
+        let productURL = URL(string:"https://www.google.com/search?q=\(productName)&tbm=shop")
+        
+        if(productURL != nil){
+            let myRequest = URLRequest(url: productURL!)
+            //webView.frame = CGRect(x:0, y:300, width: 300, height: 300)
+            webView.navigationDelegate = self
+            webView.load(myRequest)
+            //view.addSubview(webView)
+        }
+        else{
+            MakeToast.showToast(controller: self, message: "No Product Found", seconds: 2.0)
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -26,6 +72,26 @@ class GoogleReviewTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
       
     }
+    
+    private func googleResponseData(productData: GoogleReviewResponse){
+        let url = NSURL(string: productData.googleResponses[0].imageLink)
+        
+        if(url?.absoluteString != ""){
+            let data = NSData(contentsOf : url as! URL)
+            self.image = UIImage(data : data! as Data)!
+        }
+        else{
+            self.image = UIImage(named: "Logo")!;
+        }
+        
+        //self.productImage.image = self.image
+        //self.productDataName.text =
+        //self.productDetail.text = productData.googleResponses[0].productDetail
+        //self.productReview.text = "\(productData.googleResponses[0].productReview) / 5.0"
+        //self.vendorCompare = productData.googleResponses[0].vendorCompare
+        print(vendorCompare)
+    }
+    
 
     // MARK: - Table view data source
 
@@ -36,7 +102,7 @@ class GoogleReviewTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return 4
     }
 
     
@@ -44,17 +110,30 @@ class GoogleReviewTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "productImageCell", for: indexPath)
         if(indexPath.row == 0){
             let cell = tableView.dequeueReusableCell(withIdentifier: "productImageCell", for: indexPath) as! GoogleReviewImageTableViewCell
-            cell.GoogleReviewImageView.image = UIImage(named: "Logo")!;
-            cell.NameLabel.text = "What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with"
+            cell.GoogleReviewImageView.image = self.image
+            cell.NameLabel.text = self.productData?.googleResponses[0].productName
             
             return cell
         }
         else if(indexPath.row == 1){
-            let cell = tableView.dequeueReusableCell(withIdentifier: "priceCell", for: indexPath) as! ProductPriceTableViewCell
-            cell.priceLabel.text = "9634927349"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "productDetailCell", for: indexPath) as! ProductDetailTableViewCell
+            cell.productDetailLabel.text = self.productData?.googleResponses[0].productDetail
             
             return cell
         }
+        else if(indexPath.row == 2){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "productReviewCell", for: indexPath) as! ProductReviewTableViewCell
+            cell.productReviewNumber.text = self.productData?.googleResponses[0].productReview
+            
+            return cell
+        }
+        else if(indexPath.row == 3){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "productVendorCell", for: indexPath) as! ProductVendorCompareTableViewCell
+            cell.vendorLabel.text = self.productData?.googleResponses[0].vendorCompare
+            
+            return cell
+        }
+ 
         
         return cell
     }

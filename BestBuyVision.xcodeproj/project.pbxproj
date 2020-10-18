@@ -27,6 +27,10 @@
 		57028AF42527729100051C62 /* BangAndOlufsen.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57028AEB2527729000051C62 /* BangAndOlufsen.mlmodel */; };
 		57028AF52527729100051C62 /* Sennheiser.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57028AEC2527729000051C62 /* Sennheiser.mlmodel */; };
 		57028AFF2527D16E00051C62 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57028AFE2527D16E00051C62 /* MainMenuViewController.swift */; };
+		5716D7B1253CCF7600195555 /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5716D7B0253CCF7600195555 /* First_Stage_Categories_Classifier.mlmodel */; };
+		5716D7B9253CD91400195555 /* ProductDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5716D7B8253CD91400195555 /* ProductDetailTableViewCell.swift */; };
+		5716D7BB253CD93400195555 /* ProductReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5716D7BA253CD93400195555 /* ProductReviewTableViewCell.swift */; };
+		5716D7C0253CD96000195555 /* ProductVendorCompareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5716D7BF253CD96000195555 /* ProductVendorCompareTableViewCell.swift */; };
 		5749E2ED2523CA440063DB47 /* ApiHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E2EC2523CA440063DB47 /* ApiHandlers.swift */; };
 		5749E2F62523CCB70063DB47 /* OcrTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E2F52523CCB70063DB47 /* OcrTextView.swift */; };
 		5749E2FE2523CCDE0063DB47 /* ScanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E2FD2523CCDE0063DB47 /* ScanButton.swift */; };
@@ -55,7 +59,6 @@
 		57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */; };
 		57C3D0B62539117C0050652A /* GoogleReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D0B52539117C0050652A /* GoogleReviewTableViewController.swift */; };
 		57C3D0BC25393F670050652A /* GoogleReviewImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D0BB25393F670050652A /* GoogleReviewImageTableViewCell.swift */; };
-		57C3D0C4253950850050652A /* ProductPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D0C3253950850050652A /* ProductPriceTableViewCell.swift */; };
 		57D406BA2470AF850042A7D1 /* MakeToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D406B92470AF850042A7D1 /* MakeToast.swift */; };
 		57D655D925219D9C00DDEF5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57D655D825219D9C00DDEF5F /* GoogleService-Info.plist */; };
 		7D25AD249D3EB41CD6E0D40D /* Pods_BestBuyVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */; };
@@ -65,7 +68,6 @@
 		AE5C670C245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */; };
 		AE5D4A36251D98FD0020D855 /* GoogleReviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */; };
 		AE5D4A38252189260020D855 /* GoogleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A37252189260020D855 /* GoogleModel.swift */; };
-		AE5D4A70253965930020D855 /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A6F253965930020D855 /* First_Stage_Categories_Classifier.mlmodel */; };
 		AE64F12D2472022A00FAD5BF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */; };
 		AE9C0F0624A3E13800F554C4 /* makeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9C0F0524A3E13800F554C4 /* makeAlert.swift */; };
 		AEAFA0E524566C9B00931015 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFA0E424566C9B00931015 /* User.swift */; };
@@ -113,6 +115,10 @@
 		57028AEB2527729000051C62 /* BangAndOlufsen.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BangAndOlufsen.mlmodel; sourceTree = "<group>"; };
 		57028AEC2527729000051C62 /* Sennheiser.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Sennheiser.mlmodel; sourceTree = "<group>"; };
 		57028AFE2527D16E00051C62 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		5716D7B0253CCF7600195555 /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
+		5716D7B8253CD91400195555 /* ProductDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTableViewCell.swift; sourceTree = "<group>"; };
+		5716D7BA253CD93400195555 /* ProductReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewTableViewCell.swift; sourceTree = "<group>"; };
+		5716D7BF253CD96000195555 /* ProductVendorCompareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVendorCompareTableViewCell.swift; sourceTree = "<group>"; };
 		5749E2EC2523CA440063DB47 /* ApiHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandlers.swift; sourceTree = "<group>"; };
 		5749E2F52523CCB70063DB47 /* OcrTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcrTextView.swift; sourceTree = "<group>"; };
 		5749E2FD2523CCDE0063DB47 /* ScanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanButton.swift; sourceTree = "<group>"; };
@@ -147,7 +153,6 @@
 		57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageViewController.swift; sourceTree = "<group>"; };
 		57C3D0B52539117C0050652A /* GoogleReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleReviewTableViewController.swift; sourceTree = "<group>"; };
 		57C3D0BB25393F670050652A /* GoogleReviewImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleReviewImageTableViewCell.swift; sourceTree = "<group>"; };
-		57C3D0C3253950850050652A /* ProductPriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPriceTableViewCell.swift; sourceTree = "<group>"; };
 		57D406B92470AF850042A7D1 /* MakeToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeToast.swift; sourceTree = "<group>"; };
 		57D655D825219D9C00DDEF5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,7 +164,6 @@
 		AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionDetailControllerViewController.swift; sourceTree = "<group>"; };
 		AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleReviewResponse.swift; sourceTree = "<group>"; };
 		AE5D4A37252189260020D855 /* GoogleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleModel.swift; sourceTree = "<group>"; };
-		AE5D4A6F253965930020D855 /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../../Documents/ClassificationResults/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
 		AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		AE9C0F0524A3E13800F554C4 /* makeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeAlert.swift; sourceTree = "<group>"; };
 		AEAFA0E424566C9B00931015 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -235,8 +239,8 @@
 				57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */,
 				57BA1F0B23FA185400350ADB /* SignupViewController.swift */,
 				AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */,
+				5716D7B0253CCF7600195555 /* First_Stage_Categories_Classifier.mlmodel */,
 				577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */,
-				AE5D4A6F253965930020D855 /* First_Stage_Categories_Classifier.mlmodel */,
 				AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */,
 				AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */,
 				579B8A222462547C008F3C28 /* GoogleReviewViewController.swift */,
@@ -348,7 +352,9 @@
 			isa = PBXGroup;
 			children = (
 				57C3D0BB25393F670050652A /* GoogleReviewImageTableViewCell.swift */,
-				57C3D0C3253950850050652A /* ProductPriceTableViewCell.swift */,
+				5716D7B8253CD91400195555 /* ProductDetailTableViewCell.swift */,
+				5716D7BA253CD93400195555 /* ProductReviewTableViewCell.swift */,
+				5716D7BF253CD96000195555 /* ProductVendorCompareTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -667,13 +673,14 @@
 				57028AED2527729100051C62 /* Insignia.mlmodel in Sources */,
 				AE5D4A36251D98FD0020D855 /* GoogleReviewResponse.swift in Sources */,
 				579B8A232462547C008F3C28 /* GoogleReviewViewController.swift in Sources */,
+				5716D7C0253CD96000195555 /* ProductVendorCompareTableViewCell.swift in Sources */,
 				57BA1ED823F9995500350ADB /* ViewController.swift in Sources */,
 				57028AEE2527729100051C62 /* Jabra.mlmodel in Sources */,
 				57028AF42527729100051C62 /* BangAndOlufsen.mlmodel in Sources */,
 				5749E2ED2523CA440063DB47 /* ApiHandlers.swift in Sources */,
 				57028AF02527729100051C62 /* JBL.mlmodel in Sources */,
 				57BA1F0C23FA185400350ADB /* SignupViewController.swift in Sources */,
-				AE5D4A70253965930020D855 /* First_Stage_Categories_Classifier.mlmodel in Sources */,
+				5716D7B1253CCF7600195555 /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				57028AF12527729100051C62 /* BeatsElectronics.mlmodel in Sources */,
 				57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */,
 				57028AD52527727600051C62 /* Hewlett-Packard.mlmodel in Sources */,
@@ -696,10 +703,10 @@
 				57724D4424B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift in Sources */,
 				57028AEF2527729100051C62 /* AudioTechinca.mlmodel in Sources */,
 				57BA1ED423F9995500350ADB /* AppDelegate.swift in Sources */,
+				5716D7B9253CD91400195555 /* ProductDetailTableViewCell.swift in Sources */,
 				AE9C0F0624A3E13800F554C4 /* makeAlert.swift in Sources */,
 				57BA1F0823FA0CCE00350ADB /* UIViewAndExtension.swift in Sources */,
 				57D406BA2470AF850042A7D1 /* MakeToast.swift in Sources */,
-				57C3D0C4253950850050652A /* ProductPriceTableViewCell.swift in Sources */,
 				5749E3032523CD030063DB47 /* ScanImageView.swift in Sources */,
 				AEAFA0E524566C9B00931015 /* User.swift in Sources */,
 				576DC481245DFDC6002A9926 /* Utilities.swift in Sources */,
@@ -713,6 +720,7 @@
 				57028AD42527727600051C62 /* ASUS.mlmodel in Sources */,
 				57028AD92527727600051C62 /* AcerInc.mlmodel in Sources */,
 				5749E2FE2523CCDE0063DB47 /* ScanButton.swift in Sources */,
+				5716D7BB253CD93400195555 /* ProductReviewTableViewCell.swift in Sources */,
 				57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */,
 				57028AFF2527D16E00051C62 /* MainMenuViewController.swift in Sources */,
 				577ECCA42453C77F007AB88D /* Product.swift in Sources */,

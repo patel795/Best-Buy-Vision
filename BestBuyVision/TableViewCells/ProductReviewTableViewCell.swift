@@ -1,16 +1,18 @@
 //
-//  ProductPriceTableViewCell.swift
+//  ProductReviewTableViewCell.swift
 //  BestBuyVision
 //
-//  Created by Rathin Chopra on 2020-10-15.
+//  Created by Rathin Chopra on 2020-10-18.
 //  Copyright © 2020 Rathin Chopra. All rights reserved.
 //
 
 import UIKit
 
-class ProductPriceTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var priceLabel: UILabel!
+class ProductReviewTableViewCell: UITableViewCell {
+    @IBOutlet weak var productReviewHeading: UILabel!
+    @IBOutlet weak var productReviewNumber: UILabel!
+    @IBOutlet weak var productReviewStarView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
