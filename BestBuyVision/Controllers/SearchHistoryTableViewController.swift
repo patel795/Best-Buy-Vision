@@ -7,19 +7,70 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class SearchHistoryTableViewController: UITableViewController {
 
+    let db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
+        tabBarController?.navigationItem.title = "Search History"
+        tabBarController?.navigationController?.navigationBar.prefersLargeTitles = true
+        tabBarController?.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        tabBarController?.navigationController?.navigationBar.backgroundColor = Colors.bestBuyBlue
+        tabBarController?.navigationController?.navigationBar.barTintColor = Colors.bestBuyBlue
+        tabBarController?.navigationController?.navigationBar.tintColor = Colors.bestBuyBlue
+        tabBarController?.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+         */
+        
+        
         navigationItem.title = "Search History"
-        navigationItem.titleView?.tintColor = UIColor.white
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.backgroundColor = Colors.bestBuyBlue
         navigationController?.navigationBar.barTintColor = Colors.bestBuyBlue
-        navigationController?.navigationBar.tintColor = Colors.white
+        navigationController?.navigationBar.tintColor = Colors.bestBuyBlue
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        
+        var firebaseData = [String: Any]()
+        
+        let group = DispatchGroup()
+        
+        group.enter()
+        self.db.collection("SearchHistory").getDocuments() {
+            (querySnapshot, err) in
+            
+            // MARK: FB - Boilerplate code to get data from Firestore
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("---------------------------------------------")
+                    let data = document.data()
+                    if(document.documentID == Auth.auth().currentUser!.uid){
+                        firebaseData = data
+                    }
+                }
+            }
+            group.leave()
+        }
+        
+        
+        group.notify(queue: .main) {
+            if(!firebaseData.isEmpty){
+                let skuArray:[Any] = firebaseData["SKU"] as! [Any]
+                if(!skuArray.isEmpty){
+                    print(skuArray)
+                }
+            }
+        }
+        
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

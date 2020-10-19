@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import ImageSlideshow
+import Firebase
 
 class ProductDescriptionDetailControllerViewController: UIViewController, ImageSlideshowDelegate{
     
@@ -29,10 +30,14 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
     
     var alamofireSource = [AlamofireSource(urlString: "https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080")!, AlamofireSource(urlString: "https://images.unsplash.com/photo-1447746249824-4be4e1b76d66?w=1080")!, AlamofireSource(urlString: "https://images.unsplash.com/photo-1463595373836-6e0b0a8ee322?w=1080")!]
     
+    let db = Firestore.firestore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         googleReviewBtn.layer.cornerRadius = googleReviewBtn.frame.size.height/2
+        
+        self.saveSearchHistory()
         
         makeApiCall(){ (info) in
             self.alamofireSource.removeAll()
@@ -48,6 +53,23 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
             self.productName.text = self.products[0].productName
             self.productPrice.text = "$" + self.products[0].productPrice
             self.productDescription.text = self.products[0].productDescription
+        }
+    }
+    
+    private func saveSearchHistory(){
+        
+        let usersRef = db.collection("SearchHistory").document("\(Auth.auth().currentUser!.uid)")
+
+        usersRef.getDocument { (document, error) in
+            if let document = document {
+
+                if document.exists{
+                    self.db.collection("SearchHistory").document("\(Auth.auth().currentUser!.uid)").updateData(["SKU" : FieldValue.arrayUnion([self.SKU])])
+
+                } else {
+                    self.db.collection("SearchHistory").document("\(Auth.auth().currentUser!.uid)").setData(["SKU" : [self.SKU]])
+                }
+            }
         }
     }
     
