@@ -197,7 +197,6 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
 
         usersRef.getDocument { (document, error) in
             if let document = document {
-
                 if document.exists{
                     self.db.collection("Wishlist").document("\(Auth.auth().currentUser!.uid)").updateData(["SKU" : FieldValue.arrayUnion([self.SKU])])
 

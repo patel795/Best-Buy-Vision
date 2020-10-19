@@ -17,6 +17,7 @@ class SearchHistoryTableViewController: UITableViewController {
     var products =  [Product]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.reloadData()
         
         /*
         tabBarController?.navigationItem.title = "Search History"
