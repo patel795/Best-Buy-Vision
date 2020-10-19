@@ -115,7 +115,6 @@ class WIshlistTableViewController: UITableViewController {
 
         return cell
 
-        return cell
     }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

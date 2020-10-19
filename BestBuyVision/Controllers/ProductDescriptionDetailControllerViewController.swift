@@ -36,6 +36,7 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
         super.viewDidLoad()
         
         googleReviewBtn.layer.cornerRadius = googleReviewBtn.frame.size.height/2
+        navigationController?.navigationBar.tintColor = Colors.white
         
         self.saveSearchHistory()
         
