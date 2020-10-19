@@ -13,6 +13,8 @@ import FirebaseAuth
 class SearchHistoryTableViewController: UITableViewController {
 
     let db = Firestore.firestore()
+    private var apiHandler = ApiHandlers()
+    var products =  [Product]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +42,8 @@ class SearchHistoryTableViewController: UITableViewController {
         
         let group = DispatchGroup()
         
+        tableView.rowHeight = 115
+        
         group.enter()
         self.db.collection("SearchHistory").getDocuments() {
             (querySnapshot, err) in
@@ -49,7 +53,6 @@ class SearchHistoryTableViewController: UITableViewController {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    print("---------------------------------------------")
                     let data = document.data()
                     if(document.documentID == Auth.auth().currentUser!.uid){
                         firebaseData = data
@@ -62,12 +65,14 @@ class SearchHistoryTableViewController: UITableViewController {
         
         group.notify(queue: .main) {
             if(!firebaseData.isEmpty){
-                let skuArray:[Any] = firebaseData["SKU"] as! [Any]
+                let skuArray:[String] = firebaseData["SKU"] as! [String]
                 if(!skuArray.isEmpty){
-                    print(skuArray)
+                    self.getProducts(skuArray: skuArray)
                 }
             }
         }
+        
+        
         
         
         
@@ -77,28 +82,55 @@ class SearchHistoryTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    private func getProducts(skuArray:[String]){
+        let dispatchGroup = DispatchGroup()
+        
+        for sku in skuArray {
+            dispatchGroup.enter()
+            apiHandler.makeApiCall(productName: "", sku: Int(sku)!){ (info) in
+                self.products = info
+                self.tableView.reloadData()
+            }
+            dispatchGroup.leave()
+        }
+        dispatchGroup.wait()
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.products.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchHistoryCell", for: indexPath) as! SearchHistoryTableViewCell
 
+        var image = UIImage()
+        let url = NSURL(string: self.products[indexPath.row].productThumbnailURL)
+        
+        if(url?.absoluteString != ""){
+            let data = NSData(contentsOf : url! as URL)
+            image = UIImage(data : data! as Data)!
+        }
+        else{
+            image = UIImage(named: "Logo")!;
+        }
         // Configure the cell...
+        cell.searchHistoryImage.image = image
+        cell.searchHistoryProductName.text = self.products[indexPath.row].productName
+        cell.searchHistoryProductPrice.text = "$\(self.products[indexPath.row].productPrice)"
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
