@@ -192,4 +192,19 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
         }
     }
 
+    @IBAction func addToWishlist(_ sender: Any) {
+        let usersRef = db.collection("Wishlist").document("\(Auth.auth().currentUser!.uid)")
+
+        usersRef.getDocument { (document, error) in
+            if let document = document {
+
+                if document.exists{
+                    self.db.collection("Wishlist").document("\(Auth.auth().currentUser!.uid)").updateData(["SKU" : FieldValue.arrayUnion([self.SKU])])
+
+                } else {
+                    self.db.collection("Wishlist").document("\(Auth.auth().currentUser!.uid)").setData(["SKU" : [self.SKU]])
+                }
+            }
+        }
+    }
 }

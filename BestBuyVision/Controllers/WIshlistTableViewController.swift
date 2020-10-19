@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class WIshlistTableViewController: UITableViewController {
 
+    let db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +22,39 @@ class WIshlistTableViewController: UITableViewController {
         navigationController?.navigationBar.barTintColor = Colors.bestBuyBlue
         navigationController?.navigationBar.tintColor = Colors.white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        var firebaseData = [String: Any]()
+        
+        let group = DispatchGroup()
+        
+        group.enter()
+        self.db.collection("Wishlist").getDocuments() {
+            (querySnapshot, err) in
+            
+            // MARK: FB - Boilerplate code to get data from Firestore
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("---------------------------------------------")
+                    let data = document.data()
+                    if(document.documentID == Auth.auth().currentUser!.uid){
+                        firebaseData = data
+                    }
+                }
+            }
+            group.leave()
+        }
+        
+        
+        group.notify(queue: .main) {
+            if(!firebaseData.isEmpty){
+                let skuArray:[Any] = firebaseData["SKU"] as! [Any]
+                if(!skuArray.isEmpty){
+                    print(skuArray)
+                }
+            }
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
