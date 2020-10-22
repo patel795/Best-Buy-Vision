@@ -43,7 +43,6 @@ class WIshlistTableViewController: UITableViewController {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    print("---------------------------------------------")
                     let data = document.data()
                     if(document.documentID == Auth.auth().currentUser!.uid){
                         firebaseData = data

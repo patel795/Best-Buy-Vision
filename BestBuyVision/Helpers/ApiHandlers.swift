@@ -59,8 +59,7 @@ class ApiHandlers{
                         }
                     }
                     else{
-                        //self.removeSpinner()
-                        //self.performSegue(withIdentifier: "segueNoProduct", sender: nil)//completion("Can't find the product.")
+                        //self.performSegue(withIdentifier: "segueNoProduct", sender: nil)
                     }
                 }
                 catch {

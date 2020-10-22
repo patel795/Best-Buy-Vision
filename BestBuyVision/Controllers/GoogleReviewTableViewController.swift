@@ -41,6 +41,7 @@ class GoogleReviewTableViewController: UITableViewController, WKNavigationDelega
             print("loaded more")
         }
         count += 1;
+        self.removeSpinner()
     }
     
     override func viewDidLoad() {
@@ -50,16 +51,19 @@ class GoogleReviewTableViewController: UITableViewController, WKNavigationDelega
         tableView.estimatedRowHeight = 600
         
         tabBarController?.navigationItem.title = "Google Review"
+        tableView.allowsSelection = false
         
         productName = Utilities.replaceSpecialChars(productName, "")
         productName = productName.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
         let productURL = URL(string:"https://www.google.com/search?q=\(productName)&tbm=shop")
         
+        self.showSpinner(onView: self.view)
         if(productURL != nil){
             let myRequest = URLRequest(url: productURL!)
             //webView.frame = CGRect(x:0, y:300, width: 300, height: 300)
             webView.navigationDelegate = self
             webView.load(myRequest)
+            
             //view.addSubview(webView)
         }
         else{
@@ -122,9 +126,17 @@ class GoogleReviewTableViewController: UITableViewController, WKNavigationDelega
             return cell
         }
         else if(indexPath.row == 2){
+            let ratingNumber = Double(self.productData?.googleResponses[0].productReview ?? "0")
+            let starView: CosmosView = {
+                let view  = CosmosView()
+                view.settings.updateOnTouch = false
+                view.rating = ratingNumber ?? 0
+                view.settings.fillMode = .precise
+                return view
+            }()
             let cell = tableView.dequeueReusableCell(withIdentifier: "productReviewCell", for: indexPath) as! ProductReviewTableViewCell
             cell.productReviewNumber.text = self.productData?.googleResponses[0].productReview
-            
+            cell.productReviewStarView.addSubview(starView)
             return cell
         }
         else if(indexPath.row == 3){

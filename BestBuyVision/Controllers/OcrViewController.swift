@@ -27,7 +27,6 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
         
         configure()
         configureOCR()
-        
         // Do any additional setup after loading the view.
     }
     
@@ -35,7 +34,10 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
         view.addSubview(scanImageView)
         view.addSubview(ocrTextView)
         view.addSubview(scanButton)
-        
+        ocrTextView.isEditable = false
+        ocrTextView.text = "NOTE: The image should contain the product tag with a SKU or webcode.\nMake sure the image is clear.\nTry to just take image of the product tag."
+        ocrTextView.textColor = Colors.bestBuyBlue
+        ocrTextView.font = UIFont.boldSystemFont(ofSize: 16.0)
         let padding: CGFloat = 16
         NSLayoutConstraint.activate([
             scanButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: padding),
@@ -55,7 +57,6 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
         ])
         scanButton.addTarget(self, action: #selector(scanDocument), for: .touchUpInside)
     }
-    
 
     @objc private func scanDocument() {
         
@@ -73,6 +74,7 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
               imagePicker.sourceType = .camera
               imagePicker.mediaTypes = [kUTTypeImage as String]
               self.present(imagePicker, animated: true, completion: {
+                self.showSpinner(onView: self.view)
               })
           }
           imagePickerActionSheet.addAction(cameraButton)
@@ -86,6 +88,7 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
             imagePicker.sourceType = .photoLibrary
             imagePicker.mediaTypes = [kUTTypeImage as String]
             self.present(imagePicker, animated: true, completion: {
+                self.showSpinner(onView: self.view)
             })
         }
         imagePickerActionSheet.addAction(libraryButton)
@@ -98,9 +101,9 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
     
     
     private func processImage(_ image: UIImage) {
+
         guard let cgImage = image.cgImage else { return }
 
-        ocrTextView.text = ""
         scanButton.isEnabled = false
         
         let requestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
@@ -123,23 +126,45 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
                 ocrText += topCandidate.string + "\n"
             }
             
-            let array = ocrText.components(separatedBy: " ")
-            let loweredCaseArray = array.map { $0.lowercased() }
+            if(ocrText == ""){
+                makeAlert.showAlert(controller: self, title: "Image Error", message: "Please select a image that contains text")
+                DispatchQueue.main.async {
+                    self.removeSpinner()
+                    self.scanButton.isEnabled = true
+                    self.scanImageView.image = nil
+                }
+                return
+            }
             
-            // MARK: SKU IS FOR USA AND CODE: IS FOR CANADA
-            let indexOfCode = loweredCaseArray.firstIndex(of: "sku:")
+            let pattern = "sku [0-9]{7}|sku[0-9]{7}|sku:[0-9]{7}|sku: [0-9]{7}"
+            let text = ocrText.lowercased()
+            let result = text.range(of: pattern, options:.regularExpression)
             
+            var sku = ""
+            
+            for i in text.indices[text.index(after: result!.lowerBound)..<result!.upperBound]{
+                sku.append(text[i])
+            }
+        
             DispatchQueue.main.async {
-                self.ocrTextView.text = ocrText
+                self.removeSpinner()
                 self.scanButton.isEnabled = true
             }
             
-            // MARK: - UI CHANGE
-            if let number = Int(loweredCaseArray[indexOfCode! + 1].components(separatedBy: CharacterSet.decimalDigits.inverted).joined()) {
-                self.SKU = number
+            if(sku != ""){
+                let stringArray = sku.components(separatedBy: CharacterSet.decimalDigits.inverted)
+                var tempSKU = ""
+                for item in stringArray {
+                    if let number = Int(item) {
+                        tempSKU += "\(number)"
+                    }
+                }
+                if let number = Int(tempSKU) {
+                    self.SKU = number
+                }
+                self.performSegue(withIdentifier: "segueProductWithSku", sender: self)
             }
             
-            self.performSegue(withIdentifier: "segueProductWithSku", sender: self)
         }
         
         ocrRequest.recognitionLevel = .accurate
@@ -155,8 +180,8 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
           return
       }
       dismiss(animated: true) {
-        self.scanImageView.image = selectedPhoto
         self.processImage(selectedPhoto)
+        self.scanImageView.image = selectedPhoto
       }
     }
     
@@ -190,7 +215,7 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
         // Pass the selected object to the new view controller.
         if segue.identifier == "segueProductWithSku" {
             if let productsTableViewController = segue.destination as? ProoductsTableViewController {
-                productsTableViewController.productSKU = SKU
+                productsTableViewController.productSKU = self.SKU
             }
         }
     }

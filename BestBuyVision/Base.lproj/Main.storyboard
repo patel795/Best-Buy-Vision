@@ -3,7 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -709,33 +709,55 @@
                                     <outlet property="productDetailLabel" destination="luR-l9-sf2" id="Ptl-V7-7YB"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productReviewCell" rowHeight="120" id="JEu-vU-xs4" customClass="ProductReviewTableViewCell" customModule="BestBuyVision" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="329" width="375" height="120"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productReviewCell" rowHeight="135" id="JEu-vU-xs4" customClass="ProductReviewTableViewCell" customModule="BestBuyVision" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="329" width="375" height="135"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JEu-vU-xs4" id="PjT-tB-01a">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product Review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vr8-HA-DVK">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vr8-HA-DVK">
                                             <rect key="frame" x="16" y="11" width="343" height="18"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="343" id="GwG-dj-iGJ"/>
+                                                <constraint firstAttribute="height" constant="18" id="jGe-Gm-CdD"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4.2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOs-yU-iHW">
-                                            <rect key="frame" x="16" y="37" width="94" height="38"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOs-yU-iHW">
+                                            <rect key="frame" x="16" y="37" width="94" height="42"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="94" id="8ae-kb-owt"/>
+                                                <constraint firstAttribute="height" constant="42" id="sgk-Gl-QiQ"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fhu-I9-rtM">
-                                            <rect key="frame" x="16" y="83" width="343" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhu-I9-rtM">
+                                            <rect key="frame" x="16" y="83" width="343" height="41"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="41" id="GRz-29-5FD"/>
+                                                <constraint firstAttribute="width" constant="343" id="ccp-cP-v93"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="uOs-yU-iHW" firstAttribute="top" secondItem="vr8-HA-DVK" secondAttribute="bottom" constant="8" symbolic="YES" id="5A5-YY-Nyy"/>
+                                        <constraint firstItem="uOs-yU-iHW" firstAttribute="leading" secondItem="PjT-tB-01a" secondAttribute="leadingMargin" id="5bN-mV-isF"/>
+                                        <constraint firstItem="fhu-I9-rtM" firstAttribute="bottom" secondItem="PjT-tB-01a" secondAttribute="bottomMargin" id="9DL-wc-g4M"/>
+                                        <constraint firstItem="vr8-HA-DVK" firstAttribute="leading" secondItem="PjT-tB-01a" secondAttribute="leadingMargin" id="Ayh-9L-GIQ"/>
+                                        <constraint firstItem="fhu-I9-rtM" firstAttribute="trailing" secondItem="PjT-tB-01a" secondAttribute="trailingMargin" id="EMq-kq-mB8"/>
+                                        <constraint firstItem="fhu-I9-rtM" firstAttribute="leading" secondItem="PjT-tB-01a" secondAttribute="leadingMargin" id="VhR-gc-5V1"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uOs-yU-iHW" secondAttribute="trailing" constant="249" id="k4A-Sm-E8M"/>
+                                        <constraint firstItem="vr8-HA-DVK" firstAttribute="top" secondItem="PjT-tB-01a" secondAttribute="topMargin" id="rht-is-nPL"/>
+                                        <constraint firstItem="fhu-I9-rtM" firstAttribute="top" secondItem="uOs-yU-iHW" secondAttribute="bottom" constant="4" id="v4B-Vs-48N"/>
+                                        <constraint firstItem="vr8-HA-DVK" firstAttribute="trailing" secondItem="PjT-tB-01a" secondAttribute="trailingMargin" id="vs3-cZ-V0u"/>
+                                        <constraint firstItem="uOs-yU-iHW" firstAttribute="top" secondItem="vr8-HA-DVK" secondAttribute="bottom" constant="8" symbolic="YES" id="z1m-Xq-b3z"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="productReviewHeading" destination="vr8-HA-DVK" id="w7s-Ce-YQc"/>
@@ -744,7 +766,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productVendorCell" rowHeight="75" id="1sv-tH-9FA" customClass="ProductVendorCompareTableViewCell" customModule="BestBuyVision" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="449" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="464" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1sv-tH-9FA" id="x0T-6e-SdG">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>

@@ -54,12 +54,22 @@ class ProoductsTableViewController: UITableViewController {
             
             group.enter()
             apiHandler.makeApiCall(productName: "", sku: productSKU){ (info) in
+                if(info.count == 0){
+                    print("heuu")
+                }
                 self.products = info
                 self.tableView.reloadData()
+                group.leave()
             }
-            group.leave()
-            
-            group.wait()
+            group.notify(queue: .main) {
+                if(self.products.isEmpty){
+                    print("No product found")
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "segueNoProduct", sender: nil)
+                    }
+                }
+                print("done: OCR")
+            }
         }
         
         // Uncomment the following line to preserve selection between presentations

@@ -26,12 +26,7 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate, WKNavigationDe
     @IBOutlet weak var productReview: UILabel!
     @IBOutlet weak var productComparePrices: UILabel!
     
-    lazy var starView: CosmosView = {
-        var view  = CosmosView()
-        view.settings.updateOnTouch = false
-        view.rating = 4
-        return view
-    }()
+    
     
     func webView(_ webView: WKWebView,
       didFinish navigation: WKNavigation!) {
