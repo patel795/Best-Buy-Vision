@@ -19,9 +19,9 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate {
         let cardUiView = cardViewForTextRecognition.getChildView()
         let cardUiViewForImageRecognition = cardViewForImageRecognition.getChildView()
         
-        let card1 = cardViewForTextRecognition.createSubView(mainView: view, headerLabel: "Image of the logo", x_coordinate: Double(UIScreen.main.bounds.width * 0.05), y_coordinate: Double(30), forMainMenuLogo: true)
+        let card1 = cardViewForTextRecognition.createSubView(mainView: view, headerLabel: "Image Recognition", x_coordinate: Double(UIScreen.main.bounds.width * 0.05), y_coordinate: Double(30), forMainMenuLogo: true, imageName: "ImageRecognitionLogo")
         
-        let card2 = cardViewForImageRecognition.createSubView(mainView: view, headerLabel: "Image of the logo", x_coordinate: Double((UIScreen.main.bounds.width * 0.55)), y_coordinate: Double(30), forMainMenuLogo: true)
+        let card2 = cardViewForImageRecognition.createSubView(mainView: view, headerLabel: "Text recognition", x_coordinate: Double((UIScreen.main.bounds.width * 0.55)), y_coordinate: Double(30), forMainMenuLogo: true, imageName: "TextRecognitionLogo")
         
         view.addSubview(card1)
         view.addSubview(card2)

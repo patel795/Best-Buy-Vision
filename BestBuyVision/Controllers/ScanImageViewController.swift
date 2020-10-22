@@ -40,9 +40,9 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         cardUiView = cardView.getChildView()
         productcardUiView = cardViewForProduct.getChildView()
         
-        let card1 = cardView.createSubView(mainView: view, headerLabel: "Image of the logo", x_coordinate: Double((UIScreen.main.bounds.width - UIScreen.main.bounds.width * 0.9)/2), y_coordinate: Double(30), forMainMenuLogo: false)
+        let card1 = cardView.createSubView(mainView: view, headerLabel: "Product Logo", x_coordinate: Double((UIScreen.main.bounds.width - UIScreen.main.bounds.width * 0.9)/2), y_coordinate: Double(30), forMainMenuLogo: false, imageName: "camera")
         
-        let card2 = cardViewForProduct.createSubView(mainView: view, headerLabel: "Image of the product", x_coordinate: Double((UIScreen.main.bounds.width - UIScreen.main.bounds.width * 0.9)/2), y_coordinate: Double(270), forMainMenuLogo: false)
+        let card2 = cardViewForProduct.createSubView(mainView: view, headerLabel: "Product Image", x_coordinate: Double((UIScreen.main.bounds.width - UIScreen.main.bounds.width * 0.9)/2), y_coordinate: Double(270), forMainMenuLogo: false, imageName: "camera")
         
         view.addSubview(card1)
         view.addSubview(card2)

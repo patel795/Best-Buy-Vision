@@ -16,7 +16,7 @@ class CardsUIView{
     let label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 20))
     var productImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: Double(UIScreen.main.bounds.width) * 0.7, height: Double(200)))
     
-    func createSubView(mainView: UIView, headerLabel: String, x_coordinate: Double, y_coordinate: Double, forMainMenuLogo: Bool) -> UIView{
+    func createSubView(mainView: UIView, headerLabel: String, x_coordinate: Double, y_coordinate: Double, forMainMenuLogo: Bool, imageName: String) -> UIView{
         
         if(forMainMenuLogo){
             childView.frame = CGRect(x: x_coordinate, y: y_coordinate, width: Double(UIScreen.main.bounds.width) * 0.4, height: Double(200))
@@ -54,10 +54,10 @@ class CardsUIView{
         var image = UIImage()
         
         if(forMainMenuLogo){
-            image = UIImage(named: "ImageRecognitionLogo")!
+            image = UIImage(named: imageName)!
         }
         else{
-            image = UIImage(systemName: "camera")!
+            image = UIImage(systemName: imageName)!
         }
         
         let imageView = UIImageView(image: image)

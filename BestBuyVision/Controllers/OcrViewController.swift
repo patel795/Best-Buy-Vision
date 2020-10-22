@@ -141,7 +141,15 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
             let result = text.range(of: pattern, options:.regularExpression)
             
             var sku = ""
-            
+            if(result == nil){
+                makeAlert.showAlert(controller: self, title: "Image Error", message: "Image is not clear.")
+                DispatchQueue.main.async {
+                    self.removeSpinner()
+                    self.scanButton.isEnabled = true
+                    self.scanImageView.image = nil
+                }
+                return
+            }
             for i in text.indices[text.index(after: result!.lowerBound)..<result!.upperBound]{
                 sku.append(text[i])
             }
