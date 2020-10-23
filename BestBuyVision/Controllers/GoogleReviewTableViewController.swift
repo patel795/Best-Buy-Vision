@@ -47,6 +47,15 @@ class GoogleReviewTableViewController: UITableViewController, WKNavigationDelega
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let backButtonImage = UIImage(systemName: "arrow.left")
+        let bestbuyBtn = UIButton(type: .system)
+        bestbuyBtn.setImage(backButtonImage, for: .normal)
+        bestbuyBtn.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
+        bestbuyBtn.imageView?.contentMode = .scaleAspectFit
+        tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: bestbuyBtn)
+        
+        bestbuyBtn.addTarget(self, action: #selector(backButton), for: .touchUpInside)
+        
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
         
@@ -75,6 +84,10 @@ class GoogleReviewTableViewController: UITableViewController, WKNavigationDelega
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
       
+    }
+    
+    @objc private func backButton() {
+        _ = navigationController?.popViewController(animated: true)
     }
     
     private func googleResponseData(productData: GoogleReviewResponse){

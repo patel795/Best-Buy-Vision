@@ -50,10 +50,18 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     private func setUpNavigationBar() {
+        let backButtonImage = UIImage(systemName: "arrow.left")
+        let backBtn = UIButton(type: .system)
+        backBtn.setImage(backButtonImage, for: .normal)
+        backBtn.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
+        backBtn.imageView?.contentMode = .scaleAspectFit
+        tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backBtn)
+        tabBarController?.navigationItem.leftBarButtonItem?.isEnabled = false
+        
         let image = UIImage(named: "Logo2")
         let newImage = image?.imageWithColor(.white)
         var titleViewImage = UIImageView()
-        titleViewImage = UIImageView(image: newImage?.imageWithInsets(insets: UIEdgeInsets(top: 300, left: 0, bottom: 300, right: 7000)))
+        titleViewImage = UIImageView(image: newImage?.imageWithInsets(insets: UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)))
         titleViewImage.contentMode = .scaleAspectFit
         
         tabBarController?.navigationItem.titleView = titleViewImage

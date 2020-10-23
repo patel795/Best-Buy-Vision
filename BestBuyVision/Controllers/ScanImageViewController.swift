@@ -27,22 +27,26 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     let cardViewForProduct = CardsUIView()
     var productcardUiView = UIView()
     var companylogoName:String = ""
+    var card1 = UIView()
+    var card2 = UIView()
 
-    /*
-    @IBOutlet weak var productLogoImage: UIImageView!
-    @IBOutlet weak var uploadImageBtn: UIButton!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var biggerimageView: UIImageView!
-    */
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let backButtonImage = UIImage(systemName: "arrow.left")
+        let bestbuyBtn = UIButton(type: .system)
+        bestbuyBtn.setImage(backButtonImage, for: .normal)
+        bestbuyBtn.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
+        bestbuyBtn.imageView?.contentMode = .scaleAspectFit
+        tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: bestbuyBtn)
+        bestbuyBtn.addTarget(self, action: #selector(backButton), for: .touchUpInside)
+        tabBarController?.navigationItem.leftBarButtonItem?.isEnabled = true
         cardUiView = cardView.getChildView()
         productcardUiView = cardViewForProduct.getChildView()
         
-        let card1 = cardView.createSubView(mainView: view, headerLabel: "Product Logo", x_coordinate: Double((UIScreen.main.bounds.width - UIScreen.main.bounds.width * 0.9)/2), y_coordinate: Double(30), forMainMenuLogo: false, imageName: "camera")
+        card1 = cardView.createSubView(mainView: view, headerLabel: "Product Logo", x_coordinate: Double((UIScreen.main.bounds.width - UIScreen.main.bounds.width * 0.9)/2), y_coordinate: Double(30), forMainMenuLogo: false, imageName: "camera")
         
-        let card2 = cardViewForProduct.createSubView(mainView: view, headerLabel: "Product Image", x_coordinate: Double((UIScreen.main.bounds.width - UIScreen.main.bounds.width * 0.9)/2), y_coordinate: Double(270), forMainMenuLogo: false, imageName: "camera")
+        card2 = cardViewForProduct.createSubView(mainView: view, headerLabel: "Product Image", x_coordinate: Double((UIScreen.main.bounds.width - UIScreen.main.bounds.width * 0.9)/2), y_coordinate: Double(270), forMainMenuLogo: false, imageName: "camera")
         
         view.addSubview(card1)
         view.addSubview(card2)
@@ -57,12 +61,17 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         //uploadImageBtn.layer.cornerRadius = uploadImageBtn.frame.size.height/2
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        //super.viewWillAppear(animated)
-        //biggerimageView.isHidden = true
-        //imageView.isHidden = false
-        //self.tabBarController?.navigationItem.hidesBackButton = true
-        //setUpNavigationBar()
+    override func viewWillDisappear(_ animated: Bool) {
+        productNameString = ""
+        classificationResult = Array()
+        classificationConfidence = Array()
+        image = UIImage()
+        selectedImageView = UIImageView()
+        counter = 0
+        cardUiView = UIView()
+        productcardUiView = UIView()
+        companylogoName = ""
+        //tabBarController?.navigationItem.leftBarButtonItem = nil;
     }
     
     private func companyLogoDetector(image: UIImage, completion: @escaping (String?) -> ()){
@@ -83,25 +92,6 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                  return
              }
         }
-    }
-    
-    
-    private func setUpNavigationBar() {
-        let image = UIImage(named: "Logo2")
-        let newImage = image?.imageWithColor(.white)
-        var titleViewImage = UIImageView()
-        titleViewImage = UIImageView(image: newImage?.imageWithInsets(insets: UIEdgeInsets(top: 300, left: 0, bottom: 300, right: 7000)))
-        titleViewImage.contentMode = .scaleAspectFit
-        
-        tabBarController?.navigationItem.titleView = titleViewImage
-        
-        let accountImage = UIImage(systemName: "person.circle")
-        
-        let bestbuyBtn = UIButton(type: .system)
-        bestbuyBtn.setImage(accountImage, for: .normal)
-        bestbuyBtn.imageView?.contentMode = .scaleAspectFit
-        bestbuyBtn.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
-        tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: bestbuyBtn)
     }
     
     // MARK: - Image Classification
@@ -189,6 +179,8 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 else if(self.counter == 1){
                     
                     self.performSegue(withIdentifier: "segueProducts", sender: self)
+                    self.cardView.revertImageView()
+                    self.cardViewForProduct.revertImageView()
                     self.removeSpinner()
                 }
                 else if(self.counter == 0 && Category_Model.categoriesDict[self.classificationResult[0]]![self.companylogoName] != nil ){
@@ -290,6 +282,10 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         selectedImageView = imageViewForProduct
         cardViewForProduct.changeImageView()
         imageSelector()
+    }
+    
+    @objc private func backButton() {
+        _ = navigationController?.popViewController(animated: true)
     }
     
     

@@ -99,6 +99,12 @@ class CardsUIView{
         productImageView.isHidden = false
     }
     
+    func revertImageView(){
+        verticalStack.isHidden = false
+        productImageView.isHidden = true
+        productImageView.image = nil
+    }
+    
     func getChildView() -> UIView{
         return childView
     }

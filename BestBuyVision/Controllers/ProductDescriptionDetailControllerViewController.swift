@@ -37,6 +37,14 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
         
         googleReviewBtn.layer.cornerRadius = googleReviewBtn.frame.size.height/2
         navigationController?.navigationBar.tintColor = Colors.white
+        let backButtonImage = UIImage(systemName: "arrow.left")
+        let bestbuyBtn = UIButton(type: .system)
+        bestbuyBtn.setImage(backButtonImage, for: .normal)
+        bestbuyBtn.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
+        bestbuyBtn.imageView?.contentMode = .scaleAspectFit
+        tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: bestbuyBtn)
+        
+        bestbuyBtn.addTarget(self, action: #selector(backButton), for: .touchUpInside)
         
         self.saveSearchHistory()
         
@@ -55,6 +63,10 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
             self.productPrice.text = "$" + self.products[0].productPrice
             self.productDescription.text = self.products[0].productDescription
         }
+    }
+    
+    @objc private func backButton() {
+        _ = navigationController?.popViewController(animated: true)
     }
     
     private func saveSearchHistory(){

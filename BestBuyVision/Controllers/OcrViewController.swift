@@ -24,10 +24,22 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarController?.navigationItem.leftBarButtonItem?.isEnabled = true
+        let backButtonImage = UIImage(systemName: "arrow.left")
+        let bestbuyBtn = UIButton(type: .system)
+        bestbuyBtn.setImage(backButtonImage, for: .normal)
+        bestbuyBtn.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
+        bestbuyBtn.imageView?.contentMode = .scaleAspectFit
+        tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: bestbuyBtn)
         
+        bestbuyBtn.addTarget(self, action: #selector(backButton), for: .touchUpInside)
         configure()
         configureOCR()
         // Do any additional setup after loading the view.
+    }
+    
+    @objc private func backButton() {
+        _ = navigationController?.popViewController(animated: true)
     }
     
     private func configure() {

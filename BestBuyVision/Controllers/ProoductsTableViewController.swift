@@ -21,18 +21,20 @@ class ProoductsTableViewController: UITableViewController {
     private var apiHandler = ApiHandlers()
     
     @IBOutlet weak var productNames: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let backButtonImage = UIImage(systemName: "arrow.left")
+        let bestbuyBtn = UIButton(type: .system)
+        bestbuyBtn.setImage(backButtonImage, for: .normal)
+        bestbuyBtn.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
+        bestbuyBtn.imageView?.contentMode = .scaleAspectFit
+        tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: bestbuyBtn)
+        
+        bestbuyBtn.addTarget(self, action: #selector(backButton), for: .touchUpInside)
         
         tableView.rowHeight = 115
-        
-        /*
-        var formattedProductNames = "*For debugging purposes only* \n"
-        for i in 0...1{
-            formattedProductNames = formattedProductNames + productNameStrings[i] + "\n"
-        }
-        productNames.text = "\(formattedProductNames)"
-        */
         
         let parentVC = self.navigationController?.viewControllers[self.navigationController!.viewControllers.count-2]
         
@@ -77,6 +79,17 @@ class ProoductsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        productNameStrings = Array()
+        products =  [Product]()
+        indexPathRow = Int()
+        productSKU = Int()
+    }
+    
+    @objc private func backButton() {
+        _ = navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Table view data source

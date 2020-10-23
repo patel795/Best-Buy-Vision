@@ -51,6 +51,15 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate, WKNavigationDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let backButtonImage = UIImage(systemName: "arrow.left")
+        let bestbuyBtn = UIButton(type: .system)
+        bestbuyBtn.setImage(backButtonImage, for: .normal)
+        bestbuyBtn.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
+        bestbuyBtn.imageView?.contentMode = .scaleAspectFit
+        tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: bestbuyBtn)
+        
+        bestbuyBtn.addTarget(self, action: #selector(backButton), for: .touchUpInside)
+        
         productName = Utilities.replaceSpecialChars(productName, "")
         productName = productName.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
         let productURL = URL(string:"https://www.google.com/search?q=\(productName)&tbm=shop")
@@ -65,6 +74,10 @@ class GoogleReviewViewController: UIViewController, WKUIDelegate, WKNavigationDe
         else{
             MakeToast.showToast(controller: self, message: "No Product Found", seconds: 2.0)
         }
+    }
+    
+    @objc private func backButton() {
+        _ = navigationController?.popViewController(animated: true)
     }
     
     @IBAction func buttonTrigger(_ sender: UIButton?) {
