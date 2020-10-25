@@ -152,12 +152,12 @@
             </objects>
             <point key="canvasLocation" x="1047.2" y="112.3152709359606"/>
         </scene>
-        <!--Scan Image-->
+        <!--Scan Image View Controller-->
         <scene sceneID="p59-oy-efR">
             <objects>
                 <viewController id="3W9-ey-kYx" customClass="ScanImageViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a4D-n5-dfA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7SA-Lm-Os8">
@@ -176,7 +176,7 @@
                         <viewLayoutGuide key="safeArea" id="LLS-cW-SDD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Scan Image" id="mBO-MB-xLy"/>
+                    <navigationItem key="navigationItem" id="mBO-MB-xLy"/>
                     <connections>
                         <segue destination="ZWd-70-xlL" kind="show" identifier="segueProducts" id="lpQ-hG-CsH"/>
                         <segue destination="cCH-5n-rvy" kind="show" identifier="segueNegativeClass" id="rEy-6b-MH3"/>
@@ -184,14 +184,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Prv-4Q-Fcy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5022" y="-214"/>
+            <point key="canvasLocation" x="4925.6000000000004" y="-239.40886699507391"/>
         </scene>
         <!--Prooducts Table View Controller-->
         <scene sceneID="q5n-3w-w9r">
             <objects>
                 <tableViewController id="ZWd-70-xlL" customClass="ProoductsTableViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PhK-6G-P2O">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -242,14 +242,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jGI-K3-c9g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6306.3999999999996" y="-214.28571428571431"/>
+            <point key="canvasLocation" x="6273" y="-239"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="yEN-PP-ete">
             <objects>
                 <viewController id="cCH-5n-rvy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="abB-oC-oCZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rY5-qo-x7P">
@@ -870,13 +870,13 @@
                 <tabBarController id="uDw-NK-fen" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="fwW-eT-y9E"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GA3-jN-cs8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" red="0.0" green="0.24313725489999999" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="e5E-Ev-4bY" kind="relationship" relationship="viewControllers" id="ybU-xA-OUd"/>
+                        <segue destination="mYs-qb-fQO" kind="relationship" relationship="viewControllers" id="BiX-Uc-vn8"/>
                         <segue destination="2c3-nX-ez2" kind="relationship" relationship="viewControllers" id="itn-1b-Tkh"/>
                         <segue destination="tUF-TA-Rk7" kind="relationship" relationship="viewControllers" id="Wg1-W9-i88"/>
                     </connections>
@@ -1176,7 +1176,7 @@ reset link</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BE-48-7oi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4572" y="441.87192118226602"/>
+            <point key="canvasLocation" x="4926" y="442"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="N4m-qU-PF8">
@@ -1199,16 +1199,17 @@ reset link</string>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </scene>
-        <!--Main Menu View Controller-->
+        <!--Search-->
         <scene sceneID="I4b-Rb-JeN">
             <objects>
                 <viewController id="mYs-qb-fQO" customClass="MainMenuViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uci-Hz-u1r">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="JTc-1S-f1y"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="HmT-qb-Keh"/>
                     <navigationItem key="navigationItem" id="qKI-ma-Mev"/>
                     <connections>
                         <segue destination="3W9-ey-kYx" kind="show" identifier="segueImageRecognition" id="NjC-ow-fnk"/>
@@ -1217,14 +1218,14 @@ reset link</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D0C-fO-HDl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3988" y="-214.28571428571431"/>
+            <point key="canvasLocation" x="3629.5999999999999" y="-238.66995073891627"/>
         </scene>
         <!--Ocr View Controller-->
         <scene sceneID="soH-r2-8GE">
             <objects>
                 <viewController id="RWG-LX-to4" customClass="OcrViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="88l-np-ZxY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="zm7-rz-hyC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1236,25 +1237,7 @@ reset link</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLM-Wy-edX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5022" y="-975"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="kdG-ZR-yQZ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="e5E-Ev-4bY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="9e2-4A-FF5"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GG1-W5-XzG">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="mYs-qb-fQO" kind="relationship" relationship="rootViewController" id="RbY-np-uo9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z9p-IQ-wNU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2846" y="-214"/>
+            <point key="canvasLocation" x="4926" y="-975"/>
         </scene>
         <!--Search History-->
         <scene sceneID="FSq-sk-jec">
@@ -1299,8 +1282,8 @@ reset link</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZIS-En-Vcc"/>
-        <segue reference="vhC-vz-deH"/>
+        <segue reference="BkB-uK-rKv"/>
+        <segue reference="rEy-6b-MH3"/>
         <segue reference="lpQ-hG-CsH"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -32,7 +32,9 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpNavigationBar()
         
+        /*
         let backButtonImage = UIImage(systemName: "arrow.left")
         let bestbuyBtn = UIButton(type: .system)
         bestbuyBtn.setImage(backButtonImage, for: .normal)
@@ -41,6 +43,8 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: bestbuyBtn)
         bestbuyBtn.addTarget(self, action: #selector(backButton), for: .touchUpInside)
         tabBarController?.navigationItem.leftBarButtonItem?.isEnabled = true
+        */
+        
         cardUiView = cardView.getChildView()
         productcardUiView = cardViewForProduct.getChildView()
         
@@ -59,6 +63,29 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         tapGestureForProduct.delegate = self
         productcardUiView.addGestureRecognizer(tapGestureForProduct)
         //uploadImageBtn.layer.cornerRadius = uploadImageBtn.frame.size.height/2
+    }
+    
+    private func setUpNavigationBar() {
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "Logo2")
+        let newImage = image?.imageWithColor(.white)
+        imageView.image = newImage
+        navigationItem.titleView = imageView
+        
+        tabBarController?.navigationController?.navigationBar.barTintColor = Colors.bestBuyBlue
+        tabBarController?.navigationController?.navigationBar.tintColor = Colors.white
+        
+        let accountImage = UIImage(systemName: "person.circle")
+        
+        let bestbuyBtn = UIButton(type: .system)
+        bestbuyBtn.setImage(accountImage, for: .normal)
+        bestbuyBtn.imageView?.contentMode = .scaleAspectFit
+        bestbuyBtn.frame = CGRect(x: 0, y: 0, width: 38, height: 38)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: bestbuyBtn)
+        
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
