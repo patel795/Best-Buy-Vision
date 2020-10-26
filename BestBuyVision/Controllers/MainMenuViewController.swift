@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
-class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate {
+class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    var imageArray = [UIImage(named : "Bacwardslcon"), UIImage(named : "ImageRecognitionLogo"), UIImage(named : "iphone_product_image"), UIImage(named : "Logo"), UIImage(named : "Logo2")]
+    
+    let db = Firestore.firestore()
+    private var apiHandler = ApiHandlers()
+    var products =  [Product]()
     let cardViewForTextRecognition = CardsUIView()
     let cardViewForImageRecognition = CardsUIView()
     
@@ -33,6 +39,8 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate {
         let tapGestureForCard2 = UITapGestureRecognizer(target: self, action: #selector(clickTextRecognitionImageView(_:)))
         tapGestureForCard2.delegate = self
         cardUiViewForImageRecognition.addGestureRecognizer(tapGestureForCard2)
+        
+        getDataFromFirebase()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +81,81 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate {
         bestbuyBtn.imageView?.contentMode = .scaleAspectFit
         bestbuyBtn.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
         tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: bestbuyBtn)
+    }
+    
+    private func getDataFromFirebase(){
+        var firebaseData = [String: Any]()
+        
+        let group = DispatchGroup()
+        
+        group.enter()
+        self.db.collection("Wishlist").getDocuments() {
+            (querySnapshot, err) in
+            
+            // MARK: FB - Boilerplate code to get data from Firestore
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    if(document.documentID == Auth.auth().currentUser!.uid){
+                        firebaseData = data
+                    }
+                }
+            }
+            group.leave()
+        }
+        
+        
+        group.notify(queue: .main) {
+            if(!firebaseData.isEmpty){
+                let skuArray:[String] = firebaseData["SKU"] as! [String]
+                if(!skuArray.isEmpty){
+                    self.getProducts(skuArray: skuArray)
+                }
+            }
+        }
+    }
+    
+    private func getProducts(skuArray:[String]){
+        let dispatchGroup = DispatchGroup()
+        
+        for sku in skuArray {
+            dispatchGroup.enter()
+            apiHandler.makeApiCall(productName: "", sku: Int(sku)!){ (info) in
+                self.products = info
+                //self.tableView.reloadData()
+            }
+            dispatchGroup.leave()
+        }
+        dispatchGroup.wait()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imageArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
+        
+        //var image = UIImage()
+        //let url = NSURL(string: self.products[indexPath.row].productThumbnailURL)
+        
+        /*if(url?.absoluteString != ""){
+            let data = NSData(contentsOf : url! as URL)
+            image = UIImage(data : data! as Data)!
+        }
+        else{
+            image = UIImage(named: "Logo")!;
+        }*/
+        // Configure the cell...
+        //cell.productImage.image = image
+        //cell.productName.text = self.products[indexPath.row].productName
+        //cell.productPrice.text = "$\(self.products[indexPath.row].productPrice)"
+        
+        cell.productImage.image = imageArray[indexPath.row]
+        
+        return cell
     }
     
 
