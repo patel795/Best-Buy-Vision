@@ -27,6 +27,10 @@ class ScanImageView: UIImageView {
         layer.cornerRadius = 7.0
         layer.borderWidth = 3.0
         layer.borderColor = UIColor.systemGray.cgColor
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.6
+        layer.shadowOffset = CGSize(width: 5, height: 5)
+        layer.shadowRadius = 7
         backgroundColor = UIColor.init(white: 1.0, alpha: 0.1)
         clipsToBounds = true
     }

@@ -23,10 +23,10 @@ class ApiHandlers{
             
             let productNameForURL = startingText + productName
             
-            url = URL(string: "https://api.bestbuy.com/v1/products((\(productNameForURL)&active=true))?format=json&show=sku,name,salePrice,bestSellingRank,image,shortDescription&pageSize=100&pageSize=3&page=1&apiKey=\(self.APIKEY)")
+            url = URL(string: "https://api.bestbuy.com/v1/products((\(productNameForURL)&active=true))?format=json&show=sku,name,salePrice,manufacturer,bestSellingRank,image,shortDescription&pageSize=100&pageSize=3&page=1&apiKey=\(self.APIKEY)")
         }
         else {
-            url = URL(string: "https://api.bestbuy.com/v1/products((sku=\(sku)&active=true))?format=json&show=sku,name,salePrice,bestSellingRank,image,shortDescription&pageSize=100&pageSize=3&page=1&apiKey=\(self.APIKEY)")
+            url = URL(string: "https://api.bestbuy.com/v1/products((sku=\(sku)&active=true))?format=json&show=sku,name,salePrice,bestSellingRank,manufacturer,image,shortDescription&pageSize=100&pageSize=3&page=1&apiKey=\(self.APIKEY)")
 
         }
         
@@ -52,7 +52,8 @@ class ApiHandlers{
                                                    productPrice: json["products"][i]["salePrice"].stringValue,
                                                    productDescription: json["products"][i]["shortDescription"].stringValue,
                                                    SKU: json["products"][i]["sku"].stringValue,
-                                                   productThumbnailURL: json["products"][i]["image"].stringValue)
+                                                   productThumbnailURL: json["products"][i]["image"].stringValue,
+                                                   manufacturer: json["products"][i]["manufacturer"].stringValue)
                                 self.products.append(item)
                             }
                             completion(self.products)

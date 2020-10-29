@@ -20,6 +20,7 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
     var imageLinks: Array<String> = Array()
     var products =  [Product]()
     var imagesJson: JSON?
+    var itemBrand = ""
     
     @IBOutlet weak var googleReviewBtn: UIButton!
     @IBOutlet weak var expandDescriptionBtn: UIButton!
@@ -31,11 +32,14 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
     var alamofireSource = [AlamofireSource(urlString: "https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080")!, AlamofireSource(urlString: "https://images.unsplash.com/photo-1447746249824-4be4e1b76d66?w=1080")!, AlamofireSource(urlString: "https://images.unsplash.com/photo-1463595373836-6e0b0a8ee322?w=1080")!]
     
     let db = Firestore.firestore()
+    let increment = Firebase.FieldValue.increment(1.00)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+            
         googleReviewBtn.layer.cornerRadius = googleReviewBtn.frame.size.height/2
+        
+        /*
         navigationController?.navigationBar.tintColor = Colors.white
         let backButtonImage = UIImage(systemName: "arrow.left")
         let bestbuyBtn = UIButton(type: .system)
@@ -43,8 +47,9 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
         bestbuyBtn.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
         bestbuyBtn.imageView?.contentMode = .scaleAspectFit
         tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: bestbuyBtn)
-        
         bestbuyBtn.addTarget(self, action: #selector(backButton), for: .touchUpInside)
+        */
+        
         
         self.saveSearchHistory()
         
@@ -62,11 +67,75 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
             self.productName.text = self.products[0].productName
             self.productPrice.text = "$" + self.products[0].productPrice
             self.productDescription.text = self.products[0].productDescription
+            
+            self.logEvent()
         }
     }
     
     @objc private func backButton() {
         _ = navigationController?.popViewController(animated: true)
+    }
+    
+    private func logEvent(){
+        let range = priceRangeCalculator(productPrice: Double(self.products[0].productPrice)!)
+        
+        /*
+        let usersRef = db.collection("LoggedEvents").document("price_range_search_history")
+
+        usersRef.getDocument { (document, error) in
+            if let document = document {
+
+                if document.exists{
+                    self.db.collection("LoggedEvents").document("price_range_search_history").updateData([range : FieldValue.increment(Int64(1))])
+
+                } else {
+                    self.db.collection("LoggedEvents").document("price_range_search_history").setData([range : FieldValue.increment(Int64(1))])
+                }
+            }
+        }
+        */
+        
+        let batch = db.batch()
+        //let removedChar: Set<Character> = [".", "/", "\\"]
+        //itemBrand.removeAll(where: { removedChar.contains($0) })
+        
+        let priceRangeSearchHistory = db.collection("LoggedEvents").document("price_range_search_history")
+        batch.updateData([range : FieldValue.increment(Int64(1)) ], forDocument: priceRangeSearchHistory)
+
+        let mostViewedComapany = db.collection("LoggedEvents").document("most_viewed_company")
+        batch.updateData([self.products[0].manufacturer: FieldValue.increment(Int64(1)) ], forDocument: mostViewedComapany)
+
+        //let laRef = db.collection("cities").document("LA")
+        //batch.deleteDocument(laRef)
+        
+        // Commit the batch
+        batch.commit() { err in
+            if let err = err {
+                print("Error writing batch \(err)")
+            } else {
+                print("Batch write succeeded.")
+            }
+        }
+    }
+    
+    private func priceRangeCalculator(productPrice: Double) -> String {
+        let priceRangeArray = ["0-250", "250-500", "500-750", "750-1000", "1000-1250", "1250-1500", "1500+"]
+        
+        for item in priceRangeArray{
+            if(item.contains("+")){
+                let priceRange = item.components(separatedBy: "+")
+                if(productPrice >= Double(priceRange[0])!){
+                    return item
+                }
+            }
+            else{
+                let priceRange = item.components(separatedBy: "-")
+                if(productPrice >= Double(priceRange[0])! && productPrice < Double(priceRange[1])!){
+                    return item
+                }
+            }
+        }
+        return "ERROR"
     }
     
     private func saveSearchHistory(){
@@ -122,7 +191,7 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
     private func makeApiCall(completion: @escaping (String) -> ()){
         
         guard let URL = URL(string:
-            "https://api.bestbuy.com/v1/products(sku=\(self.SKU))?show=sku,name,salePrice,images,longDescription&apiKey=\(self.APIKEY)&format=json")
+            "https://api.bestbuy.com/v1/products(sku=\(self.SKU))?show=sku,name,salePrice,images,manufacturer,longDescription&apiKey=\(self.APIKEY)&format=json")
             
         else {
             completion("Error: URL")
@@ -144,7 +213,8 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
                                                productPrice: json["products"][0]["salePrice"].stringValue,
                                                productDescription: json["products"][0]["longDescription"].stringValue,
                                                SKU: json["products"][0]["sku"].stringValue,
-                                               productThumbnailURL: json["products"][0]["image"].stringValue)
+                                               productThumbnailURL: json["products"][0]["image"].stringValue,
+                                               manufacturer: json["products"][0]["manufacturer"].stringValue)
                         
                         self.imagesJson = json["products"][0]["images"]
                         self.products.append(item)

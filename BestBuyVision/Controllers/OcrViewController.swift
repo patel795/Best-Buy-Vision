@@ -11,7 +11,7 @@ import Vision
 import VisionKit
 import MobileCoreServices
 
-class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
 
     private var scanButton = ScanButton(frame: .zero)
     private var scanImageView = ScanImageView(frame: .zero)
@@ -21,6 +21,7 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
     private var SKU = Int()
     
     private var apiHandler = ApiHandlers()
+    private var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,11 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let image = UIImage(systemName: "camera.viewfinder")
+        scanImageView.image = image
+    }
+    
     @objc private func backButton() {
         _ = navigationController?.popViewController(animated: true)
     }
@@ -46,10 +52,22 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
         view.addSubview(scanImageView)
         view.addSubview(ocrTextView)
         view.addSubview(scanButton)
+        
         ocrTextView.isEditable = false
         ocrTextView.text = "NOTE: The image should contain the product tag with a SKU or webcode.\nMake sure the image is clear.\nTry to just take image of the product tag."
         ocrTextView.textColor = Colors.bestBuyBlue
         ocrTextView.font = UIFont.boldSystemFont(ofSize: 16.0)
+        
+        let image = UIImage(systemName: "camera.viewfinder")
+        scanImageView.image = image
+        scanImageView.contentMode = .scaleAspectFit
+        scanImageView.tintColor = Colors.bestBuyBlue
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(clickImageView(_:)))
+        tapGesture.delegate = self
+        scanImageView.addGestureRecognizer(tapGesture)
+        scanImageView.isUserInteractionEnabled = true
+        
         let padding: CGFloat = 16
         NSLayoutConstraint.activate([
             scanButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: padding),
@@ -69,9 +87,8 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
         ])
         scanButton.addTarget(self, action: #selector(scanDocument), for: .touchUpInside)
     }
-
-    @objc private func scanDocument() {
-        
+    
+    @objc func clickImageView(_ sender: UIView) {
         let imagePickerActionSheet =
           UIAlertController(title: "Snap/Upload Image",
                             message: nil,
@@ -86,7 +103,6 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
               imagePicker.sourceType = .camera
               imagePicker.mediaTypes = [kUTTypeImage as String]
               self.present(imagePicker, animated: true, completion: {
-                self.showSpinner(onView: self.view)
               })
           }
           imagePickerActionSheet.addAction(cameraButton)
@@ -100,7 +116,6 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
             imagePicker.sourceType = .photoLibrary
             imagePicker.mediaTypes = [kUTTypeImage as String]
             self.present(imagePicker, animated: true, completion: {
-                self.showSpinner(onView: self.view)
             })
         }
         imagePickerActionSheet.addAction(libraryButton)
@@ -110,19 +125,43 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
         
         present(imagePickerActionSheet, animated: true)
     }
+
+    @objc private func scanDocument() {
+        if(self.scanImageView.image!.isEqualToImage(UIImage(systemName: "camera")!)){
+            let image = UIImage(systemName: "camera.viewfinder")
+            scanImageView.image = image
+            makeAlert.showAlert(controller: self, title: "Image Error", message: "Please select the image")
+        }
+        else{
+            self.processImage(self.scanImageView.image!)
+        }
+    }
     
     
     private func processImage(_ image: UIImage) {
+    
+        DispatchQueue.global(qos: .default).async {
 
-        guard let cgImage = image.cgImage else { return }
+            guard let cgImage = image.cgImage else { return }
 
-        scanButton.isEnabled = false
-        
-        let requestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-        do {
-            try requestHandler.perform([self.ocrRequest])
-        } catch {
-            print(error)
+            DispatchQueue.main.async { [weak self] in
+                 // UI updates must be on main thread
+                self!.showSpinner(onView: self!.view)
+                self!.scanButton.isEnabled = false
+             }
+            
+            let requestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+            do {
+                
+                try requestHandler.perform([self.ocrRequest])
+            } catch {
+                print(error)
+            }
+
+           DispatchQueue.main.async { [weak self] in
+                // UI updates must be on main thread
+                self!.removeSpinner()
+            }
         }
     }
 
@@ -139,12 +178,13 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
             }
             
             if(ocrText == ""){
-                makeAlert.showAlert(controller: self, title: "Image Error", message: "Please select a image that contains text")
-                DispatchQueue.main.async {
-                    self.removeSpinner()
-                    self.scanButton.isEnabled = true
-                    self.scanImageView.image = nil
-                }
+                
+                DispatchQueue.main.async { [weak self] in
+                     // UI updates must be on main thread
+                    makeAlert.showAlert(controller: self!, title: "Image Error", message: "Please select a image that contains text")
+                    self!.scanButton.isEnabled = true
+                    self!.scanImageView.image = UIImage(systemName: "camera.viewfinder")
+                 }
                 return
             }
             
@@ -154,22 +194,22 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
             
             var sku = ""
             if(result == nil){
-                makeAlert.showAlert(controller: self, title: "Image Error", message: "Image is not clear.")
-                DispatchQueue.main.async {
-                    self.removeSpinner()
-                    self.scanButton.isEnabled = true
-                    self.scanImageView.image = nil
-                }
+                DispatchQueue.main.async { [weak self] in
+                     // UI updates must be on main thread
+                    makeAlert.showAlert(controller: self!, title: "Image Error", message: "Image is not clear.")
+                    self!.scanButton.isEnabled = true
+                    self!.scanImageView.image = UIImage(systemName: "camera.viewfinder")
+                 }
                 return
             }
             for i in text.indices[text.index(after: result!.lowerBound)..<result!.upperBound]{
                 sku.append(text[i])
             }
         
-            DispatchQueue.main.async {
-                self.removeSpinner()
-                self.scanButton.isEnabled = true
-            }
+            DispatchQueue.main.async { [weak self] in
+                 // UI updates must be on main thread
+                self!.scanButton.isEnabled = true
+             }
             
             if(sku != ""){
                 let stringArray = sku.components(separatedBy: CharacterSet.decimalDigits.inverted)
@@ -182,7 +222,11 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
                 if let number = Int(tempSKU) {
                     self.SKU = number
                 }
-                self.performSegue(withIdentifier: "segueProductWithSku", sender: self)
+                DispatchQueue.main.async { [weak self] in
+                     // UI updates must be on main thread
+                    self!.performSegue(withIdentifier: "segueProductWithSku", sender: self)
+                 }
+                
             }
             
         }
@@ -200,7 +244,6 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
           return
       }
       dismiss(animated: true) {
-        self.processImage(selectedPhoto)
         self.scanImageView.image = selectedPhoto
       }
     }
@@ -212,7 +255,6 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
         }
         
         self.scanImageView.image = scan.imageOfPage(at: 0)
-        processImage(scan.imageOfPage(at: 0))
         controller.dismiss(animated: true)
     }
     

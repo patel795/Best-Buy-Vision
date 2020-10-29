@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Firebase
 
 class ProoductsTableViewController: UITableViewController {
 
@@ -17,6 +18,7 @@ class ProoductsTableViewController: UITableViewController {
     var products =  [Product]()
     var indexPathRow = Int()
     var productSKU = Int()
+    var itemBrand = ""
     
     private var apiHandler = ApiHandlers()
     
@@ -25,6 +27,8 @@ class ProoductsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /*
         let backButtonImage = UIImage(systemName: "arrow.left")
         let bestbuyBtn = UIButton(type: .system)
         bestbuyBtn.setImage(backButtonImage, for: .normal)
@@ -33,7 +37,8 @@ class ProoductsTableViewController: UITableViewController {
         tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: bestbuyBtn)
         
         bestbuyBtn.addTarget(self, action: #selector(backButton), for: .touchUpInside)
-        
+        */
+ 
         tableView.rowHeight = 115
         
         let parentVC = self.navigationController?.viewControllers[self.navigationController!.viewControllers.count-2]
@@ -46,19 +51,20 @@ class ProoductsTableViewController: UITableViewController {
                 apiHandler.makeApiCall(productName: productNameStrings[index], sku: 0){ (info) in
                     self.products = info
                     self.tableView.reloadData()
+                    group.leave()
                 }
-                group.leave()
+                
             }
-            group.wait()
+            group.notify(queue: .main) {
+                self.logEvents(analytic_product_array: self.products)
+            }
         }
         else if parentVC is OcrViewController {
             let group = DispatchGroup()
             
             group.enter()
             apiHandler.makeApiCall(productName: "", sku: productSKU){ (info) in
-                if(info.count == 0){
-                    print("heuu")
-                }
+
                 self.products = info
                 self.tableView.reloadData()
                 group.leave()
@@ -81,11 +87,31 @@ class ProoductsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        productNameStrings = Array()
-        products =  [Product]()
-        indexPathRow = Int()
-        productSKU = Int()
+    private func logEvents(analytic_product_array: [Product]){
+        var analytic_products = [[String: Any]]()
+        for item in analytic_product_array{
+            /*
+            var productName = item.productName
+            productName = productName.replacingOccurrences(of: "\\", with: "")
+            productName = productName.replacingOccurrences(of: "\"", with: "")
+            productName = productName.replacingOccurrences(of: "-", with: "")
+            */
+            let product: [String: Any] = [
+                AnalyticsParameterItemID: item.SKU,
+                //AnalyticsParameterItemName: productName,
+                //AnalyticsParameterItemCategory: "socks",
+                AnalyticsParameterItemBrand: itemBrand,
+                AnalyticsParameterPrice: Double(item.productPrice),
+            ]
+            analytic_products.append(product)
+        }
+        
+        var itemList: [String: Any] = [
+          AnalyticsParameterItemListID: "L001",
+          AnalyticsParameterItemListName: "Related products",
+        ]
+        itemList[AnalyticsParameterItems] = analytic_products
+        Analytics.logEvent(AnalyticsEventViewItemList, parameters: itemList)
     }
     
     @objc private func backButton() {
@@ -175,6 +201,7 @@ class ProoductsTableViewController: UITableViewController {
         if segue.identifier == "segueProductDetail" {
             if let productDescriptionDetailController = segue.destination as? ProductDescriptionDetailControllerViewController {
                 productDescriptionDetailController.SKU = products[indexPathRow].SKU
+                productDescriptionDetailController.itemBrand = itemBrand
             }
         }
     }

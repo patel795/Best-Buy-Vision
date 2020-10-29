@@ -352,6 +352,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
             if let productsTableViewController = segue.destination as? ProoductsTableViewController {
                 print(classificationResult)
                 productsTableViewController.productNameStrings = classificationResult
+                productsTableViewController.itemBrand = self.companylogoName
             }
         }
     }
