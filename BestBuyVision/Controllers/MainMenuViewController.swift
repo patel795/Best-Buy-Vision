@@ -58,6 +58,8 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UIC
     }
     
     private func setUpNavigationBar() {
+        
+        /*
         let backButtonImage = UIImage(systemName: "arrow.left")
         let backBtn = UIButton(type: .system)
         backBtn.setImage(backButtonImage, for: .normal)
@@ -65,6 +67,7 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UIC
         backBtn.imageView?.contentMode = .scaleAspectFit
         tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backBtn)
         tabBarController?.navigationItem.leftBarButtonItem?.isEnabled = false
+        */
         
         let image = UIImage(named: "Logo2")
         let newImage = image?.imageWithColor(.white)
@@ -74,6 +77,7 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UIC
         
         tabBarController?.navigationItem.titleView = titleViewImage
         
+        /*
         let accountImage = UIImage(systemName: "person.circle")
         
         let bestbuyBtn = UIButton(type: .system)
@@ -81,6 +85,7 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UIC
         bestbuyBtn.imageView?.contentMode = .scaleAspectFit
         bestbuyBtn.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
         tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: bestbuyBtn)
+        */
     }
     
     private func getDataFromFirebase(){

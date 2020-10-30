@@ -192,6 +192,9 @@ PODS:
     - RxDataSources (~> 4.0)
     - RxGesture (~> 3.0)
     - RxSwift (~> 5.0)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - Cosmos (23.0.0)
   - Differentiator (4.0.1)
   - FBSDKCoreKit (5.15.1):
@@ -414,6 +417,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - CardParts
+  - Charts
   - Cosmos
   - Firebase/Analytics
   - Firebase/Core
@@ -436,6 +440,7 @@ SPEC REPOS:
     - AppAuth
     - BoringSSL-GRPC
     - CardParts
+    - Charts
     - Cosmos
     - Differentiator
     - FBSDKCoreKit
@@ -483,6 +488,7 @@ SPEC CHECKSUMS:
   AppAuth: 73574f3013a1e65b9601a3ddc8b3158cce68c09d
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   CardParts: fc7fd19ed6ed46c502ba9ee75dba275e721b9895
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   FBSDKCoreKit: 1d5acf7c9d7a2f92bb1a242dc60cae5b7adb91df
@@ -522,6 +528,6 @@ SPEC CHECKSUMS:
   SwiftSoup: f97bc4e988c7729d6457f9642f974c617a6e2510
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 923d938f093b9304fb5a8c263e59841cbb8d5f36
+PODFILE CHECKSUM: a58890bc9342b9350054cb42596e6a53cd7dccac
 
 COCOAPODS: 1.9.1

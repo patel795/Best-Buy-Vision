@@ -35,5 +35,6 @@ pod "ImageSlideshow"
   pod 'CardParts'
   pod 'SwiftSoup'
   pod 'Cosmos'
+  pod 'Charts'
 
 end
