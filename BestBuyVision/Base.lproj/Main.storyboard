@@ -245,10 +245,10 @@
             </objects>
             <point key="canvasLocation" x="6273" y="-239"/>
         </scene>
-        <!--View Controller-->
+        <!--No Products View Controller-->
         <scene sceneID="yEN-PP-ete">
             <objects>
-                <viewController id="cCH-5n-rvy" sceneMemberID="viewController">
+                <viewController id="cCH-5n-rvy" customClass="NoProductsViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="abB-oC-oCZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -474,7 +474,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4G1-WL-HOn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8152.8000000000002" y="-145.56650246305421"/>
+            <point key="canvasLocation" x="8148" y="-183"/>
         </scene>
         <!--Google Review View Controller-->
         <scene sceneID="WYG-wz-bG3">
@@ -819,7 +819,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJA-fr-Wgq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9458.3999999999996" y="-146.30541871921181"/>
+            <point key="canvasLocation" x="9458" y="-183"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="OKz-xE-mBG">
@@ -1212,7 +1212,7 @@ reset link</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gny-of-m4h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6030" y="1940"/>
+            <point key="canvasLocation" x="6273" y="1940"/>
         </scene>
         <!--Ishlist Table View Controller-->
         <scene sceneID="cAA-kb-LyH">

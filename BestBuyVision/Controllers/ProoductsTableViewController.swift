@@ -64,13 +64,14 @@ class ProoductsTableViewController: UITableViewController {
             
             group.enter()
             apiHandler.makeApiCall(productName: "", sku: productSKU){ (info) in
-
+                print("===========")
+                print(info)
                 self.products = info
                 self.tableView.reloadData()
                 group.leave()
             }
             group.notify(queue: .main) {
-                if(self.products.isEmpty){
+                if(self.products.count == 0){
                     print("No product found")
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "segueNoProduct", sender: nil)
@@ -90,12 +91,7 @@ class ProoductsTableViewController: UITableViewController {
     private func logEvents(analytic_product_array: [Product]){
         var analytic_products = [[String: Any]]()
         for item in analytic_product_array{
-            /*
-            var productName = item.productName
-            productName = productName.replacingOccurrences(of: "\\", with: "")
-            productName = productName.replacingOccurrences(of: "\"", with: "")
-            productName = productName.replacingOccurrences(of: "-", with: "")
-            */
+
             let product: [String: Any] = [
                 AnalyticsParameterItemID: item.SKU,
                 //AnalyticsParameterItemName: productName,
