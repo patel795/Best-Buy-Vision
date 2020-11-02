@@ -105,11 +105,13 @@ class ApiHandlers{
             if (response.result.isSuccess) {
                 do {
                     let json = try JSON(data:response.data!)
-                    print(json["results"])
+                    //print(json["results"])
                     //print(json)
                     if(json["error"].isEmpty){
                         if(json["results"].count != 0){
-                            for i in 0...json["results"].count - 1{
+                            print(json["result"][0]["names"]["title"].stringValue)
+                            print(json["result"][1]["names"]["title"].stringValue)
+                            for i in 0...1{
                                 let item = ProductRecommended(productName: json["results"][i]["names"]["title"].stringValue, productPrice: json["results"][i]["prices"]["current"].stringValue, productThumbnailURL: json["results"][i]["images"]["standard"].stringValue, averageScore: json["results"][i]["customerReviews"]["averageScore"].stringValue)
                                 self.recommendedProducts.append(item)
                             }
