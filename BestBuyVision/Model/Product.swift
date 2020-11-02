@@ -14,7 +14,6 @@ class Product {
     var productDescription: String
     var SKU: String
     var productThumbnailURL: String
-    var images = [String]()
     var manufacturer: String
     
     init(productName: String, productPrice: String, productDescription: String, SKU: String, productThumbnailURL : String, manufacturer: String) {
