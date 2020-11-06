@@ -60,9 +60,12 @@ class ApiHandlers{
                             }
                             completion(self.products)
                         }
+                        else{
+                            completion([])
+                        }
                     }
                     else{
-                        //self.performSegue(withIdentifier: "segueNoProduct", sender: nil)
+                        completion([])
                     }
                 }
                 catch {
