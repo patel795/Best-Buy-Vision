@@ -96,8 +96,8 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
         */
         
         let batch = db.batch()
-        //let removedChar: Set<Character> = [".", "/", "\\"]
-        //itemBrand.removeAll(where: { removedChar.contains($0) })
+        let removedChar: Set<Character> = [".", "/", "\\"]
+        self.products[0].manufacturer.removeAll(where: { removedChar.contains($0) })
         
         let priceRangeSearchHistory = db.collection("LoggedEvents").document("price_range_search_history")
         batch.updateData([range : FieldValue.increment(Int64(1)) ], forDocument: priceRangeSearchHistory)
@@ -286,6 +286,32 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
                 } else {
                     self.db.collection("Wishlist").document("\(Auth.auth().currentUser!.uid)").setData(["SKU" : [self.SKU]])
                 }
+            }
+        }
+        addWishListToDataAnalytics()
+    }
+    
+    private func addWishListToDataAnalytics(){
+        let range = priceRangeCalculator(productPrice: Double(self.products[0].productPrice)!)
+        let batch = db.batch()
+        let removedChar: Set<Character> = [".", "/", "\\"]
+        self.products[0].manufacturer.removeAll(where: { removedChar.contains($0) })
+        
+        let priceRangeSearchHistory = db.collection("LoggedEvents").document("price_range_wishlist")
+        batch.updateData([range : FieldValue.increment(Int64(1)) ], forDocument: priceRangeSearchHistory)
+
+        let mostViewedComapany = db.collection("LoggedEvents").document("companies_wishlist")
+        batch.updateData([self.products[0].manufacturer: FieldValue.increment(Int64(1)) ], forDocument: mostViewedComapany)
+
+        //let laRef = db.collection("cities").document("LA")
+        //batch.deleteDocument(laRef)
+        
+        // Commit the batch
+        batch.commit() { err in
+            if let err = err {
+                print("Error writing batch \(err)")
+            } else {
+                print("Batch write succeeded.")
             }
         }
     }

@@ -64,8 +64,6 @@ class ProoductsTableViewController: UITableViewController {
             
             group.enter()
             apiHandler.makeApiCall(productName: "", sku: productSKU){ (info) in
-                print("===========")
-                print(info)
                 self.products = info
                 self.tableView.reloadData()
                 group.leave()
