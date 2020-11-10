@@ -134,4 +134,39 @@ class ApiHandlers{
             }
         }
     }
+    
+    func trendingProducts(completion: @escaping ([ProductRecommended]) -> ()){
+        let url = URL(string: "https://api.bestbuy.com/beta/products/trendingViewed?apiKey=\(self.APIKEY)")
+        
+        Alamofire.request(url!, method: .get, parameters: nil).responseJSON {
+            (response) in
+            if (response.result.isSuccess) {
+                do {
+                    let json = try JSON(data:response.data!)
+                    //print(json["results"])
+                    //print(json)
+                    if(json["error"].isEmpty){
+                        if(json["results"].count != 0){
+                            print(json["result"][0]["names"]["title"].stringValue)
+                            print(json["result"][1]["names"]["title"].stringValue)
+                            for i in 0...5{
+                                let item = ProductRecommended(productName: json["results"][i]["names"]["title"].stringValue, productPrice: json["results"][i]["prices"]["current"].stringValue, productThumbnailURL: json["results"][i]["images"]["standard"].stringValue, averageScore: json["results"][i]["customerReviews"]["averageScore"].stringValue)
+                                self.recommendedProducts.append(item)
+                            }
+                            completion(self.recommendedProducts)
+                        }
+                    }
+                    else{
+                        //self.performSegue(withIdentifier: "segueNoProduct", sender: nil)
+                    }
+                }
+                catch {
+                    completion([])
+                }
+            }
+            else{
+                completion([])
+            }
+        }
+    }
 }

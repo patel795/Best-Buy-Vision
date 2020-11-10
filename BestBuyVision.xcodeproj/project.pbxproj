@@ -37,7 +37,6 @@
 		5749E2FE2523CCDE0063DB47 /* ScanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E2FD2523CCDE0063DB47 /* ScanButton.swift */; };
 		5749E3032523CD030063DB47 /* ScanImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E3022523CD030063DB47 /* ScanImageView.swift */; };
 		5749E3082523CD2D0063DB47 /* OcrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E3072523CD2D0063DB47 /* OcrViewController.swift */; };
-		5756CC362553B429000CE56B /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5756CC352553B429000CE56B /* First_Stage_Categories_Classifier.mlmodel */; };
 		576DC481245DFDC6002A9926 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576DC480245DFDC6002A9926 /* Utilities.swift */; };
 		57724D4424B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57724D4324B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift */; };
 		57724D4624B80AC100AAEBA6 /* GoogleVisionStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57724D4524B80AC100AAEBA6 /* GoogleVisionStructs.swift */; };
@@ -80,6 +79,7 @@
 		AECCEBBD253D123A00CF77B2 /* WIshlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECCEBBC253D123A00CF77B2 /* WIshlistTableViewController.swift */; };
 		AECCEBCD254676EA00CF77B2 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECCEBCC254676EA00CF77B2 /* ProductCollectionViewCell.swift */; };
 		AECCEBD3254FB55A00CF77B2 /* ProductRecommended.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECCEBD2254FB55A00CF77B2 /* ProductRecommended.swift */; };
+		AECCEBD92559DCAB00CF77B2 /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AECCEBD82559DCAB00CF77B2 /* First_Stage_Categories_Classifier.mlmodel */; };
 		AEFB8EA924461DA400F89819 /* ProoductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -134,7 +134,6 @@
 		5749E2FD2523CCDE0063DB47 /* ScanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanButton.swift; sourceTree = "<group>"; };
 		5749E3022523CD030063DB47 /* ScanImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageView.swift; sourceTree = "<group>"; };
 		5749E3072523CD2D0063DB47 /* OcrViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcrViewController.swift; sourceTree = "<group>"; };
-		5756CC352553B429000CE56B /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
 		576DC480245DFDC6002A9926 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		57724D4324B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionLogoDetector.swift; sourceTree = "<group>"; };
 		57724D4524B80AC100AAEBA6 /* GoogleVisionStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionStructs.swift; sourceTree = "<group>"; };
@@ -185,6 +184,7 @@
 		AECCEBBC253D123A00CF77B2 /* WIshlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIshlistTableViewController.swift; sourceTree = "<group>"; };
 		AECCEBCC254676EA00CF77B2 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		AECCEBD2254FB55A00CF77B2 /* ProductRecommended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRecommended.swift; sourceTree = "<group>"; };
+		AECCEBD82559DCAB00CF77B2 /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../../Documents/ClassificationResults/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
 		AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProoductsTableViewController.swift; sourceTree = "<group>"; };
 		F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -259,8 +259,8 @@
 				AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */,
 				577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */,
 				AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */,
+				AECCEBD82559DCAB00CF77B2 /* First_Stage_Categories_Classifier.mlmodel */,
 				AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */,
-				5756CC352553B429000CE56B /* First_Stage_Categories_Classifier.mlmodel */,
 				579B8A222462547C008F3C28 /* GoogleReviewViewController.swift */,
 				AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */,
 				5749E3072523CD2D0063DB47 /* OcrViewController.swift */,
@@ -757,7 +757,7 @@
 				5716D7BB253CD93400195555 /* ProductReviewTableViewCell.swift in Sources */,
 				57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */,
 				57028AFF2527D16E00051C62 /* MainMenuViewController.swift in Sources */,
-				5756CC362553B429000CE56B /* First_Stage_Categories_Classifier.mlmodel in Sources */,
+				AECCEBD92559DCAB00CF77B2 /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				577ECCA42453C77F007AB88D /* Product.swift in Sources */,
 				57028AD82527727600051C62 /* Dell.mlmodel in Sources */,
 				57028AE02527727C00051C62 /* RazerInc.mlmodel in Sources */,

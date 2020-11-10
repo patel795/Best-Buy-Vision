@@ -23,9 +23,11 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UIC
     let cardViewForTextRecognition = CardsUIView()
     let cardViewForImageRecognition = CardsUIView()
     var count = 0
+    var indexPathRow = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.showSpinner(onView: self.view)
         getDataFromFirebase(dataStorage: "Wishlist")
         getDataFromFirebase(dataStorage: "SearchHistory")
         let cardUiView = cardViewForTextRecognition.getChildView()
@@ -138,8 +140,23 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UIC
                     }
                     
                     if(self.count == 1){
-                        print("Hello", self.skuArray)
                         self.getProducts(skuArray: self.skuArray)
+                    }
+                    self.count+=1
+                }
+                else{
+                    if(self.count == 1){
+                        if(!self.skuArray.isEmpty){
+                            self.getProducts(skuArray: self.skuArray)
+                        }
+                        else{
+                            self.apiHandler.trendingProducts(){ (info) in
+                                self.recommendedProducts = info
+                                //self.tableView.reloadData()
+                                self.collectionViewData.reloadData()
+                                //self.collectionViewData.reloadItems(at: self.items)
+                            }
+                        }
                     }
                     self.count+=1
                 }
@@ -161,10 +178,17 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UIC
             dispatchGroup.leave()
         }
         dispatchGroup.wait()
+        self.removeSpinner()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.recommendedProducts.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        indexPathRow = indexPath.row
+        self.performSegue(withIdentifier: "segueProductRecommended", sender: AnyObject?.self)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -194,12 +218,21 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UIC
             return view
         }()
         cell.productReview.addSubview(starView)
-        
+        self.removeSpinner()
         //self.collectionView.reloadData()
         //cell.productImage.image = imageArray[indexPath.row]
         return cell
     }
     
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "segueProductRecommended" {
+            if let productDescriptionDetailController = segue.destination as? ProductDescriptionDetailControllerViewController {
+                productDescriptionDetailController.SKU = recommendedProducts[indexPathRow].SKU
+            }
+        }
+    }*/
 
     /*
     // MARK: - Navigation
@@ -211,5 +244,5 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UIC
     }
     */
 
-    }
+}
 
