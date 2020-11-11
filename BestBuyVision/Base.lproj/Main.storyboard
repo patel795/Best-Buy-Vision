@@ -289,7 +289,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="374" id="ab5-lP-n54" customClass="ProductDescriptionImageTableViewCell" customModule="BestBuyVision" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productImageCell" rowHeight="374" id="ab5-lP-n54" customClass="ProductDescriptionImageTableViewCell" customModule="BestBuyVision" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="374"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ab5-lP-n54" id="OwU-yu-IwK">
@@ -329,7 +329,7 @@
                                     <outlet property="productDescriptionProductName" destination="ERK-DZ-ppv" id="hJM-Fr-HjM"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="z1C-D3-RlV" customClass="ProductDescriptionPriceTableViewCell" customModule="BestBuyVision" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productPriceCell" id="z1C-D3-RlV" customClass="ProductDescriptionPriceTableViewCell" customModule="BestBuyVision" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="402" width="375" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z1C-D3-RlV" id="EBg-8a-xbu">
@@ -349,7 +349,7 @@
                                     <outlet property="productDescriptionPrice" destination="K1y-xC-FcQ" id="eLY-BZ-g6z"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="yUq-8a-9ov" customClass="ProductDescriptionOverviewTableViewCell" customModule="BestBuyVision" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productOverviewCell" rowHeight="75" id="yUq-8a-9ov" customClass="ProductDescriptionOverviewTableViewCell" customModule="BestBuyVision" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="445.66666793823242" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yUq-8a-9ov" id="15q-dL-nf1">
@@ -390,7 +390,7 @@
                                     <outlet property="productDescriptionOverview" destination="lZJ-I3-ISa" id="sQo-x9-OOI"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Vdz-Ct-DWG" customClass="ProductDescriptionSpecificationTableViewCell" customModule="BestBuyVision" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productSpecificationCell" id="Vdz-Ct-DWG" customClass="ProductDescriptionSpecificationTableViewCell" customModule="BestBuyVision" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="520.66666793823242" width="375" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vdz-Ct-DWG" id="kWj-gc-m4t">
@@ -410,7 +410,7 @@
                                     <outlet property="productDescriptionSpecification" destination="qMg-6I-iyx" id="NzE-VY-eZZ"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HIi-nf-LFF" customClass="ProductDescriptionGoogleReviewTableViewCell" customModule="BestBuyVision" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productGoogleReviewCell" id="HIi-nf-LFF" customClass="ProductDescriptionGoogleReviewTableViewCell" customModule="BestBuyVision" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="564.33333587646484" width="375" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HIi-nf-LFF" id="MbS-hc-QHN">
