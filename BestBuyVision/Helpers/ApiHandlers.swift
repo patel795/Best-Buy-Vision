@@ -115,7 +115,7 @@ class ApiHandlers{
                             print(json["result"][0]["names"]["title"].stringValue)
                             print(json["result"][1]["names"]["title"].stringValue)
                             for i in 0...1{
-                                let item = ProductRecommended(productName: json["results"][i]["names"]["title"].stringValue, productPrice: json["results"][i]["prices"]["current"].stringValue, productThumbnailURL: json["results"][i]["images"]["standard"].stringValue, averageScore: json["results"][i]["customerReviews"]["averageScore"].stringValue)
+                                let item = ProductRecommended(productName: json["results"][i]["names"]["title"].stringValue, productPrice: json["results"][i]["prices"]["current"].stringValue, productThumbnailURL: json["results"][i]["images"]["standard"].stringValue, averageScore: json["results"][i]["customerReviews"]["averageScore"].stringValue, SKU: json["results"][i]["sku"].stringValue)
                                 self.recommendedProducts.append(item)
                             }
                             completion(self.recommendedProducts)
@@ -150,7 +150,7 @@ class ApiHandlers{
                             print(json["result"][0]["names"]["title"].stringValue)
                             print(json["result"][1]["names"]["title"].stringValue)
                             for i in 0...5{
-                                let item = ProductRecommended(productName: json["results"][i]["names"]["title"].stringValue, productPrice: json["results"][i]["prices"]["current"].stringValue, productThumbnailURL: json["results"][i]["images"]["standard"].stringValue, averageScore: json["results"][i]["customerReviews"]["averageScore"].stringValue)
+                                let item = ProductRecommended(productName: json["results"][i]["names"]["title"].stringValue, productPrice: json["results"][i]["prices"]["current"].stringValue, productThumbnailURL: json["results"][i]["images"]["standard"].stringValue, averageScore: json["results"][i]["customerReviews"]["averageScore"].stringValue, SKU: json["results"][i]["sku"].stringValue)
                                 self.recommendedProducts.append(item)
                             }
                             completion(self.recommendedProducts)

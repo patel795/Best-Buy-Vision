@@ -13,11 +13,13 @@ class ProductRecommended {
     var productPrice: String
     var productThumbnailURL: String
     var averageScore : String
+    var SKU: String
     
-    init(productName: String, productPrice: String, productThumbnailURL : String, averageScore: String) {
+    init(productName: String, productPrice: String, productThumbnailURL : String, averageScore: String, SKU: String) {
         self.productName = productName
         self.productPrice = productPrice
         self.productThumbnailURL = productThumbnailURL
         self.averageScore = averageScore
+        self.SKU = SKU
     }
 }

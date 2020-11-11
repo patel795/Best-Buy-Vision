@@ -148,7 +148,8 @@ class ProoductsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         indexPathRow = indexPath.row
-        self.performSegue(withIdentifier: "segueProductDetail", sender: AnyObject?.self)
+        //self.performSegue(withIdentifier: "segueProductDetail", sender: AnyObject?.self)
+        self.performSegue(withIdentifier: "productDescription", sender: AnyObject?.self)
     }
     /*
     // Override to support conditional editing of the table view.
@@ -189,7 +190,7 @@ class ProoductsTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if segue.identifier == "segueProductDetail" {
@@ -198,7 +199,7 @@ class ProoductsTableViewController: UITableViewController {
                 productDescriptionDetailController.itemBrand = itemBrand
             }
         }
-    }
+    }*/
     
 
 }

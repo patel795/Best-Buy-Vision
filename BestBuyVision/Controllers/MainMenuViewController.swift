@@ -224,7 +224,7 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UIC
         return cell
     }
     
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if segue.identifier == "segueProductRecommended" {
@@ -232,7 +232,7 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UIC
                 productDescriptionDetailController.SKU = recommendedProducts[indexPathRow].SKU
             }
         }
-    }*/
+    }
 
     /*
     // MARK: - Navigation
