@@ -26,7 +26,8 @@ struct GoogleReviewResponse {
         let productNames = try doc.getElementsByClass("fbrNcd")[0].getElementsByTag("a")[0].text()
         
         var productDetail = try doc.getElementsByClass("kBBuHb")[0].child(0).text()
-        for n in 1...4 {
+        print(try doc.getElementsByClass("kBBuHb")[0].children().count)
+        for n in 1...(try doc.getElementsByClass("kBBuHb")[0].children().count - 1) {
             productDetail.append("\n\(try doc.getElementsByClass("kBBuHb")[0].child(n).text())")
         }
         productDetail.append("\n\(try doc.getElementsByClass("VOVcm")[1].text())")
@@ -35,8 +36,9 @@ struct GoogleReviewResponse {
         
         var vendorCompare = try doc.getElementsByClass("t9KcM")[0].child(1).text()
         vendorCompare.append(" - \(try doc.getElementsByClass("t9KcM")[0].child(0).child(0).text())")
-        for n in 1...4 {
-            print(try doc.getElementsByClass("t9KcM")[n])
+        //print(try doc.getElementsByClass("t9KcM").count)
+        for n in 1...(try doc.getElementsByClass("t9KcM").count - 1) {
+            //print(try doc.getElementsByClass("t9KcM")[n])
             if (try doc.getElementsByClass("t9KcM")[n] != nil){
                 vendorCompare.append("\n\(try doc.getElementsByClass("t9KcM")[n].child(1).text()) - \(try doc.getElementsByClass("t9KcM")[n].child(0).child(0).text())")
             }
