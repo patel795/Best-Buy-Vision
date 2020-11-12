@@ -56,9 +56,11 @@ class SearchHistoryTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    /*
     override func viewWillAppear(_ animated: Bool) {
         getDataFromFirebase()
     }
+    */
     
     @objc func refresh(sender:AnyObject) {
         getDataFromFirebase()
@@ -102,19 +104,25 @@ class SearchHistoryTableViewController: UITableViewController {
         let dispatchGroup = DispatchGroup()
         let apiHandler = ApiHandlers()
         products = [Product]()
-        for sku in skuArray {
-            dispatchGroup.enter()
-            apiHandler.makeApiCall(productName: "", sku: Int(sku)!){ (info) in
-                self.products = info
-                self.tableView.reloadData()
-                
+        var arrayString = ""
+        for sku in skuArray{
+            if(arrayString == ""){
+                arrayString = "\(sku)"
             }
-            dispatchGroup.leave()
-            DispatchQueue.main.async {
-                self.removeSpinner()
+            else{
+                arrayString = "\(arrayString),\(sku)"
             }
         }
-        dispatchGroup.wait()
+        print(arrayString)
+        dispatchGroup.enter()
+        apiHandler.makeBatchApiCall(skus: arrayString){ (info) in
+            self.products = info
+            self.tableView.reloadData()
+            dispatchGroup.leave()
+        }
+        dispatchGroup.notify(queue: .main) {
+            self.removeSpinner()
+        }
     }
 
     // MARK: - Table view data source

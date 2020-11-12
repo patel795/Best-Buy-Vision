@@ -37,13 +37,14 @@ struct GoogleReviewResponse {
         var vendorCompare = try doc.getElementsByClass("t9KcM")[0].child(1).text()
         vendorCompare.append(" - \(try doc.getElementsByClass("t9KcM")[0].child(0).child(0).text())")
         //print(try doc.getElementsByClass("t9KcM").count)
-        for n in 1...(try doc.getElementsByClass("t9KcM").count - 1) {
-            //print(try doc.getElementsByClass("t9KcM")[n])
-            if (try doc.getElementsByClass("t9KcM")[n] != nil){
-                vendorCompare.append("\n\(try doc.getElementsByClass("t9KcM")[n].child(1).text()) - \(try doc.getElementsByClass("t9KcM")[n].child(0).child(0).text())")
+        if(try doc.getElementsByClass("t9KcM").count > 1){
+            for n in 1...(try doc.getElementsByClass("t9KcM").count - 1) {
+                //print(try doc.getElementsByClass("t9KcM")[n])
+                if (try doc.getElementsByClass("t9KcM")[n] != nil){
+                    vendorCompare.append("\n\(try doc.getElementsByClass("t9KcM")[n].child(1).text()) - \(try doc.getElementsByClass("t9KcM")[n].child(0).child(0).text())")
+                }
             }
         }
-
         var googleResponses = [GoogleModel]()
         
         let productResponse = GoogleModel(imageLink: imageLinks, productName: productNames, productDetail: productDetail, productReview: productReview, vendorCompare: vendorCompare)

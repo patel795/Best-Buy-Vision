@@ -249,30 +249,30 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
             let cell = tableView.dequeueReusableCell(withIdentifier: "productImageCell", for: indexPath) as! ProductDescriptionImageTableViewCell
             cell.productDescriptionImageSlideShow = self.slideshow
             cell.productDescriptionProductName.text = self.products[0].productName
-            
+            cell.isUserInteractionEnabled = false
             return cell
         }
         else if(indexPath.row == 1 && !self.products.isEmpty){
             let cell = tableView.dequeueReusableCell(withIdentifier: "productPriceCell", for: indexPath) as! ProductDescriptionPriceTableViewCell
             cell.productDescriptionPrice.text = self.products[0].productPrice
-            
+            cell.isUserInteractionEnabled = false
             return cell
         }
         else if(indexPath.row == 2 && !self.products.isEmpty){
             let cell = tableView.dequeueReusableCell(withIdentifier: "productOverviewCell", for: indexPath) as! ProductDescriptionOverviewTableViewCell
             cell.productDescriptionOverview.text = self.products[0].productDescription
-            
+            cell.isUserInteractionEnabled = false
             return cell
         }
         else if(indexPath.row == 3 && !self.products.isEmpty){
             let cell = tableView.dequeueReusableCell(withIdentifier: "productSpecificationCell", for: indexPath) as! ProductDescriptionSpecificationTableViewCell
-            cell.productDescriptionSpecification.text = "Empty"
+            cell.productDescriptionSpecification.text = "Spefications"
             
             return cell
         }
         else if(indexPath.row == 4 && !self.products.isEmpty){
             let cell = tableView.dequeueReusableCell(withIdentifier: "productGoogleReviewCell", for: indexPath) as! ProductDescriptionGoogleReviewTableViewCell
-            cell.productDescriptionGoogleReview.text = "Empty"
+            cell.productDescriptionGoogleReview.text = "Google Review"
             
             return cell
         }
@@ -281,6 +281,13 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        indexPathRow = indexPath.row
+        if(indexPath.row == 4) {
+            self.performSegue(withIdentifier: "segueReview", sender: AnyObject?.self)
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -316,14 +323,17 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "segueReview" {
+            if let googleReviewController = segue.destination as? GoogleReviewTableViewController {
+                googleReviewController.productName = self.products[0].productName
+            }
+        }
     }
-    */
-
 }
