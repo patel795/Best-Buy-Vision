@@ -15,7 +15,6 @@ class Product {
     var SKU: String
     var productThumbnailURL: String
     var manufacturer: String
-    
     init(productName: String, productPrice: String, productDescription: String, SKU: String, productThumbnailURL : String, manufacturer: String) {
         self.productName = productName
         self.productPrice = productPrice
@@ -25,3 +24,4 @@ class Product {
         self.manufacturer = manufacturer
     }
 }
+

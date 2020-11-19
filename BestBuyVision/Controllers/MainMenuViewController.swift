@@ -47,6 +47,7 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UIC
         let tapGestureForCard2 = UITapGestureRecognizer(target: self, action: #selector(clickTextRecognitionImageView(_:)))
         tapGestureForCard2.delegate = self
         cardUiViewForImageRecognition.addGestureRecognizer(tapGestureForCard2)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

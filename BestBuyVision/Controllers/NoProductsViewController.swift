@@ -15,15 +15,21 @@ class NoProductsViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: false)
         
         
-        let backButtonImage = UIImage(systemName: "arrow.left")
+        let backButtonImage = UIImage(systemName: "multiply")
         let backBtn = UIButton(type: .system)
         backBtn.setImage(backButtonImage, for: .normal)
         backBtn.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
         backBtn.imageView?.contentMode = .scaleAspectFit
-        tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backBtn)
-        tabBarController?.navigationItem.leftBarButtonItem?.isEnabled = false
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backBtn)
+        navigationItem.leftBarButtonItem?.isEnabled = true
         
+        backBtn.addTarget(self, action: #selector(backButton), for: .touchUpInside)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc private func backButton() {
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

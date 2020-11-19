@@ -163,6 +163,45 @@ class ApiHandlers{
         }
     }
     
+    func getProductDetails(sku : String, completion: @escaping ([ProductSpecification]) -> ()){
+        var details = [ProductSpecification]()
+        let url = URL(string:"https://api.bestbuy.com/v1/products(sku=\(sku))?apiKey=\(self.APIKEY)&sort=sku.asc&show=details.value&format=json")
+        
+        // ALAMOFIRE function: get the data from the website
+        Alamofire.request(url!, method: .get, parameters: nil).responseJSON {
+            (response) in
+            if (response.result.isSuccess) {
+                do {
+                    let json = try JSON(data:response.data!)
+                    if(json["error"].isEmpty){
+                        if(json["products"].count != 0){
+                            for i in 0...json["products"].count - 1{
+                                for x in 0...json["products"][i]["details"].count{
+                                    let productItem = ProductSpecification(name: json["products"][i]["details"][x]["name"].stringValue, value: json["products"][i]["details"][x]["value"].stringValue)
+                                        
+                                    details.append(productItem)
+                                }
+                            }
+                            completion(details)
+                        }
+                        else{
+                            completion([])
+                        }
+                    }
+                    else{
+                        completion([])
+                    }
+                }
+                catch {
+                    completion([])
+                }
+            }
+            else{
+                completion([])
+            }
+        }
+    }
+    
     func trendingProducts(completion: @escaping ([ProductRecommended]) -> ()){
         let url = URL(string: "https://api.bestbuy.com/beta/products/trendingViewed?apiKey=\(self.APIKEY)")
         

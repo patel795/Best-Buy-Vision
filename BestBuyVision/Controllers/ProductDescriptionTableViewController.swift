@@ -294,6 +294,9 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
         if(indexPath.row == 4) {
             self.performSegue(withIdentifier: "segueReview", sender: AnyObject?.self)
         }
+        if(indexPath.row == 3){
+            self.performSegue(withIdentifier: "segueSpecification", sender: nil)
+        }
     }
     /*
     // Override to support conditional editing of the table view.
@@ -381,6 +384,11 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
         if segue.identifier == "segueReview" {
             if let googleReviewController = segue.destination as? GoogleReviewTableViewController {
                 googleReviewController.productName = self.products[0].productName
+            }
+        }
+        if segue.identifier == "segueSpecification" {
+            if let googleReviewController = segue.destination as? ProductSpeficationTableViewController {
+                googleReviewController.sku = self.products[0].SKU
             }
         }
     }
