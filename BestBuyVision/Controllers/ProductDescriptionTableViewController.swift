@@ -21,7 +21,8 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
     var products =  [Product]()
     var imagesJson: JSON?
     var itemBrand = ""
-    var slideshow = ImageSlideshow()
+    var temporaryslideshow:ImageSlideshow?
+    
     
     var alamofireSource = [AlamofireSource(urlString: "https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080")!, AlamofireSource(urlString: "https://images.unsplash.com/photo-1447746249824-4be4e1b76d66?w=1080")!, AlamofireSource(urlString: "https://images.unsplash.com/photo-1463595373836-6e0b0a8ee322?w=1080")!]
     
@@ -40,10 +41,12 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
                 let string = self.imagesJson?[i]["rel"].stringValue
                 if (string?.contains("Standard"))! {
                     self.alamofireSource.append(AlamofireSource(urlString: (self.imagesJson?[i]["href"].stringValue)!)!)
+                    
                 }
                 //self.imageLinks.append(json["products"][0]["images"][i]["href"].stringValue)
             }
             
+            print(self.alamofireSource)
             /*self.productName.text = self.products[0].productName
             self.productPrice.text = "$" + self.products[0].productPrice
             self.productDescription.text = self.products[0].productDescription*/
@@ -137,7 +140,7 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
         }
     }
     
-    private func imageSlideView(){
+    private func imageSlideView(slideshow:ImageSlideshow){
 
         slideshow.slideshowInterval = 5.0
         slideshow.pageIndicatorPosition = .init(horizontal: .center, vertical: .under)
@@ -154,16 +157,17 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
 
         // can be used with other sample sources as `afNetworkingSource`, `alamofireSource` or `sdWebImageSource` or `kingfisherSource`
         slideshow.setImageInputs(alamofireSource)
+        temporaryslideshow = slideshow
 
-        let recognizer = UITapGestureRecognizer(target: self, action: #selector(ProductDescriptionDetailControllerViewController.didTap))
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(ProductDescriptionTableViewController.didTap))
         slideshow.addGestureRecognizer(recognizer)
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
     }
     
     @objc func didTap() {
-        let fullScreenController = slideshow.presentFullScreenController(from: self)
+        let fullScreenController = temporaryslideshow?.presentFullScreenController(from: self)
         // set the activity indicator for full screen controller (skipping the line will show no activity indicator)
-        fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
+        fullScreenController?.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
     }
     
     func imageSlideshow(_ imageSlideshow: ImageSlideshow, didChangeCurrentPageTo page: Int) {
@@ -204,7 +208,7 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
                         DispatchQueue.main.async {
                             //reloading the table view data
                             //self.tableView.reloadData()
-                            self.imageSlideView()
+                            //self.imageSlideView()
                             self.tableView.reloadData()
                             // remove spinner
                             self.removeSpinner()
@@ -247,14 +251,17 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
         let cell = tableView.dequeueReusableCell(withIdentifier: "productImageCell", for: indexPath)
         if(indexPath.row == 0 && !self.products.isEmpty){
             let cell = tableView.dequeueReusableCell(withIdentifier: "productImageCell", for: indexPath) as! ProductDescriptionImageTableViewCell
-            cell.productDescriptionImageSlideShow = self.slideshow
+            //cell.productDescriptionImageSlideShow = slideshow
+            imageSlideView(slideshow: cell.productDescriptionImageSlideShow)
+            //cell.productDescriptionImageSlideShow.setImageInputs(alamofireSource)
+            //cell.productDescriptionImageSlideShow.setImageInputs(slideshow.images[indexPath])
             cell.productDescriptionProductName.text = self.products[0].productName
-            cell.isUserInteractionEnabled = false
+            cell.isUserInteractionEnabled = true
             return cell
         }
         else if(indexPath.row == 1 && !self.products.isEmpty){
             let cell = tableView.dequeueReusableCell(withIdentifier: "productPriceCell", for: indexPath) as! ProductDescriptionPriceTableViewCell
-            cell.productDescriptionPrice.text = self.products[0].productPrice
+            cell.productDescriptionPrice.text = "$" + self.products[0].productPrice
             cell.isUserInteractionEnabled = false
             return cell
         }
@@ -324,6 +331,47 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
     */
 
     
+    @IBAction func addToWishlist(_ sender: Any) {
+        let usersRef = db.collection("Wishlist").document("\(Auth.auth().currentUser!.uid)")
+
+        usersRef.getDocument { (document, error) in
+            if let document = document {
+                if document.exists{
+                    self.db.collection("Wishlist").document("\(Auth.auth().currentUser!.uid)").updateData(["SKU" : FieldValue.arrayUnion([self.SKU])])
+
+                } else {
+                    self.db.collection("Wishlist").document("\(Auth.auth().currentUser!.uid)").setData(["SKU" : [self.SKU]])
+                }
+            }
+        }
+        MakeToast.showToast(controller: self, message: "Product is added in wishlist", seconds: 1.0)
+        addWishListToDataAnalytics()
+    }
+    
+    private func addWishListToDataAnalytics(){
+        let range = priceRangeCalculator(productPrice: Double(self.products[0].productPrice)!)
+        let batch = db.batch()
+        let removedChar: Set<Character> = [".", "/", "\\"]
+        self.products[0].manufacturer.removeAll(where: { removedChar.contains($0) })
+        
+        let priceRangeSearchHistory = db.collection("LoggedEvents").document("price_range_wishlist")
+        batch.updateData([range : FieldValue.increment(Int64(1)) ], forDocument: priceRangeSearchHistory)
+
+        let mostViewedComapany = db.collection("LoggedEvents").document("companies_wishlist")
+        batch.updateData([self.products[0].manufacturer: FieldValue.increment(Int64(1)) ], forDocument: mostViewedComapany)
+
+        //let laRef = db.collection("cities").document("LA")
+        //batch.deleteDocument(laRef)
+        
+        // Commit the batch
+        batch.commit() { err in
+            if let err = err {
+                print("Error writing batch \(err)")
+            } else {
+                print("Batch write succeeded.")
+            }
+        }
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

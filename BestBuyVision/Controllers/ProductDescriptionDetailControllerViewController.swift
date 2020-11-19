@@ -64,6 +64,7 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
                 //self.imageLinks.append(json["products"][0]["images"][i]["href"].stringValue)
             }
             
+            print(self.alamofireSource)
             self.productName.text = self.products[0].productName
             self.productPrice.text = "$" + self.products[0].productPrice
             self.productDescription.text = self.products[0].productDescription
@@ -175,6 +176,7 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
 
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(ProductDescriptionDetailControllerViewController.didTap))
         slideshow.addGestureRecognizer(recognizer)
+        print(slideshow)
     }
     
     @objc func didTap() {

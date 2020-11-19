@@ -228,7 +228,7 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UIC
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if segue.identifier == "segueProductRecommended" {
-            if let productDescriptionDetailController = segue.destination as? ProductDescriptionDetailControllerViewController {
+            if let productDescriptionDetailController = segue.destination as? ProductDescriptionTableViewController {
                 productDescriptionDetailController.SKU = recommendedProducts[indexPathRow].SKU
             }
         }

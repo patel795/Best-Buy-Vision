@@ -149,7 +149,7 @@ class ProoductsTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         indexPathRow = indexPath.row
         //self.performSegue(withIdentifier: "segueProductDetail", sender: AnyObject?.self)
-        self.performSegue(withIdentifier: "productDescription", sender: AnyObject?.self)
+        self.performSegue(withIdentifier: "segueProductDetail", sender: AnyObject?.self)
     }
     /*
     // Override to support conditional editing of the table view.
@@ -193,7 +193,7 @@ class ProoductsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "productDescription" {
+        if segue.identifier == "segueProductDetail" {
             if let productDescriptionDetailController = segue.destination as? ProductDescriptionTableViewController {
                 productDescriptionDetailController.SKU = products[indexPathRow].SKU
                 productDescriptionDetailController.itemBrand = itemBrand

@@ -49,7 +49,6 @@
 		579B8A232462547C008F3C28 /* GoogleReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B8A222462547C008F3C28 /* GoogleReviewViewController.swift */; };
 		57A3069824CA3A90007D84BE /* CardsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3069724CA3A90007D84BE /* CardsUIView.swift */; };
 		57AC72F22454D6E000F23F43 /* SpinnerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AC72F12454D6E000F23F43 /* SpinnerExtension.swift */; };
-		57B93026255CE716003FB2B6 /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57B93025255CE716003FB2B6 /* First_Stage_Categories_Classifier.mlmodel */; };
 		57BA1ED423F9995500350ADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1ED323F9995500350ADB /* AppDelegate.swift */; };
 		57BA1ED623F9995500350ADB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1ED523F9995500350ADB /* SceneDelegate.swift */; };
 		57BA1ED823F9995500350ADB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1ED723F9995500350ADB /* ViewController.swift */; };
@@ -86,6 +85,7 @@
 		AEDE298B255BAA360071CACD /* ProductDescriptionOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE298A255BAA360071CACD /* ProductDescriptionOverviewTableViewCell.swift */; };
 		AEDE298D255BAA4D0071CACD /* ProductDescriptionSpecificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE298C255BAA4D0071CACD /* ProductDescriptionSpecificationTableViewCell.swift */; };
 		AEDE298F255BAA690071CACD /* ProductDescriptionGoogleReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE298E255BAA690071CACD /* ProductDescriptionGoogleReviewTableViewCell.swift */; };
+		AEDE299125661D020071CACD /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AEDE299025661D020071CACD /* First_Stage_Categories_Classifier.mlmodel */; };
 		AEFB8EA924461DA400F89819 /* ProoductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -152,7 +152,6 @@
 		579B8A222462547C008F3C28 /* GoogleReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleReviewViewController.swift; sourceTree = "<group>"; };
 		57A3069724CA3A90007D84BE /* CardsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsUIView.swift; sourceTree = "<group>"; };
 		57AC72F12454D6E000F23F43 /* SpinnerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerExtension.swift; sourceTree = "<group>"; };
-		57B93025255CE716003FB2B6 /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../Desktop/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
 		57BA1ED023F9995500350ADB /* BestBuyVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestBuyVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BA1ED323F9995500350ADB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57BA1ED523F9995500350ADB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +196,7 @@
 		AEDE298A255BAA360071CACD /* ProductDescriptionOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		AEDE298C255BAA4D0071CACD /* ProductDescriptionSpecificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionSpecificationTableViewCell.swift; sourceTree = "<group>"; };
 		AEDE298E255BAA690071CACD /* ProductDescriptionGoogleReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionGoogleReviewTableViewCell.swift; sourceTree = "<group>"; };
+		AEDE299025661D020071CACD /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../../Documents/ClassificationResults/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
 		AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProoductsTableViewController.swift; sourceTree = "<group>"; };
 		F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -272,11 +272,11 @@
 				577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */,
 				AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */,
 				AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */,
+				AEDE299025661D020071CACD /* First_Stage_Categories_Classifier.mlmodel */,
 				579B8A222462547C008F3C28 /* GoogleReviewViewController.swift */,
 				AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */,
 				5749E3072523CD2D0063DB47 /* OcrViewController.swift */,
 				57028AFE2527D16E00051C62 /* MainMenuViewController.swift */,
-				57B93025255CE716003FB2B6 /* First_Stage_Categories_Classifier.mlmodel */,
 				5716D7ED253D083100195555 /* SearchHistoryTableViewController.swift */,
 				57C3D0B52539117C0050652A /* GoogleReviewTableViewController.swift */,
 				AECCEBBC253D123A00CF77B2 /* WIshlistTableViewController.swift */,
@@ -742,7 +742,7 @@
 				57C3D0B62539117C0050652A /* GoogleReviewTableViewController.swift in Sources */,
 				57028AF22527729100051C62 /* BoseCorporation.mlmodel in Sources */,
 				57028AD72527727600051C62 /* Lenovo.mlmodel in Sources */,
-				57B93026255CE716003FB2B6 /* First_Stage_Categories_Classifier.mlmodel in Sources */,
+				AEDE299125661D020071CACD /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				57A3069824CA3A90007D84BE /* CardsUIView.swift in Sources */,
 				AE3F2ED424D2096F00F88129 /* ClassificationModels.swift in Sources */,
 				AE5D4A38252189260020D855 /* GoogleModel.swift in Sources */,
