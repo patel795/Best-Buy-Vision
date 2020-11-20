@@ -12,36 +12,81 @@ import CoreML
 
 struct Category_Model {
     static let categoriesDict:[String:[String:AnyObject]] = [
-                                        "Laptops":Laptops_Model.laptopsCategoriesDict,
-                                        "Headphones":Headphones_Model.headphonesCategoriesDict,
-                                        "Digital Camera": Laptops_Model.laptopsCategoriesDict,
-                                        "In Ear Headphones": Laptops_Model.laptopsCategoriesDict,
-                                        "Mobile_Phones": Laptops_Model.laptopsCategoriesDict,
-                                        "Printers": Laptops_Model.laptopsCategoriesDict,
-                                        "Tablets": Laptops_Model.laptopsCategoriesDict,
-                                        "Watches": Laptops_Model.laptopsCategoriesDict]
+        "Laptops":Laptops_Model.laptopsCategoriesDict,
+        "Headphones":Headphones_Model.headphonesCategoriesDict,
+        "Digital Camera": Digital_Camera_Model.digitalCameraCategoriesDict,
+        "In Ear Headphones": In_Ear_Headphones_Model.inEarHeadphonesCategoriesDict,
+        "Mobile_Phones": Mobile_Phones_Model.mobilePhoneCategoriesDict,
+        "Printers": Printers_Model.printersCategoriesDict,
+        "Tablets": Tablets_Model.tabletsCategoriesDict,
+        "Watches": Laptops_Model.laptopsCategoriesDict
+    ]
 }
 
 struct Laptops_Model {
-    static let laptopsCategoriesDict:[String:AnyObject] = ["Apple Inc.": AppleInc().model,
-                                              "Acer Inc.": AcerInc().model,
-                                              "ASUS": ASUS().model,
-                                              "Dell": Dell().model,
-                                              "Hewlett-Packard": Hewlett_Packard().model,
-                                              "Lenovo": Lenovo().model,
-                                              "Micro-Star International": Micro_Star_International().model,
-                                              "Microsoft Corporation": MicrosoftCorporation().model,
-                                              "Razer Inc.": RazerInc().model]
+    static let laptopsCategoriesDict:[String:AnyObject] = [
+          "Apple Inc.": AppleInc().model,
+          "Acer Inc.": AcerInc().model,
+          "ASUS": ASUS().model,
+          "Dell": Dell().model,
+          "Hewlett-Packard": Hewlett_Packard().model,
+          "Lenovo": Lenovo().model,
+          "Micro-Star International": Micro_Star_International().model,
+          "Microsoft Corporation": MicrosoftCorporation().model,
+          "Razer Inc.": RazerInc().model
+    ]
 }
 
 struct Headphones_Model {
-    static let headphonesCategoriesDict:[String:AnyObject] = ["Audio Technica": AudioTechinca().model,
-                                            "Bang & Olufsen": BangAndOlufsen().model,
-                                            "Beats Electronics": BeatsElectronics().model,
-                                            "Bose Corporation": BoseCorporation().model,
-                                            "Insignia": Insignia().model,
-                                            "Jabra": Jabra().model,
-                                            "JBL": JBL().model,
-                                            "Sennheiser": Sennheiser().model,
-                                            "Sony": Sony().model]
+    static let headphonesCategoriesDict:[String:AnyObject] = [
+        "Audio Technica": AudioTechinca().model,
+        "Bang & Olufsen": BangAndOlufsen().model,
+        "Beats Electronics": BeatsElectronics().model,
+        "Bose Corporation": BoseCorporation().model,
+        "Insignia": Insignia().model,
+        "Jabra": Jabra().model,
+        "JBL": JBL().model,
+        "Sennheiser": Sennheiser().model,
+        "Sony": Sony().model
+    ]
+}
+
+struct Digital_Camera_Model {
+    static let digitalCameraCategoriesDict:[String:AnyObject] = [
+        "Nikon": Nikon().model,
+        "Canon Inc.": CanonInc().model,
+        "Sony": SonyDSLR().model
+    ]
+}
+
+struct Tablets_Model {
+    static let tabletsCategoriesDict:[String:AnyObject] = [
+        "Apple Inc.": AppleTablets().model,
+        "Microsoft Corporation": MicrosoftTablets().model,
+        "Samsung Group": SamsungTablets().model
+    ]
+}
+
+struct Printers_Model {
+    static let printersCategoriesDict:[String:AnyObject] = [
+        "Canon Inc.": CanonPrinters().model,
+        "Hewlett-Packard": HpPrinters().model,
+        "Seiko Epson": EpsonPrinters().model
+    ]
+}
+
+struct Mobile_Phones_Model {
+    static let mobilePhoneCategoriesDict:[String:AnyObject] = [
+        "Apple Inc.": ApplePhones().model,
+        "Samsung Group": SamsungPhones().model,
+        "Google": GooglePhones().model
+    ]
+}
+
+struct In_Ear_Headphones_Model {
+    static let inEarHeadphonesCategoriesDict:[String:AnyObject] = [
+        "Apple Inc.": AppleInEarHeadphones().model,
+        "JBL": JBLInEarHeadphones().model,
+        "Sony": SonyInEarHeadphones().model
+    ]
 }

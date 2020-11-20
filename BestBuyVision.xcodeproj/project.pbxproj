@@ -32,6 +32,21 @@
 		5716D7BB253CD93400195555 /* ProductReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5716D7BA253CD93400195555 /* ProductReviewTableViewCell.swift */; };
 		5716D7C0253CD96000195555 /* ProductVendorCompareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5716D7BF253CD96000195555 /* ProductVendorCompareTableViewCell.swift */; };
 		5716D7EE253D083100195555 /* SearchHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5716D7ED253D083100195555 /* SearchHistoryTableViewController.swift */; };
+		5742285E25676DE600290CBF /* CanonInc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5742285B25676DE600290CBF /* CanonInc.mlmodel */; };
+		5742285F25676DE600290CBF /* Nikon.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5742285C25676DE600290CBF /* Nikon.mlmodel */; };
+		5742286025676DE600290CBF /* SonyDSLR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5742285D25676DE600290CBF /* SonyDSLR.mlmodel */; };
+		57422868256775E000290CBF /* AppleTablets.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57422865256775E000290CBF /* AppleTablets.mlmodel */; };
+		57422869256775E000290CBF /* MicrosoftTablets.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57422866256775E000290CBF /* MicrosoftTablets.mlmodel */; };
+		5742286A256775E000290CBF /* SamsungTablets.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57422867256775E000290CBF /* SamsungTablets.mlmodel */; };
+		574228722567780A00290CBF /* HpPrinters.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5742286F2567780900290CBF /* HpPrinters.mlmodel */; };
+		574228732567780A00290CBF /* CanonPrinters.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 574228702567780A00290CBF /* CanonPrinters.mlmodel */; };
+		574228742567780A00290CBF /* EpsonPrinters.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 574228712567780A00290CBF /* EpsonPrinters.mlmodel */; };
+		5742287C25677ABE00290CBF /* ApplePhones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5742287925677ABD00290CBF /* ApplePhones.mlmodel */; };
+		5742287D25677ABE00290CBF /* GooglePhones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5742287A25677ABE00290CBF /* GooglePhones.mlmodel */; };
+		5742287E25677ABE00290CBF /* SamsungPhones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5742287B25677ABE00290CBF /* SamsungPhones.mlmodel */; };
+		5742288625677E8D00290CBF /* JBLInEarHeadphones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5742288325677E8C00290CBF /* JBLInEarHeadphones.mlmodel */; };
+		5742288725677E8D00290CBF /* SonyInEarHeadphones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5742288425677E8D00290CBF /* SonyInEarHeadphones.mlmodel */; };
+		5742288825677E8D00290CBF /* AppleInEarHeadphones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5742288525677E8D00290CBF /* AppleInEarHeadphones.mlmodel */; };
 		5749E2ED2523CA440063DB47 /* ApiHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E2EC2523CA440063DB47 /* ApiHandlers.swift */; };
 		5749E2F62523CCB70063DB47 /* OcrTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E2F52523CCB70063DB47 /* OcrTextView.swift */; };
 		5749E2FE2523CCDE0063DB47 /* ScanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E2FD2523CCDE0063DB47 /* ScanButton.swift */; };
@@ -138,6 +153,21 @@
 		5716D7BA253CD93400195555 /* ProductReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewTableViewCell.swift; sourceTree = "<group>"; };
 		5716D7BF253CD96000195555 /* ProductVendorCompareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVendorCompareTableViewCell.swift; sourceTree = "<group>"; };
 		5716D7ED253D083100195555 /* SearchHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryTableViewController.swift; sourceTree = "<group>"; };
+		5742285B25676DE600290CBF /* CanonInc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CanonInc.mlmodel; path = ../../../../../Desktop/CoreMLData/Models/DSLR/CanonInc.mlmodel; sourceTree = "<group>"; };
+		5742285C25676DE600290CBF /* Nikon.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Nikon.mlmodel; path = ../../../../../Desktop/CoreMLData/Models/DSLR/Nikon.mlmodel; sourceTree = "<group>"; };
+		5742285D25676DE600290CBF /* SonyDSLR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SonyDSLR.mlmodel; path = ../../../../../Desktop/CoreMLData/Models/DSLR/SonyDSLR.mlmodel; sourceTree = "<group>"; };
+		57422865256775E000290CBF /* AppleTablets.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AppleTablets.mlmodel; sourceTree = "<group>"; };
+		57422866256775E000290CBF /* MicrosoftTablets.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MicrosoftTablets.mlmodel; sourceTree = "<group>"; };
+		57422867256775E000290CBF /* SamsungTablets.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SamsungTablets.mlmodel; sourceTree = "<group>"; };
+		5742286F2567780900290CBF /* HpPrinters.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HpPrinters.mlmodel; sourceTree = "<group>"; };
+		574228702567780A00290CBF /* CanonPrinters.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CanonPrinters.mlmodel; sourceTree = "<group>"; };
+		574228712567780A00290CBF /* EpsonPrinters.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EpsonPrinters.mlmodel; sourceTree = "<group>"; };
+		5742287925677ABD00290CBF /* ApplePhones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ApplePhones.mlmodel; sourceTree = "<group>"; };
+		5742287A25677ABE00290CBF /* GooglePhones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GooglePhones.mlmodel; sourceTree = "<group>"; };
+		5742287B25677ABE00290CBF /* SamsungPhones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SamsungPhones.mlmodel; sourceTree = "<group>"; };
+		5742288325677E8C00290CBF /* JBLInEarHeadphones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = JBLInEarHeadphones.mlmodel; sourceTree = "<group>"; };
+		5742288425677E8D00290CBF /* SonyInEarHeadphones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SonyInEarHeadphones.mlmodel; sourceTree = "<group>"; };
+		5742288525677E8D00290CBF /* AppleInEarHeadphones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AppleInEarHeadphones.mlmodel; sourceTree = "<group>"; };
 		5749E2EC2523CA440063DB47 /* ApiHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandlers.swift; sourceTree = "<group>"; };
 		5749E2F52523CCB70063DB47 /* OcrTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcrTextView.swift; sourceTree = "<group>"; };
 		5749E2FD2523CCDE0063DB47 /* ScanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanButton.swift; sourceTree = "<group>"; };
@@ -306,6 +336,56 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		57422839256765D900290CBF /* DSLR */ = {
+			isa = PBXGroup;
+			children = (
+				5742285B25676DE600290CBF /* CanonInc.mlmodel */,
+				5742285C25676DE600290CBF /* Nikon.mlmodel */,
+				5742285D25676DE600290CBF /* SonyDSLR.mlmodel */,
+			);
+			path = DSLR;
+			sourceTree = "<group>";
+		};
+		574228642567707E00290CBF /* Tablets */ = {
+			isa = PBXGroup;
+			children = (
+				57422865256775E000290CBF /* AppleTablets.mlmodel */,
+				57422866256775E000290CBF /* MicrosoftTablets.mlmodel */,
+				57422867256775E000290CBF /* SamsungTablets.mlmodel */,
+			);
+			path = Tablets;
+			sourceTree = "<group>";
+		};
+		5742286E2567771B00290CBF /* Printers */ = {
+			isa = PBXGroup;
+			children = (
+				574228702567780A00290CBF /* CanonPrinters.mlmodel */,
+				574228712567780A00290CBF /* EpsonPrinters.mlmodel */,
+				5742286F2567780900290CBF /* HpPrinters.mlmodel */,
+			);
+			path = Printers;
+			sourceTree = "<group>";
+		};
+		57422878256779E100290CBF /* MobilePhones */ = {
+			isa = PBXGroup;
+			children = (
+				5742287925677ABD00290CBF /* ApplePhones.mlmodel */,
+				5742287A25677ABE00290CBF /* GooglePhones.mlmodel */,
+				5742287B25677ABE00290CBF /* SamsungPhones.mlmodel */,
+			);
+			path = MobilePhones;
+			sourceTree = "<group>";
+		};
+		5742288225677DD200290CBF /* InEarHeadphones */ = {
+			isa = PBXGroup;
+			children = (
+				5742288525677E8D00290CBF /* AppleInEarHeadphones.mlmodel */,
+				5742288325677E8C00290CBF /* JBLInEarHeadphones.mlmodel */,
+				5742288425677E8D00290CBF /* SonyInEarHeadphones.mlmodel */,
+			);
+			path = InEarHeadphones;
+			sourceTree = "<group>";
+		};
 		5749E2F42523CC9E0063DB47 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +506,11 @@
 		AE3F2ED524D209CE00F88129 /* CreateMLModels */ = {
 			isa = PBXGroup;
 			children = (
+				5742288225677DD200290CBF /* InEarHeadphones */,
+				57422878256779E100290CBF /* MobilePhones */,
+				5742286E2567771B00290CBF /* Printers */,
+				574228642567707E00290CBF /* Tablets */,
+				57422839256765D900290CBF /* DSLR */,
 				57B243E424D72E9E009F4513 /* Headphones */,
 				AE3F2EDC24D20E8B00F88129 /* Laptops */,
 			);
@@ -726,10 +811,12 @@
 			files = (
 				57028AED2527729100051C62 /* Insignia.mlmodel in Sources */,
 				AE5D4A36251D98FD0020D855 /* GoogleReviewResponse.swift in Sources */,
+				5742288725677E8D00290CBF /* SonyInEarHeadphones.mlmodel in Sources */,
 				579B8A232462547C008F3C28 /* GoogleReviewViewController.swift in Sources */,
 				5716D7C0253CD96000195555 /* ProductVendorCompareTableViewCell.swift in Sources */,
 				57BA1ED823F9995500350ADB /* ViewController.swift in Sources */,
 				5796940E254B923A00C4ADE9 /* DataAnalyticsTableViewCell.swift in Sources */,
+				5742286025676DE600290CBF /* SonyDSLR.mlmodel in Sources */,
 				57028AEE2527729100051C62 /* Jabra.mlmodel in Sources */,
 				578A04162566E8BC00FBB421 /* SpeficationTableViewCell.swift in Sources */,
 				578A040C2566D15700FBB421 /* ProductSpecification.swift in Sources */,
@@ -742,6 +829,7 @@
 				57028AF12527729100051C62 /* BeatsElectronics.mlmodel in Sources */,
 				57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */,
 				57028AD52527727600051C62 /* Hewlett-Packard.mlmodel in Sources */,
+				5742287D25677ABE00290CBF /* GooglePhones.mlmodel in Sources */,
 				57C3D0BC25393F670050652A /* GoogleReviewImageTableViewCell.swift in Sources */,
 				57BA1F0423FA0BD700350ADB /* UIShadows.swift in Sources */,
 				AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
@@ -765,16 +853,23 @@
 				57028AEF2527729100051C62 /* AudioTechinca.mlmodel in Sources */,
 				57BA1ED423F9995500350ADB /* AppDelegate.swift in Sources */,
 				5716D7B9253CD91400195555 /* ProductDetailTableViewCell.swift in Sources */,
+				5742285E25676DE600290CBF /* CanonInc.mlmodel in Sources */,
+				57422868256775E000290CBF /* AppleTablets.mlmodel in Sources */,
+				5742288825677E8D00290CBF /* AppleInEarHeadphones.mlmodel in Sources */,
+				574228722567780A00290CBF /* HpPrinters.mlmodel in Sources */,
 				AEDE298D255BAA4D0071CACD /* ProductDescriptionSpecificationTableViewCell.swift in Sources */,
+				57422869256775E000290CBF /* MicrosoftTablets.mlmodel in Sources */,
 				AEDE298F255BAA690071CACD /* ProductDescriptionGoogleReviewTableViewCell.swift in Sources */,
 				AE9C0F0624A3E13800F554C4 /* makeAlert.swift in Sources */,
 				578A04112566D95700FBB421 /* ProductSpeficationTableViewController.swift in Sources */,
 				57BA1F0823FA0CCE00350ADB /* UIViewAndExtension.swift in Sources */,
+				574228742567780A00290CBF /* EpsonPrinters.mlmodel in Sources */,
 				57D406BA2470AF850042A7D1 /* MakeToast.swift in Sources */,
 				570910EB254FA0E3005A7E9F /* NoProductsViewController.swift in Sources */,
 				5749E3032523CD030063DB47 /* ScanImageView.swift in Sources */,
 				AEAFA0E524566C9B00931015 /* User.swift in Sources */,
 				AEDE2989255BAA220071CACD /* ProductDescriptionPriceTableViewCell.swift in Sources */,
+				5742285F25676DE600290CBF /* Nikon.mlmodel in Sources */,
 				AEDE298B255BAA360071CACD /* ProductDescriptionOverviewTableViewCell.swift in Sources */,
 				576DC481245DFDC6002A9926 /* Utilities.swift in Sources */,
 				57BA1ED623F9995500350ADB /* SceneDelegate.swift in Sources */,
@@ -783,8 +878,10 @@
 				57028AD32527727600051C62 /* Micro-Star International.mlmodel in Sources */,
 				AEFB8EA924461DA400F89819 /* ProoductsTableViewController.swift in Sources */,
 				AE5C670C245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift in Sources */,
+				5742287C25677ABE00290CBF /* ApplePhones.mlmodel in Sources */,
 				AE64F12D2472022A00FAD5BF /* ForgotPasswordViewController.swift in Sources */,
 				5749E3082523CD2D0063DB47 /* OcrViewController.swift in Sources */,
+				5742288625677E8D00290CBF /* JBLInEarHeadphones.mlmodel in Sources */,
 				57AC72F22454D6E000F23F43 /* SpinnerExtension.swift in Sources */,
 				57028AD42527727600051C62 /* ASUS.mlmodel in Sources */,
 				57028AD92527727600051C62 /* AcerInc.mlmodel in Sources */,
@@ -793,7 +890,10 @@
 				57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */,
 				57028AFF2527D16E00051C62 /* MainMenuViewController.swift in Sources */,
 				AEDE2987255BA9250071CACD /* ProductDescriptionImageTableViewCell.swift in Sources */,
+				5742287E25677ABE00290CBF /* SamsungPhones.mlmodel in Sources */,
 				577ECCA42453C77F007AB88D /* Product.swift in Sources */,
+				5742286A256775E000290CBF /* SamsungTablets.mlmodel in Sources */,
+				574228732567780A00290CBF /* CanonPrinters.mlmodel in Sources */,
 				57028AD82527727600051C62 /* Dell.mlmodel in Sources */,
 				57028AE02527727C00051C62 /* RazerInc.mlmodel in Sources */,
 				AEDE2983255BA2950071CACD /* ProductDescriptionTableViewController.swift in Sources */,
