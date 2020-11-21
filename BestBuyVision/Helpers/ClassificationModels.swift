@@ -16,7 +16,7 @@ struct Category_Model {
         "Headphones":Headphones_Model.headphonesCategoriesDict,
         "Digital Camera": Digital_Camera_Model.digitalCameraCategoriesDict,
         "In Ear Headphones": In_Ear_Headphones_Model.inEarHeadphonesCategoriesDict,
-        "Mobile_Phones": Mobile_Phones_Model.mobilePhoneCategoriesDict,
+        "Mobile Phones": Mobile_Phones_Model.mobilePhoneCategoriesDict,
         "Printers": Printers_Model.printersCategoriesDict,
         "Tablets": Tablets_Model.tabletsCategoriesDict,
         "Watches": Laptops_Model.laptopsCategoriesDict

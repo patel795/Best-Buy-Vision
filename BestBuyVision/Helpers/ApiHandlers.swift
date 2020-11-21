@@ -24,10 +24,10 @@ class ApiHandlers{
             
             let productNameForURL = startingText + productName
             
-            url = URL(string: "https://api.bestbuy.com/v1/products((\(productNameForURL)&active=true))?format=json&show=sku,name,salePrice,manufacturer,bestSellingRank,image,shortDescription&page=1&apiKey=\(self.APIKEY)")
+            url = URL(string: "https://api.bestbuy.com/v1/products((\(productNameForURL)&active=true))?format=json&show=sku,name,salePrice,manufacturer,bestSellingRank,image,shortDescription,customerReviewAverage&page=1&apiKey=\(self.APIKEY)")
         }
         else {
-            url = URL(string: "https://api.bestbuy.com/v1/products((sku=\(sku)&active=true))?format=json&show=sku,name,salePrice,bestSellingRank,manufacturer,image,shortDescription&page=1&apiKey=\(self.APIKEY)")
+            url = URL(string: "https://api.bestbuy.com/v1/products((sku=\(sku)&active=true))?format=json&show=sku,name,salePrice,bestSellingRank,manufacturer,image,shortDescription,customerReviewAverage&page=1&apiKey=\(self.APIKEY)")
         }
         
         // ALAMOFIRE function: get the data from the website
@@ -46,7 +46,8 @@ class ApiHandlers{
                                                    productDescription: json["products"][i]["shortDescription"].stringValue,
                                                    SKU: json["products"][i]["sku"].stringValue,
                                                    productThumbnailURL: json["products"][i]["image"].stringValue,
-                                                   manufacturer: json["products"][i]["manufacturer"].stringValue)
+                                                   manufacturer: json["products"][i]["manufacturer"].stringValue,
+                                                   customerReviewAverage: json["products"][i]["customerReviewAverage"].doubleValue)
                                 self.products.append(item)
                             }
                             completion(self.products)
@@ -71,7 +72,7 @@ class ApiHandlers{
     
     func makeBatchApiCall(skus: String, completion: @escaping ([Product]) -> ()){
         
-        let urlString = "https://api.bestbuy.com/v1/products(sku%20in%20(\(skus)))?format=json&show=sku,name,salePrice,bestSellingRank,manufacturer,image,shortDescription&apiKey=\(self.APIKEY)"
+        let urlString = "https://api.bestbuy.com/v1/products(sku%20in%20(\(skus)))?format=json&show=sku,name,salePrice,bestSellingRank,manufacturer,image,shortDescription,customerReviewAverage&apiKey=\(self.APIKEY)"
         
         let url = URL(string: urlString)
         
@@ -91,7 +92,8 @@ class ApiHandlers{
                                                    productDescription: json["products"][i]["shortDescription"].stringValue,
                                                    SKU: json["products"][i]["sku"].stringValue,
                                                    productThumbnailURL: json["products"][i]["image"].stringValue,
-                                                   manufacturer: json["products"][i]["manufacturer"].stringValue)
+                                                   manufacturer: json["products"][i]["manufacturer"].stringValue,
+                                                   customerReviewAverage: json["products"][i]["customerReviewAverage"].doubleValue)
                                 self.products.append(item)
                             }
                             completion(self.products)

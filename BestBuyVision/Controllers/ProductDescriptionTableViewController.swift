@@ -22,6 +22,7 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
     var imagesJson: JSON?
     var itemBrand = ""
     var temporaryslideshow:ImageSlideshow?
+    var productCategory = ""
     
     
     var alamofireSource = [AlamofireSource(urlString: "https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080")!, AlamofireSource(urlString: "https://images.unsplash.com/photo-1447746249824-4be4e1b76d66?w=1080")!, AlamofireSource(urlString: "https://images.unsplash.com/photo-1463595373836-6e0b0a8ee322?w=1080")!]
@@ -62,43 +63,64 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
     }
     
     private func logEvent(){
-        let range = priceRangeCalculator(productPrice: Double(self.products[0].productPrice)!)
-        
-        /*
-        let usersRef = db.collection("LoggedEvents").document("price_range_search_history")
+        calculateAverageRating(){ (info) in
+            let range = self.priceRangeCalculator(productPrice: Double(self.products[0].productPrice)!)
+            let batch = self.db.batch()
+            let removedChar: Set<Character> = [".", "/", "\\"]
+            self.products[0].manufacturer.removeAll(where: { removedChar.contains($0) })
+            self.productCategory.removeAll(where: { removedChar.contains($0) })
+            
+            let customerDataAnalytics = self.db.collection("CustomerDataAnalytics").document("Reviews")
+            batch.updateData([self.products[0].manufacturer: info], forDocument: customerDataAnalytics)
+            
+            let priceRangeSearchHistory = self.db.collection("LoggedEvents").document("price_range_search_history")
+            batch.updateData([range : FieldValue.increment(Int64(1)) ], forDocument: priceRangeSearchHistory)
 
-        usersRef.getDocument { (document, error) in
-            if let document = document {
-
-                if document.exists{
-                    self.db.collection("LoggedEvents").document("price_range_search_history").updateData([range : FieldValue.increment(Int64(1))])
-
+            let mostViewedComapany = self.db.collection("LoggedEvents").document("most_viewed_company")
+            batch.updateData([self.products[0].manufacturer: FieldValue.increment(Int64(1)) ], forDocument: mostViewedComapany)
+            
+            if(self.productCategory != ""){
+                let mostViewedCategory = self.db.collection("LoggedEvents").document("most_viewed_category")
+                batch.updateData([self.productCategory: FieldValue.increment(Int64(1)) ], forDocument: mostViewedCategory)
+            }
+            
+            // Commit the batch
+            batch.commit() { err in
+                if let err = err {
+                    print("Error writing batch \(err)")
                 } else {
-                    self.db.collection("LoggedEvents").document("price_range_search_history").setData([range : FieldValue.increment(Int64(1))])
+                    print("Batch write succeeded.")
                 }
             }
         }
-        */
-        
-        let batch = db.batch()
-        let removedChar: Set<Character> = [".", "/", "\\"]
-        self.products[0].manufacturer.removeAll(where: { removedChar.contains($0) })
-        
-        let priceRangeSearchHistory = db.collection("LoggedEvents").document("price_range_search_history")
-        batch.updateData([range : FieldValue.increment(Int64(1)) ], forDocument: priceRangeSearchHistory)
-
-        let mostViewedComapany = db.collection("LoggedEvents").document("most_viewed_company")
-        batch.updateData([self.products[0].manufacturer: FieldValue.increment(Int64(1)) ], forDocument: mostViewedComapany)
-
-        //let laRef = db.collection("cities").document("LA")
-        //batch.deleteDocument(laRef)
-        
-        // Commit the batch
-        batch.commit() { err in
+    }
+    
+    private func calculateAverageRating(completion: @escaping (Double) -> ()){
+        var firebaseData = [String: Any]()
+        let group = DispatchGroup()
+        group.enter()
+        self.db.collection("CustomerDataAnalytics").getDocuments() {
+            (querySnapshot, err) in
+            
+            // MARK: FB - Boilerplate code to get data from Firestore
             if let err = err {
-                print("Error writing batch \(err)")
+                print("Error getting documents: \(err)")
             } else {
-                print("Batch write succeeded.")
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    if(document.documentID == "Reviews"){
+                        firebaseData = data
+                    }
+                }
+            }
+            group.leave()
+        }
+        
+        group.notify(queue: .main) {
+            if(!firebaseData.isEmpty){
+                var ratings:Double = firebaseData["\(self.products[0].manufacturer)"] as! Double
+                ratings = (ratings + self.products[0].customerReviewAverage) / 2
+                completion(ratings)
             }
         }
     }
@@ -177,7 +199,7 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
     private func makeApiCall(completion: @escaping (String) -> ()){
         
         guard let URL = URL(string:
-            "https://api.bestbuy.com/v1/products(sku=\(self.SKU))?show=sku,name,salePrice,images,manufacturer,longDescription&apiKey=\(self.APIKEY)&format=json")
+            "https://api.bestbuy.com/v1/products(sku=\(self.SKU))?show=sku,name,salePrice,images,manufacturer,longDescription,customerReviewAverage&apiKey=\(self.APIKEY)&format=json")
             
         else {
             completion("Error: URL")
@@ -200,7 +222,8 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
                                                productDescription: json["products"][0]["longDescription"].stringValue,
                                                SKU: json["products"][0]["sku"].stringValue,
                                                productThumbnailURL: json["products"][0]["image"].stringValue,
-                                               manufacturer: json["products"][0]["manufacturer"].stringValue)
+                                               manufacturer: json["products"][0]["manufacturer"].stringValue,
+                                               customerReviewAverage: json["products"][0]["customerReviewAverage"].doubleValue)
                         
                         self.imagesJson = json["products"][0]["images"]
                         self.products.append(item)

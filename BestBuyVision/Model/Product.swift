@@ -15,13 +15,16 @@ class Product {
     var SKU: String
     var productThumbnailURL: String
     var manufacturer: String
-    init(productName: String, productPrice: String, productDescription: String, SKU: String, productThumbnailURL : String, manufacturer: String) {
+    var customerReviewAverage: Double
+    
+    init(productName: String, productPrice: String, productDescription: String, SKU: String, productThumbnailURL : String, manufacturer: String, customerReviewAverage: Double) {
         self.productName = productName
         self.productPrice = productPrice
         self.productDescription = productDescription
         self.SKU = SKU
         self.productThumbnailURL = productThumbnailURL
         self.manufacturer = manufacturer
+        self.customerReviewAverage = customerReviewAverage
     }
 }
 

@@ -29,6 +29,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     var companylogoName:String = ""
     var card1 = UIView()
     var card2 = UIView()
+    var productCategory = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -211,7 +212,6 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                     self.removeSpinner()
                 }
                 else if(self.counter == 0 && Category_Model.categoriesDict[self.classificationResult[0]]![self.companylogoName] != nil ){
-                    
                     self.ThirdClassificationRequest(modelName: self.classificationResult[0])
                 }
                 else{
@@ -225,7 +225,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     
     func ThirdClassificationRequest(modelName:String){
         counter = 1
-    
+        self.productCategory = modelName
         let thirdClassificationRequest: VNCoreMLRequest = {
             do {
                 let chosenCategory = Category_Model.categoriesDict[modelName]!
@@ -237,7 +237,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
                     self?.processClassifications(for: request, error: error)
                 })
-                request.imageCropAndScaleOption = .centerCrop
+                request.imageCropAndScaleOption = .scaleFit
                 return request
                 } catch {
                     fatalError("Failed to load Vision ML model: \(error)")
@@ -353,6 +353,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 print(classificationResult)
                 productsTableViewController.productNameStrings = classificationResult
                 productsTableViewController.itemBrand = self.companylogoName
+                productsTableViewController.productCategory = self.productCategory
             }
         }
     }

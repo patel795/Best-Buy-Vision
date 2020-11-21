@@ -127,7 +127,7 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
     }
 
     @objc private func scanDocument() {
-        if(self.scanImageView.image!.isEqualToImage(UIImage(systemName: "camera")!)){
+        if(self.scanImageView.image!.isEqualToImage(UIImage(systemName: "camera.viewfinder")!)){
             let image = UIImage(systemName: "camera.viewfinder")
             scanImageView.image = image
             makeAlert.showAlert(controller: self, title: "Image Error", message: "Please select the image")

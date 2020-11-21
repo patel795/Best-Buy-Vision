@@ -193,7 +193,7 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
     private func makeApiCall(completion: @escaping (String) -> ()){
         
         guard let URL = URL(string:
-            "https://api.bestbuy.com/v1/products(sku=\(self.SKU))?show=sku,name,salePrice,images,manufacturer,longDescription&apiKey=\(self.APIKEY)&format=json")
+            "https://api.bestbuy.com/v1/products(sku=\(self.SKU))?show=sku,name,salePrice,images,manufacturer,longDescription,customerReviewAverage&apiKey=\(self.APIKEY)&format=json")
             
         else {
             completion("Error: URL")
@@ -216,7 +216,8 @@ class ProductDescriptionDetailControllerViewController: UIViewController, ImageS
                                                productDescription: json["products"][0]["longDescription"].stringValue,
                                                SKU: json["products"][0]["sku"].stringValue,
                                                productThumbnailURL: json["products"][0]["image"].stringValue,
-                                               manufacturer: json["products"][0]["manufacturer"].stringValue)
+                                               manufacturer: json["products"][0]["manufacturer"].stringValue,
+                                               customerReviewAverage: json["products"][0]["customerReviewAverage"].doubleValue)
                         
                         self.imagesJson = json["products"][0]["images"]
                         self.products.append(item)

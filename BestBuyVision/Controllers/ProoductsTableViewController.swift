@@ -19,6 +19,7 @@ class ProoductsTableViewController: UITableViewController {
     var indexPathRow = Int()
     var productSKU = Int()
     var itemBrand = ""
+    var productCategory = ""
     
     private var apiHandler = ApiHandlers()
     
@@ -197,6 +198,7 @@ class ProoductsTableViewController: UITableViewController {
             if let productDescriptionDetailController = segue.destination as? ProductDescriptionTableViewController {
                 productDescriptionDetailController.SKU = products[indexPathRow].SKU
                 productDescriptionDetailController.itemBrand = itemBrand
+                productDescriptionDetailController.productCategory = self.productCategory
             }
         }
     }
