@@ -118,7 +118,7 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
         
         group.notify(queue: .main) {
             if(!firebaseData.isEmpty){
-                var ratings:Double = firebaseData["\(self.products[0].manufacturer)"] as! Double
+                var ratings:Double = firebaseData["\(self.products[0].manufacturer)"] as? Double ?? 0.0
                 ratings = (ratings + self.products[0].customerReviewAverage) / 2
                 completion(ratings)
             }

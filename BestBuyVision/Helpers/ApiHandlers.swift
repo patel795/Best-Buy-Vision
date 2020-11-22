@@ -72,7 +72,7 @@ class ApiHandlers{
     
     func makeBatchApiCall(skus: String, completion: @escaping ([Product]) -> ()){
         
-        let urlString = "https://api.bestbuy.com/v1/products(sku%20in%20(\(skus)))?format=json&show=sku,name,salePrice,bestSellingRank,manufacturer,image,shortDescription,customerReviewAverage&apiKey=\(self.APIKEY)"
+        let urlString = "https://api.bestbuy.com/v1/products(sku%20in%20(\(skus)))?format=json&show=sku,name,salePrice,bestSellingRank,manufacturer,image,shortDescription,customerReviewAverage&pageSize=100&apiKey=\(self.APIKEY)"
         
         let url = URL(string: urlString)
         

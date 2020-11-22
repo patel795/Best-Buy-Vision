@@ -45,15 +45,9 @@ class SearchHistoryTableViewController: UITableViewController {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         self.showSpinner(onView: self.view)
+        
         //get data
         getDataFromFirebase()
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     /*
@@ -64,7 +58,6 @@ class SearchHistoryTableViewController: UITableViewController {
     
     @objc func refresh(sender:AnyObject) {
         getDataFromFirebase()
-        self.refreshControl!.endRefreshing()
     }
     
     private func getDataFromFirebase(){
@@ -122,6 +115,7 @@ class SearchHistoryTableViewController: UITableViewController {
         }
         dispatchGroup.notify(queue: .main) {
             self.removeSpinner()
+            self.refreshControl!.endRefreshing()
         }
     }
 
@@ -142,20 +136,23 @@ class SearchHistoryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchHistoryCell", for: indexPath) as! SearchHistoryTableViewCell
 
         var image = UIImage()
-        let url = NSURL(string: self.products[indexPath.row].productThumbnailURL)
-        
-        if(url?.absoluteString != ""){
-            let data = NSData(contentsOf : url! as URL)
-            image = UIImage(data : data! as Data)!
-        }
-        else{
-            image = UIImage(named: "Logo")!;
-        }
-        // Configure the cell...
-        cell.searchHistoryImage.image = image
-        cell.searchHistoryProductName.text = self.products[indexPath.row].productName
-        cell.searchHistoryProductPrice.text = "$\(self.products[indexPath.row].productPrice)"
+        if(!self.products.isEmpty){
+            let url = NSURL(string: self.products[indexPath.row].productThumbnailURL)
+            
+            if(url?.absoluteString != ""){
+                let data = NSData(contentsOf : url! as URL)
+                image = UIImage(data : data! as Data)!
+            }
+            else{
+                image = UIImage(named: "Logo")!;
+            }
+            // Configure the cell...
+            cell.searchHistoryImage.image = image
+            cell.searchHistoryProductName.text = self.products[indexPath.row].productName
+            cell.searchHistoryProductPrice.text = "$\(self.products[indexPath.row].productPrice)"
 
+            return cell
+        }
         return cell
     }
     
