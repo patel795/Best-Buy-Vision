@@ -14,7 +14,7 @@ enum HTMLError: Error {
 }
 
 struct GoogleReviewResponse {
-    
+    var productReview = ""
     let googleResponses: [GoogleModel]
     init(_ innerHTML: Any?) throws {
         guard let htmlString = innerHTML as? String else
@@ -31,8 +31,12 @@ struct GoogleReviewResponse {
             productDetail.append("\n\(try doc.getElementsByClass("kBBuHb")[0].child(n).text())")
         }
         productDetail.append("\n\(try doc.getElementsByClass("VOVcm")[1].text())")
-        
-        let productReview = try doc.getElementsByClass("bJkpaf")[0].text()
+        if(try doc.getElementsByClass("bJkpaf").count > 0){
+            productReview = try doc.getElementsByClass("bJkpaf")[0].text()
+        }
+        else{
+            productReview = "NULL"
+        }
         var vendorCompare = ""
         if(try doc.getElementsByClass("t9KcM").count > 0){
             vendorCompare = try doc.getElementsByClass("t9KcM")[0].child(1).text()

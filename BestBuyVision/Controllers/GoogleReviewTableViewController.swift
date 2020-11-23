@@ -46,7 +46,7 @@ class GoogleReviewTableViewController: UITableViewController, WKNavigationDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+/*
         let backButtonImage = UIImage(systemName: "arrow.left")
         let bestbuyBtn = UIButton(type: .system)
         bestbuyBtn.setImage(backButtonImage, for: .normal)
@@ -55,6 +55,7 @@ class GoogleReviewTableViewController: UITableViewController, WKNavigationDelega
         tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: bestbuyBtn)
         
         bestbuyBtn.addTarget(self, action: #selector(backButton), for: .touchUpInside)
+ */
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
