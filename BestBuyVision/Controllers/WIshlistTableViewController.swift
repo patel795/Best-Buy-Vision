@@ -19,21 +19,40 @@ class WIshlistTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl!.addTarget(self, action: #selector(refresh(sender:)), for: UIControl.Event.valueChanged)
+        
+        
+        tableView.rowHeight = 130
         navigationItem.title = "Wishlist Products"
-        navigationItem.titleView?.tintColor = UIColor.white
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.backgroundColor = Colors.bestBuyBlue
         navigationController?.navigationBar.barTintColor = Colors.bestBuyBlue
         navigationController?.navigationBar.tintColor = Colors.white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
+        self.showSpinner(onView: self.view)
+        
+        //get data
+        getDataFromFirebase()
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    @objc func refresh(sender:AnyObject) {
+        getDataFromFirebase()
+    }
+    
+    private func getDataFromFirebase(){
         var firebaseData = [String: Any]()
         
         let group = DispatchGroup()
-        
-        tableView.rowHeight = 165
-        
         group.enter()
         self.db.collection("Wishlist").getDocuments() {
             (querySnapshot, err) in
@@ -61,25 +80,32 @@ class WIshlistTableViewController: UITableViewController {
                 }
             }
         }
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     private func getProducts(skuArray:[String]){
         let dispatchGroup = DispatchGroup()
-        
-        for sku in skuArray {
-            dispatchGroup.enter()
-            apiHandler.makeApiCall(productName: "", sku: Int(sku)!){ (info) in
-                self.products = info
-                self.tableView.reloadData()
+        let apiHandler = ApiHandlers()
+        products = [Product]()
+        var arrayString = ""
+        for sku in skuArray{
+            if(arrayString == ""){
+                arrayString = "\(sku)"
             }
+            else{
+                arrayString = "\(arrayString),\(sku)"
+            }
+        }
+        print(arrayString)
+        dispatchGroup.enter()
+        apiHandler.makeBatchApiCall(skus: arrayString){ (info) in
+            self.products = info
+            self.tableView.reloadData()
             dispatchGroup.leave()
         }
-        dispatchGroup.wait()
+        dispatchGroup.notify(queue: .main) {
+            self.removeSpinner()
+            self.refreshControl!.endRefreshing()
+        }
     }
     // MARK: - Table view data source
 

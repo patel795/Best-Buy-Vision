@@ -44,7 +44,7 @@ class ProoductsTableViewController: UITableViewController {
         
         let parentVC = self.navigationController?.viewControllers[self.navigationController!.viewControllers.count-2]
         
-        if (parentVC is ScanImageViewController) {
+        if (parentVC is ScanImageViewController || parentVC is LogoViewController) {
             let group = DispatchGroup()
             
             for index in 0...(productNameStrings.count - 1) {

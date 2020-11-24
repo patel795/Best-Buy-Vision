@@ -90,3 +90,7 @@ struct In_Ear_Headphones_Model {
         "Sony": SonyInEarHeadphones().model
     ]
 }
+
+struct companies {
+    static let company:[String] = ["", "Apple Inc.", "Google", "Samsung Group", "JBL", "Sony", "Beats Electronics"]
+}

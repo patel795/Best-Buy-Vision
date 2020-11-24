@@ -122,13 +122,15 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UIC
             if(!firebaseData.isEmpty){
                 let sku:[String] = firebaseData["SKU"] as! [String]
                 var counter = 0
+                var i = 0
                 if(!sku.isEmpty){
                     //self.getProducts(skuArray: skuArray)
                     if(sku.count >= 3){
-                        while (counter < 3) {
+                        while (counter < 3 && i < 6) {
                             let randomSKU = sku.randomElement()
                             if(self.skuArray.contains(randomSKU!)){
                                 print("Do nothing")
+                                i+=1
                             }
                             else{
                                 self.skuArray.append(randomSKU!)

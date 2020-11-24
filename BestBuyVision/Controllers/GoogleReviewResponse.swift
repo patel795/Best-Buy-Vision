@@ -15,6 +15,10 @@ enum HTMLError: Error {
 
 struct GoogleReviewResponse {
     var productReview = ""
+    var imageLinks = ""
+    var productNames = ""
+    var productDetail = ""
+    
     let googleResponses: [GoogleModel]
     init(_ innerHTML: Any?) throws {
         guard let htmlString = innerHTML as? String else
@@ -22,15 +26,36 @@ struct GoogleReviewResponse {
         //[0].getElementsByTagName('img')[0].getAttribute('src')
         let doc = try SwiftSoup.parse(htmlString)
         
-        let imageLinks = try doc.getElementsByClass("oR27Gd")[0].getElementsByTag("img")[0].attr("src")
-        let productNames = try doc.getElementsByClass("fbrNcd")[0].getElementsByTag("a")[0].text()
-        
-        var productDetail = try doc.getElementsByClass("kBBuHb")[0].child(0).text()
-        print(try doc.getElementsByClass("kBBuHb")[0].children().count)
-        for n in 1...(try doc.getElementsByClass("kBBuHb")[0].children().count - 1) {
-            productDetail.append("\n\(try doc.getElementsByClass("kBBuHb")[0].child(n).text())")
+        if (try doc.getElementsByClass("oR27Gd").count > 0){
+            imageLinks = try doc.getElementsByClass("oR27Gd")[0].getElementsByTag("img")[0].attr("src")
         }
-        productDetail.append("\n\(try doc.getElementsByClass("VOVcm")[1].text())")
+        else {
+            imageLinks = "No Image Found"
+        }
+        
+        if (try doc.getElementsByClass("fbrNcd").count > 0){
+            productNames = try doc.getElementsByClass("fbrNcd")[0].getElementsByTag("a")[0].text()
+        }
+        else{
+            productNames = "No Product Name Found"
+        }
+        
+        if (try doc.getElementsByClass("kBBuHb").count > 0){
+            productDetail = try doc.getElementsByClass("kBBuHb")[0].child(0).text()
+            
+            for n in 1...(try doc.getElementsByClass("kBBuHb")[0].children().count - 1) {
+                productDetail.append("\n\(try doc.getElementsByClass("kBBuHb")[0].child(n).text())")
+            }
+        }
+        else {
+            productDetail = "No Product Details Found"
+        }
+
+        if (try doc.getElementsByClass("VOVcm").count > 1){
+            print(try doc.getElementsByClass("VOVcm")[0].text())
+            productDetail.append("\n\(try doc.getElementsByClass("VOVcm")[1].text())")
+        }
+        
         if(try doc.getElementsByClass("bJkpaf").count > 0){
             productReview = try doc.getElementsByClass("bJkpaf")[0].text()
         }
