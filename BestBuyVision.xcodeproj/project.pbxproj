@@ -55,6 +55,10 @@
 		576E452F25689955005021C3 /* CustomerDATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576E452E25689955005021C3 /* CustomerDATableViewController.swift */; };
 		57724D4424B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57724D4324B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift */; };
 		57724D4624B80AC100AAEBA6 /* GoogleVisionStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57724D4524B80AC100AAEBA6 /* GoogleVisionStructs.swift */; };
+		5779F0E4256DFE1000BE0D0D /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5779F0E3256DFE1000BE0D0D /* First_Stage_Categories_Classifier.mlmodel */; };
+		5779F0EB256E1BE100BE0D0D /* SonyDSLR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5779F0E8256E1BE100BE0D0D /* SonyDSLR.mlmodel */; };
+		5779F0EC256E1BE100BE0D0D /* CanonInc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5779F0E9256E1BE100BE0D0D /* CanonInc.mlmodel */; };
+		5779F0ED256E1BE100BE0D0D /* Nikon.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5779F0EA256E1BE100BE0D0D /* Nikon.mlmodel */; };
 		577ECCA224537AFB007AB88D /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */; };
 		577ECCA42453C77F007AB88D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577ECCA32453C77F007AB88D /* Product.swift */; };
 		578850B5253D389C00E751E0 /* SearchHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578850B4253D389C00E751E0 /* SearchHistoryTableViewCell.swift */; };
@@ -92,10 +96,6 @@
 		AE5D4A36251D98FD0020D855 /* GoogleReviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */; };
 		AE5D4A38252189260020D855 /* GoogleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D4A37252189260020D855 /* GoogleModel.swift */; };
 		AE64F12D2472022A00FAD5BF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */; };
-		AE6A7DF0256D87C4008ABFB5 /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE6A7DEF256D87C4008ABFB5 /* First_Stage_Categories_Classifier.mlmodel */; };
-		AE6A7DF2256D883D008ABFB5 /* CanonInc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE6A7DF1256D883D008ABFB5 /* CanonInc.mlmodel */; };
-		AE6A7DF5256D889C008ABFB5 /* SonyDSLR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE6A7DF3256D889B008ABFB5 /* SonyDSLR.mlmodel */; };
-		AE6A7DF6256D889C008ABFB5 /* Nikon.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE6A7DF4256D889C008ABFB5 /* Nikon.mlmodel */; };
 		AE6A7DF8256D8DBC008ABFB5 /* LogoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A7DF7256D8DBB008ABFB5 /* LogoViewController.swift */; };
 		AE9C0F0624A3E13800F554C4 /* makeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9C0F0524A3E13800F554C4 /* makeAlert.swift */; };
 		AEAFA0E524566C9B00931015 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFA0E424566C9B00931015 /* User.swift */; };
@@ -180,6 +180,10 @@
 		576E452E25689955005021C3 /* CustomerDATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDATableViewController.swift; sourceTree = "<group>"; };
 		57724D4324B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionLogoDetector.swift; sourceTree = "<group>"; };
 		57724D4524B80AC100AAEBA6 /* GoogleVisionStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionStructs.swift; sourceTree = "<group>"; };
+		5779F0E3256DFE1000BE0D0D /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../Desktop/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
+		5779F0E8256E1BE100BE0D0D /* SonyDSLR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SonyDSLR.mlmodel; path = ../../../../../Desktop/CoreMLData/Models/DSLR/SonyDSLR.mlmodel; sourceTree = "<group>"; };
+		5779F0E9256E1BE100BE0D0D /* CanonInc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CanonInc.mlmodel; path = ../../../../../Desktop/CoreMLData/Models/DSLR/CanonInc.mlmodel; sourceTree = "<group>"; };
+		5779F0EA256E1BE100BE0D0D /* Nikon.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Nikon.mlmodel; path = ../../../../../Desktop/CoreMLData/Models/DSLR/Nikon.mlmodel; sourceTree = "<group>"; };
 		577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		577ECCA32453C77F007AB88D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		578850B4253D389C00E751E0 /* SearchHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -225,10 +229,6 @@
 		AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleReviewResponse.swift; sourceTree = "<group>"; };
 		AE5D4A37252189260020D855 /* GoogleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleModel.swift; sourceTree = "<group>"; };
 		AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
-		AE6A7DEF256D87C4008ABFB5 /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../../Documents/ClassificationResults/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
-		AE6A7DF1256D883D008ABFB5 /* CanonInc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CanonInc.mlmodel; path = ../../../../../../Documents/ClassificationResults/CanonInc.mlmodel; sourceTree = "<group>"; };
-		AE6A7DF3256D889B008ABFB5 /* SonyDSLR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SonyDSLR.mlmodel; path = ../../../../../../Documents/ClassificationResults/SonyDSLR.mlmodel; sourceTree = "<group>"; };
-		AE6A7DF4256D889C008ABFB5 /* Nikon.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Nikon.mlmodel; path = ../../../../../../Documents/ClassificationResults/Nikon.mlmodel; sourceTree = "<group>"; };
 		AE6A7DF7256D8DBB008ABFB5 /* LogoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoViewController.swift; sourceTree = "<group>"; };
 		AE9C0F0524A3E13800F554C4 /* makeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeAlert.swift; sourceTree = "<group>"; };
 		AEAFA0E424566C9B00931015 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -316,11 +316,11 @@
 				577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */,
 				AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */,
 				AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */,
+				5779F0E3256DFE1000BE0D0D /* First_Stage_Categories_Classifier.mlmodel */,
 				579B8A222462547C008F3C28 /* GoogleReviewViewController.swift */,
 				AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */,
 				5749E3072523CD2D0063DB47 /* OcrViewController.swift */,
 				57028AFE2527D16E00051C62 /* MainMenuViewController.swift */,
-				AE6A7DEF256D87C4008ABFB5 /* First_Stage_Categories_Classifier.mlmodel */,
 				5716D7ED253D083100195555 /* SearchHistoryTableViewController.swift */,
 				57C3D0B52539117C0050652A /* GoogleReviewTableViewController.swift */,
 				AECCEBBC253D123A00CF77B2 /* WIshlistTableViewController.swift */,
@@ -350,9 +350,9 @@
 		57422839256765D900290CBF /* DSLR */ = {
 			isa = PBXGroup;
 			children = (
-				AE6A7DF1256D883D008ABFB5 /* CanonInc.mlmodel */,
-				AE6A7DF4256D889C008ABFB5 /* Nikon.mlmodel */,
-				AE6A7DF3256D889B008ABFB5 /* SonyDSLR.mlmodel */,
+				5779F0E9256E1BE100BE0D0D /* CanonInc.mlmodel */,
+				5779F0EA256E1BE100BE0D0D /* Nikon.mlmodel */,
+				5779F0E8256E1BE100BE0D0D /* SonyDSLR.mlmodel */,
 			);
 			path = DSLR;
 			sourceTree = "<group>";
@@ -822,12 +822,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				57028AED2527729100051C62 /* Insignia.mlmodel in Sources */,
-				AE6A7DF0256D87C4008ABFB5 /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				AE5D4A36251D98FD0020D855 /* GoogleReviewResponse.swift in Sources */,
 				5742288725677E8D00290CBF /* SonyInEarHeadphones.mlmodel in Sources */,
 				579B8A232462547C008F3C28 /* GoogleReviewViewController.swift in Sources */,
-				AE6A7DF2256D883D008ABFB5 /* CanonInc.mlmodel in Sources */,
 				5716D7C0253CD96000195555 /* ProductVendorCompareTableViewCell.swift in Sources */,
+				5779F0EC256E1BE100BE0D0D /* CanonInc.mlmodel in Sources */,
 				57BA1ED823F9995500350ADB /* ViewController.swift in Sources */,
 				5796940E254B923A00C4ADE9 /* DataAnalyticsTableViewCell.swift in Sources */,
 				57028AEE2527729100051C62 /* Jabra.mlmodel in Sources */,
@@ -848,9 +847,9 @@
 				AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				57028AF32527729100051C62 /* Sony.mlmodel in Sources */,
 				5749E2F62523CCB70063DB47 /* OcrTextView.swift in Sources */,
-				AE6A7DF5256D889C008ABFB5 /* SonyDSLR.mlmodel in Sources */,
 				577ECCA224537AFB007AB88D /* ProductTableViewCell.swift in Sources */,
 				578850BA253D38AC00E751E0 /* WishlistTableViewCell.swift in Sources */,
+				5779F0EB256E1BE100BE0D0D /* SonyDSLR.mlmodel in Sources */,
 				AECCEBD3254FB55A00CF77B2 /* ProductRecommended.swift in Sources */,
 				57C3D0B62539117C0050652A /* GoogleReviewTableViewController.swift in Sources */,
 				57028AF22527729100051C62 /* BoseCorporation.mlmodel in Sources */,
@@ -865,7 +864,6 @@
 				57028ADF2527727C00051C62 /* MicrosoftCorporation.mlmodel in Sources */,
 				57724D4424B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift in Sources */,
 				57028AEF2527729100051C62 /* AudioTechinca.mlmodel in Sources */,
-				AE6A7DF6256D889C008ABFB5 /* Nikon.mlmodel in Sources */,
 				57BA1ED423F9995500350ADB /* AppDelegate.swift in Sources */,
 				5716D7B9253CD91400195555 /* ProductDetailTableViewCell.swift in Sources */,
 				57422868256775E000290CBF /* AppleTablets.mlmodel in Sources */,
@@ -885,6 +883,7 @@
 				5749E3032523CD030063DB47 /* ScanImageView.swift in Sources */,
 				AEAFA0E524566C9B00931015 /* User.swift in Sources */,
 				AEDE2989255BAA220071CACD /* ProductDescriptionPriceTableViewCell.swift in Sources */,
+				5779F0ED256E1BE100BE0D0D /* Nikon.mlmodel in Sources */,
 				AEDE298B255BAA360071CACD /* ProductDescriptionOverviewTableViewCell.swift in Sources */,
 				576DC481245DFDC6002A9926 /* Utilities.swift in Sources */,
 				57BA1ED623F9995500350ADB /* SceneDelegate.swift in Sources */,
@@ -903,6 +902,7 @@
 				5749E2FE2523CCDE0063DB47 /* ScanButton.swift in Sources */,
 				5716D7BB253CD93400195555 /* ProductReviewTableViewCell.swift in Sources */,
 				576E452F25689955005021C3 /* CustomerDATableViewController.swift in Sources */,
+				5779F0E4256DFE1000BE0D0D /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */,
 				57028AFF2527D16E00051C62 /* MainMenuViewController.swift in Sources */,
 				AEDE2987255BA9250071CACD /* ProductDescriptionImageTableViewCell.swift in Sources */,

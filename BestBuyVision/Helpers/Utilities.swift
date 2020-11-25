@@ -70,7 +70,7 @@ class Utilities {
     
     static func replaceSpecialChars(_ text: String, _ replaceString: String)  -> String{
         let specialChars = ["\"", "_", "+", "(", ")", "\u{00B9}", "\u{00B2}", "\u{00B3}",
-                            "\u{2074}", "\u{2075}", "\u{2076}", "\u{2077}", "\u{2078}", "\u{2079}", "\u{2122}"]
+                            "\u{2074}", "\u{2075}", "\u{2076}", "\u{2077}", "\u{2078}", "\u{2079}", "\u{2122}", "-"]
         var resultString = text
         for char in specialChars{
             resultString = resultString.replacingOccurrences(of: "\(char)", with: replaceString, options: .literal, range: nil)

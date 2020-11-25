@@ -78,6 +78,8 @@ class GoogleReviewTableViewController: UITableViewController, WKNavigationDelega
         }
         else{
             MakeToast.showToast(controller: self, message: "No Product Found", seconds: 2.0)
+            self.removeSpinner()
+            self.navigationController?.popViewController(animated: true)
         }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

@@ -14,10 +14,16 @@ class SettingsViewController: UIViewController {
     
     let db = Firestore.firestore()
 
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        Utilities.styleTextField(passwordTextField)
+        Utilities.styleTextField(emailTextField)
+        
+        emailTextField.text = Auth.auth().currentUser!.email
     }
     
     private func isUserManager(completion: @escaping (Bool) -> ()){
