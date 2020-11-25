@@ -100,7 +100,7 @@ class SignupViewController: UIViewController {
                     user?.user.sendEmailVerification { (error) in
                         print(error ?? "error unknown")
                     }
-                    self.showToast(controller: self, message : "Account has been registered, to login please verify your email.", seconds: 1.0)
+                    self.showToast(controller: self, message : "Account has been registered, to login please verify your email.", seconds: 3.0)
                     self.navigationController?.popViewController(animated: true)
                 }
                 else {

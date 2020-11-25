@@ -33,7 +33,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpNavigationBar()
+        //setUpNavigationBar()
         
         /*
         let backButtonImage = UIImage(systemName: "arrow.left")
@@ -163,6 +163,10 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 print("Failed to perform classification.\n\(error.localizedDescription)")
             }
         }
+    }
+    
+    @IBAction func requuirementsBtnClick(_ sender: Any) {
+        makeAlert.showAlert(controller: self, title: "Requirements for images used in recognition", message: "• The image for logo should only contain the logo that is shown on the product. \n • The image of the product should contain whole product and try to capture it in proper lighting. \n • Try to take an image in proper lighting so that the logo/product is properly visible and without any shadows.")
     }
     
     // Updates the UI with the results of the classification.

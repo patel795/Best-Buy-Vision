@@ -14,16 +14,41 @@ class SettingsViewController: UIViewController {
     
     let db = Firestore.firestore()
 
-    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        Utilities.styleTextField(passwordTextField)
         Utilities.styleTextField(emailTextField)
         
         emailTextField.text = Auth.auth().currentUser!.email
+    }
+    
+    @IBAction func resetPasswordBtnClick(_ sender: Any) {
+        let email = Auth.auth().currentUser!.email
+        if (email == "") {
+            makeAlert.showAlert(controller: self,title: "No Email Adddress", message: "Error..Please enter your email address")
+        }
+        else{
+            Auth.auth().sendPasswordReset(withEmail: email!) {
+                error in
+                
+                if (error == nil) {
+                    MakeToast.showToast(controller: self, message : "Reset Password Link has been sent to your email address", seconds: 1.0)
+                    self.navigationController?.popViewController(animated: true)
+                }
+                else {
+                    // 1. Error when creating a user
+                    print("ERROR!")
+                    print(error?.localizedDescription as Any)
+                    
+                    // 2. Show the error in the UI
+                    let errorMsg = error?.localizedDescription
+                    makeAlert.showAlert(controller: self, title: "Error", message: errorMsg!)
+                }
+                //print(error ?? "error unknown")
+            }
+        }
     }
     
     private func isUserManager(completion: @escaping (Bool) -> ()){

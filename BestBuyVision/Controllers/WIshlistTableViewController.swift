@@ -79,6 +79,9 @@ class WIshlistTableViewController: UITableViewController {
                     self.getProducts(skuArray: skuArray)
                 }
             }
+            else{
+                self.removeSpinner()
+            }
         }
     }
 

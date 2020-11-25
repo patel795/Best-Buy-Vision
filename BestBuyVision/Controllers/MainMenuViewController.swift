@@ -164,6 +164,14 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UIC
                     self.count+=1
                 }
             }
+            else{
+                self.apiHandler.trendingProducts(){ (info) in
+                    self.recommendedProducts = info
+                    //self.tableView.reloadData()
+                    self.collectionViewData.reloadData()
+                    //self.collectionViewData.reloadItems(at: self.items)
+                }
+            }
         }
     }
     
@@ -210,7 +218,9 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UIC
         // Configure the cell...
         cell.productImage.image = image
         cell.productName.text = self.recommendedProducts[indexPath.row].productName
-        cell.productPrice.text = "$\(self.recommendedProducts[indexPath.row].productPrice)"
+        
+        let convertedPrice = Double("\(self.recommendedProducts[indexPath.row].productPrice)")
+        cell.productPrice.text = String(format: "$%.2f", convertedPrice as! Double)
         
         let ratingNumber = Double(self.recommendedProducts[indexPath.row].averageScore )
         let starView: CosmosView = {

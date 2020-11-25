@@ -153,7 +153,7 @@
             </objects>
             <point key="canvasLocation" x="1047.2" y="112.3152709359606"/>
         </scene>
-        <!--Scan Image View Controller-->
+        <!--Image Recognition-->
         <scene sceneID="p59-oy-efR">
             <objects>
                 <viewController id="3W9-ey-kYx" customClass="ScanImageViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
@@ -189,11 +189,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8RY-Qb-BfV">
+                                <rect key="frame" x="16" y="585" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Click here to get specifications for images!"/>
+                                <connections>
+                                    <action selector="requuirementsBtnClick:" destination="3W9-ey-kYx" eventType="touchUpInside" id="4wP-TR-w2l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LLS-cW-SDD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mBO-MB-xLy"/>
+                    <navigationItem key="navigationItem" title="Image Recognition" id="mBO-MB-xLy"/>
                     <connections>
                         <segue destination="ZWd-70-xlL" kind="show" identifier="segueProducts" id="lpQ-hG-CsH"/>
                         <segue destination="cCH-5n-rvy" kind="show" identifier="segueNegativeClass" id="rEy-6b-MH3"/>
@@ -237,6 +246,15 @@
                                 </state>
                                 <connections>
                                     <action selector="searchProduct:" destination="fVm-aZ-7Sh" eventType="touchUpInside" id="yLh-qf-6j1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ped-k0-E3M">
+                                <rect key="frame" x="16" y="638" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Click here to get specifications for images!"/>
+                                <connections>
+                                    <action selector="requirementBtnClick:" destination="fVm-aZ-7Sh" eventType="touchUpInside" id="mxL-YX-PFJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -778,7 +796,7 @@
             </objects>
             <point key="canvasLocation" x="8148" y="-183"/>
         </scene>
-        <!--Google Review Table View Controller-->
+        <!--Google reviews-->
         <scene sceneID="sOA-Ju-Vxa">
             <objects>
                 <tableViewController id="kr0-oe-5Oe" customClass="GoogleReviewTableViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
@@ -973,7 +991,7 @@
                             <outlet property="delegate" destination="kr0-oe-5Oe" id="l4k-9v-5Hs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="YTD-SC-hK4"/>
+                    <navigationItem key="navigationItem" title="Google reviews" id="YTD-SC-hK4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJA-fr-Wgq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1246,33 +1264,29 @@ reset link</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbK-DV-aNz">
-                                <rect key="frame" x="16" y="131" width="56" height="23"/>
+                                <rect key="frame" x="16" y="116" width="56" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="flN-AV-35I">
-                                <rect key="frame" x="16" y="170" width="343" height="34"/>
+                                <rect key="frame" x="16" y="156" width="343" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ceu-SJ-DAf">
-                                <rect key="frame" x="16" y="228" width="95" height="23"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQf-l2-tHV">
+                                <rect key="frame" x="16" y="228" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MGq-8v-8hs">
-                                <rect key="frame" x="16" y="268" width="343" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Click here to reset your password!"/>
+                                <connections>
+                                    <action selector="resetPasswordBtnClick:" destination="Pjh-bu-Vtn" eventType="touchUpInside" id="4jT-Vg-Gsy"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSb-Fi-khQ">
-                                <rect key="frame" x="16" y="355" width="343" height="45"/>
+                                <rect key="frame" x="22" y="289" width="343" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.24313725489999999" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -1290,7 +1304,6 @@ reset link</string>
                     <navigationItem key="navigationItem" id="UqT-GH-PSs"/>
                     <connections>
                         <outlet property="emailTextField" destination="flN-AV-35I" id="YT3-8x-kPG"/>
-                        <outlet property="passwordTextField" destination="MGq-8v-8hs" id="ihO-Lm-cbx"/>
                         <segue destination="hN6-YS-eU3" kind="show" identifier="segueDataAnalytics" id="rxp-W6-1uh"/>
                         <segue destination="91N-f8-avu" kind="show" identifier="segueCustomerDA" id="RAR-gv-q5c"/>
                     </connections>
@@ -1627,7 +1640,7 @@ reset link</string>
             </objects>
             <point key="canvasLocation" x="3629.5999999999999" y="-238.66995073891627"/>
         </scene>
-        <!--Ocr View Controller-->
+        <!--Text Recognition-->
         <scene sceneID="soH-r2-8GE">
             <objects>
                 <viewController id="RWG-LX-to4" customClass="OcrViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
@@ -1637,7 +1650,7 @@ reset link</string>
                         <viewLayoutGuide key="safeArea" id="zm7-rz-hyC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CIF-y3-XhJ"/>
+                    <navigationItem key="navigationItem" title="Text Recognition" id="CIF-y3-XhJ"/>
                     <connections>
                         <segue destination="ZWd-70-xlL" kind="show" identifier="segueProductWithSku" id="wYv-ag-rRf"/>
                     </connections>
@@ -1710,8 +1723,8 @@ reset link</string>
     <inferredMetricsTieBreakers>
         <segue reference="pkI-fS-2lv"/>
         <segue reference="y10-O9-gKu"/>
-        <segue reference="rEy-6b-MH3"/>
-        <segue reference="lpQ-hG-CsH"/>
+        <segue reference="e7W-Av-Ku7"/>
+        <segue reference="wYv-ag-rRf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>

@@ -90,6 +90,9 @@ class SearchHistoryTableViewController: UITableViewController {
                     self.getProducts(skuArray: skuArray)
                 }
             }
+            else{
+                self.removeSpinner()
+            }
         }
     }
     

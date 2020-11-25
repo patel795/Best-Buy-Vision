@@ -54,7 +54,7 @@ class CustomerDATableViewController: UITableViewController {
         
         // Configure the cell...
         cell.companyName.text = companyNames[indexPath.row]
-        cell.companyRating.text = "\(ratingsArray[indexPath.row])"
+        cell.companyRating.text = String(format: "%.2f", ratingsArray[indexPath.row] as! Double)
         cell.cosmosView.addSubview(starView)
         return cell
     }

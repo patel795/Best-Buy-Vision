@@ -83,6 +83,10 @@ class LogoViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         _ = navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func requirementBtnClick(_ sender: Any) {
+        makeAlert.showAlert(controller: self, title: "Requirements for images used in recognition", message: "• The image for logo should only contain the logo that is shown on the product. \n • The image of the product should contain whole product and try to capture it in proper lighting. \n • Try to take an image in proper lighting so that the logo/product is properly visible and without any shadows.")
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
 
