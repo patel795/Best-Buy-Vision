@@ -38,9 +38,6 @@
 		574228722567780A00290CBF /* HpPrinters.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5742286F2567780900290CBF /* HpPrinters.mlmodel */; };
 		574228732567780A00290CBF /* CanonPrinters.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 574228702567780A00290CBF /* CanonPrinters.mlmodel */; };
 		574228742567780A00290CBF /* EpsonPrinters.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 574228712567780A00290CBF /* EpsonPrinters.mlmodel */; };
-		5742287C25677ABE00290CBF /* ApplePhones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5742287925677ABD00290CBF /* ApplePhones.mlmodel */; };
-		5742287D25677ABE00290CBF /* GooglePhones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5742287A25677ABE00290CBF /* GooglePhones.mlmodel */; };
-		5742287E25677ABE00290CBF /* SamsungPhones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5742287B25677ABE00290CBF /* SamsungPhones.mlmodel */; };
 		5742288625677E8D00290CBF /* JBLInEarHeadphones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5742288325677E8C00290CBF /* JBLInEarHeadphones.mlmodel */; };
 		5742288725677E8D00290CBF /* SonyInEarHeadphones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5742288425677E8D00290CBF /* SonyInEarHeadphones.mlmodel */; };
 		5742288825677E8D00290CBF /* AppleInEarHeadphones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5742288525677E8D00290CBF /* AppleInEarHeadphones.mlmodel */; };
@@ -55,7 +52,6 @@
 		576E452F25689955005021C3 /* CustomerDATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576E452E25689955005021C3 /* CustomerDATableViewController.swift */; };
 		57724D4424B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57724D4324B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift */; };
 		57724D4624B80AC100AAEBA6 /* GoogleVisionStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57724D4524B80AC100AAEBA6 /* GoogleVisionStructs.swift */; };
-		5779F0E4256DFE1000BE0D0D /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5779F0E3256DFE1000BE0D0D /* First_Stage_Categories_Classifier.mlmodel */; };
 		5779F0EB256E1BE100BE0D0D /* SonyDSLR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5779F0E8256E1BE100BE0D0D /* SonyDSLR.mlmodel */; };
 		5779F0EC256E1BE100BE0D0D /* CanonInc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5779F0E9256E1BE100BE0D0D /* CanonInc.mlmodel */; };
 		5779F0ED256E1BE100BE0D0D /* Nikon.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5779F0EA256E1BE100BE0D0D /* Nikon.mlmodel */; };
@@ -88,6 +84,10 @@
 		57C3D0BC25393F670050652A /* GoogleReviewImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D0BB25393F670050652A /* GoogleReviewImageTableViewCell.swift */; };
 		57D406BA2470AF850042A7D1 /* MakeToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D406B92470AF850042A7D1 /* MakeToast.swift */; };
 		57D655D925219D9C00DDEF5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57D655D825219D9C00DDEF5F /* GoogleService-Info.plist */; };
+		57F21FBF256F412E00E1687C /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57F21FBE256F412E00E1687C /* First_Stage_Categories_Classifier.mlmodel */; };
+		57F21FC9256F415800E1687C /* SamsungPhones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57F21FC6256F415800E1687C /* SamsungPhones.mlmodel */; };
+		57F21FCA256F415800E1687C /* ApplePhones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57F21FC7256F415800E1687C /* ApplePhones.mlmodel */; };
+		57F21FCB256F415800E1687C /* GooglePhones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57F21FC8256F415800E1687C /* GooglePhones.mlmodel */; };
 		7D25AD249D3EB41CD6E0D40D /* Pods_BestBuyVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */; };
 		A055CCFF7B775CD02F9AB81F /* Pods_BestBuyVisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */; };
 		AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03AC78243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
@@ -163,9 +163,6 @@
 		5742286F2567780900290CBF /* HpPrinters.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HpPrinters.mlmodel; sourceTree = "<group>"; };
 		574228702567780A00290CBF /* CanonPrinters.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CanonPrinters.mlmodel; sourceTree = "<group>"; };
 		574228712567780A00290CBF /* EpsonPrinters.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EpsonPrinters.mlmodel; sourceTree = "<group>"; };
-		5742287925677ABD00290CBF /* ApplePhones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ApplePhones.mlmodel; sourceTree = "<group>"; };
-		5742287A25677ABE00290CBF /* GooglePhones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GooglePhones.mlmodel; sourceTree = "<group>"; };
-		5742287B25677ABE00290CBF /* SamsungPhones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SamsungPhones.mlmodel; sourceTree = "<group>"; };
 		5742288325677E8C00290CBF /* JBLInEarHeadphones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = JBLInEarHeadphones.mlmodel; sourceTree = "<group>"; };
 		5742288425677E8D00290CBF /* SonyInEarHeadphones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SonyInEarHeadphones.mlmodel; sourceTree = "<group>"; };
 		5742288525677E8D00290CBF /* AppleInEarHeadphones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AppleInEarHeadphones.mlmodel; sourceTree = "<group>"; };
@@ -180,7 +177,6 @@
 		576E452E25689955005021C3 /* CustomerDATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDATableViewController.swift; sourceTree = "<group>"; };
 		57724D4324B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionLogoDetector.swift; sourceTree = "<group>"; };
 		57724D4524B80AC100AAEBA6 /* GoogleVisionStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionStructs.swift; sourceTree = "<group>"; };
-		5779F0E3256DFE1000BE0D0D /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../Desktop/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
 		5779F0E8256E1BE100BE0D0D /* SonyDSLR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SonyDSLR.mlmodel; path = ../../../../../Desktop/CoreMLData/Models/DSLR/SonyDSLR.mlmodel; sourceTree = "<group>"; };
 		5779F0E9256E1BE100BE0D0D /* CanonInc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CanonInc.mlmodel; path = ../../../../../Desktop/CoreMLData/Models/DSLR/CanonInc.mlmodel; sourceTree = "<group>"; };
 		5779F0EA256E1BE100BE0D0D /* Nikon.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Nikon.mlmodel; path = ../../../../../Desktop/CoreMLData/Models/DSLR/Nikon.mlmodel; sourceTree = "<group>"; };
@@ -219,6 +215,10 @@
 		57C3D0BB25393F670050652A /* GoogleReviewImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleReviewImageTableViewCell.swift; sourceTree = "<group>"; };
 		57D406B92470AF850042A7D1 /* MakeToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeToast.swift; sourceTree = "<group>"; };
 		57D655D825219D9C00DDEF5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		57F21FBE256F412E00E1687C /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../Desktop/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
+		57F21FC6256F415800E1687C /* SamsungPhones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SamsungPhones.mlmodel; sourceTree = "<group>"; };
+		57F21FC7256F415800E1687C /* ApplePhones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ApplePhones.mlmodel; sourceTree = "<group>"; };
+		57F21FC8256F415800E1687C /* GooglePhones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GooglePhones.mlmodel; sourceTree = "<group>"; };
 		5DBF56B51AAEA90B739630B5 /* Pods_BestBuyVisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC19D754A28E20EF1FDA65 /* Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig"; path = "Target Support Files/Pods-BestBuyVision-BestBuyVisionUITests/Pods-BestBuyVision-BestBuyVisionUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D5AFF8C1FA1A128CC1AC4CC /* Pods-BestBuyVisionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyVisionTests.debug.xcconfig"; path = "Target Support Files/Pods-BestBuyVisionTests/Pods-BestBuyVisionTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -316,9 +316,9 @@
 				577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */,
 				AE5C670B245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift */,
 				AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */,
-				5779F0E3256DFE1000BE0D0D /* First_Stage_Categories_Classifier.mlmodel */,
 				579B8A222462547C008F3C28 /* GoogleReviewViewController.swift */,
 				AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */,
+				57F21FBE256F412E00E1687C /* First_Stage_Categories_Classifier.mlmodel */,
 				5749E3072523CD2D0063DB47 /* OcrViewController.swift */,
 				57028AFE2527D16E00051C62 /* MainMenuViewController.swift */,
 				5716D7ED253D083100195555 /* SearchHistoryTableViewController.swift */,
@@ -380,9 +380,9 @@
 		57422878256779E100290CBF /* MobilePhones */ = {
 			isa = PBXGroup;
 			children = (
-				5742287925677ABD00290CBF /* ApplePhones.mlmodel */,
-				5742287A25677ABE00290CBF /* GooglePhones.mlmodel */,
-				5742287B25677ABE00290CBF /* SamsungPhones.mlmodel */,
+				57F21FC7256F415800E1687C /* ApplePhones.mlmodel */,
+				57F21FC8256F415800E1687C /* GooglePhones.mlmodel */,
+				57F21FC6256F415800E1687C /* SamsungPhones.mlmodel */,
 			);
 			path = MobilePhones;
 			sourceTree = "<group>";
@@ -831,6 +831,7 @@
 				5796940E254B923A00C4ADE9 /* DataAnalyticsTableViewCell.swift in Sources */,
 				57028AEE2527729100051C62 /* Jabra.mlmodel in Sources */,
 				578A04162566E8BC00FBB421 /* SpeficationTableViewCell.swift in Sources */,
+				57F21FCA256F415800E1687C /* ApplePhones.mlmodel in Sources */,
 				578A040C2566D15700FBB421 /* ProductSpecification.swift in Sources */,
 				57028AF42527729100051C62 /* BangAndOlufsen.mlmodel in Sources */,
 				5749E2ED2523CA440063DB47 /* ApiHandlers.swift in Sources */,
@@ -841,7 +842,6 @@
 				57028AF12527729100051C62 /* BeatsElectronics.mlmodel in Sources */,
 				57BA1F0A23FA0D1300350ADB /* Colors.swift in Sources */,
 				57028AD52527727600051C62 /* Hewlett-Packard.mlmodel in Sources */,
-				5742287D25677ABE00290CBF /* GooglePhones.mlmodel in Sources */,
 				57C3D0BC25393F670050652A /* GoogleReviewImageTableViewCell.swift in Sources */,
 				57BA1F0423FA0BD700350ADB /* UIShadows.swift in Sources */,
 				AE03AC79243F920800BDF48B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
@@ -881,6 +881,8 @@
 				57D406BA2470AF850042A7D1 /* MakeToast.swift in Sources */,
 				570910EB254FA0E3005A7E9F /* NoProductsViewController.swift in Sources */,
 				5749E3032523CD030063DB47 /* ScanImageView.swift in Sources */,
+				57F21FCB256F415800E1687C /* GooglePhones.mlmodel in Sources */,
+				57F21FC9256F415800E1687C /* SamsungPhones.mlmodel in Sources */,
 				AEAFA0E524566C9B00931015 /* User.swift in Sources */,
 				AEDE2989255BAA220071CACD /* ProductDescriptionPriceTableViewCell.swift in Sources */,
 				5779F0ED256E1BE100BE0D0D /* Nikon.mlmodel in Sources */,
@@ -892,7 +894,6 @@
 				57028AD32527727600051C62 /* Micro-Star International.mlmodel in Sources */,
 				AEFB8EA924461DA400F89819 /* ProoductsTableViewController.swift in Sources */,
 				AE5C670C245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift in Sources */,
-				5742287C25677ABE00290CBF /* ApplePhones.mlmodel in Sources */,
 				AE64F12D2472022A00FAD5BF /* ForgotPasswordViewController.swift in Sources */,
 				5749E3082523CD2D0063DB47 /* OcrViewController.swift in Sources */,
 				5742288625677E8D00290CBF /* JBLInEarHeadphones.mlmodel in Sources */,
@@ -902,11 +903,10 @@
 				5749E2FE2523CCDE0063DB47 /* ScanButton.swift in Sources */,
 				5716D7BB253CD93400195555 /* ProductReviewTableViewCell.swift in Sources */,
 				576E452F25689955005021C3 /* CustomerDATableViewController.swift in Sources */,
-				5779F0E4256DFE1000BE0D0D /* First_Stage_Categories_Classifier.mlmodel in Sources */,
+				57F21FBF256F412E00E1687C /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */,
 				57028AFF2527D16E00051C62 /* MainMenuViewController.swift in Sources */,
 				AEDE2987255BA9250071CACD /* ProductDescriptionImageTableViewCell.swift in Sources */,
-				5742287E25677ABE00290CBF /* SamsungPhones.mlmodel in Sources */,
 				577ECCA42453C77F007AB88D /* Product.swift in Sources */,
 				5742286A256775E000290CBF /* SamsungTablets.mlmodel in Sources */,
 				574228732567780A00290CBF /* CanonPrinters.mlmodel in Sources */,
