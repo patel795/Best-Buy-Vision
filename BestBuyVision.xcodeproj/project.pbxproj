@@ -46,6 +46,7 @@
 		5749E2FE2523CCDE0063DB47 /* ScanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E2FD2523CCDE0063DB47 /* ScanButton.swift */; };
 		5749E3032523CD030063DB47 /* ScanImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E3022523CD030063DB47 /* ScanImageView.swift */; };
 		5749E3082523CD2D0063DB47 /* OcrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E3072523CD2D0063DB47 /* OcrViewController.swift */; };
+		57564A972570DF56000B05DD /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57564A962570DF56000B05DD /* First_Stage_Categories_Classifier.mlmodel */; };
 		576DC481245DFDC6002A9926 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576DC480245DFDC6002A9926 /* Utilities.swift */; };
 		576E452525686CE7005021C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576E452425686CE7005021C3 /* SettingsViewController.swift */; };
 		576E452A25689918005021C3 /* CompanyRatingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576E452925689917005021C3 /* CompanyRatingsTableViewCell.swift */; };
@@ -84,7 +85,6 @@
 		57C3D0BC25393F670050652A /* GoogleReviewImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D0BB25393F670050652A /* GoogleReviewImageTableViewCell.swift */; };
 		57D406BA2470AF850042A7D1 /* MakeToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D406B92470AF850042A7D1 /* MakeToast.swift */; };
 		57D655D925219D9C00DDEF5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57D655D825219D9C00DDEF5F /* GoogleService-Info.plist */; };
-		57F21FBF256F412E00E1687C /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57F21FBE256F412E00E1687C /* First_Stage_Categories_Classifier.mlmodel */; };
 		57F21FC9256F415800E1687C /* SamsungPhones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57F21FC6256F415800E1687C /* SamsungPhones.mlmodel */; };
 		57F21FCA256F415800E1687C /* ApplePhones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57F21FC7256F415800E1687C /* ApplePhones.mlmodel */; };
 		57F21FCB256F415800E1687C /* GooglePhones.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57F21FC8256F415800E1687C /* GooglePhones.mlmodel */; };
@@ -171,6 +171,7 @@
 		5749E2FD2523CCDE0063DB47 /* ScanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanButton.swift; sourceTree = "<group>"; };
 		5749E3022523CD030063DB47 /* ScanImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageView.swift; sourceTree = "<group>"; };
 		5749E3072523CD2D0063DB47 /* OcrViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcrViewController.swift; sourceTree = "<group>"; };
+		57564A962570DF56000B05DD /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../Desktop/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
 		576DC480245DFDC6002A9926 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		576E452425686CE7005021C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		576E452925689917005021C3 /* CompanyRatingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRatingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -215,7 +216,6 @@
 		57C3D0BB25393F670050652A /* GoogleReviewImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleReviewImageTableViewCell.swift; sourceTree = "<group>"; };
 		57D406B92470AF850042A7D1 /* MakeToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeToast.swift; sourceTree = "<group>"; };
 		57D655D825219D9C00DDEF5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		57F21FBE256F412E00E1687C /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../Desktop/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
 		57F21FC6256F415800E1687C /* SamsungPhones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SamsungPhones.mlmodel; sourceTree = "<group>"; };
 		57F21FC7256F415800E1687C /* ApplePhones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ApplePhones.mlmodel; sourceTree = "<group>"; };
 		57F21FC8256F415800E1687C /* GooglePhones.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GooglePhones.mlmodel; sourceTree = "<group>"; };
@@ -318,12 +318,12 @@
 				AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */,
 				579B8A222462547C008F3C28 /* GoogleReviewViewController.swift */,
 				AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */,
-				57F21FBE256F412E00E1687C /* First_Stage_Categories_Classifier.mlmodel */,
 				5749E3072523CD2D0063DB47 /* OcrViewController.swift */,
 				57028AFE2527D16E00051C62 /* MainMenuViewController.swift */,
 				5716D7ED253D083100195555 /* SearchHistoryTableViewController.swift */,
 				57C3D0B52539117C0050652A /* GoogleReviewTableViewController.swift */,
 				AECCEBBC253D123A00CF77B2 /* WIshlistTableViewController.swift */,
+				57564A962570DF56000B05DD /* First_Stage_Categories_Classifier.mlmodel */,
 				57969412254B92C200C4ADE9 /* DataAnalyticsTableViewController.swift */,
 				570910EA254FA0E2005A7E9F /* NoProductsViewController.swift */,
 				AEDE2982255BA2950071CACD /* ProductDescriptionTableViewController.swift */,
@@ -902,8 +902,8 @@
 				57028AD92527727600051C62 /* AcerInc.mlmodel in Sources */,
 				5749E2FE2523CCDE0063DB47 /* ScanButton.swift in Sources */,
 				5716D7BB253CD93400195555 /* ProductReviewTableViewCell.swift in Sources */,
+				57564A972570DF56000B05DD /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				576E452F25689955005021C3 /* CustomerDATableViewController.swift in Sources */,
-				57F21FBF256F412E00E1687C /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */,
 				57028AFF2527D16E00051C62 /* MainMenuViewController.swift in Sources */,
 				AEDE2987255BA9250071CACD /* ProductDescriptionImageTableViewCell.swift in Sources */,

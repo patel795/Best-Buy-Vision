@@ -101,6 +101,7 @@ class SearchHistoryTableViewController: UITableViewController {
         let apiHandler = ApiHandlers()
         products = [Product]()
         var arrayString = ""
+        //let reversedSkuArray = Array(skuArray.sorted().reversed())
         for sku in skuArray{
             if(arrayString == ""){
                 arrayString = "\(sku)"

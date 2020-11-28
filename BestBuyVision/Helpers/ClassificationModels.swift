@@ -92,5 +92,5 @@ struct In_Ear_Headphones_Model {
 }
 
 struct companies {
-    static let company:[String] = ["", "Apple Inc.", "Google", "Samsung Group", "JBL", "Sony", "Beats Electronics"]
+    static let company:[String] = ["", "Acer Inc.", "Apple Inc.", "ASUS", "Audio Technica", "Bang & Olufsen", "Beats Electronics", "Bose Corporation", "Canon Inc.", "Dell", "Google", "Hewlett-Packard", "Insignia", "Jabra", "JBL", "Lenovo", "Micro-Star International", "Microsoft Corporation", "Nikon", "Razer Inc.", "Samsung Group", "Seiko Epson", "Sennheiser", "Sony"]
 }

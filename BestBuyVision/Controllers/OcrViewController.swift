@@ -54,7 +54,7 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
         view.addSubview(scanButton)
         
         ocrTextView.isEditable = false
-        ocrTextView.text = "NOTE: The image should contain the product tag with a SKU or webcode.\nMake sure the image is clear.\nTry to just take image of the product tag."
+        ocrTextView.text = "Requirements for product tag image: \n• The image should contain the product tag with a SKU or webcode.\n• Make sure the image is clear.\n• Try to just take image of the product tag. \n• The image should be taken in the proper lighting and try to avoid shadows in the image."
         ocrTextView.textColor = Colors.bestBuyBlue
         ocrTextView.font = UIFont.boldSystemFont(ofSize: 16.0)
         
@@ -196,7 +196,7 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
             if(result == nil){
                 DispatchQueue.main.async { [weak self] in
                      // UI updates must be on main thread
-                    makeAlert.showAlert(controller: self!, title: "Image Error", message: "Image is not clear.")
+                    makeAlert.showAlert(controller: self!, title: "Image Error", message: "Cannot find the SKU number in the image. Please follow the requirements to get proper result.")
                     self!.scanButton.isEnabled = true
                     self!.scanImageView.image = UIImage(systemName: "camera.viewfinder")
                  }

@@ -19,7 +19,9 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     var classificationResult: Array<String> = Array()
     var classificationConfidence: Array<Float> = Array()
     var image = UIImage()
+    var imageForProduct = UIImage()
     var selectedImageView = UIImageView()
+    var selectedImageViewForProduct = UIImageView()
     var counter = 0
     let APIKEY = "TWVhgdNpaxCG1GSk4IReKegI"
     var cardUiView = UIView()
@@ -30,6 +32,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     var card1 = UIView()
     var card2 = UIView()
     var productCategory = ""
+    var senderName = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,10 +98,12 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         classificationConfidence = Array()
         image = UIImage()
         selectedImageView = UIImageView()
+        selectedImageViewForProduct = UIImageView()
         counter = 0
         cardUiView = UIView()
         productcardUiView = UIView()
         companylogoName = ""
+        //senderName = ""
         //tabBarController?.navigationItem.leftBarButtonItem = nil;
     }
     
@@ -203,7 +208,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 //self.biggerimageView.isHidden = false
                 //self.imageView.isHidden = true
                 //self.removeSpinner()
-                
+                print(self.classificationResult)
                 if(self.classificationResult.contains("Negative Class") && self.classificationConfidence[ self.classificationResult.index(of: "Negative Class")!] > 0.01){
                     self.performSegue(withIdentifier: "segueNegativeClass", sender: nil)
                     return
@@ -241,7 +246,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
                     self?.processClassifications(for: request, error: error)
                 })
-                request.imageCropAndScaleOption = .scaleFit
+                request.imageCropAndScaleOption = .centerCrop
                 return request
                 } catch {
                     fatalError("Failed to load Vision ML model: \(error)")
@@ -254,8 +259,17 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
 
-        image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        selectedImageView.image = image
+        if(self.senderName == "logo"){
+            self.image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+            //self.selectedImageView.image = self.image
+            cardView.getProductImageView().image = self.image
+        }
+        else if(self.senderName == "product"){
+            self.imageForProduct = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+            self.cardViewForProduct.getProductImageView().image = self.imageForProduct
+        }
+        
+        //selectedImageView.image = image
         //self.showSpinner(onView: self.view)
         
         //self.removeSpinner()
@@ -266,7 +280,6 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         guard (info[.editedImage] as? UIImage) != nil else {
             return
         }
-
         // print out the image size as a test
         print(image.size)
     }
@@ -292,15 +305,20 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         photoSourcePicker.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
         present(photoSourcePicker, animated: true){
-            self.selectedImageView.image = self.image
+            if(self.senderName == "logo"){
+                self.cardView.getProductImageView().image = self.image
+            }
+            else if(self.senderName == "product"){
+                self.cardViewForProduct.getProductImageView().image = self.imageForProduct
+            }
         }
     }
 
     @objc func clickView(_ sender: UIView) {
         
         var imageViewForProduct = cardView.getProductImageView()
-        
-        selectedImageView = imageViewForProduct
+        self.senderName = "logo"
+        //selectedImageView = imageViewForProduct
         cardView.changeImageView()
         imageSelector()
     }
@@ -309,8 +327,8 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
     @objc func clickProductView(_ sender: UIView) {
         
         var imageViewForProduct = cardViewForProduct.getProductImageView()
-        
-        selectedImageView = imageViewForProduct
+        self.senderName = "product"
+        //selectedImageViewForProduct = imageViewForProduct
         cardViewForProduct.changeImageView()
         imageSelector()
     }

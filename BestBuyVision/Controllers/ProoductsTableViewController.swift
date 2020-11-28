@@ -46,16 +46,24 @@ class ProoductsTableViewController: UITableViewController {
         
         if (parentVC is ScanImageViewController || parentVC is LogoViewController) {
             let group = DispatchGroup()
-            
+            var apiProductString = ""
             for index in 0...(productNameStrings.count - 1) {
-                group.enter()
-                apiHandler.makeApiCall(productName: productNameStrings[index], sku: 0){ (info) in
-                    self.products = info
-                    self.tableView.reloadData()
-                    group.leave()
+                
+                if(apiProductString == ""){
+                    apiProductString = "\(productNameStrings[index])"
+                }
+                else{
+                    apiProductString = "\(apiProductString),\(productNameStrings[index])"
                 }
                 
             }
+            group.enter()
+            apiHandler.makeBatchApiCall(skus: apiProductString){ (info) in
+                self.products = info
+                self.tableView.reloadData()
+                group.leave()
+            }
+            
             group.notify(queue: .main) {
                 self.logEvents(analytic_product_array: self.products)
             }

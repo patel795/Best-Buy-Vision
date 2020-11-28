@@ -27,11 +27,9 @@ class LogoViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
     var counter = 0
     var productCategory = ""
     
-    //let company = ["Apple", "Google", "Samsung", "Beats", "Boss", "Fitbit"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpNavigationBar()
+        
         productcardUiView = cardViewForProduct.getChildView()
         
         card1 = cardViewForProduct.createSubView(mainView: view, headerLabel: "Product Image", x_coordinate: Double((UIScreen.main.bounds.width - UIScreen.main.bounds.width * 0.9)/2), y_coordinate: Double(330), forMainMenuLogo: false, imageName: "camera")
@@ -91,7 +89,7 @@ class LogoViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         picker.dismiss(animated: true)
 
         image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        selectedImageView.image = image
+        self.cardViewForProduct.getProductImageView().image = image
         //self.showSpinner(onView: self.view)
         
         //self.removeSpinner()
@@ -126,7 +124,7 @@ class LogoViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         photoSourcePicker.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
         present(photoSourcePicker, animated: true){
-            self.selectedImageView.image = self.image
+            self.cardViewForProduct.getProductImageView().image = self.image
         }
     }
     
@@ -134,7 +132,7 @@ class LogoViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         
         var imageViewForProduct = cardViewForProduct.getProductImageView()
         
-        selectedImageView = imageViewForProduct
+        //selectedImageView = imageViewForProduct
         cardViewForProduct.changeImageView()
         imageSelector()
     }

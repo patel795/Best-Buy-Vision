@@ -213,7 +213,7 @@
             </objects>
             <point key="canvasLocation" x="4925.6000000000004" y="-239.40886699507391"/>
         </scene>
-        <!--Logo View Controller-->
+        <!--List of companies-->
         <scene sceneID="i39-K6-fT2">
             <objects>
                 <viewController id="fVm-aZ-7Sh" customClass="LogoViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
@@ -261,7 +261,7 @@
                         <viewLayoutGuide key="safeArea" id="jU6-1F-fHv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="S3h-0c-VLe"/>
+                    <navigationItem key="navigationItem" title="List of companies" id="S3h-0c-VLe"/>
                     <connections>
                         <outlet property="logoPickerView" destination="AwW-yM-ACp" id="yYg-u6-Dfc"/>
                         <segue destination="ZWd-70-xlL" kind="show" identifier="segueProductsTableView" id="Xo5-wf-W3k"/>
@@ -371,7 +371,7 @@
             <objects>
                 <tableViewController id="sBe-cj-CaA" customClass="ProductDescriptionTableViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LeJ-UW-fbf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -544,7 +544,7 @@
             <objects>
                 <tableViewController id="bdA-Iz-DCr" customClass="ProductSpeficationTableViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WJa-2W-QEv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -801,7 +801,7 @@
             <objects>
                 <tableViewController id="kr0-oe-5Oe" customClass="GoogleReviewTableViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="isR-R1-S5c">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -1722,9 +1722,9 @@ reset link</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="pkI-fS-2lv"/>
-        <segue reference="y10-O9-gKu"/>
-        <segue reference="e7W-Av-Ku7"/>
-        <segue reference="wYv-ag-rRf"/>
+        <segue reference="2uL-f4-zCg"/>
+        <segue reference="rEy-6b-MH3"/>
+        <segue reference="lpQ-hG-CsH"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>
