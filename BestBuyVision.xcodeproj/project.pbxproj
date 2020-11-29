@@ -46,16 +46,12 @@
 		5749E2FE2523CCDE0063DB47 /* ScanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E2FD2523CCDE0063DB47 /* ScanButton.swift */; };
 		5749E3032523CD030063DB47 /* ScanImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E3022523CD030063DB47 /* ScanImageView.swift */; };
 		5749E3082523CD2D0063DB47 /* OcrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749E3072523CD2D0063DB47 /* OcrViewController.swift */; };
-		57564A972570DF56000B05DD /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57564A962570DF56000B05DD /* First_Stage_Categories_Classifier.mlmodel */; };
 		576DC481245DFDC6002A9926 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576DC480245DFDC6002A9926 /* Utilities.swift */; };
 		576E452525686CE7005021C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576E452425686CE7005021C3 /* SettingsViewController.swift */; };
 		576E452A25689918005021C3 /* CompanyRatingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576E452925689917005021C3 /* CompanyRatingsTableViewCell.swift */; };
 		576E452F25689955005021C3 /* CustomerDATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576E452E25689955005021C3 /* CustomerDATableViewController.swift */; };
 		57724D4424B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57724D4324B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift */; };
 		57724D4624B80AC100AAEBA6 /* GoogleVisionStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57724D4524B80AC100AAEBA6 /* GoogleVisionStructs.swift */; };
-		5779F0EB256E1BE100BE0D0D /* SonyDSLR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5779F0E8256E1BE100BE0D0D /* SonyDSLR.mlmodel */; };
-		5779F0EC256E1BE100BE0D0D /* CanonInc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5779F0E9256E1BE100BE0D0D /* CanonInc.mlmodel */; };
-		5779F0ED256E1BE100BE0D0D /* Nikon.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5779F0EA256E1BE100BE0D0D /* Nikon.mlmodel */; };
 		577ECCA224537AFB007AB88D /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */; };
 		577ECCA42453C77F007AB88D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577ECCA32453C77F007AB88D /* Product.swift */; };
 		578850B5253D389C00E751E0 /* SearchHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578850B4253D389C00E751E0 /* SearchHistoryTableViewCell.swift */; };
@@ -108,6 +104,10 @@
 		AEDE298B255BAA360071CACD /* ProductDescriptionOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE298A255BAA360071CACD /* ProductDescriptionOverviewTableViewCell.swift */; };
 		AEDE298D255BAA4D0071CACD /* ProductDescriptionSpecificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE298C255BAA4D0071CACD /* ProductDescriptionSpecificationTableViewCell.swift */; };
 		AEDE298F255BAA690071CACD /* ProductDescriptionGoogleReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE298E255BAA690071CACD /* ProductDescriptionGoogleReviewTableViewCell.swift */; };
+		AEE57C8C25735EB4007A982E /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AEE57C8B25735EB4007A982E /* First_Stage_Categories_Classifier.mlmodel */; };
+		AEE57C9025735EC9007A982E /* Nikon.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AEE57C8D25735EC9007A982E /* Nikon.mlmodel */; };
+		AEE57C9125735EC9007A982E /* CanonInc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AEE57C8E25735EC9007A982E /* CanonInc.mlmodel */; };
+		AEE57C9225735EC9007A982E /* SonyDSLR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AEE57C8F25735EC9007A982E /* SonyDSLR.mlmodel */; };
 		AEFB8EA924461DA400F89819 /* ProoductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -171,16 +171,12 @@
 		5749E2FD2523CCDE0063DB47 /* ScanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanButton.swift; sourceTree = "<group>"; };
 		5749E3022523CD030063DB47 /* ScanImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageView.swift; sourceTree = "<group>"; };
 		5749E3072523CD2D0063DB47 /* OcrViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcrViewController.swift; sourceTree = "<group>"; };
-		57564A962570DF56000B05DD /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../Desktop/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
 		576DC480245DFDC6002A9926 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		576E452425686CE7005021C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		576E452925689917005021C3 /* CompanyRatingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRatingsTableViewCell.swift; sourceTree = "<group>"; };
 		576E452E25689955005021C3 /* CustomerDATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDATableViewController.swift; sourceTree = "<group>"; };
 		57724D4324B806DF00AAEBA6 /* GoogleVisionLogoDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionLogoDetector.swift; sourceTree = "<group>"; };
 		57724D4524B80AC100AAEBA6 /* GoogleVisionStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionStructs.swift; sourceTree = "<group>"; };
-		5779F0E8256E1BE100BE0D0D /* SonyDSLR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SonyDSLR.mlmodel; path = ../../../../../Desktop/CoreMLData/Models/DSLR/SonyDSLR.mlmodel; sourceTree = "<group>"; };
-		5779F0E9256E1BE100BE0D0D /* CanonInc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CanonInc.mlmodel; path = ../../../../../Desktop/CoreMLData/Models/DSLR/CanonInc.mlmodel; sourceTree = "<group>"; };
-		5779F0EA256E1BE100BE0D0D /* Nikon.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Nikon.mlmodel; path = ../../../../../Desktop/CoreMLData/Models/DSLR/Nikon.mlmodel; sourceTree = "<group>"; };
 		577ECCA124537AFB007AB88D /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		577ECCA32453C77F007AB88D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		578850B4253D389C00E751E0 /* SearchHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -241,6 +237,10 @@
 		AEDE298A255BAA360071CACD /* ProductDescriptionOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		AEDE298C255BAA4D0071CACD /* ProductDescriptionSpecificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionSpecificationTableViewCell.swift; sourceTree = "<group>"; };
 		AEDE298E255BAA690071CACD /* ProductDescriptionGoogleReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionGoogleReviewTableViewCell.swift; sourceTree = "<group>"; };
+		AEE57C8B25735EB4007A982E /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../../Documents/ClassificationResults/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
+		AEE57C8D25735EC9007A982E /* Nikon.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Nikon.mlmodel; path = ../../../../../../Documents/ClassificationResults/Nikon.mlmodel; sourceTree = "<group>"; };
+		AEE57C8E25735EC9007A982E /* CanonInc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CanonInc.mlmodel; path = ../../../../../../Documents/ClassificationResults/CanonInc.mlmodel; sourceTree = "<group>"; };
+		AEE57C8F25735EC9007A982E /* SonyDSLR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SonyDSLR.mlmodel; path = ../../../../../../Documents/ClassificationResults/SonyDSLR.mlmodel; sourceTree = "<group>"; };
 		AEFB8EA824461DA400F89819 /* ProoductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProoductsTableViewController.swift; sourceTree = "<group>"; };
 		F313EE5A80FD2C039AB7DC1B /* Pods_BestBuyVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -318,12 +318,12 @@
 				AE5D4A35251D98FD0020D855 /* GoogleReviewResponse.swift */,
 				579B8A222462547C008F3C28 /* GoogleReviewViewController.swift */,
 				AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */,
+				AEE57C8B25735EB4007A982E /* First_Stage_Categories_Classifier.mlmodel */,
 				5749E3072523CD2D0063DB47 /* OcrViewController.swift */,
 				57028AFE2527D16E00051C62 /* MainMenuViewController.swift */,
 				5716D7ED253D083100195555 /* SearchHistoryTableViewController.swift */,
 				57C3D0B52539117C0050652A /* GoogleReviewTableViewController.swift */,
 				AECCEBBC253D123A00CF77B2 /* WIshlistTableViewController.swift */,
-				57564A962570DF56000B05DD /* First_Stage_Categories_Classifier.mlmodel */,
 				57969412254B92C200C4ADE9 /* DataAnalyticsTableViewController.swift */,
 				570910EA254FA0E2005A7E9F /* NoProductsViewController.swift */,
 				AEDE2982255BA2950071CACD /* ProductDescriptionTableViewController.swift */,
@@ -350,9 +350,9 @@
 		57422839256765D900290CBF /* DSLR */ = {
 			isa = PBXGroup;
 			children = (
-				5779F0E9256E1BE100BE0D0D /* CanonInc.mlmodel */,
-				5779F0EA256E1BE100BE0D0D /* Nikon.mlmodel */,
-				5779F0E8256E1BE100BE0D0D /* SonyDSLR.mlmodel */,
+				AEE57C8E25735EC9007A982E /* CanonInc.mlmodel */,
+				AEE57C8D25735EC9007A982E /* Nikon.mlmodel */,
+				AEE57C8F25735EC9007A982E /* SonyDSLR.mlmodel */,
 			);
 			path = DSLR;
 			sourceTree = "<group>";
@@ -826,7 +826,7 @@
 				5742288725677E8D00290CBF /* SonyInEarHeadphones.mlmodel in Sources */,
 				579B8A232462547C008F3C28 /* GoogleReviewViewController.swift in Sources */,
 				5716D7C0253CD96000195555 /* ProductVendorCompareTableViewCell.swift in Sources */,
-				5779F0EC256E1BE100BE0D0D /* CanonInc.mlmodel in Sources */,
+				AEE57C9125735EC9007A982E /* CanonInc.mlmodel in Sources */,
 				57BA1ED823F9995500350ADB /* ViewController.swift in Sources */,
 				5796940E254B923A00C4ADE9 /* DataAnalyticsTableViewCell.swift in Sources */,
 				57028AEE2527729100051C62 /* Jabra.mlmodel in Sources */,
@@ -849,7 +849,6 @@
 				5749E2F62523CCB70063DB47 /* OcrTextView.swift in Sources */,
 				577ECCA224537AFB007AB88D /* ProductTableViewCell.swift in Sources */,
 				578850BA253D38AC00E751E0 /* WishlistTableViewCell.swift in Sources */,
-				5779F0EB256E1BE100BE0D0D /* SonyDSLR.mlmodel in Sources */,
 				AECCEBD3254FB55A00CF77B2 /* ProductRecommended.swift in Sources */,
 				57C3D0B62539117C0050652A /* GoogleReviewTableViewController.swift in Sources */,
 				57028AF22527729100051C62 /* BoseCorporation.mlmodel in Sources */,
@@ -868,6 +867,7 @@
 				5716D7B9253CD91400195555 /* ProductDetailTableViewCell.swift in Sources */,
 				57422868256775E000290CBF /* AppleTablets.mlmodel in Sources */,
 				5742288825677E8D00290CBF /* AppleInEarHeadphones.mlmodel in Sources */,
+				AEE57C9025735EC9007A982E /* Nikon.mlmodel in Sources */,
 				574228722567780A00290CBF /* HpPrinters.mlmodel in Sources */,
 				AEDE298D255BAA4D0071CACD /* ProductDescriptionSpecificationTableViewCell.swift in Sources */,
 				57422869256775E000290CBF /* MicrosoftTablets.mlmodel in Sources */,
@@ -885,7 +885,6 @@
 				57F21FC9256F415800E1687C /* SamsungPhones.mlmodel in Sources */,
 				AEAFA0E524566C9B00931015 /* User.swift in Sources */,
 				AEDE2989255BAA220071CACD /* ProductDescriptionPriceTableViewCell.swift in Sources */,
-				5779F0ED256E1BE100BE0D0D /* Nikon.mlmodel in Sources */,
 				AEDE298B255BAA360071CACD /* ProductDescriptionOverviewTableViewCell.swift in Sources */,
 				576DC481245DFDC6002A9926 /* Utilities.swift in Sources */,
 				57BA1ED623F9995500350ADB /* SceneDelegate.swift in Sources */,
@@ -894,6 +893,7 @@
 				57028AD32527727600051C62 /* Micro-Star International.mlmodel in Sources */,
 				AEFB8EA924461DA400F89819 /* ProoductsTableViewController.swift in Sources */,
 				AE5C670C245B41CF0055F9F6 /* ProductDescriptionDetailControllerViewController.swift in Sources */,
+				AEE57C9225735EC9007A982E /* SonyDSLR.mlmodel in Sources */,
 				AE64F12D2472022A00FAD5BF /* ForgotPasswordViewController.swift in Sources */,
 				5749E3082523CD2D0063DB47 /* OcrViewController.swift in Sources */,
 				5742288625677E8D00290CBF /* JBLInEarHeadphones.mlmodel in Sources */,
@@ -902,7 +902,7 @@
 				57028AD92527727600051C62 /* AcerInc.mlmodel in Sources */,
 				5749E2FE2523CCDE0063DB47 /* ScanButton.swift in Sources */,
 				5716D7BB253CD93400195555 /* ProductReviewTableViewCell.swift in Sources */,
-				57564A972570DF56000B05DD /* First_Stage_Categories_Classifier.mlmodel in Sources */,
+				AEE57C8C25735EB4007A982E /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				576E452F25689955005021C3 /* CustomerDATableViewController.swift in Sources */,
 				57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */,
 				57028AFF2527D16E00051C62 /* MainMenuViewController.swift in Sources */,

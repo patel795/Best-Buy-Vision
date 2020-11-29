@@ -103,6 +103,30 @@ class SettingsViewController: UIViewController {
     }
     
     
+    @IBAction func logOut(_ sender: Any) {
+        let alert = UIAlertController(title: "Log Out", message: "Are you sure you want to logout?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action) in
+            switch action.style{
+            case .default:
+                print("default")
+            case .cancel:
+                print("cancel")
+            case .destructive:
+                do {
+                    try Auth.auth().signOut()
+                    //navigationController?.popToRootViewController(animated: true)
+                    //let mainViewController = ViewController()
+                    //let mainmenuViewNavigationController = UINavigationController(rootViewController: mainViewController)
+                    //self.present(mainmenuViewNavigationController, animated: true, completion: nil)
+                    self.performSegue(withIdentifier: "unwindToViewController", sender: self)
+                    } catch let err {
+                        print(err)
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

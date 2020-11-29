@@ -36,6 +36,15 @@ class ViewController: UIViewController {
         db.settings = settings
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        usernameTextBox.text = ""
+        passwordTextBox.text = ""
+    }
+    
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+
+    }
+    
     private func setUpNavigationBar() {
         let image = UIImage(named: "Logo2")
         let newImage = image?.imageWithColor(.white)
