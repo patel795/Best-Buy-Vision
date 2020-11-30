@@ -81,6 +81,9 @@ class WIshlistTableViewController: UITableViewController {
             }
             else{
                 self.removeSpinner()
+                self.products = []
+                self.tableView.reloadData()
+                self.refreshControl!.endRefreshing()
             }
         }
     }
@@ -112,6 +115,28 @@ class WIshlistTableViewController: UITableViewController {
     }
     // MARK: - Table view data source
 
+    @IBAction func deleteAll(_ sender: Any) {
+        let alert = UIAlertController(title: "Delete All", message: "Are you sure you want to delete all wishlist products?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action) in
+            switch action.style{
+            case .default:
+                print("default")
+            case .cancel:
+                print("cancel")
+            case .destructive:
+                do {
+                    print(Auth.auth().currentUser!.uid)
+                    self.db.collection("Wishlist").document("\(Auth.auth().currentUser!.uid)").updateData(["SKU" : FieldValue.delete()])
+                    self.getDataFromFirebase()
+                    } catch let err {
+                        print(err)
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1

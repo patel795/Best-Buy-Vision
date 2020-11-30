@@ -369,7 +369,7 @@
             <objects>
                 <tableViewController id="sBe-cj-CaA" customClass="ProductDescriptionTableViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LeJ-UW-fbf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -542,7 +542,7 @@
             <objects>
                 <tableViewController id="bdA-Iz-DCr" customClass="ProductSpeficationTableViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WJa-2W-QEv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -799,7 +799,7 @@
             <objects>
                 <tableViewController id="kr0-oe-5Oe" customClass="GoogleReviewTableViewController" customModule="BestBuyVision" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="isR-R1-S5c">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -1244,7 +1244,13 @@ reset link</string>
                             <outlet property="delegate" destination="yjO-he-z17" id="OH0-KQ-Zpe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="iyw-oV-PKx"/>
+                    <navigationItem key="navigationItem" id="iyw-oV-PKx">
+                        <barButtonItem key="rightBarButtonItem" title="Delete All" id="11C-xM-rTi">
+                            <connections>
+                                <action selector="deleteAll:" destination="yjO-he-z17" id="SHz-2c-DOT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="sBe-cj-CaA" kind="show" identifier="segueSearchHistory" id="gxZ-hL-ccf"/>
                     </connections>
@@ -1507,7 +1513,13 @@ reset link</string>
                             <outlet property="delegate" destination="Byn-Yp-hcT" id="gyA-sb-yir"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="FLY-cR-959"/>
+                    <navigationItem key="navigationItem" id="FLY-cR-959">
+                        <barButtonItem key="rightBarButtonItem" title="Delete All" id="4ur-zv-W6G">
+                            <connections>
+                                <action selector="deleteAll:" destination="Byn-Yp-hcT" id="YY3-G3-M9u"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="sBe-cj-CaA" kind="show" identifier="segueWishlistProductDetail" id="y10-O9-gKu"/>
                     </connections>
@@ -1734,7 +1746,7 @@ reset link</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="pkI-fS-2lv"/>
-        <segue reference="2uL-f4-zCg"/>
+        <segue reference="gxZ-hL-ccf"/>
         <segue reference="rEy-6b-MH3"/>
         <segue reference="lpQ-hG-CsH"/>
     </inferredMetricsTieBreakers>
