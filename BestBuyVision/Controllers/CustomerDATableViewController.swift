@@ -73,7 +73,7 @@ class CustomerDATableViewController: UITableViewController {
             } else {
                 for document in querySnapshot!.documents {
                     let data = document.data()
-                    if(document.documentID == "Reviews"){
+                    if(document.documentID == "\(Auth.auth().currentUser!.uid)"){
                         firebaseData = data
                     }
                 }

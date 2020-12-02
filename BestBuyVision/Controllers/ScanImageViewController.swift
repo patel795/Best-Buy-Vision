@@ -116,6 +116,10 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 googleResult = json["responses"][0]["logoAnnotations"][0]["description"].stringValue
                 if (googleResult == ""){
                     makeAlert.showAlert(controller: self, title: "Product Logo Error", message: "Could not find logo name. Please take the image of product logo properly.")
+                    self.cardViewForProduct.getProductImageView().image = UIImage()
+                    self.cardView.getProductImageView().image = UIImage()
+                    self.cardView.revertImageView()
+                    self.cardViewForProduct.revertImageView()
                     completion("Error")
                     return
                 }
@@ -142,7 +146,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
             let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
                 self?.processClassifications(for: request, error: error)
             })
-            request.imageCropAndScaleOption = .centerCrop
+            request.imageCropAndScaleOption = .scaleFit
             return request
         } catch {
             fatalError("Failed to load Vision ML model: \(error)")
@@ -153,7 +157,10 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
         //classificationLabel.text = "Classifying..."
         
         let orientation = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue))!
-        guard let ciImage = CIImage(image: image) else { fatalError("Unable to create \(CIImage.self) from \(image).") }
+        guard let ciImage = CIImage(image: image) else {
+            makeAlert.showAlert(controller: self, title: "ERROR!", message: "Image for the logo is not clear.")
+            return
+        }
         
         DispatchQueue.global(qos: .userInitiated).async {
             let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation)
@@ -246,7 +253,7 @@ class ScanImageViewController: UIViewController, UINavigationControllerDelegate,
                 let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
                     self?.processClassifications(for: request, error: error)
                 })
-                request.imageCropAndScaleOption = .centerCrop
+                request.imageCropAndScaleOption = .scaleFit
                 return request
                 } catch {
                     fatalError("Failed to load Vision ML model: \(error)")

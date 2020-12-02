@@ -16,11 +16,17 @@ class ProductSpeficationTableViewController: UITableViewController {
         super.viewDidLoad()
 
         let apiCall = ApiHandlers()
+        self.showSpinner(onView: self.view)
+        let dispatchGroup = DispatchGroup()
+        dispatchGroup.enter()
         apiCall.getProductDetails(sku: self.sku){ (info) in
             self.productDetailsArray = info
             self.tableView.reloadData()
+            dispatchGroup.leave()
         }
-        
+        dispatchGroup.notify(queue: .main){
+            self.removeSpinner()
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

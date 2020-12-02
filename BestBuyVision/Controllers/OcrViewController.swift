@@ -188,7 +188,7 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
                 return
             }
             
-            let pattern = "sku [0-9]{7}|sku[0-9]{7}|sku:[0-9]{7}|sku: [0-9]{7}"
+            let pattern = "sku [0-9]{7}|sku[0-9]{7}|sku:[0-9]{7}|sku: [0-9]{7}|5ku: [0-9]{7}"
             let text = ocrText.lowercased()
             let result = text.range(of: pattern, options:.regularExpression)
             
@@ -202,6 +202,7 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
                  }
                 return
             }
+            
             for i in text.indices[text.index(after: result!.lowerBound)..<result!.upperBound]{
                 sku.append(text[i])
             }
@@ -233,7 +234,7 @@ class OcrViewController: UIViewController, VNDocumentCameraViewControllerDelegat
         
         ocrRequest.recognitionLevel = .accurate
         ocrRequest.recognitionLanguages = ["en-US", "en-GB"]
-        ocrRequest.usesLanguageCorrection = true
+        ocrRequest.usesLanguageCorrection = false
     }
     
     func imagePickerController(_ picker: UIImagePickerController,

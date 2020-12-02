@@ -164,8 +164,9 @@ class WIshlistTableViewController: UITableViewController {
         // Configure the cell...
         cell.wishlistProductImage.image = image
         cell.wishlistProductName.text = self.products[indexPath.row].productName
-        cell.wishlistProductPrice.text = "$\(self.products[indexPath.row].productPrice)"
-
+        let convertedPrice = Double("\(self.products[indexPath.row].productPrice)")
+        cell.wishlistProductPrice?.text = String(format: "$%.2f", convertedPrice as! Double)
+        
         return cell
 
     }

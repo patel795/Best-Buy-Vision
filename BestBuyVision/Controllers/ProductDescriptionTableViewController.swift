@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import ImageSlideshow
 import Firebase
+import FirebaseAuth
 
 class ProductDescriptionTableViewController: UITableViewController, ImageSlideshowDelegate {
 
@@ -70,7 +71,7 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
             self.products[0].manufacturer.removeAll(where: { removedChar.contains($0) })
             self.productCategory.removeAll(where: { removedChar.contains($0) })
             
-            let customerDataAnalytics = self.db.collection("CustomerDataAnalytics").document("Reviews")
+            let customerDataAnalytics = self.db.collection("CustomerDataAnalytics").document("\(Auth.auth().currentUser!.uid)")
             batch.updateData([self.products[0].manufacturer: info], forDocument: customerDataAnalytics)
             
             let priceRangeSearchHistory = self.db.collection("LoggedEvents").document("price_range_search_history")
@@ -108,7 +109,7 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
             } else {
                 for document in querySnapshot!.documents {
                     let data = document.data()
-                    if(document.documentID == "Reviews"){
+                    if(document.documentID == Auth.auth().currentUser!.uid){
                         firebaseData = data
                     }
                 }
@@ -157,6 +158,18 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
 
                 } else {
                     self.db.collection("SearchHistory").document("\(Auth.auth().currentUser!.uid)").setData(["SKU" : [self.SKU]])
+                }
+            }
+        }
+        
+        let daRef = db.collection("CustomerDataAnalytics").document("\(Auth.auth().currentUser!.uid)")
+
+        daRef.getDocument { (document, error) in
+            if let document = document {
+
+                if !document.exists{
+                    self.db.collection("CustomerDataAnalytics").document("\(Auth.auth().currentUser!.uid)").setData([self.products[0].manufacturer : self.products[0].customerReviewAverage])
+
                 }
             }
         }
@@ -284,7 +297,8 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
         }
         else if(indexPath.row == 1 && !self.products.isEmpty){
             let cell = tableView.dequeueReusableCell(withIdentifier: "productPriceCell", for: indexPath) as! ProductDescriptionPriceTableViewCell
-            cell.productDescriptionPrice.text = "$" + self.products[0].productPrice
+            let convertedPrice = Double("\(self.products[0].productPrice)")
+            cell.productDescriptionPrice?.text = String(format: "$%.2f", convertedPrice as! Double)
             cell.isUserInteractionEnabled = false
             return cell
         }
@@ -370,6 +384,23 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
                 }
             }
         }
+        
+        let daRef = db.collection("CustomerDataAnalytics").document("\(Auth.auth().currentUser!.uid)")
+
+        calculateAverageRating(){ (info) in
+            daRef.getDocument { (document, error) in
+                if let document = document {
+
+                    if document.exists{
+                        self.db.collection("CustomerDataAnalytics").document("\(Auth.auth().currentUser!.uid)").updateData([self.products[0].manufacturer : info])
+                    }
+                    else{
+                        self.db.collection("CustomerDataAnalytics").document("\(Auth.auth().currentUser!.uid)").setData([self.products[0].manufacturer : self.products[0].customerReviewAverage])
+                    }
+                }
+            }
+        }
+        
         MakeToast.showToast(controller: self, message: "Product is added in wishlist", seconds: 1.0)
         addWishListToDataAnalytics()
     }

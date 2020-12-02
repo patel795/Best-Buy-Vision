@@ -19,7 +19,7 @@ struct Category_Model {
         "Mobile Phones": Mobile_Phones_Model.mobilePhoneCategoriesDict,
         "Printers": Printers_Model.printersCategoriesDict,
         "Tablets": Tablets_Model.tabletsCategoriesDict,
-        "Watches": Laptops_Model.laptopsCategoriesDict
+        "Watches": Watches_Model.watchCategoriesDict
     ]
 }
 
@@ -91,6 +91,14 @@ struct In_Ear_Headphones_Model {
     ]
 }
 
+struct Watches_Model {
+    static let watchCategoriesDict:[String:AnyObject] = [
+        "Apple Inc.": AppleWatch().model,
+        "Fitbit": FitbitWatches().model,
+        "Samsung Group": SamsungWatches().model
+    ]
+}
+
 struct companies {
-    static let company:[String] = ["", "Acer Inc.", "Apple Inc.", "ASUS", "Audio Technica", "Bang & Olufsen", "Beats Electronics", "Bose Corporation", "Canon Inc.", "Dell", "Google", "Hewlett-Packard", "Insignia", "Jabra", "JBL", "Lenovo", "Micro-Star International", "Microsoft Corporation", "Nikon", "Razer Inc.", "Samsung Group", "Seiko Epson", "Sennheiser", "Sony"]
+    static let company:[String] = ["", "Acer Inc.", "Apple Inc.", "ASUS", "Audio Technica", "Bang & Olufsen", "Beats Electronics", "Bose Corporation", "Canon Inc.", "Dell", "Fitbit", "Google", "Hewlett-Packard", "Insignia", "Jabra", "JBL", "Lenovo", "Micro-Star International", "Microsoft Corporation", "Nikon", "Razer Inc.", "Samsung Group", "Seiko Epson", "Sennheiser", "Sony"]
 }

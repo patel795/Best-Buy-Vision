@@ -148,8 +148,8 @@ class ProoductsTableViewController: UITableViewController {
         
         cell.productImage.image = image
         cell.productName?.text = self.products[indexPath.row].productName
-        cell.productPrice?.text = "$" + self.products[indexPath.row].productPrice
-        
+        let convertedPrice = Double("\(self.products[indexPath.row].productPrice)")
+        cell.productPrice?.text = String(format: "$%.2f", convertedPrice as! Double)
         return cell
     }
     
