@@ -219,7 +219,7 @@ class MainMenuViewController: UIViewController, UIGestureRecognizerDelegate, UIC
         cell.productImage.image = image
         cell.productName.text = self.recommendedProducts[indexPath.row].productName
         
-        let convertedPrice = Double("\(self.recommendedProducts[indexPath.row].productPrice)")
+        var convertedPrice = Double("\(self.recommendedProducts[indexPath.row].productPrice)") ?? 0.0
         cell.productPrice.text = String(format: "$%.2f", convertedPrice as! Double)
         
         let ratingNumber = Double(self.recommendedProducts[indexPath.row].averageScore )

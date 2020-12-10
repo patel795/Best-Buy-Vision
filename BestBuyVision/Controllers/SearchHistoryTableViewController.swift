@@ -156,7 +156,7 @@ class SearchHistoryTableViewController: UITableViewController {
             // Configure the cell...
             cell.searchHistoryImage.image = image
             cell.searchHistoryProductName.text = self.products[indexPath.row].productName
-            let convertedPrice = Double("\(self.products[indexPath.row].productPrice)")
+            var convertedPrice = Double("\(self.products[indexPath.row].productPrice)")
             cell.searchHistoryProductPrice?.text = String(format: "$%.2f", convertedPrice as! Double)
 
             return cell

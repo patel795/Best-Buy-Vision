@@ -28,6 +28,7 @@
 		57028AF52527729100051C62 /* Sennheiser.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57028AEC2527729000051C62 /* Sennheiser.mlmodel */; };
 		57028AFF2527D16E00051C62 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57028AFE2527D16E00051C62 /* MainMenuViewController.swift */; };
 		570910EB254FA0E3005A7E9F /* NoProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570910EA254FA0E2005A7E9F /* NoProductsViewController.swift */; };
+		5713B2942578552100FE16D4 /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5713B2932578552100FE16D4 /* First_Stage_Categories_Classifier.mlmodel */; };
 		5716D7B9253CD91400195555 /* ProductDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5716D7B8253CD91400195555 /* ProductDetailTableViewCell.swift */; };
 		5716D7BB253CD93400195555 /* ProductReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5716D7BA253CD93400195555 /* ProductReviewTableViewCell.swift */; };
 		5716D7C0253CD96000195555 /* ProductVendorCompareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5716D7BF253CD96000195555 /* ProductVendorCompareTableViewCell.swift */; };
@@ -79,7 +80,6 @@
 		57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */; };
 		57C3D0B62539117C0050652A /* GoogleReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D0B52539117C0050652A /* GoogleReviewTableViewController.swift */; };
 		57C3D0BC25393F670050652A /* GoogleReviewImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D0BB25393F670050652A /* GoogleReviewImageTableViewCell.swift */; };
-		57D0E26525760A8F00559DB7 /* First_Stage_Categories_Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D0E26425760A8F00559DB7 /* First_Stage_Categories_Classifier.mlmodel */; };
 		57D0E26C25760AA300559DB7 /* CanonInc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D0E26925760AA300559DB7 /* CanonInc.mlmodel */; };
 		57D0E26D25760AA300559DB7 /* Nikon.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D0E26A25760AA300559DB7 /* Nikon.mlmodel */; };
 		57D0E26E25760AA300559DB7 /* SonyDSLR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57D0E26B25760AA300559DB7 /* SonyDSLR.mlmodel */; };
@@ -156,6 +156,7 @@
 		57028AEC2527729000051C62 /* Sennheiser.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Sennheiser.mlmodel; sourceTree = "<group>"; };
 		57028AFE2527D16E00051C62 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		570910EA254FA0E2005A7E9F /* NoProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoProductsViewController.swift; sourceTree = "<group>"; };
+		5713B2932578552100FE16D4 /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../Desktop/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
 		5716D7B8253CD91400195555 /* ProductDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTableViewCell.swift; sourceTree = "<group>"; };
 		5716D7BA253CD93400195555 /* ProductReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewTableViewCell.swift; sourceTree = "<group>"; };
 		5716D7BF253CD96000195555 /* ProductVendorCompareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVendorCompareTableViewCell.swift; sourceTree = "<group>"; };
@@ -213,7 +214,6 @@
 		57BA1F0D23FA223700350ADB /* ScanImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageViewController.swift; sourceTree = "<group>"; };
 		57C3D0B52539117C0050652A /* GoogleReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleReviewTableViewController.swift; sourceTree = "<group>"; };
 		57C3D0BB25393F670050652A /* GoogleReviewImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleReviewImageTableViewCell.swift; sourceTree = "<group>"; };
-		57D0E26425760A8F00559DB7 /* First_Stage_Categories_Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = First_Stage_Categories_Classifier.mlmodel; path = ../../../../Desktop/First_Stage_Categories_Classifier.mlmodel; sourceTree = "<group>"; };
 		57D0E26925760AA300559DB7 /* CanonInc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CanonInc.mlmodel; path = ../../../../../Desktop/CoreMLData/Models/DSLR/CanonInc.mlmodel; sourceTree = "<group>"; };
 		57D0E26A25760AA300559DB7 /* Nikon.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Nikon.mlmodel; path = ../../../../../Desktop/CoreMLData/Models/DSLR/Nikon.mlmodel; sourceTree = "<group>"; };
 		57D0E26B25760AA300559DB7 /* SonyDSLR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SonyDSLR.mlmodel; path = ../../../../../Desktop/CoreMLData/Models/DSLR/SonyDSLR.mlmodel; sourceTree = "<group>"; };
@@ -326,12 +326,12 @@
 				AE64F12C2472022A00FAD5BF /* ForgotPasswordViewController.swift */,
 				5749E3072523CD2D0063DB47 /* OcrViewController.swift */,
 				57028AFE2527D16E00051C62 /* MainMenuViewController.swift */,
-				57D0E26425760A8F00559DB7 /* First_Stage_Categories_Classifier.mlmodel */,
 				5716D7ED253D083100195555 /* SearchHistoryTableViewController.swift */,
 				57C3D0B52539117C0050652A /* GoogleReviewTableViewController.swift */,
 				AECCEBBC253D123A00CF77B2 /* WIshlistTableViewController.swift */,
 				57969412254B92C200C4ADE9 /* DataAnalyticsTableViewController.swift */,
 				570910EA254FA0E2005A7E9F /* NoProductsViewController.swift */,
+				5713B2932578552100FE16D4 /* First_Stage_Categories_Classifier.mlmodel */,
 				AEDE2982255BA2950071CACD /* ProductDescriptionTableViewController.swift */,
 				578A04102566D95700FBB421 /* ProductSpeficationTableViewController.swift */,
 				576E452425686CE7005021C3 /* SettingsViewController.swift */,
@@ -907,6 +907,7 @@
 				57BA1ED623F9995500350ADB /* SceneDelegate.swift in Sources */,
 				AECCEBBD253D123A00CF77B2 /* WIshlistTableViewController.swift in Sources */,
 				57D0E27925760AB800559DB7 /* FitbitWatches.mlmodel in Sources */,
+				5713B2942578552100FE16D4 /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				AECCEBCD254676EA00CF77B2 /* ProductCollectionViewCell.swift in Sources */,
 				57D0E27A25760AB800559DB7 /* AppleWatch.mlmodel in Sources */,
 				57028AD32527727600051C62 /* Micro-Star International.mlmodel in Sources */,
@@ -921,7 +922,6 @@
 				57028AD92527727600051C62 /* AcerInc.mlmodel in Sources */,
 				5749E2FE2523CCDE0063DB47 /* ScanButton.swift in Sources */,
 				5716D7BB253CD93400195555 /* ProductReviewTableViewCell.swift in Sources */,
-				57D0E26525760A8F00559DB7 /* First_Stage_Categories_Classifier.mlmodel in Sources */,
 				576E452F25689955005021C3 /* CustomerDATableViewController.swift in Sources */,
 				57BA1F0E23FA223700350ADB /* ScanImageViewController.swift in Sources */,
 				57028AFF2527D16E00051C62 /* MainMenuViewController.swift in Sources */,

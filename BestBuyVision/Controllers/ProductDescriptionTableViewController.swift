@@ -297,7 +297,7 @@ class ProductDescriptionTableViewController: UITableViewController, ImageSlidesh
         }
         else if(indexPath.row == 1 && !self.products.isEmpty){
             let cell = tableView.dequeueReusableCell(withIdentifier: "productPriceCell", for: indexPath) as! ProductDescriptionPriceTableViewCell
-            let convertedPrice = Double("\(self.products[0].productPrice)")
+            var convertedPrice = Double("\(self.products[0].productPrice)")
             cell.productDescriptionPrice?.text = String(format: "$%.2f", convertedPrice as! Double)
             cell.isUserInteractionEnabled = false
             return cell
